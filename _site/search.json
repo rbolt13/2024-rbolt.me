@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Randi Bolt",
+    "section": "",
+    "text": "With a relentless passion for exploring diverse topics and a commitment to continual improvement, I bring a dynamic data-driven approach to a diverse set of industries in the technical space. Dive into my hands-on projects on GitHub to witness the practical application of my skills. Explore my professional journey on LinkedIn to gain insights into my experience, and stay tuned for in-depth technical insights and blogs on my Notion hub. I invite you to connect with me as we embark on a journey of discovery and innovation together."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "",
+    "section": "",
+    "text": "Quarto\n\n\nTechnical Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 15, 2024\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nporfessional development\n\n\nnotion\n\n\n\n\n\n\n\n\n\n\n\nJan 8, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-01-15-Making-This-Blog/index.html",
+    "href": "posts/2024-01-15-Making-This-Blog/index.html",
+    "title": "Creating a Blog in Quarto",
+    "section": "",
+    "text": "Brainstorming and Research\nTo start I did some research such as.\n\n\nCreate a Quart Blog\nHow I did this.\nDifferent ways you can do this.\n\n\nConnect to Github\nHow I did this.\nOther ways to do this.\n\n\nConnect to Netlify.\nHow i did this.\n\n\nStyle blog\nSome this to consider in the scss file: * colors * fonts * spacing * styling\nSome thing to consider in yaml * menu * footer * screen reader writing * organization * favicon\nSome things to consider on the main blog pages *"
+  },
+  {
+    "objectID": "posts/2024-01-08-Setting-Up-Hub-In-Notion/index.html",
+    "href": "posts/2024-01-08-Setting-Up-Hub-In-Notion/index.html",
+    "title": "Setting Up Hub in Notion",
+    "section": "",
+    "text": "This post talks about Notion."
+  }
+]

@@ -1,0 +1,48 @@
+---
+title: "Creating a Blog in Quarto"
+date: "2024-01-15"
+categories: [Quarto, Technical Blog]
+---
+
+In this post I talk about some of the things I did to create this blog. 
+
+![](thumbnail.jpg)
+
+
+# Brainstorming and Research
+
+To start I did some research such as.
+
+# Create a Quart Blog
+
+How I did this. 
+
+Different ways you can do this.
+
+# Connect to Github
+
+How I did this.
+
+Other ways to do this.
+
+# Connect to Netlify.
+
+How i did this.
+
+# Style blog 
+
+Some this to consider in the scss file: 
+* colors
+* fonts
+* spacing 
+* styling 
+
+Some thing to consider in yaml
+* menu
+* footer
+* screen reader writing 
+* organization 
+* favicon
+
+Some things to consider on the main blog pages
+* 

@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+// This file ...
+
+/* colors */
+//blue: banner color
+//pink: Hyperlink color
+//light: background color
+//dark: text color
+$blue:           #246d82ff !default;
+$pink:          #c96260ff !default;
+$light:         #edd1ceff !default;
+$dark:          #161B33 !default;
+
+/* colors assigned */
+//primay: banner 
+//body-bg: body / background
+//body-color: text
+//a{colors}: hyperlinks
+$primary: $blue !default;
+$body-bg: $light !default;
+$body-color: $dark !default;
+$link-color: $pink !default;
+
+/* font */
+//font-family-base: default
+//headings-font-family: headings 
+$font-family-base: 'Source Sans Pro', 'Lato' !default;
+$headings-font-family:    'Prata', 'Roboto' !default;
+/*-- scss:rules --*/
+

@@ -1,0 +1,8 @@
+---
+title: "Setting Up Hub in Notion"
+date: "2024-01-08"
+categories: [porfessional development, notion]
+image: "image.jpg"
+---
+
+This post talks about Notion.

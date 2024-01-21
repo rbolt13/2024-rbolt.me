@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Randi Bolt"
+  page-navigation: true
+  page-footer:
+    center: "Made with [Quarto](https://quarto.org/) and deployed with [Netlify](https://www.netlify.com/).<br>Randi Bolt 2024"
+    left: 
+      - icon: envelope
+        href: mailto:randibolt93@gmail.com
+      - icon: github
+        href: https://github.com/rbolt13
+      - icon: linkedin
+        href: https://www.linkedin.com/in/randi-bolt/
+
+  navbar:
+    right:
+      - text: ""
+        menu:
+          - icon: book
+            text: Notion
+            href: https://notion.com/randi-hub
+          - icon: envelope
+            text: Email
+            href: mailto:randibolt93@gmail.com          
+          - icon: github
+            text: Github
+            href: https://github.com/rbolt13
+          - icon: linkedin
+            text: Linkedin
+            href: https://www.linkedin.com/in/randi-bolt/
+
+      
+format:
+  html:
+    theme: styles.scss
