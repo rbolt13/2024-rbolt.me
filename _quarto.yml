@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Randi Bolt"
+  favicon: 2023-rbolt.png
   page-navigation: true
   page-footer:
     center: "Made with [Quarto](https://quarto.org/) and deployed with [Netlify](https://www.netlify.com/).<br>Randi Bolt 2024"
