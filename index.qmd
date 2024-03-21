@@ -1,6 +1,6 @@
 ---
 title: "Randi Bolt"
-image: profile.png
+image: img/world-of-data.jpg
 about:
   template: trestles
 ---

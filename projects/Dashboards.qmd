@@ -1,0 +1,13 @@
+---
+title: "Dashboards"
+toc: true
+---
+
+## 2024 Oscar Prediction Challenge
+
+This shiny app presents the results of a survey where participants predicted the winners of various Oscars categories. 
+
+## Covid-19 
+
+Covid Dashboard is an interactive analysis tool that specifically examines Covid-19 cases and fatalities in both the United States and my home state of Oregon. What initially began as a class project at the onset of the pandemic, has undergone multiple iterations and refinements to evolve into a fully functional and informative dashboard.
+ [Continue reading](https://rbolt13.github.io/covid-dashboard/)

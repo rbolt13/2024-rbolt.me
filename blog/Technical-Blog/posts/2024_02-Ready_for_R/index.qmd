@@ -1,0 +1,139 @@
+---
+title: "Ready 4 R"
+data: "2024-03-01"
+categories: ["R", "Ready4R (24-2)"]
+toc: true
+draft: true
+---
+
+[Ready for R](https://buttondown.email/ready4r) is a mailing list offering a free online course initiated by local Oregonian [Ted Laderas](https://laderast.github.io/) to impart foundational knowledge in rstats and the tidyverse. Subscribers receive a weekly email delving into various methods for data exploration and analysis. On a monthly basis, I will look into these examples, providing additional insights based on my own experiences.
+
+![Text reads "Ready 4 R - Mastering the Tidyverse", with images of a raised pathway through tall trees.](ready4r.png)
+
+# Skim Your Data (2/2)
+
+---
+
+This week's installment focuses on the  [skimr](https://cran.r-project.org/web/packages/skimr/skimr.pdf) package, maintained by [rOpenSci](https://docs.ropensci.org/skimr/articles/skimr.html?utm_source=ready4r&utm_medium=email&utm_campaign=ready-for-r-2024-02-05-skim-your-data). Ted emphasizes its usefulness with new datasets to grasp the broader picture. In the following code snippet, I install the skimr package and load all necessary data manipulation packages for this tutorial.
+
+```{r install and load packages}
+#| eval: false
+# Install Package
+install.packages("skimr")
+# Load Packages
+library(skimr)
+library(readr)
+library(dplyr)
+library(janitor)
+```
+
+Next, we proceed to obtain the dataset, which is the [Kaggle 80 Cerals](https://www.kaggle.com/datasets/crawford/80-cereals). I am using a slightly modified version compared to Ted's, necessitating adjustments to the code below.
+
+```{r load data}
+#| output: false
+# Load Data
+cereals <- readr::read_csv("../../../../data/cereal.csv") |>
+  # clean names by converting to lowercase, replace spaces 
+  # with underscore and removes special characters
+  janitor::clean_names() |>
+  # make shelf an ordered factor
+  dplyr::mutate(shelf = factor(shelf, ordered = TRUE)) |>
+  # convert mfr and type columns to categorical data
+  dplyr::mutate(across(c("mfr", "type"), as.factor))
+```
+
+### Overall Summary
+
+Before getting into the skimr package, let's start with a traditional summary of the dataset:
+
+```{r cerals summary}
+summary(cereals)
+```
+
+The above summary provides a wealth of information. For columns designated as factors (mfr, type, and shelf), we observe counts for each category. Other column types display quantiles.
+
+Now, let's utilize skimr::skim to generate a condensed summary of the dataset: 
+
+```{r skim summary}
+skim_output <- skimr::skim(cereals)
+summary(skim_output)
+```
+
+This condensed summary, as Ted aptly notes, offers a more succinct overview. Discrepancies in variable counts by type often signal the need for variable transformation. Personally, I find this approach invaluable, especially when dealing with datasets containing numerous columns. Quickly verifying high-level assumptions can significantly streamline the analysis process. Let's explore different types of summaries.
+
+### Character Summary
+
+Below, we validate our assumptions:
+
+* There is only one character column, "name".
+
+* There are 77 unique rows, aligning with our assumption that each row represents a different cereal.
+
+```{r character skim summary}
+skimr::yank(skim_output, "character")
+```
+
+### Factor Summary
+
+Below, we confirm our assumptions:
+
+* There are three factor columns: mfr, type, and shelf.
+
+* No missing values are present.
+
+* Shelf is the only ordered factor.
+
+* The dataset comprises seven manufacturers, two types of cereal (cold and hot), and three shelf heights (1: floor, 2: middle, 3: top).
+
+```{r factor skim summary}
+skimr::yank(skim_output, "factor")
+```
+
+### Numeric Summary
+
+Lastly, we examine the numeric summary, which provides information similar to the traditional summary. However, it also includes histograms, offering additional insights.
+
+```{r numeric skim summary}
+skimr::yank(skim_output, "numeric")
+```
+
+
+
+### Overall
+
+Exploring this has been enlightening, and I anticipate revisiting it. It's surprising how frequently I find myself explaining to non-data professionals that the mean (or average) isn't always the most reliable indicator of sample behavior. Data can be heavily skewed, making visualizations essential for accurate interpretation. While tools like ggplot offer sophisticated visualization options, the initial data review provided by skimr is invaluable.
+
+# The Power of Crosstables (2/12)
+
+---
+
+This week we focus on crosstables, also known as two-way tables. These tables are a helpful way that data analysis can compare the results of two or more variables in a table, so we can start asking questions about how they relate. We start this week using the same cereals dataset, but slightly modifying it.
+
+```{r modify data}
+#| output: false
+manu_labels <- c("American Home"="A",
+                   "General Mills"="G",
+                   "Kelloggs"="K",
+                   "Nabisco" = "N",
+                   "Post" = "P",
+                   "Quaker Oats" = "Q", 
+                   "Ralston Purina" = "R")
+cereals <- cereals |>
+  dplyr::mutate(mfr = forcats::fct_recode(mfr, !!!manu_labels))
+```
+
+### Crosstabs with `janitor::tabyl()`
+
+For a single variable we can use `janitor::tabyl()` to view counts and percentages, as shown below:
+
+```{r tabyl for shelf}
+cereals |>
+  janitor::tabyl(shelf) 
+```
+
+We may want to know whether the manufacturers are evenly distributed in terms of cereal type. 
+
+
+# {vtree} for you and me (2/19)
+
+# Philosophy of EDA (2/25)

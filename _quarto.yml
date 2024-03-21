@@ -7,7 +7,7 @@ website:
   google-analytics: "G-GPSGHZ166H"
   page-navigation: true
   page-footer:
-    center: "Made with [Quarto](https://quarto.org/) and deployed with [Netlify](https://www.netlify.com/).<br>Randi Bolt 2024"
+    center: "Randi Bolt 2024 <br> Made with [Quarto](https://quarto.org/) and deployed with [Netlify](https://www.netlify.com/)."
     left: 
       - icon: github
         href: https://github.com/rbolt13
@@ -15,25 +15,51 @@ website:
         href: https://www.linkedin.com/in/randi-bolt/
       - icon: envelope
         href: mailto:randibolt93@gmail.com
-      - icon: book
-        href: https://notion.com/randi-hub
 
   navbar:
     right:
-      - text: ""
+      - text: "Blogs"
         menu:
+          - icon: book
+            text: Book Reviews
+            href: blog/Book-Reviews/blog.qmd
+          - icon: person
+            text: Personal Blog
+            href: blog/Personal-Blog/blog.qmd
+          - icon: code
+            text: Technical Blog
+            href: blog/Technical-Blog/blog.qmd
+      - text: "Projects"
+        menu:
+          - icon: bar-chart
+            text: Data Visuals and Analysis
+            href: projects/Data-Visuals-and-Analysis.qmd
+          - icon: bar-chart-steps
+            text: Dashboards
+            href: projects/Dashboards.qmd
+          - icon: journal
+            text: Educational Insights
+            href: projects/Educational-Insights.qmd
+          - icon: pen
+            text: Technical Blogs
+            href: projects/Technical-Blogs.qmd
+      - text: "Links"
+        menu:
+          - icon: envelope
+            text: Email
+            href: mailto:randibolt93@gmail.com 
           - icon: github
             text: Github
             href: https://github.com/rbolt13
           - icon: linkedin
             text: Linkedin
             href: https://www.linkedin.com/in/randi-bolt/
-          - icon: envelope
-            text: Email
-            href: mailto:randibolt93@gmail.com 
-          - icon: book
-            text: Notion
-            href: https://notion.com/randi-hub
+          - icon: film
+            text: Letterboxd
+            href: https://letterboxd.com/rbolt/
+          - icon: spotify
+            text: Spotify
+            href: https://open.spotify.com/user/innluxglueuzbltzfxgbsc2dz?si=483d58c3de6046f3
 
       
 format:

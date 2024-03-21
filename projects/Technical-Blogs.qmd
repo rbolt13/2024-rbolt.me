@@ -1,0 +1,20 @@
+---
+title: "Technical Blogs"
+toc: true
+---
+
+## 2024: rbolt.me
+
+Current iteration of my blog. Made using Quarto and deployed with Netlify.
+
+## 2023: rbolt22
+
+Made using Quarto and deployed with Netlify. Topics include interview preparation, R and SQL, creating a package in R, web scraping, python basics, quarto links, ... [Continue reading](https://www.rbolt.me/)
+
+## 2022: rbolt2
+
+Made with R using blogdown and deployed with Netlify. Topics include NBA circular barcharts, reproducible research, docker, Shiny Style Guide notes, finals and midterm preparation notes, ... [Continue reading](https://rbolt2.netlify.app/)
+
+## 2021: rbolt
+
+Made with R using blogdown and deployed with Netlify. Topics include using API's, generative art, idempotent proof, abstract mathematics, transformation and weighting to correct model inadequacies, diagnostics for leverage and influence, ...[Continue reading](https://rbolt.netlify.app/)

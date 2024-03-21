@@ -6,9 +6,9 @@
 //pink: Hyperlink color
 //light: background color
 //dark: text color
-$blue:           #246d82ff !default;
+$banner:           #3f2c0cff !default;
 $pink:          #c96260ff !default;
-$light:         #edd1ceff !default;
+$light:         #ecc899ff !default;
 $dark:          #161B33 !default;
 
 /* colors assigned */
@@ -16,7 +16,7 @@ $dark:          #161B33 !default;
 //body-bg: body / background
 //body-color: text
 //a{colors}: hyperlinks
-$primary: $blue !default;
+$primary: $banner !default;
 $body-bg: $light !default;
 $body-color: $dark !default;
 $link-color: $pink !default;

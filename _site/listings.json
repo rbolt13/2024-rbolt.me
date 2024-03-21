@@ -9,8 +9,51 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/Technical-Blog/posts/2024-02-29-Shiny-Oscar-Dashboard.html",
+      "/blog/Personal-Blog/posts/2024_01-MLK_Storm/index.html",
+      "/blog/Book-Reviews/posts/2024_03_Book_Review_Carmageddon/2024_03_Book_Review_Carmageddon.html",
       "/posts/2024-01-15-Making-This-Blog/index.html",
       "/posts/2024-01-08-Setting-Up-Hub-In-Notion/index.html"
     ]
+  },
+  {
+    "listing": "/blog/R/blog.html",
+    "items": [
+      "/blog/R/posts/2024-02-29-Intro-to-Shiny.html"
+    ]
+  },
+  {
+    "listing": "/blog/Personal/blog.html",
+    "items": [
+      "/blog/Personal/posts/2024_03_Book_Review_Carmageddon/2024_03_Book_Review_Carmageddon.html"
+    ]
+  },
+  {
+    "listing": "/blog/Python/blog.html",
+    "items": []
+  },
+  {
+    "listing": "/blog/Code/blog.html",
+    "items": [
+      "/blog/Code/posts/2024-02-29-Shiny-Oscar-Dashboard.html"
+    ]
+  },
+  {
+    "listing": "/blog/Technical-Blog/blog.html",
+    "items": []
+  },
+  {
+    "listing": "/blog/Personal-Blog/blog.html",
+    "items": [
+      "/blog/Personal-Blog/posts/2024_01-MLK_Storm/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/Book-Reviews/blog.html",
+    "items": []
+  },
+  {
+    "listing": "/projects/Educational-Notes/blog.html",
+    "items": []
   }
 ]
