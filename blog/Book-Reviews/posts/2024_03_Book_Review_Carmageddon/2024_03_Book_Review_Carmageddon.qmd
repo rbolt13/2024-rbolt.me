@@ -2,6 +2,7 @@
 title: "Book Review: Carmageddon"
 date: "2024-03-15"
 categories: ["24-3: Book Review"]
+toc: true
 draft: true
 ---
 
@@ -12,3 +13,47 @@ In his thought-provoking book, Carmageddon: How Cars Make Life Worse and What to
 # Introduction
 
 Coming soon i think...
+
+# Civil Rights and Public Transportation
+
+this....
+
+# Parking and Traffic
+
+this ...
+
+# Cars > People
+
+this ....
+
+# Some Cars do kill people
+
+this ...
+
+# Car clubs trick ya
+
+this ...
+
+# Walkable Cities
+
+this...
+
+# Cars in 3rd world countries 
+
+this ...
+
+# Electric Cars are not the fix
+
+mining
+
+elons tunnels 
+
+# Car Companies are Corporations 
+
+Lead Fuel
+
+BMW Diesel and 
+
+# Conlusion 
+
+this ...
