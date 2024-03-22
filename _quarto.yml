@@ -40,9 +40,6 @@ website:
           - icon: journal
             text: Educational Insights
             href: projects/Educational-Insights.qmd
-          - icon: pen
-            text: Technical Blogs
-            href: projects/Technical-Blogs.qmd
       - text: "Links"
         menu:
           - icon: envelope
