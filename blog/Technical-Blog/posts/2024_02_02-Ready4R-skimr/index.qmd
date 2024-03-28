@@ -1,0 +1,110 @@
+---
+title: "Ready4R: skimr Package"
+date: "2024-02-02"
+categories: ["R", "Ready4R", "EDA"]
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+toc: true
+draft: true
+---
+
+The inaugural installment of [Ready4R](https://buttondown.email/ready4r) focuses on the [skimr](https://cran.r-project.org/web/packages/skimr/skimr.pdf) package, maintained by [rOpenSci](https://docs.ropensci.org/skimr/articles/skimr.html?utm_source=ready4r&utm_medium=email&utm_campaign=ready-for-r-2024-02-05-skim-your-data).
+
+![Summary table of numeric values of cereals.](img.png)
+
+# Introduction
+
+[Ready4R](https://buttondown.email/ready4r) is a mailing list offering a free online course initiated by local Oregonian [Ted Laderas](https://laderast.github.io/) to impart foundational knowledge in rstats and the tidyverse. Subscribers receive a weekly email delving into various methods for data exploration and analysis. On a weekly basis, I will look into these examples, providing additional insights based on my own experiences.
+
+# Skim You Data
+
+The inaugural installment focuses on the [skimr](https://cran.r-project.org/web/packages/skimr/skimr.pdf) package, maintained by [rOpenSci](https://docs.ropensci.org/skimr/articles/skimr.html?utm_source=ready4r&utm_medium=email&utm_campaign=ready-for-r-2024-02-05-skim-your-data).Ted emphasizes its usefulness with new datasets to grasp the broader picture. In the following code snippet, I install the skimr package and load all necessary data manipulation packages for this tutorial.
+
+```{r linstall and load packages}
+#| output: false
+# Install Package
+# install.packages("skimr")
+# Load Packages
+library(skimr)
+library(readr)
+library(dplyr)
+library(janitor)
+library(ggplot2)
+```
+
+Next, we proceed to obtain the dataset, which is the [Kaggle 80 Cerals](https://www.kaggle.com/datasets/crawford/80-cereals). I am using a slightly modified version compared to Ted's, necessitating adjustments to the code below.
+
+```{r load data}
+#| output: false
+# Load Data
+cereals <- readr::read_csv("../../../../data/cereal.csv") |>
+  # clean names by converting to lowercase, replace spaces 
+  # with underscore and removes special characters
+  janitor::clean_names() |>
+  # make shelf an ordered factor
+  dplyr::mutate(shelf = factor(shelf, ordered = TRUE)) |>
+  # convert mfr and type columns to categorical data
+  dplyr::mutate(across(c("mfr", "type"), as.factor))
+```
+
+### Overall Summary
+
+Before getting into the skimr package, let's start with a traditional summary of the dataset:
+
+```{r cerals summary}
+summary(cereals)
+```
+
+The above summary provides a wealth of information. For columns designated as factors (mfr, type, and shelf), we observe counts for each category. Other column types display quantiles.
+
+Now, let's utilize skimr::skim to generate a condensed summary of the dataset:
+
+```{r skim summary}
+skim_output <- skimr::skim(cereals)
+summary(skim_output)
+```
+
+This condensed summary, as Ted aptly notes, offers a more succinct overview. Discrepancies in variable counts by type often signal the need for variable transformation. Personally, I find this approach invaluable, especially when dealing with datasets containing numerous columns. Quickly verifying high-level assumptions can significantly streamline the analysis process. Let's explore different types of summaries.
+
+### Character Summary
+
+Below, we validate our assumptions:
+
+-   There is only one character column, "name".
+
+-   There are 77 unique rows, aligning with our assumption that each row represents a different cereal.
+
+```{r character skim summary}
+skimr::yank(skim_output, "character")
+```
+
+### Factor Summary
+
+Below, we confirm our assumptions:
+
+-   There are three factor columns: mfr, type, and shelf.
+
+-   No missing values are present.
+
+-   Shelf is the only ordered factor.
+
+-   The dataset comprises seven manufacturers, two types of cereal (cold and hot), and three shelf heights (1: floor, 2: middle, 3: top).
+
+```{r factor skim summary}
+skimr::yank(skim_output, "factor")
+```
+
+### Numeric Summary
+
+Lastly, we examine the numeric summary, which provides information similar to the traditional summary. However, it also includes histograms, offering additional insights.
+
+```{r numeric skim summary}
+skimr::yank(skim_output, "numeric")
+```
+
+### Overall
+
+Exploring this has been enlightening, and I anticipate revisiting it. It's surprising how frequently I find myself explaining to non-data professionals that the mean (or average) isn't always the most reliable indicator of sample behavior. Data can be heavily skewed, making visualizations essential for accurate interpretation. While tools like ggplot offer sophisticated visualization options, the initial data review provided by skimr is invaluable.

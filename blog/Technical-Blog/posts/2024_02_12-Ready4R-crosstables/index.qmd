@@ -1,0 +1,219 @@
+---
+title: "Ready4R: Crosstables"
+date: "2024-02-12"
+categories: ["R", "Ready4R", "EDA"]
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+toc: true
+draft: true
+---
+
+This week we focus on crosstables, also known as two-way tables.
+
+![Crosstable of manufacturers cereals with mascots.](img.png)
+
+# Introduction
+
+Crosstables are a helpful way to compare the results of two or more variables in a table, so that we can start asking questions about how they relate. We start this week using the same cereals dataset, but slightly modifying it.
+
+```{r load packages, data, and modify data}
+#| output: false
+# Install Package
+# Load Packages
+library(readr)
+library(dplyr)
+library(janitor)
+# Load Data
+cereals <- readr::read_csv("../../../../data/cereal.csv") |>
+  # clean names by converting to lowercase, replace spaces 
+  # with underscore and removes special characters
+  janitor::clean_names() |>
+  # make shelf an ordered factor
+  dplyr::mutate(shelf = factor(shelf, ordered = TRUE)) |>
+  # convert mfr and type columns to categorical data
+  dplyr::mutate(across(c("mfr", "type"), as.factor))
+# Rename Labels
+manu_labels <- c("American Home"="A",
+                   "General Mills"="G",
+                   "Kelloggs"="K",
+                   "Nabisco" = "N",
+                   "Post" = "P",
+                   "Quaker Oats" = "Q", 
+                   "Ralston Purina" = "R")
+cereals <- cereals |>
+  dplyr::mutate(mfr = forcats::fct_recode(mfr, !!!manu_labels))
+```
+
+# Crosstabs with `janitor::tabyl()`
+
+For a single variable we can use `janitor::tabyl()` to view counts and percentages, as shown below:
+
+```{r tabyl for shelf}
+cereals |>
+  janitor::tabyl(shelf) 
+```
+
+A slick way to get counts and percentage per shelf (AKA our ordered factor variable). Next we may want to know whether the manufacturers (factor variable) are evenly distributed in terms of cereal type (factor variable). Note: Use `adorn_percentages()` and `adorn_n()` interchangeably to get percentages or counts.
+
+```{r tablyl of manufactures by type}
+cereals |>
+  # Create frequency table of manufacturers by type
+  janitor::tabyl(mfr, type) |>
+  # Calculate percentages based on hot and cold cereal totals
+  janitor::adorn_percentages(denominator = "row") |>
+  # Format percentages
+  janitor::adorn_pct_formatting() |>
+  # Add totals
+  janitor::adorn_ns() |>
+  # Nicely format table
+  knitr::kable()
+```
+
+$\underline{\textbf{Insights}}$
+
+-   Only **1** manufacturer makes hots cereals: **American Home**
+
+-   Only **2** manufacturers make both hot and cold cereal: **Nabisco** and **Quaker Oats**
+
+-   The remaining **4** manufacturers only make cold cereals: **General Mills**, **Kelloggs**, **Post**, and **Raiston Purina**
+
+# Shelf Height and Marketing
+
+Now let's look at the distribution of cereals across different shelf heights (1 = bottom, 2 = middle, and 3 = top). According to an article cited by Ted titled [Cereal aisle psychology: All eyes on the consumer](https://www.usatoday.com/story/news/nation/2014/04/03/cereal-aisle-eye-contact/7212389/?utm_source=ready4r&utm_medium=email&utm_campaign=ready4r-02-12-2024-the-power-of-crosstables), researchers conducted a two-part study confirming that cereals targeting children are typically placed about 23 inches off the ground. They observed that cereals on the top shelves often feature characters staring straight ahead or slightly upward to make eye contact with adults, while those on lower shelves, adorned with cartoon characters with large inviting eyes, create eye contact with children.
+
+Lets use crosstables to visualize how manufacturers distribute their cereals across shelves.
+
+```{r tabyl of mfr by shelf}
+cereals |>
+  # Create frequency table of manufacturers by shelf
+  janitor::tabyl(mfr, shelf) |>
+  # Calculate percentages based on shelf total
+  janitor::adorn_percentages(denominator="row") |>
+  # Format percentages
+  janitor::adorn_pct_formatting() |>
+  # Add totals
+  janitor::adorn_ns() |>
+  # Nicely format table
+  knitr::kable()
+```
+
+$\underline{\textbf{Insights}}$
+
+-   **American Home** exclusively markets its cereals on the second shelf.
+
+-   **Nabisco** primarily markets its cereals on the bottom shelf, presumably targeting children.
+
+-   **General Mills**, **Kelloggs**, **Post**, and **Quaker Oats** mainly target adults, as they primarily market their cereals on the top shelf..
+
+-   **Ralston Purina** evenly splits its marketing efforts between the top and bottom shelves.
+
+# Which shelves have cereal mascots?
+
+Next, let's investigate which shelves feature cereal mascots, assuming that mascots often indicate cereals marketed towards children. Using [data scraped by Ted](https://gist.github.com/laderast/74131e0ca53e626c353bc644adad28c5?utm_source=ready4r&utm_medium=email&utm_campaign=ready4r-02-12-2024-the-power-of-crosstables) from the article ["268 Cereal Mascots,"](https://www.whiteclouds.com/listicles/268-cereal-mascots/?utm_source=ready4r&utm_medium=email&utm_campaign=ready4r-02-12-2024-the-power-of-crosstables) we can identify cereals with mascots and their distribution across shelves.
+
+Below we clean and join our data sets, and then check the dimmensions are correct.
+
+```{r load, clean, and join mascot data}
+# Load Data
+m_c <- utils::read.csv("../../../../data/mascots.csv",
+                       row.names = NULL)
+# Clean cereal names
+m_c <- m_c |>
+mutate(name=stringr::str_replace(name,"Cap’n Crunch cereals", "Cap'n'Crunch")) |>
+  mutate(name=stringr::str_replace(name, "Count Chocula cereal", "Count Chocula")) |>
+  mutate(name=stringr::str_replace(name, "Honey Smacks", "Smacks")) |>
+  mutate(name=stringr::str_replace(name, "Mini-Wheats", "Frosted Mini-Wheats")) 
+# join with cereals data
+mascot_count <- cereals |>
+  left_join(y=m_c, by="name") |>
+  mutate(has_mascot = ifelse(is.na(mascot), "No", "Yes")) 
+# check dimension
+dim(mascot_count)
+```
+
+Let's do a **Quick Check!**, and look at the second shelf to see any obvious errors in the data.
+
+```{r}
+mascot_count |>
+  # Filter to second shelf
+  dplyr::filter(shelf==2) |>
+  # Select only name, manufacturer, mascot, and has_mascot
+  select(name, mfr, mascot, has_mascot) |>
+  # Arrange by mascot 
+  arrange(mascot) |>
+  # Nicely format table
+  knitr::kable()
+```
+
+Ted notes that there are duplicate rows for cereals, because mascots can change over time, or have multiple mascots. This will be problematic for our crosstable which works on counts, so we do a little extra cleaning is done in the code below.
+
+```{r}
+mascot_count |>
+  # Select name, shelf, and has_mascot columns
+  select(name, shelf, has_mascot) |>
+  # Remove the duplicate rows
+  distinct() |>
+  # Create crosstable of shelfs by has_mascot
+  janitor::tabyl(shelf, has_mascot) |>
+  # Calculate percentage based on Yes or No to having a mascot
+  janitor::adorn_percentages() |>
+  # Format percentages
+  janitor::adorn_pct_formatting() |>
+  # Add totals
+  janitor::adorn_ns() |>
+  # Nicely format table
+  knitr::kable()
+```
+
+$\underline{\textbf{Insights}}$
+
+-   **Cereals with mascots are absent from the top shelf**, suggesting that cereal manufacturers predominately target children on the first and second shelves.
+
+Finally, let's identify which manufacturer boasts the highest number of cereals with mascots:
+
+```{r}
+mascot_count |>
+  # Select name, manufacturer, and has_mascot
+  select(name, mfr, has_mascot) |>
+  # Remove the duplicate rows
+  distinct() |>
+  # Create crosstable of shelfs by has_mascot
+  janitor::tabyl(mfr, has_mascot) |>
+  # Calculate percentages based on column totals
+  janitor::adorn_percentages(denominator = "col") |>
+  # Format percentages
+  janitor::adorn_pct_formatting() |>
+  # Add totals
+  janitor::adorn_ns() |>
+  # Nicely format table
+  knitr::kable()
+```
+
+$\underline{\textbf{Insights}}$
+
+-   **General Mills** and **Kelloggs** lead with the most cereals featuring mascots.
+
+-   **American Home** and **Nabisco** have no cereals with mascots.
+
+# Overall
+
+Crosstables serves as a powerful tool for exploring relationships within datasets. Through these analyses, we gain valuable insights into how cereal manufacturers strategically position their products, offering a glimpse into the fascinating world of consumer psychology and marketing dynamics.
+
+# W.E.B. Dubois' Visualizations (Black History Month)
+
+Born in 1868, Du Bois was not only a scholar and activist but also an innovative thinker in the realm of data representation. As the first Black American to earn a doctorate from Harvard, he embarked on a journey through Europe before returning to the United States to focus on social sciences.
+
+Driven by a fervent desire to elevate the rights and livelihoods of Black people, Du Bois recognized the power of compelling evidence in effecting societal change. However, he understood that mere statistical data alone could not dismantle generations of racial oppression.
+
+One of his seminal works emerged during the 1900 Paris Exposition, where Du Bois seized the opportunity to narrate the story of Black Americans through a novel medium: charts. His collection of 63 data visualizations titled "The Exhibit of American Negroes" was divided into two sections. The first, "A Series of Statistical Charts Illustrating the Condition of the Descendants of Former African Slaves Now in Residence in the United States of America," offered a broad view of the data at national and international levels. The companion piece, "The Georgia Negro," focused on a singular state, providing a localized perspective.
+
+Du Bois meticulously organized his charts into three distinct viewpoints—international, national, and local—thereby weaving a comprehensive narrative encompassing African American history, education, business development, and property ownership. Through interconnected data points, he crafted an elaborate story that evolved seamlessly from the local to the international arena, reinforcing the narrative of Black empowerment and resilience.
+
+$\underline{\textbf{Articles}}$
+
+-   [How W.E.B. Du Bois used data visualization to confront prejudice in the early 20th century](https://www.tableau.com/blog/how-web-du-bois-used-data-visualization-confront-prejudice-early-20th-century?utm_source=ready4r&utm_medium=email&utm_campaign=ready4r-02-12-2024-the-power-of-crosstables) by Jason Forrest
+
+-   [W.E.B. Du Bois Portrait Gallary](https://public.tableau.com/app/profile/chimdi.nwosu/viz/W_E_B_DuboisPortraitGallery/MainGallery?_gl=1%2A14kfx8s%2A_ga%2ANDk5MDE3ODYwLjE3MDU5MzY2MzE.%2A_ga_8YLN0SNXVS%2AMTcwNzI3OTM2Mi4zLjEuMTcwNzI3OTU3Mi4wLjAuMA..&utm_source=ready4r&utm_medium=email&utm_campaign=ready4r-02-12-2024-the-power-of-crosstables) by Chimdi Niwosu

@@ -40,7 +40,14 @@
   },
   {
     "listing": "/blog/Technical-Blog/blog.html",
-    "items": []
+    "items": [
+      "/blog/Technical-Blog/posts/2023_06_20_W25-TidyTuesday-UFO-Sightings-Redux copy/index.html",
+      "/blog/Technical-Blog/posts/2023_06_13_W24-TidyTuesday-SAFI-Teaching-Data copy/index.html",
+      "/blog/Technical-Blog/posts/2023_05_30_W22-TidyTuesday-Centenarians-Data copy/index.html",
+      "/blog/Technical-Blog/posts/2023_05_04_Gun-Law-ScoreCard-Review copy/index.html",
+      "/blog/Technical-Blog/posts/2023_04_25_W17-TidyTuesday-London-Marathon copy/index.html",
+      "/blog/Technical-Blog/posts/2023_02_21_W08-TidyTuesday-Bob-Ross copy/index.html"
+    ]
   },
   {
     "listing": "/blog/Personal-Blog/blog.html",
