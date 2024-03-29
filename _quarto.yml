@@ -40,6 +40,9 @@ website:
           - icon: journal
             text: Educational Insights
             href: projects/Educational-Insights.qmd
+          - icon: megaphone
+            text: Talks
+            href: projects/Talks.qmd
           - icon: laptop
             text: Technical Blogs
             href: projects/Technical-Blogs.qmd

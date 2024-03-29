@@ -551,5 +551,12 @@
     "title": "Technical Blogs",
     "section": "rbolt (2021)",
     "text": "rbolt (2021)\nMade with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more."
+  },
+  {
+    "objectID": "projects/Talks.html",
+    "href": "projects/Talks.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Oregon Grown (2021)\n\nUsed spatial references from Oregon Spatial Library, ARLIS, and PCC Geography Department to apply mapping techniques such as select by attribute, spatial join, clip, and XY Table to Point to investigate dispensary diversity in Oregon November 2020.\nFormatted, organized, added classifications, and geocoded a data table of approximately 700 rows of data from the Oregon Liquor Control Commission’s active marijuanna retail license.\nDiscovered more than half of dispensaries in Oregon are owned by chains, and about 10% of dispensaries in Portland’s Urban Growth Boundary are owned by one chain, Groundworks.\nCreated an abstract that was accepted for GIS in Action 2021, and presented virtually April 2021."
   }
 ]
