@@ -31,15 +31,18 @@ website:
             href: blog/Technical-Blog/blog.qmd
       - text: "Projects"
         menu:
-          - icon: bar-chart
-            text: Data Visuals and Analysis
-            href: projects/Data-Visuals-and-Analysis.qmd
           - icon: bar-chart-steps
             text: Dashboards
             href: projects/Dashboards.qmd
+          - icon: bar-chart
+            text: Data Visuals and Analysis
+            href: projects/Data-Visuals-and-Analysis.qmd
           - icon: journal
             text: Educational Insights
             href: projects/Educational-Insights.qmd
+          - icon: laptop
+            text: Technical Blogs
+            href: projects/Technical-Blogs.qmd
       - text: "Links"
         menu:
           - icon: envelope

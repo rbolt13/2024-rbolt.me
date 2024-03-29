@@ -3,18 +3,18 @@ title: "Technical Blogs"
 toc: true
 ---
 
-## 2024: rbolt.me
+## [rbolt.me](https://www.rbolt.me/) (2024)
 
-Current iteration of my blog. Made using Quarto and deployed with Netlify.
+Current iteration of my blog. Made using Quarto and deployed with Netlify. Technical posts include a lot of data analysis and visualization in R, and tutorials. 
 
-## 2023: rbolt22
+## [rbolt22](https://rbolt22.netlify.app/) (2023)
 
-Made using Quarto and deployed with Netlify. Topics include interview preparation, R and SQL, creating a package in R, web scraping, python basics, quarto links, ... [Continue reading](https://www.rbolt.me/)
+Made using Quarto and deployed with Netlify. Topics include collaborating with Posit Cloud and Google Drive, using R, SQL, and Python, creating a package in R, web scraping, data visualization, machine learning, statistics and probability, and more.
 
-## 2022: rbolt2
+## [rbolt2](https://rbolt2.netlify.app/) (2022)
 
-Made with R using blogdown and deployed with Netlify. Topics include NBA circular barcharts, reproducible research, docker, Shiny Style Guide notes, finals and midterm preparation notes, ... [Continue reading](https://rbolt2.netlify.app/)
+Made with R using the blogdown package and deployed with Netlify. Topics include reproducible research for data science, docker for reproducible research, project organization for data science, Bayes statistics, predicting stock prices with R packages, statistics and mathematics notes, and more. 
 
-## 2021: rbolt
+## [rbolt](https://rbolt.netlify.app/) (2021)
 
-Made with R using blogdown and deployed with Netlify. Topics include using API's, generative art, idempotent proof, abstract mathematics, transformation and weighting to correct model inadequacies, diagnostics for leverage and influence, ...[Continue reading](https://rbolt.netlify.app/)
+Made with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more. 

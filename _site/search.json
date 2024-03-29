@@ -340,28 +340,28 @@
     "href": "projects/Technical-Blogs.html",
     "title": "Technical Blogs",
     "section": "",
-    "text": "Current iteration of my blog. Made using Quarto and deployed with Netlify."
+    "text": "Current iteration of my blog. Made using Quarto and deployed with Netlify. Technical posts include a lot of data analysis and visualization in R, and tutorials."
   },
   {
     "objectID": "projects/Technical-Blogs.html#rbolt22",
     "href": "projects/Technical-Blogs.html#rbolt22",
     "title": "Technical Blogs",
     "section": "2023: rbolt22",
-    "text": "2023: rbolt22\nMade using Quarto and deployed with Netlify. Topics include interview preparation, R and SQL, creating a package in R, web scraping, python basics, quarto links, … Continue reading"
+    "text": "2023: rbolt22\nMade using Quarto and deployed with Netlify. Topics include collaborating with Posit Cloud and Google Drive, using R, SQL, and Python, creating a package in R, web scraping, data visualization, machine learning, statistics and probability, and more."
   },
   {
     "objectID": "projects/Technical-Blogs.html#rbolt2",
     "href": "projects/Technical-Blogs.html#rbolt2",
     "title": "Technical Blogs",
     "section": "2022: rbolt2",
-    "text": "2022: rbolt2\nMade with R using blogdown and deployed with Netlify. Topics include NBA circular barcharts, reproducible research, docker, Shiny Style Guide notes, finals and midterm preparation notes, … Continue reading"
+    "text": "2022: rbolt2\nMade with R using the blogdown package and deployed with Netlify. Topics include reproducible research for data science, docker for reproducible research, project organization for data science, Bayes statistics, predicting stock prices with R packages, statistics and mathematics notes, and more."
   },
   {
     "objectID": "projects/Technical-Blogs.html#rbolt",
     "href": "projects/Technical-Blogs.html#rbolt",
     "title": "Technical Blogs",
     "section": "2021: rbolt",
-    "text": "2021: rbolt\nMade with R using blogdown and deployed with Netlify. Topics include using API’s, generative art, idempotent proof, abstract mathematics, transformation and weighting to correct model inadequacies, diagnostics for leverage and influence, …Continue reading"
+    "text": "2021: rbolt\nMade with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more."
   },
   {
     "objectID": "projects/Educational-Insights.html",
@@ -530,5 +530,26 @@
     "title": "Gun Law Scorecard (Article Review)",
     "section": "Final Thoughts",
     "text": "Final Thoughts\nHere are some of my main take away from this analysis:\n\nA consistent color scheme of Red, White, and Blue was present across the article, and data visuals. Red is more prominently used with guns, gun deaths, worst states, and as a highlight, accent, or call to action color. The blue seems more neutral or positive. Something to consider when deciding on color palletes for visuals.\nA “new” metric was created (the scorecard) to tell a consistent story through multiple data visuals.\nInteractive visuals are a great way to engage the reader to investigate their own state, and familiarize themselves with other states.\nOther data that might be interesting to view, gun sales, suicide by gun, mass shootings, state regulations, and gun related hate crimes."
+  },
+  {
+    "objectID": "projects/Technical-Blogs.html#rbolt22-2023",
+    "href": "projects/Technical-Blogs.html#rbolt22-2023",
+    "title": "Technical Blogs",
+    "section": "rbolt22 (2023)",
+    "text": "rbolt22 (2023)\nMade using Quarto and deployed with Netlify. Topics include collaborating with Posit Cloud and Google Drive, using R, SQL, and Python, creating a package in R, web scraping, data visualization, machine learning, statistics and probability, and more."
+  },
+  {
+    "objectID": "projects/Technical-Blogs.html#rbolt2-2022",
+    "href": "projects/Technical-Blogs.html#rbolt2-2022",
+    "title": "Technical Blogs",
+    "section": "rbolt2 (2022)",
+    "text": "rbolt2 (2022)\nMade with R using the blogdown package and deployed with Netlify. Topics include reproducible research for data science, docker for reproducible research, project organization for data science, Bayes statistics, predicting stock prices with R packages, statistics and mathematics notes, and more."
+  },
+  {
+    "objectID": "projects/Technical-Blogs.html#rbolt-2021",
+    "href": "projects/Technical-Blogs.html#rbolt-2021",
+    "title": "Technical Blogs",
+    "section": "rbolt (2021)",
+    "text": "rbolt (2021)\nMade with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more."
   }
 ]
