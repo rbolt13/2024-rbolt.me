@@ -186,19 +186,29 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="../../../../projects/Data-Visuals-and-Analysis.html"><i class="bi bi-bar-chart" role="img">
-</i> 
- <span class="dropdown-text">Data Visuals and Analysis</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../../../projects/Dashboards.html"><i class="bi bi-bar-chart-steps" role="img">
 </i> 
  <span class="dropdown-text">Dashboards</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../../../projects/Data-Visuals-and-Analysis.html"><i class="bi bi-bar-chart" role="img">
+</i> 
+ <span class="dropdown-text">Data Visuals and Analysis</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../../../projects/Educational-Insights.html"><i class="bi bi-journal" role="img">
 </i> 
  <span class="dropdown-text">Educational Insights</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../projects/Talks.html"><i class="bi bi-megaphone" role="img">
+</i> 
+ <span class="dropdown-text">Talks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../projects/Technical-Blogs.html"><i class="bi bi-laptop" role="img">
+</i> 
+ <span class="dropdown-text">Technical Blogs</span></a>
   </li>  
     </ul>
   </li>
@@ -484,40 +494,27 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(tidyverse) </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(png)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">#### Load Data ####</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"nrennie/LondonMarathon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/private/var/folders/90/4rtssdj16dl23f_f66qj0t3w0000gn/T/RtmpEWW0yg/remotes8900632d9954/nrennie-LondonMarathon-c83c680/DESCRIPTION’ ... OK
-* preparing ‘LondonMarathon’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-Removed empty directory ‘LondonMarathon/data-raw’
-* building ‘LondonMarathon_0.0.2.tar.gz’</code></pre>
-</div>
-<details>
-<summary>Show Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(winners, <span class="at">package =</span> <span class="st">"LondonMarathon"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Clean Data ####</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">clean</span>(winners)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">#### Create Data Visual ####</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>data_vis <span class="ot">&lt;-</span> <span class="fu">vis</span>(data)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">#### Style Data Visual ####</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>sty_vis <span class="ot">&lt;-</span> <span class="fu">style</span>(data_vis)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">#### Add Flags ####</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>sty_vis_with_flags <span class="ot">&lt;-</span> <span class="fu">add_flags</span>(sty_vis)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="do">#### Save Plot ####</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"plot.png"</span>, </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">30</span>, </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">20</span>, </span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"nrennie/LondonMarathon"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(winners, <span class="at">package =</span> <span class="st">"LondonMarathon"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">#### Clean Data ####</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">clean</span>(winners)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">#### Create Data Visual ####</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>data_vis <span class="ot">&lt;-</span> <span class="fu">vis</span>(data)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">#### Style Data Visual ####</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>sty_vis <span class="ot">&lt;-</span> <span class="fu">style</span>(data_vis)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="do">#### Add Flags ####</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>sty_vis_with_flags <span class="ot">&lt;-</span> <span class="fu">add_flags</span>(sty_vis)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="do">#### Save Plot ####</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"plot.png"</span>, </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">30</span>, </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
