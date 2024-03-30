@@ -57,7 +57,9 @@
   },
   {
     "listing": "/blog/Book-Reviews/blog.html",
-    "items": []
+    "items": [
+      "/blog/Book-Reviews/posts/2024_04_01-BookReview-HowToWinFriendsAndInfluencePeople/index.html"
+    ]
   },
   {
     "listing": "/projects/Educational-Notes/blog.html",
