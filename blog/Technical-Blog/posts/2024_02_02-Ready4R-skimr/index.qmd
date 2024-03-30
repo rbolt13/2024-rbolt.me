@@ -1,14 +1,14 @@
 ---
 title: "Ready4R: skimr Package"
 date: "2024-02-02"
-categories: ["R", "Ready4R", "EDA"]
+categories: ["Ready4R","R", "Exploratory Data Analysis"]
 format: 
   html:
     code-fold: true
     code-summary: "Show code"
     code-tools: true
 toc: true
-draft: true
+draft: false
 ---
 
 The inaugural installment of [Ready4R](https://buttondown.email/ready4r) focuses on the [skimr](https://cran.r-project.org/web/packages/skimr/skimr.pdf) package, maintained by [rOpenSci](https://docs.ropensci.org/skimr/articles/skimr.html?utm_source=ready4r&utm_medium=email&utm_campaign=ready-for-r-2024-02-05-skim-your-data).

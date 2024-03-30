@@ -1,12 +1,13 @@
 ---
 title: "Book Review: Carmageddon"
-date: "2024-03-15"
-categories: ["24-3: Book Review"]
+date: "2024-03-01"
+categories: ["Book Review"]
 toc: true
 draft: true
 ---
 
-In his thought-provoking book, Carmageddon: How Cars Make Life Worse and What to Do About It, Daniel Knowles challenges the unquestioned dominance of automobiles in modern society. With incisive analysis and compelling arguments, Knowles delves into the myriad ways in which car culture negatively impacts our lives and attempts to offer potential solutions for a more sustainable future.
+**Rating**: 9/10 </br>
+**Overview**: In his thought-provoking book, Carmageddon: How Cars Make Life Worse and What to Do About It, Daniel Knowles challenges the unquestioned dominance of automobiles in modern society. With incisive analysis and compelling arguments, Knowles delves into the myriad ways in which car culture negatively impacts our lives and attempts to offer potential solutions for a more sustainable future.
 
 ![](carmageddon.jpeg)
 
