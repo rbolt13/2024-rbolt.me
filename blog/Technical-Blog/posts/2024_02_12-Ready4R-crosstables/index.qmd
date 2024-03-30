@@ -8,14 +8,18 @@ format:
     code-summary: "Show code"
     code-tools: true
 toc: true
-draft: true
+draft: false
 ---
 
-This week we focus on crosstables, also known as two-way tables.
+This week the [Ready4R](https://buttondown.email/ready4r) mailing list focus on crosstables, also known as two-way tables.
 
-![Crosstable of manufacturers cereals with mascots.](img.png)
+![A crosstable of manufacturers cereals with mascots.](img.png)
 
 # Introduction
+
+[Ready4R](https://buttondown.email/ready4r) is a mailing list offering a free online course initiated by local Oregonian [Ted Laderas](https://laderast.github.io/) to impart foundational knowledge in rstats and the tidyverse. Subscribers receive a weekly email delving into various methods for data exploration and analysis. On a weekly basis, I will look into these examples, providing additional insights based on my own experiences.
+
+# Crosstables
 
 Crosstables are a helpful way to compare the results of two or more variables in a table, so that we can start asking questions about how they relate. We start this week using the same cereals dataset, but slightly modifying it.
 
@@ -148,7 +152,7 @@ mascot_count |>
   knitr::kable()
 ```
 
-Ted notes that there are duplicate rows for cereals, because mascots can change over time, or have multiple mascots. This will be problematic for our crosstable which works on counts, so we do a little extra cleaning is done in the code below.
+Ted notes that there are duplicate rows for cereals, because mascots can change over time, or have multiple mascots. This will be problematic for our crosstable which works on counts, so we do a little extra cleaning in the code below.
 
 ```{r}
 mascot_count |>

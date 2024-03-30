@@ -1,11 +1,11 @@
 ---
 title: "Week 13 Tidy NCAA Men's March Madness"
 date: "2023-03-26"
-categories: ["#TidyTuesday", R, "Data Visuals"]
+categories: ["#TidyTuesday", "R", "Data Visuals"]
 draft: true
 ---
 
-Look at this data visual... 
+Look at this data ...
 
 image coming soon. 
 
@@ -39,7 +39,7 @@ Fifth round: Final 4
 Sixth round: Finals
 The data is from 2008 - 2024 for the men's teams. The year 2020 is not included because the tournament was canceled due to Covid. The first column of almost every dataset displays the year the data is from.
 
-## Load Packages 
+# Code 
 
 ```{r}
 #### Load Packages ####
