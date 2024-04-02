@@ -1,5 +1,5 @@
 ---
-title: "Week 13 Tidy NCAA Men's March Madness"
+title: "Week 13 Tidy Tuesday: NCAA Men's March Madness"
 date: "2024-03-26"
 categories: ["#TidyTuesday", "R", "Data Visuals"]
 draft: false
