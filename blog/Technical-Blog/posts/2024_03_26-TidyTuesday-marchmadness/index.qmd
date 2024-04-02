@@ -15,7 +15,7 @@ This week's data is [NCAA Men's March Madness data](https://www.kaggle.com/datas
 
 # Code 
 
-This code retains its core components of cleaning, visualizing, and styling as past #TidyTuesday submissions, but is instead presented as Set-UP > Clean > Graph > Save. 
+This code follows the established #TidyTuesday tradition of cleaning, visualizing, and styling data. However, it introduces a streamlined structure organized into four distinct phases: Set-Up, Clean, Graph, and Save.
 
 ::: {.panel-tabset}
 
