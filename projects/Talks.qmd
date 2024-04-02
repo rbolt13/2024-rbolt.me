@@ -1,5 +1,6 @@
 ---
 title: "Talks"
+comments: false
 ---
 
 # [Code to Content](https://github.com/rbolt13/2024-PDX_RUG-Code_to_Content) (2024)

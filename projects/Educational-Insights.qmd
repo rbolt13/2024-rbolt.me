@@ -1,6 +1,7 @@
 ---
 title: "Educational Insights"
 toc: true
+comments: false
 ---
 
 # Statistics

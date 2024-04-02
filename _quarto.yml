@@ -70,3 +70,7 @@ format:
     theme: styles.scss
     template-partials:
       - metadata.html
+      
+comments: 
+  giscus:
+    repo: rbolt13/2024-rbolt.me

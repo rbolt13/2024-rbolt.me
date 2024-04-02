@@ -1,5 +1,6 @@
 ---
 title: "Data Visuals and Analysis"
+comments: false
 ---
 
 ## [#Tidy Tuesday](https://github.com/rbolt13/tidytuesday)

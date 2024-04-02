@@ -3,6 +3,7 @@ title: "Randi Bolt"
 image: img/world-of-data.jpg
 about:
   template: trestles
+comments: false
 ---
 
 ### Empowering businesses through actionable intelligence and data innovation. 

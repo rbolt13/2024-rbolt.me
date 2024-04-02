@@ -1,6 +1,7 @@
 ---
 title: "Dashboards"
 toc: true
+comments: false
 ---
 
 ## 2024 Oscar Prediction Challenge!
