@@ -8,7 +8,7 @@ comments: false
 
 Current iteration of my blog. Made using Quarto and deployed with Netlify. Technical posts include a lot of data analysis and visualization in R, and tutorials. 
 
-## [rbolt22](https://rbolt22.netlify.app/) (2023)
+## [rbolt22](https://2023-rboltme.netlify.app/) (2023)
 
 Made using Quarto and deployed with Netlify. Topics include collaborating with Posit Cloud and Google Drive, using R, SQL, and Python, creating a package in R, web scraping, data visualization, machine learning, statistics and probability, and more.
 
