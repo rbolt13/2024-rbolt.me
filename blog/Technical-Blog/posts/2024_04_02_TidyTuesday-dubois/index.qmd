@@ -1,0 +1,215 @@
+---
+title: "Week 14 Tidy Tuesday: Du Bois Visualization Challenge"
+date: "2024-04-02"
+categories: ["#TidyTuesday", "R", "Data Visuals"]
+draft: true
+---
+
+This week ... 
+
+# Du Bois Visualization Challenge 2024
+
+> The goal of the challenge is to celebrate the data visualization legacy of W.E.B Du Bois by recreating the visualizations from the 1900 Paris Exposition using modern tools.
+
+This year the challenge is organized around the colors of the [Pan African Flag](https://en.wikipedia.org/wiki/Pan-African_flag).
+For this [final week](https://github.com/ajstarks/dubois-data-portraits/tree/master/challenge/2024/challenge10), use a combination of the colors from the flag to reproduce plate 37, "A Series Of Statistical Charts Illustrating The Conditions Of Descendants Of Formal African Slaves Now Resident In The Unites States."
+Visit the challenge GitHub repository for more details!
+
+# Code 
+
+This code ...
+
+::: {.panel-tabset}
+
+### Set-Up
+
+```{r set-up}
+#| code-fold: true
+#| code-summary: "Show Code"
+#| warning: false
+#### Packages ####
+# tidyverse: A collection of data-related packages.
+# showtext: Use various fonts. 
+# forcats: Add factors to categorical variables. 
+# ggtext: Used markdown on graph text. 
+base::library(tidyverse)
+base::library(showtext)
+base::library(forcats)
+base::library(ggtext)
+
+#### Data ####
+# dubois: TidyTuesday data of occupation percentages
+dubois <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-04-02/dubois_week10.csv')
+
+#### Fonts ####
+# font_add_google(): Search Google Fonts. 
+# showtext_auto(): Turn showtext on for graphics. 
+sysfonts::font_add_google("Courier Prime", "font")
+showtext::showtext_auto()
+
+#### Colors ####
+# col1: Text 
+# col2: Background
+# colors: Colors for Pie Chart
+col1 <- "#2f3e51"
+col2 <- "#caaa81"
+colors <- c("#ce1d40", "#a59faa", "#e4bdb0", "#d1bea6", "#9b8f7d", "#ecb95b")
+
+
+### Text ####
+# title_text
+# subtitle_text
+# caption_text
+title_text <- "A SERIES OF STATISTICAL CHARTS. ILLUSTRA-<br>TING THE CONDITION OF THE DESCENDANTS OF FOR-<br>MER AFRICAN SLAVES NOW RESIDENT IN THE UNITED<br>STATES OF AMERICS."
+subtitle_text <- "<br> <span style='color:pink;'>UNE SÉRIE DE CARTES ET DIAGRAMMES STATISTIQUES MONTRANT LA<br>CONDITION PRÉSENTE DES DESCENDANTS DES ANCIENS ESCLAVES AFRI-<br>CANS ACTUELLMENT ÉTABLIS DANS LES ETATS UNIS D´ AMÉRIQUE.</span> <br> <br> <br> <br> <br> <br> THE UNIVERSITY WAS FOUNDED IN 1867. <br> IT HAS INSTRUCED 6000 NEGROS STUDENTS. <br> <span style='color:pink;'>L´UNIVERSITÉ A ÉTÉ FONDÉE EN 1867. <br> ELLE A DONNÉ L´ INSTRUCTION A'6000 ÉTUDIANTS NEGRES.</span><br> IT HAS GRADUATED 330 NEGROES AMOUNG WHOM ARE: <br> <span style='color:pink;'> ELLE A DÉLIVRÉ DES DIPLOMES A 330 NÉGRES DONT:</span>"
+caption_text <- "Randi Bolt \nApril 2024 \n#TidyTuesday \nDu Bois"
+```
+
+### Clean 
+
+```{r clean}
+#| code-fold: true
+#| code-summary: "Show Code"
+#| warning: false
+### Clean Data
+
+# Set Factor Levels
+dubois$Occupation <- fct_relevel(
+  dubois$Occupation, "Teachers", "House Wives", 
+  "Other Professions", "Government Service", 
+  "Business", "Ministers")
+
+# Add Label Column
+dubois <- dubois |>
+  mutate(label = paste0(Percentage, " %"))
+```
+
+```{r}
+library(ggrepel)
+```
+
+
+
+
+
+```{r}
+pie <- ggplot(
+  # Data
+  dubois, 
+  # Aesthetics
+  aes(
+    x = factor(1), 
+    y = Percentage, 
+    fill = Occupation)
+  ) +
+  # Geom (with outline)
+  geom_bar(
+    width = 1, 
+    stat = "identity", 
+    color = "black", 
+    size = 0.2
+  ) +
+  # Pie Chart
+  coord_polar(
+    "y", 
+    start = 15, 
+    direction = 1
+  ) +
+  # Legend Colors and Order
+  scale_fill_manual(
+    values = colors,
+    breaks = c(
+      "Teachers", "Ministers", "Government Service", 
+      "Business", "Other Professions", "House Wives"
+      )
+  ) +
+  # Remove grid from pie chart
+  theme_void() +
+  # Labels
+  labs(
+    title = title_text,
+    subtitle = subtitle_text,
+    caption = caption_text
+  ) +
+  # Values on Pie Graph
+  # ggrepel::geom_text_repel(
+  #   aes = (label = paste0(Percentage, "%")),
+  #   size = 3,
+  #   vjust = 0.5,
+  # ) +
+  # Theme
+  theme(
+    # Title
+    plot.title = element_markdown(
+      size = 11, 
+      hjust = 0,
+      lineheight = 0.9,
+      family = "font",
+      face = "bold",
+      color = col1),
+    plot.title.position = "plot",
+    # Subtitle
+    plot.subtitle = element_markdown(
+      size = 8, 
+      hjust = 0.5,
+      lineheight = 0.9,
+      family = "font", 
+      color = col1
+    ),
+    # Caption
+    plot.caption = element_text(
+      size = 6,
+      family = "font",
+      color = col1,
+      hjust = 1
+    ),
+    # Legend
+    legend.position = "left",
+    legend.title = element_blank(),
+    legend.text = element_text(
+      size = 8,
+      family = "font",
+      color = col1),
+    legend.key = element_blank(),
+    legend.background = element_blank(),
+    # Background
+    plot.background = element_rect(fill = col2, color = NA),
+    # Plot Margins
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 20))
+
+# Display the pie chart
+print(pie)
+
+```
+
+### Save
+
+```{r save}
+#| code-fold: true
+#| code-summary: "Show Code"
+#| warning: false
+ggsave(
+  "plot.png", 
+  width = 5, 
+  height = 6, 
+  units = "in",
+  dpi = 85)
+```
+
+Save plot as `plot.png`!
+
+![](plot.png)
+
+### Links
+
+[rfordatascience/tidytuesday Repo](https://github.com/rfordatascience/tidytuesday?tab=readme-ov-file)
+
+[rbolt13/tidytuesday Repo](https://github.com/rbolt13/tidytuesday)
+
+:::
+
+# Quick Notes
+
+* Used `plot.title.position()` to center the title on the plot instead of the pie chart. 
+
+
