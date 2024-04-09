@@ -260,7 +260,7 @@ pie <- ggplot(
 #| code-summary: "Show Code"
 #| warning: false
 #### Save ####
-ggsave(
+ggplot2::ggsave(
   "plot.png", 
   width = 5.25, 
   height = 6, 
@@ -295,5 +295,7 @@ Save plot as `plot.png`!
     * Setting the direction parameter to 1 for clockwise orientation or -1 for counterclockwise orientation.
     
 * The `plot.title.position()` argument aligns the plot's title centrally over the entire plot area, rather than just centering it above the pie chart, for improved layout balance and title visibility.
+
+* Due to the integrated design of `geom_label_repel()` within the `ggrepel` package, altering the color of the connecting lines between the chart and the percentage values would concurrently change the text color of the percentage values. Opting to maintain these lines in black provided a visually appealing contrast, deemed superior to alternative colors such as white. This choice also streamlined the visualization process, circumventing the more time-consuming task of manually positioning percentage labels.
 
 

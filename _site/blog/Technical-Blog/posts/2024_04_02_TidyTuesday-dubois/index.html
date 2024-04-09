@@ -525,7 +525,7 @@ Du Bois’s Chart (Original)
 <details>
 <summary>Show Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Save ####</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"plot.png"</span>, </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fl">5.25</span>, </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">6</span>, </span>
@@ -555,6 +555,7 @@ Du Bois’s Chart (Original)
 <li><p>Setting the direction parameter to 1 for clockwise orientation or -1 for counterclockwise orientation.</p></li>
 </ul></li>
 <li><p>The <code>plot.title.position()</code> argument aligns the plot’s title centrally over the entire plot area, rather than just centering it above the pie chart, for improved layout balance and title visibility.</p></li>
+<li><p>Due to the integrated design of <code>geom_label_repel()</code> within the <code>ggrepel</code> package, altering the color of the connecting lines between the chart and the percentage values would concurrently change the text color of the percentage values. Opting to maintain these lines in black provided a visually appealing contrast, deemed superior to alternative colors such as white. This choice also streamlined the visualization process, circumventing the more time-consuming task of manually positioning percentage labels.</p></li>
 </ul>
 
 
