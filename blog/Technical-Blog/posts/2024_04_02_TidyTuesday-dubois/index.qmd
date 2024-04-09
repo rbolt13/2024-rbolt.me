@@ -27,9 +27,6 @@ Participants are encouraged to channel the essence of Plate 37 from Du Bois's se
 
 > The goal of the challenge is to celebrate the data visualization legacy of W.E.B Du Bois by recreating the visualizations from the 1900 Paris Exposition using modern tools.
 
-This year the challenge is organized around the colors of the [Pan African Flag](https://en.wikipedia.org/wiki/Pan-African_flag).
-For this [final week](https://github.com/ajstarks/dubois-data-portraits/tree/master/challenge/2024/challenge10), use a combination of the colors from the flag to reproduce plate 37, "A Series Of Statistical Charts Illustrating The Conditions Of Descendants Of Formal African Slaves Now Resident In The Unites States."
-
 For comprehensive details and to join the challenge, visit the [GitHub repository](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-04-02/readme.md)!
 
 # Code 
