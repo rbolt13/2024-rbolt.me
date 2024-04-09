@@ -104,7 +104,7 @@ caption_text <- "Randi Bolt \nApril 2024 \n#TidyTuesday \nDu Bois"
 # 2. Calculate the position for labels. 
 # 3. Replace NA values in 'pos' with half of the 'Percentage' value.
 dubois <- dubois |>
-  mutate(
+  dplyr::mutate(
     # Calculate the cumulative sum of 'Percentage' column in reverse order.
     csum = base::rev(base::cumsum(base::rev(Percentage))),
     # Calculate the position for labels.
@@ -123,7 +123,7 @@ dubois <- dubois |>
 
 ### Graph
 
-```{r}
+```{r graph}
 #| code-fold: true
 #| code-summary: "Show Code"
 #| warning: false
@@ -138,7 +138,7 @@ dubois <- dubois |>
 # Define labels
 # Remove Grid from Pie Chart
 # Theme: title, subtitle, caption, legend, background, plot margins
-pie <- ggplot(
+pie <- ggplot2::ggplot(
   # Data
   dubois, 
   # Aesthetics
@@ -164,7 +164,7 @@ pie <- ggplot(
       )
   ) +
   # Add Labels Outside Pie Chart 
-  geom_label_repel(
+  ggrepel::geom_label_repel(
     # Data
     data = dubois,
     # Aesthetics
