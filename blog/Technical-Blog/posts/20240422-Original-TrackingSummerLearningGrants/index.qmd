@@ -1,0 +1,97 @@
+---
+title: "Monitoring Summer Learning Grants: A Streamlined System for Claim Submissions"
+date: "2024-04-22"
+categories: ["R", "Data Analysis", "Spread Sheets", "Data Visualization"]
+toc: true
+draft: true
+---
+
+With \$30 million allocated for historically underserved students in 2024, [HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) aims to provide [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) to ensure equitable access to quality summer programming. Explore how to build a comprehensive tracking system in Google Sheets or R to efficiently monitor grant reimbursement submissions. Learn how to structure data for clear analysis, identify potential issues, and support collaboration through enhanced tracking and insights.
+
+(image)
+
+# Introduction
+
+The Federal Systems Team is piloting a new Summer Learning Grant Program to support historically underserved students, backed by HB 4082 and \$30 million in funding. With a requirement for detailed expenditure reports, the program aims to ensure equitable access to high-quality summer programming. In response, this post provides a step-by-step guide to building a comprehensive tracking system for grant submissions, both in Google Sheets and R.
+
+First, we'll set up the core structure of the tracking system in each tool, ensuring all essential fields are included. Then, we'll create a set of fake data to analyze submission frequency, identify potential issues, and review expenditure reports efficiently. Whether you're familiar with spreadsheets or ready to explore the analytical power of R, this guide will offer insights to help streamline your grant management workflow.
+
+# Setting up the Tracking System
+
+[Requirements]{style="text-decoration: underline;"}
+
+Develop a tracking system that includes the following:
+
+-   Grantee name and lead contact
+
+-   Grantee type (e.g., district, ESD, consortium)
+
+-   Date of submission
+
+-   Submission cycle (i.e. weekly, monthly, quarterly)
+
+-   Total amount of claim
+
+-   Status of claim
+
+-   Issues or questions about the expenditure report
+
+-   Contact information for the grantee
+
+
+
+### [Google Sheets]{style="text-decoration: underline;"}
+
+![](images/clipboard-2484393714.png){alt="Screenshot of a Google Sheets spreadsheet with a header row containing nine columns. The columns are labeled from left to right as: Grantee Name, Lead Contact, Grantee Type, Date of Submission, Submission Cycle, Total Amount of Claim, Status of Claim, Issues or Questions, and Contact Information. The header row is highlighted in blue to indicate it has been frozen for easy scrolling."}
+
+1.  [Create a new Google Sheet](https://sheets.new/).
+
+2.  Rename sheet "Summer Learning Grant Expenditure Tracking".
+
+3.  In row 1, add the following column headers:
+
+    a.  Grantee Name
+
+    b.  Lead Contact
+
+    c.  Grantee Type
+
+    d.  Date of Submission
+
+    e.  Submission Cycle
+
+    f.  Total Amount of Claim
+
+    g.  Status of Claim
+
+    h.  Issues or Questions
+
+    i.  Contact Information
+    
+4. (Optional) Freexe the top row:
+
+    * Right-click on the first row to open the context menu.
+    
+    * Scroll to the bottom and click the three vertical dots labeled 'View more row actions'.
+    
+    * Select 'Freeze up to row 1' to lock the top row in place. 
+    
+    
+### [R]{style="text-decoration: underline;"}
+
+1. Create a new data frame. 
+
+```{r create data frame}
+grant_tracking <- data.frame(
+  
+)
+```
+
+
+# Generating Fake Data
+
+# Analyzing Submission Frequency
+
+# Identifying Issues
+
+# Review Expenditure Report

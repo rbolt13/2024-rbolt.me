@@ -1,30 +1,45 @@
 /*-- scss:defaults --*/
-// This file ...
+// Central configuration file for defining colors, fonts, and other styling properties.
 
-/* colors */
-//blue: banner color
-//pink: Hyperlink color
-//light: background color
-//dark: text color
-$banner:           #3f2c0cff !default;
-$pink:          #c96260ff !default;
-$light:         #ecc899ff !default;
-$dark:          #161B33 !default;
+/* Assigned Colors */
+// Primary UI elements color, e.g., navbar
+// Body background color
+// Text color used throughout the body
+// Color for all hyperlinks
+$primary: #800020;
+$body-bg: #fffef0;
+$body-color: #161B33;
+$link-color: #f1414f;
 
-/* colors assigned */
-//primay: banner 
-//body-bg: body / background
-//body-color: text
-//a{colors}: hyperlinks
-$primary: $banner !default;
-$body-bg: $light !default;
-$body-color: $dark !default;
-$link-color: $pink !default;
+/* Fonts */
+// Base font for the body text
+// Font family for headings
+$font-family-base: 'Source Sans Pro', 'Lato';
+$headings-font-family: 'Prata', 'Roboto';
 
-/* font */
-//font-family-base: default
-//headings-font-family: headings 
-$font-family-base: 'Source Sans Pro', 'Lato' !default;
-$headings-font-family:    'Prata', 'Roboto' !default;
 /*-- scss:rules --*/
+// Actual styling rules for HTML elements
 
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-family: $font-family-base;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none; // Example to remove underline from links
+
+    &:hover {
+        color: darken($link-color, 10%);
+    }
+}
+
+.navbar {
+    background-color: $primary;
+    color: $light; // Use the light color for text in the navbar for contrast
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font-family;
+}
