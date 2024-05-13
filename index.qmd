@@ -19,7 +19,7 @@ Below are the focal points of this virtual rose garden:
 **Showpiece Structures** (Projects): [Dashboards](https://www.rbolt.me/projects/dashboards) ,  <br>[Data Visuals & Analysis](https://www.rbolt.me/projects/data-visuals-and-analysis) , [Educational Insigts](https://www.rbolt.me/projects/educational-insights) ,  [Talks](https://www.rbolt.me/projects/talks) and [Archive Blogs](https://www.rbolt.me/projects/technical-blogs) 
 
 **Thematic Area** (Links):
-[Email](randibolt93@gmail.com) , [Github](https://github.com/rbolt13/), [Linkedin](https://www.linkedin.com/in/randi-bolt/) , <br>[Letterbox](https://letterboxd.com/rbolt/), and [Spotify](https://open.spotify.com/user/innluxglueuzbltzfxgbsc2dz?si=483d58c3de6046f3&nd=1&dlsi=7fdce715b6b24c86)
+[Email](randibolt93@gmail.com) , [Github](https://www.rbolt.me/links/github), [Linkedin](https://www.rbolt.me/links/linkedin) , <br>[Letterbox](https://www.rbolt.me/links/letterboxd), and [Spotify](https://www.rbolt.me/links/spotify)
 
 
 Enjoy! 
