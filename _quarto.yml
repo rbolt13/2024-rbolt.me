@@ -11,9 +11,9 @@ website:
     center: "Randi Bolt 2024"
     left: 
       - icon: github
-        href: links/github.qmd
+        href: https://www.rbolt.me/links/github
       - icon: linkedin
-        href: links/linkedin.qmd
+        href: https://www.rbolt.me/links/linkedin
       - icon: envelope
         href: mailto:randibolt93@gmail.com
 
