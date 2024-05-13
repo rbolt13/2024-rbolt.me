@@ -3,10 +3,11 @@ title: "Monitoring Summer Learning Grants Claim Submissions"
 date: "2024-04-22"
 categories: ["R", "Data Analysis", "Spread Sheets", "Data Visualization"]
 toc: true
-draft: true
+draft: false
 ---
 
-With \$30 million allocated for historically underserved students in 2024, [HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) aims to provide [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) to ensure equitable access to quality summer programming. Explore how to build a comprehensive tracking system in Google Sheets or R to efficiently monitor grant reimbursement submissions. Learn how to structure data for clear analysis, identify potential issues, and support collaboration through enhanced tracking and insights.
+[HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) provides $30M of [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) for underserved students in 2024. Learn to track grants in Google Sheets or R for clear analysis and insights. 
+
 
 (image)
 
@@ -18,7 +19,7 @@ First, we'll set up the core structure of the tracking system in each tool, ensu
 
 # Setting up the Tracking System
 
-[Requirements]{style="text-decoration: underline;"}
+**Requirements**
 
 Develop a tracking system that includes the following:
 
@@ -40,7 +41,7 @@ Develop a tracking system that includes the following:
 
 
 
-### [Google Sheets]{style="text-decoration: underline;"}
+### Google Sheets
 
 ![](images/clipboard-2484393714.png){alt="Screenshot of a Google Sheets spreadsheet with a header row containing nine columns. The columns are labeled from left to right as: Grantee Name, Lead Contact, Grantee Type, Date of Submission, Submission Cycle, Total Amount of Claim, Status of Claim, Issues or Questions, and Contact Information. The header row is highlighted in blue to indicate it has been frozen for easy scrolling."}
 
