@@ -6,6 +6,20 @@ about:
 comments: false
 ---
 
-### Empowering businesses through actionable intelligence and data innovation.
+Welcome to my rosearium 🌹
 
-As a dedicated data analyst with a relentless passion for exploring diverse topics and a commitment to continual improvement, I bring a dynamic data-driven approach to a diverse set of industries in the technical space. Explore my hands-on projects to witness firsthand my expertise, delve into insightful content on my various blogs, or connect with me through any of the provided links. I eagerly await the opportunity to engage with you. 🌹
+I am a statistical data analyst from the city of roses who leverages data science techniques to guide strategic decision-making. I have a relentless passion for exploring new topics and continuously improving upon my past and current work. 
+
+Below are the focal points of this virtual rose garden:
+
+**Central Display**:  [Technical Blog](https://www.rbolt.me/blog/technical-blog/blog)
+
+**Feature Roses**: [Book Reviews](https://www.rbolt.me/blog/book-reviews/blog) & [Personal Blog](https://www.rbolt.me/blog/personal-blog/blog)
+
+**Showpiece Structures** (Projects): [Dashboards](https://www.rbolt.me/projects/dashboards) ,  <br>[Data Visuals & Analysis](https://www.rbolt.me/projects/data-visuals-and-analysis) , [Educational Insigts](https://www.rbolt.me/projects/educational-insights) ,  [Talks](https://www.rbolt.me/projects/talks) and [Archive Blogs](https://www.rbolt.me/projects/technical-blogs) 
+
+**Thematic Area** (Links):
+[Email](randibolt93@gmail.com) , [Github](https://github.com/rbolt13/), [Linkedin](https://www.linkedin.com/in/randi-bolt/) , <br>[Letterbox](https://letterboxd.com/rbolt/), and [Spotify](https://open.spotify.com/user/innluxglueuzbltzfxgbsc2dz?si=483d58c3de6046f3&nd=1&dlsi=7fdce715b6b24c86)
+
+
+Enjoy! 
