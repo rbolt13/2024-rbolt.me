@@ -1,5 +1,5 @@
 ---
-title: "Monitoring Summer Learning Grants: A Streamlined System for Claim Submissions"
+title: "Monitoring Summer Learning Grants Claim Submissions"
 date: "2024-04-22"
 categories: ["R", "Data Analysis", "Spread Sheets", "Data Visualization"]
 toc: true

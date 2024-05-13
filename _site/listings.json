@@ -1,5 +1,19 @@
 [
   {
+    "listing": "/blog/Book-Reviews/blog.html",
+    "items": [
+      "/blog/Book-Reviews/posts/20240501-BookReview-TheOnlyGoodIndians/index.html",
+      "/blog/Book-Reviews/posts/20240401-BookReview-HowToWinFriendsAndInfluencePeople/index.html",
+      "/blog/Book-Reviews/posts/20240301-BookReview-Carmageddon/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/Personal-Blog/blog.html",
+    "items": [
+      "/blog/Personal-Blog/posts/2024_01-MLK_Storm/index.html"
+    ]
+  },
+  {
     "listing": "/blog/Technical-Blog/blog.html",
     "items": [
       "/blog/Technical-Blog/posts/20240402-TidyTuesday-dubois/index.html",
@@ -22,20 +36,6 @@
       "/blog/Technical-Blog/posts/20220228-Workshop-RStudioBuildingaBlogwithR/index.html",
       "/blog/Technical-Blog/posts/20220124-Original-LatexHacks/index.html",
       "/blog/Technical-Blog/posts/20211129-Proof-Idempotent/index.html"
-    ]
-  },
-  {
-    "listing": "/blog/Book-Reviews/blog.html",
-    "items": [
-      "/blog/Book-Reviews/posts/20240501-BookReview-TheOnlyGoodIndians/index.html",
-      "/blog/Book-Reviews/posts/20240401-BookReview-HowToWinFriendsAndInfluencePeople/index.html",
-      "/blog/Book-Reviews/posts/20240301-BookReview-Carmageddon/index.html"
-    ]
-  },
-  {
-    "listing": "/blog/Personal-Blog/blog.html",
-    "items": [
-      "/blog/Personal-Blog/posts/2024_01-MLK_Storm/index.html"
     ]
   }
 ]

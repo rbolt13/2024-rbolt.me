@@ -28,7 +28,7 @@ website:
             text: Personal Blog
             href: blog/Personal-Blog/blog.qmd
           - icon: code
-            text: Archive Blogs
+            text: Technical Blogs
             href: blog/Technical-Blog/blog.qmd
       - text: "Projects"
         menu:
@@ -45,7 +45,7 @@ website:
             text: Talks
             href: projects/Talks.qmd
           - icon: laptop
-            text: Technical Blogs
+            text: Archive Blogs
             href: projects/Technical-Blogs.qmd
       - text: "Links"
         menu:

@@ -7,7 +7,7 @@ draft: false
 ---
 
 **Rating**: 3/10 </br>
-**Overview**: Published in 1936, this book carries the unmistakable tone of its era. While it includes some noteworthy quotes and offers insights at a high level, many of the ideas presented are quite basic. Through Dale Carnegie's extensive use of personal stories and anecdotes, it becomes apparent that these strategies could also be interpreted as manipulative.
+**Overview**: Offers basic insights from 1936 with a tone of its era.
 
 ![](img.jpeg){alt="Cover of the audiobook 'How to Win Friends & Influence People' by Dale Carnegie, read by Andrew MacMillan. The cover has a deep blue background with the title in large gold letters. A small framed portrait of Dale Carnegie is centered in the lower part of the cover. The text claims it as 'The first—and still the best—book of its kind—to lead you to success'."}
 
