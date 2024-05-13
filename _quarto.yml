@@ -28,7 +28,7 @@ website:
             text: Personal Blog
             href: blog/Personal-Blog/blog.qmd
           - icon: code
-            text: Technical Blog
+            text: Archive Blogs
             href: blog/Technical-Blog/blog.qmd
       - text: "Projects"
         menu:
@@ -54,16 +54,16 @@ website:
             href: mailto:randibolt93@gmail.com 
           - icon: github
             text: Github
-            href: https://github.com/rbolt13
+            href: links/github.qmd
           - icon: linkedin
             text: Linkedin
-            href: https://www.linkedin.com/in/randi-bolt/
+            href: links/linkedin.qmd
           - icon: film
             text: Letterboxd
-            href: https://letterboxd.com/rbolt/
+            href: links/letterboxd.qmd
           - icon: spotify
             text: Spotify
-            href: https://open.spotify.com/user/innluxglueuzbltzfxgbsc2dz?si=483d58c3de6046f3
+            href: links/spotify.qmd
 
       
 format:

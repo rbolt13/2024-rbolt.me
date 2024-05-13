@@ -1,21 +1,27 @@
 ---
-title: "Technical Blogs"
+title: "Archived Blogs"
 toc: true
 comments: false
 ---
 
 ## [rbolt.me](https://www.rbolt.me/) (2024)
 
-Current iteration of my blog. Made using Quarto and deployed with Netlify. Technical posts include a lot of data analysis and visualization in R, and tutorials. 
+Current iteration of my blog. Made using Quarto and deployed with Netlify. Technical posts include a lot of data analysis and visualization in R, and tutorials.
 
 ## [rbolt22](https://2023-rboltme.netlify.app/) (2023)
 
 Made using Quarto and deployed with Netlify. Topics include collaborating with Posit Cloud and Google Drive, using R, SQL, and Python, creating a package in R, web scraping, data visualization, machine learning, statistics and probability, and more.
 
+![](images/clipboard-1376586034.png)
+
 ## [rbolt2](https://rbolt2.netlify.app/) (2022)
 
-Made with R using the blogdown package and deployed with Netlify. Topics include reproducible research for data science, docker for reproducible research, project organization for data science, Bayes statistics, predicting stock prices with R packages, statistics and mathematics notes, and more. 
+Made with R using the blogdown package and deployed with Netlify. Topics include reproducible research for data science, docker for reproducible research, project organization for data science, Bayes statistics, predicting stock prices with R packages, statistics and mathematics notes, and more.
+
+![](images/clipboard-2278531989.png)
 
 ## [rbolt](https://rbolt.netlify.app/) (2021)
 
-Made with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more. 
+Made with R using the blogdown package and deployed with Netlify. Topics include using API’s, analyzing and modifying linear regression models, and more.
+
+![](images/clipboard-1273564822.png)
