@@ -1,12 +1,14 @@
 ---
 title: "Weapons of Math Desctruction"
 date: "2022-12-12"
-categories: [Math, DEI]
+categories: ["07/10", "DEI"]
 toc: true
 draft: true
 ---
 
 These are some quotes, and my notes from the book [Weapons of Math Desctruction](https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction) by [Cathy O'Neil](https://mathbabe.org/).
+
+![](wmd.jpeg)
 
 
 
