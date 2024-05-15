@@ -8,7 +8,7 @@ comments: false
 
 I am a statistical data analyst from the city of roses who leverages data science techniques to guide strategic decision-making. I have a relentless passion for exploring new topics and continuously improving upon my past and current work.
 
-Below are the focal points of my virtual rose garden:
+Below are the focal points of my virtual rosarium:
 
 **Central Display**: [Technical Blog](https://www.rbolt.me/blog/technical-blog/blog)
 
