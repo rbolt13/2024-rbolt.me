@@ -1,0 +1,187 @@
+---
+title: "Code to Content Lighting Talk"
+date: "2024-05-15"
+categories: [Talks, Quarto]
+toc: true
+draft: false
+---
+
+In this post are the materials for my [2024 Cascadia R Conference](https://cascadiarconf.com/agenda/) lightning talk called: Code to Content. 
+
+![Image from slide 4, Blogging Blueprint, of my presentation, Code to Content.](images/clipboard-447114531.png)
+
+# Slides
+
+<iframe src="codetocontent.html" width="800" height="600">
+
+</iframe>
+
+# Talk
+
+## Slide 1: Code to Content
+
+Hello, good afternoon everyone!
+
+I'm Randi, and since rendering my first R markdown file to HTML back in 2020, I’ve been complimenting my growing technical skills with web pages and blogs. Today, I’m excited to share the transformative power of turning code into content.
+
+## Slide 2: Agenda
+
+*\[image: Purple Scroll\]*
+
+Before we set sail, let me briefly outline our agenda.
+
+*\[bullet: Adventure Awaits /n Reasons to Embark on Your Expedition\]*
+
+We’ll kick things off by diving into the compelling reasons why you should start blogging.
+
+*\[bullet: Blogging Blueprint /n Building Your Narrative With Quarto\]*
+
+Next, we’ll sail through the high-level steps on blog origination, ensuring you’re equipped to navigate your blogging journey smoothly.
+
+*\[bullet: Curated Counsel /n Advice for Smooth Sailing\]*
+
+After that, I’ll share some friendly and hopefully time saving advice.
+
+*\[bullet: Dive Deeper /n Resourceful Links\]*
+
+Finally, I’ll drop the anchor and share some resources that have been instrumental in my own blogging odyssey.
+
+*\[transition\]*
+
+## Slide 3: Adventure Awaits
+
+Now, let's talk about the adventure that awaits us.
+
+*\[image: shadowy ghost pirate ship\]*
+
+With the Reasons to Embark on Your Expedition
+
+*\[bullet: Joy in Expression and Self Discovery\]*
+
+Blogging in the tech realm isn’t just about information; it’s a canvas for personal expression. Your blog is your playground, and being your own critic is a rewarding journey.
+
+*\[bullet: Own Your Narrative\]*
+
+It’s yours - no meddling billionaires, no unwelcome changes. Every tweak, every evolution - it's all in your hands. Your blog is your ship, and you’re the captain determining its course.
+
+*\[bullet: Continuous Growth and Learning\]*
+
+Initially, I blogged to enhance my R skills, but the unexpected bonus was the development of soft skills and a cross-disciplinary dialect. Even without direct work experience, different topics I’ve explored in blog posts made me more adept at communicating complex concepts and helped me learn about new tools and industries much faster.
+
+*\[bullet: Reveal Fresh Perspectives\]*
+
+Use your blog to broaden your view, and see beyond what you see immediately.
+
+*\[bullet: Data Advocacy and Empowerment\]*
+
+Your blog has the power to empower others with knowledge. Even a simple concept not only benefits your fellow data enthusiast but also those outside our technical bubble.
+
+*\[bullet: Embedded in R Culture\]*
+
+Contribute to the vibrant culture of R by paying it forward. We’ve all found insights, solutions, and even community in blog posts. Being a part of this exchange enriches the collective knowledge.
+
+*\[transition\]*
+
+Now, let;s chart our course with the …
+
+## Slide 4: Blogging Blueprint
+
+Blogging Blueprint,
+
+*\[image: ship blueprint\]*
+
+building your narrative with Quarto.
+
+*\[bullet: knowledge acquisition, Ideation, and Planning\]*
+
+Begin your voyage by delving into the Quaro documentation. Explore blogs within and beyond your field for inspiration. Then, draft an outline that guides both the structure and content of your blog.
+
+Next,
+
+*\[bullet: Setup, Version Control, and Deployment\]*
+
+Use RStudio to swiftly create a Quarto blog. Connect that to a Github repository for version control. Finally, anchor it to your Netlify account to make your blog visible on the digital sea.
+
+From there,
+
+*\[bullet: Configure, Personalize, and Post\]*
+
+Configure your blog using the .yaml file. Infuse it with your personality, and launch your inaugural post.
+
+But we’re not done yet.
+
+*\[bullet: Aesthetics, Ownership, and Analysis\]*
+
+Navigate the currents of aesthetics with a .scss file, claim your digital territory by securing a web URL, and activate Google Analytics to analyze waves of traffic hitting your shores to offer you insights to further optimizations.
+
+Now let's set sail smoothly with some,
+
+*\[transition\]*
+
+## Slide 5: Curated Council
+
+Curated Council
+
+*\[image: three dreamy pirates in the clouds\]*
+
+Advice for smooth sailing.
+
+Let’s navigate through the essentials:
+
+*\[bullet: Prioritize Accessibility\]*
+
+Just like setting sail with the wind, prioritize accessibility. Make it the norm, and not an afterthought. Include alt text for images, mind the colors for contrast, ensure a consistent design, and be mindful of different screen sizes.
+
+*\[bullet: Select the Right Tool for the Job\]*
+
+In the vast sea of tools, Quarto stands tall with its versatility in rendering outputs and proficiency in various languages. But beware, for extensive data or bulky long term updates, consider other tools more suitable for that size and scale.
+
+*\[bullet: Avoid Duplicating Other Profiles\]*
+
+While it’s tempting to copy and paste from existing platforms, redundancy will send your audience to different waters. Be distinctive, or risk seeing your viewers sail away to more familiar ports.
+
+*\[bullet: Consider Your Audience\]*
+
+Tailor your blog to your audience, and craft your landing page with care. Guide your viewers; don’t overload them. Give them clear paths to set their course with ease.
+
+Now it’s time to,
+
+## Slide 6: Dive Deeper
+
+*\[image: pirate boat from ocean perspective\]*
+
+Into the vast ocean of resources that will aid you in your own journey.
+
+To start,
+
+*\[bullet: Quarto \> Websites \> Creating a Blog\]*
+
+Explore the Quarto documentation, a scrollable one-page guide.
+
+Then, check out
+
+*\[bullet: Creating a blog with Quarto in 10 steps\]*
+
+This comprehensive guide provides a detailed, image-rich walkthrough.
+
+Next, explore
+
+*\[bullet: Create Your Data Science Portfolio with Quarto\]*
+
+A hands-on tutorial where you create a Data Science Portfolio for Wednesday Adams.
+
+Once you’ve got the hang of creating a blog with Quarto, move on to
+
+*\[bullet: Style Your Quarto Blog without Knowing a lot of HTML/CSS\]*
+
+This game-changer saves time finding a template and imparts high-level skills in web development.
+
+Last, but not least
+
+*\[bullet: Quarto/ RMarkdown - What’s Different?\]*
+
+Presented by the organizers of this group, Ted Laderas. This presentation helps bridge the gap between RMarkdown and Quarto, and also inspired more interactivity in my blog posts.
+
+*\[Conclusion\]*
+
+And there you have it! We’ve uncovered some of the adventure that awaits us, charted course through the blogging blueprint, navigated smoother seas with curated advice and dove deeper into some resources to aid you on your journey. Set sail with code, and let your journey of content begin!
