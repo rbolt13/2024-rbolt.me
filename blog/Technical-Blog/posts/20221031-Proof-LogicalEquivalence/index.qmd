@@ -1,12 +1,14 @@
 ---
 title: "Prove P is Logically Equivalent to the Negation of the Negation of P"
 date: "2022-10-31"
-categories: [Math, Proof]
+categories: [Mathematics, Proofs]
 toc: true
-draft: true
+draft: false
 ---
 
 Let P be a statement form. Prove that $P \equiv\neg (\neg P)$.
+
+![](images/clipboard-4068753190.png)
 
 # `Solution 1`
 

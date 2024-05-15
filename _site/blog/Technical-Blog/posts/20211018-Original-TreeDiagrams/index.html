@@ -289,12 +289,11 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tree Diagrams</h1>
+<div class="quarto-title-block"><div><h1 class="title">Tree Diagrams</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
+    <div class="quarto-category">Original</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">Conditional Probabilty</div>
-    <div class="quarto-category">Tree Diagrams</div>
-    <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">Data Visuals</div>
   </div>
   </div>
 
@@ -319,40 +318,55 @@ window.Quarto = {
 
 
 <p>In this post I wanted to create a tree diagram based off my <a href="https://rbolt13.github.io/stat461/">Statistics-461 Notes</a>.</p>
-<p><img src="treediagram.png" class="img-fluid"></p>
+<p><img src="images/clipboard-2067291989.png" class="img-fluid"></p>
 <section id="set-up" class="level1">
 <h1><code>1. Set-Up</code></h1>
 <p>This example is from <a href="https://rbolt13.github.io/stat461/#Example_1">W3-D5 Example 1</a> of my <a href="https://rbolt13.github.io/stat461/">Statistics-461 Notes</a>, and uses the <a href="https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html">data.tree</a> package which can create a multiple node object.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.tree)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("DiagrammeR")</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="creating-a-node-object" class="level1">
 <h1><code>2. Creating a Node Object</code></h1>
 <p>All trees are constructed by tying together Node object, so to start I will create a new Node object for example 1.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ex1 <span class="ot">&lt;-</span> data.tree<span class="sc">::</span>Node<span class="sc">$</span><span class="fu">new</span>(<span class="st">"Example 1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>For example 1 we suppose that 1% of the population uses a certain drug. So next I want to <code>AddChild</code> to ex1 to show those who use the drug (d) and do not use the drug (dc, where c means <a href="https://guides.fscj.edu/Statistics/complement#:~:text=The%20complement%20of%20an%20event,P(A%20%E2%88%A9%20B).">compliment</a>).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> ex1<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Uses Drug"</span>, <span class="at">p =</span> <span class="fl">0.01</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dc <span class="ot">&lt;-</span> ex1<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Does Not Use Drug"</span>, <span class="at">p =</span> <span class="fl">0.99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now let t be tests positive for the disease. The drug manufacturer claims that <span class="math inline">\(P(T|D^C)=0.015\)</span> and <span class="math inline">\(P(T^C|D)=0.005\)</span>. Which means that:</p>
 <p><span class="math inline">\(P(T^C|D^C)=1-P(T|D^C)=1-0.015=0.985\)</span> and</p>
 <p><span class="math inline">\(P(T|D)=1-P(T^C|D)=1-0.005=0.995\)</span></p>
 <p>So lets add another layer of nodes to example 1.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> d<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Positive Test"</span>, <span class="at">p =</span> <span class="fl">0.995</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tc <span class="ot">&lt;-</span> d<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Negative Test"</span>, <span class="at">p =</span> <span class="fl">0.005</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> dc<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Positive Test"</span>, <span class="at">p =</span> <span class="fl">0.015</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tc<span class="ot">&lt;-</span> dc<span class="sc">$</span><span class="fu">AddChild</span>(<span class="st">"Negative Test"</span>, <span class="at">p =</span> <span class="fl">0.985</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>And then print what information we have.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">print</span>(ex1, <span class="st">'p'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>              levelName     p
 1 Example 1                NA
@@ -366,11 +380,17 @@ window.Quarto = {
 </div>
 <p>If the probability column shows as a percentages we can use the <code>SetFormat()</code> function to set the decimal to 3 places.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.tree<span class="sc">::</span><span class="fu">SetFormat</span>(ex1, <span class="st">"p"</span>, <span class="at">formatFun =</span> data.tree<span class="sc">::</span><span class="fu">FormatFixedDecimal</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>And print the information we have.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">print</span>(ex1, <span class="st">'p'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>              levelName     p
 1 Example 1                NA
@@ -392,22 +412,30 @@ window.Quarto = {
 <h1><code>4. Plotting a Tree Diagram</code></h1>
 <p>Lastly we can use the <code>plot()</code> function to print a Tree Diagram:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aa1ff50a75c4fd315231" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-aa1ff50a75c4fd315231">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"Example 1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Uses Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Does Not Use Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"5\" \n  \"2\"->\"3\" \n  \"2\"->\"4\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2794573e4a4663cd0932" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2794573e4a4663cd0932">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"Example 1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Uses Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Does Not Use Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"5\" \n  \"2\"->\"3\" \n  \"2\"->\"4\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>To visualize the tree diagram from left to right instead of top to bottom we can use the <code>SetGraphStyle()</code> function as shown below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data.tree<span class="sc">::</span><span class="fu">SetGraphStyle</span>(ex1, <span class="at">rankdir =</span> <span class="st">"LR"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c71a772ea6e1e9a63b66" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c71a772ea6e1e9a63b66">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Example 1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Uses Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Does Not Use Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"5\" \n  \"2\"->\"3\" \n  \"2\"->\"4\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b89583d99a3f2ec938ff" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b89583d99a3f2ec938ff">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"LR\"]\n\n\n\n  \"1\" [label = \"Example 1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"Uses Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"Does Not Use Drug\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"Positive Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"Negative Test\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"5\" \n  \"2\"->\"3\" \n  \"2\"->\"4\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 
@@ -491,6 +519,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -824,21 +903,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tree Diagrams"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2021-10-18"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Original, R, Data Visuals]</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>In this post I wanted to create a tree diagram based off my <span class="co">[</span><span class="ot">Statistics-461 Notes</span><span class="co">](https://rbolt13.github.io/stat461/)</span>.</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2067291989.png)</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># `1. Set-Up`</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>This example is from <span class="co">[</span><span class="ot">W3-D5 Example 1</span><span class="co">](https://rbolt13.github.io/stat461/#Example_1)</span> of my <span class="co">[</span><span class="ot">Statistics-461 Notes</span><span class="co">](https://rbolt13.github.io/stat461/)</span>, and uses the <span class="co">[</span><span class="ot">data.tree</span><span class="co">](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)</span> package which can create a multiple node object.</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load library, warning=FALSE, message=FALSE}</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="in">library(data.tree)</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="in"># install.packages("DiagrammeR")</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="in">library(DiagrammeR)</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># `2. Creating a Node Object`</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>All trees are constructed by tying together Node object, so to start I will create a new Node object for example 1.</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r create node}</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="in">ex1 &lt;- data.tree::Node$new("Example 1")</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>For example 1 we suppose that 1% of the population uses a certain drug. So next I want to <span class="in">`AddChild`</span> to ex1 to show those who use the drug (d) and do not use the drug (dc, where c means <span class="co">[</span><span class="ot">compliment</span><span class="co">]</span>(https://guides.fscj.edu/Statistics/complement#:~:text=The%20complement%20of%20an%20event,P(A%20%E2%88%A9%20B).)).</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r add children1}</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="in">d &lt;- ex1$AddChild("Uses Drug", p = 0.01)</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="in">dc &lt;- ex1$AddChild("Does Not Use Drug", p = 0.99)</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>Now let t be tests positive for the disease. The drug manufacturer claims that $P(T|D^C)=0.015$ and $P(T^C|D)=0.005$. Which means that:</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>$P(T^C|D^C)=1-P(T|D^C)=1-0.015=0.985$ and</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>$P(T|D)=1-P(T^C|D)=1-0.005=0.995$</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>So lets add another layer of nodes to example 1.</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r add children2}</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="in">t &lt;- d$AddChild("Positive Test", p = 0.995)</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="in">tc &lt;- d$AddChild("Negative Test", p = 0.005)</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="in">t &lt;- dc$AddChild("Positive Test", p = 0.015)</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="in">tc&lt;- dc$AddChild("Negative Test", p = 0.985)</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>And then print what information we have.</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r print}</span></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="in">base::print(ex1, 'p')</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>If the probability column shows as a percentages we can use the <span class="in">`SetFormat()`</span> function to set the decimal to 3 places.</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r set format}</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="in">data.tree::SetFormat(ex1, "p", formatFun = data.tree::FormatFixedDecimal(3))</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>And print the information we have.</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r print 2}</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="in">base::print(ex1, 'p')</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="fu"># `3. Conditional Probability`</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>Given a positive test, we can find the probability that a person actually uese the drug with the following equation:</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>$\begin{equation}\label{a}\begin{split}P(D|T) &amp;= \frac{P(T|D)\times P(D)}{<span class="co">[</span><span class="ot">P(T|D)\times P(D)</span><span class="co">]</span>+<span class="co">[</span><span class="ot">P(T|D^C)\times P(D^C)</span><span class="co">]</span>}<span class="sc">\\</span>&amp;=\frac{(0.995)(0.01)}{(0.995\times 0.01)+(0.015\times 0.99)}<span class="sc">\\</span>&amp;=\frac{199}{496}<span class="sc">\\</span>&amp;\approx 0.4012\end{split}\end{equation}$</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="fu"># `4. Plotting a Tree Diagram`</span></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>Lastly we can use the <span class="in">`plot()`</span> function to print a Tree Diagram:</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r print 3}</span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(ex1)</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>To visualize the tree diagram from left to right instead of top to bottom we can use the <span class="in">`SetGraphStyle()`</span> function as shown below.</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r print 4}</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a><span class="in">data.tree::SetGraphStyle(ex1, rankdir = "LR")</span></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(ex1)</span></span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

@@ -285,10 +285,11 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Transformations and Weighting to Correct Model Inadequacies</h1>
+<div class="quarto-title-block"><div><h1 class="title">Transformations and Weighting to Correct Model Inadequacies</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
-    <div class="quarto-category">R</div>
+    <div class="quarto-category">School</div>
     <div class="quarto-category">Linear Regression</div>
+    <div class="quarto-category">R</div>
   </div>
   </div>
 
@@ -313,6 +314,7 @@ window.Quarto = {
 
 
 <p>This post covers examples from Chapter 5 of <a href="https://www.amazon.com/Introduction-Regression-Analysis-Douglas-Montgomery/dp/0470542810">Introduction to Linear Regression Analysis</a>.</p>
+<p><img src="images/clipboard-2269728724.png" class="img-fluid"></p>
 <section id="set-up" class="level1">
 <h1><code>1.</code> Set Up</h1>
 <p>For this analysis I will be using four packages:</p>
@@ -323,10 +325,13 @@ window.Quarto = {
 <li><p>latex2exp: to put latex on graphs</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="example-5.1-the-electric-utility-data" class="level1">
@@ -334,8 +339,11 @@ window.Quarto = {
 <p>An electric utility company is interested in developing a model relating peak-hour demand <span class="math inline">\((y)\)</span> to total energy usage during the month <span class="math inline">\((x)\)</span>.</p>
 <p>To start lets look at the data.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ex51 <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"data/ex5-1.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ex51</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    X Customer x_.kWh. y_.kW.
 1   1        1     679   0.79
@@ -395,10 +403,13 @@ window.Quarto = {
 </div>
 <p>Right away we can see that for each customer there is a value <code>x_.kWH</code> for Kilowatt hour which corresponds to energy usage during the month, and <code>y_.kW</code> for kilowatt which would then be peak-hour demand. The plot of this is shown below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex51<span class="sc">$</span>x_.kWh., </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>           ex51<span class="sc">$</span>y_.kW.,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Usage"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Demand"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -410,8 +421,11 @@ window.Quarto = {
 </div>
 <p>As a starting point a simple linear regression model is assumed. Lets look at the summary to get an equation for the <a href="https://mathworld.wolfram.com/LeastSquaresFitting.html#:~:text=A%20mathematical%20procedure%20for%20finding,the%20points%20from%20the%20curve.">least-squares fit</a>, and analyze variability.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lm51 <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex51<span class="sc">$</span>y_.kW. <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm51)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -437,11 +451,14 @@ F-statistic: 121.7 on 1 and 51 DF,  p-value: 4.106e-15</code></pre>
 <p>For this model <span class="math inline">\(R^2=0.7046\)</span>; that is about 70% of the variability in demand is accounted for by the straight-line fit to energy usage. The summary statistics do not reveal any obvious problems with this model.</p>
 <p>Below this model is plotted with a red line.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex51<span class="sc">$</span>x_.kWh.,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>           ex51<span class="sc">$</span>y_.kW.,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Usage"</span>,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Demand"</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">abline</span>(lm51, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -453,11 +470,14 @@ F-statistic: 121.7 on 1 and 51 DF,  p-value: 4.106e-15</code></pre>
 </div>
 <p>From visual inspection we can see the points on the far left side of the graph are much closer to the best fit line than those in the middle and right side of the graph. We might want to apply a transformation to this model, so lets look at the <a href="https://en.wikipedia.org/wiki/Studentized_residual#:~:text=In%20statistics%2C%20a%20studentized%20residual,in%20the%20detection%20of%20outliers.">Studentized Residual</a> also known as r student.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm51),</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">rstudent</span>(lm51),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($t_i$)'</span>),</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}_i$)'</span>),</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -469,9 +489,12 @@ F-statistic: 121.7 on 1 and 51 DF,  p-value: 4.106e-15</code></pre>
 </div>
 <p>From this graph we can see that the residuals form an outward-opening funnel, indicating that the error variance is increasing as energy consumption increases. A transformation may be helpful in correcting this model inadequacy. To select the form of the transformation, note that the response variable y may be viewed as a “count” of the number of kilowatts used by a customer during a particular hour. The simplest probabilistic model for count data is the <a href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a>. This suggests regressing <span class="math inline">\(y^*=\sqrt{y}\)</span> on x as a variance-stabilizing transformation.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ex51<span class="sc">$</span>ystar <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">sqrt</span>(ex51<span class="sc">$</span>y_.kW.)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lm51T <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex51<span class="sc">$</span>ystar <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm51T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -495,11 +518,14 @@ F-statistic: 94.08 on 1 and 51 DF,  p-value: 3.614e-13</code></pre>
 </div>
 <p>The resulting least-squares fit is: <span class="math inline">\(\hat y^*=0.5822+0.0009529x\)</span></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm51T),</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">rstudent</span>(lm51T),</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($t_i$)'</span>),</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}^*_i$)'</span>),</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -515,8 +541,11 @@ F-statistic: 94.08 on 1 and 51 DF,  p-value: 3.614e-13</code></pre>
 <h1><code>3.</code> Example 5.2: The Windmill Data</h1>
 <p>A research engineer is investigating the use of a windmill to generate electricity. He has collected data on the DC Output from his windmill and the corresponding wind velocity.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ex52 <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"data/ex5-2.csv"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(ex52)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  X ObservationNumber_i WindVelocity_xi_mph DCOutput_yi
 1 1                   1                 5.0       1.582
@@ -529,10 +558,13 @@ F-statistic: 94.08 on 1 and 51 DF,  p-value: 3.614e-13</code></pre>
 </div>
 <p>The data is plotted below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph,</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>           ex52<span class="sc">$</span>DCOutput_yi,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Wind Velocity, X"</span>,</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"DC Output, Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -543,8 +575,11 @@ F-statistic: 94.08 on 1 and 51 DF,  p-value: 3.614e-13</code></pre>
 </div>
 <p>Inspection of the scatter diagram indicates that the relationship between DC output <span class="math inline">\((y)\)</span> and wind velocity <span class="math inline">\((x)\)</span> may be nonlinear. However, we initially fit a straight-line model to the data, and look at the summary statistics.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lm52 <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex52<span class="sc">$</span>DCOutput_yi <span class="sc">~</span> ex52<span class="sc">$</span>WindVelocity_xi_mph, <span class="at">data =</span> ex52)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm52)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -569,11 +604,14 @@ F-statistic: 160.3 on 1 and 23 DF,  p-value: 7.546e-12</code></pre>
 </div>
 <p>The summary statistics for this model are <span class="math inline">\(R^2=0.8745\)</span>, and <span class="math inline">\(F_0=160.26\)</span> (the P-value is &lt;0.0001), and he regression model is: <span class="math inline">\(\hat y=0.1309+0.2411x\)</span>, shown in red below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph,</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>           ex52<span class="sc">$</span>DCOutput_yi,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Wind Velocity, x"</span>,</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"DC Output, Y"</span>)</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">abline</span>(lm52, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -584,9 +622,12 @@ F-statistic: 160.3 on 1 and 23 DF,  p-value: 7.546e-12</code></pre>
 </div>
 <p>Below we can extract the fitted and residual values from our linear model, and then arrange them in order of increasing wind speed.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>fitted <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">fitted</span>(lm52)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>resid <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">resid</span>(lm52)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ex52 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="sc">-</span>dplyr<span class="sc">::</span><span class="fu">desc</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    X ObservationNumber_i WindVelocity_xi_mph DCOutput_yi    fitted       resid
 1  25                  25                2.45       0.123 0.7216899 -0.59868986
@@ -618,11 +659,14 @@ F-statistic: 160.3 on 1 and 23 DF,  p-value: 7.546e-12</code></pre>
 </div>
 <p>The residuals show a distinct pattern, that is, they move systematically from negative to positive and back to negative again as wind speed increases.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm52),</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">resid</span>(lm52),</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span><span class="fu">TeX</span>(r<span class="st">'($e_i$)'</span>),</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}_i$)'</span>),</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -634,9 +678,12 @@ F-statistic: 160.3 on 1 and 23 DF,  p-value: 7.546e-12</code></pre>
 <p>This residual plot indicates model inadequacy and implies that the linear relationship has not captured all of the information in the wind speed variable. Note that the curvature was apparent in the earlier scatter diagram, but is greatly amplified in the residual plot</p>
 <p>Clearly some other model form must be considered. We might initially consider using a quadratic model such as: <span class="math inline">\(y=\beta_0+\beta_1x+\beta_2x^2+\epsilon\)</span> to account for the curvature. However since the quadratic model will eventually bend downward as wind speed increases, it would not be appropriate for these data. A more reasonable model for windmill data that incorporates an upper asymptote would be: <span class="math inline">\(y=\beta_0+\beta_1(\frac{1}{x})+\epsilon\)</span>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>xstar <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>ex52<span class="sc">$</span>WindVelocity_xi_mph</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lm52T <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex52<span class="sc">$</span>DCOutput_yi <span class="sc">~</span> ex52<span class="sc">$</span>xstar, <span class="at">data =</span> ex52)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm52T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -661,11 +708,14 @@ F-statistic:  1128 on 1 and 23 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The fitted regression model is <span class="math inline">\(\hat y=2.9789-6.9345x'\)</span></p>
 <p>The summary statistics for this model are <span class="math inline">\(R^2=0.98\)</span>, and <span class="math inline">\(F_0=1128\)</span> (the p value is &lt;0.0001).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm52T),</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">rstudent</span>(lm52T),</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span><span class="fu">TeX</span>(r<span class="st">'($t_i$)'</span>),</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}_i$)'</span>),</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -680,7 +730,10 @@ F-statistic:  1128 on 1 and 23 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h1><code>4. Example 5.3: The Electic Utility Data</code></h1>
 <p>We use the <a href="https://www.statisticshowto.com/probability-and-statistics/normal-distributions/box-cox-transformation/">Box-Cox</a> procedure to select a variance-stabilizing transformation. The values of <span class="math inline">\(SS_{Res}(\lambda)\)</span> for various values are shown in the table.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>boxcoxResult <span class="ot">=</span> MASS<span class="sc">::</span><span class="fu">boxcox</span>(ex51<span class="sc">$</span>y_.kW. <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.125</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -691,14 +744,19 @@ F-statistic:  1128 on 1 and 23 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>The Box-Cox graph shows most of the data is below the 95% confidence interval.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> boxcoxResult<span class="sc">$</span>x[<span class="fu">which.max</span>(boxcoxResult<span class="sc">$</span>y)]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lambda</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5454545</code></pre>
 </div>
 </div>
 <p>Where <span class="math inline">\(\lambda\approx\)</span> 0.5454545 could be used as an appropriate exponent to use to transform the data into a “normal shape.”</p>
 
+
+<!-- -->
 
 </section>
 
@@ -782,6 +840,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1115,21 +1224,227 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb27" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Transformations and Weighting to Correct Model Inadequacies"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2021-12-20"</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [School, Linear Regression, R]</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>This post covers examples from Chapter 5 of <span class="co">[</span><span class="ot">Introduction to Linear Regression Analysis</span><span class="co">](https://www.amazon.com/Introduction-Regression-Analysis-Douglas-Montgomery/dp/0470542810)</span>.</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-2269728724.png)</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># `1.` Set Up</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>For this analysis I will be using four packages:</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>magrittr: for piping (%<span class="sc">\&gt;</span>%)</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>dplyr: to arrange the data</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>MASS: to use the boxcox function</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>latex2exp: to put latex on graphs</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, message=FALSE, warning=FALSE}</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="in">library(latex2exp) </span></span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a><span class="in">library(magrittr) </span></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr) </span></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="in">library(MASS) </span></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a><span class="fu"># `2.` Example 5.1: The Electric Utility Data</span></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>An electric utility company is interested in developing a model relating peak-hour demand $(y)$ to total energy usage during the month $(x)$.</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>To start lets look at the data.</span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>ex51 <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"data/ex5-1.csv"</span>)</span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>ex51</span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a>Right away we can see that for each customer there is a value <span class="in">`x_.kWH`</span> for Kilowatt hour which corresponds to energy usage during the month, and <span class="in">`y_.kW`</span> for kilowatt which would then be peak-hour demand. The plot of this is shown below.</span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.cap= 'Scatter diagram of the energy demand (kW) versus energy usage (kWh)'}</span></span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(ex51$x_.kWh., </span></span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a><span class="in">           ex51$y_.kW.,</span></span>
+<span id="cb27-55"><a href="#cb27-55" aria-hidden="true" tabindex="-1"></a><span class="in">           xlab = "Usage",</span></span>
+<span id="cb27-56"><a href="#cb27-56" aria-hidden="true" tabindex="-1"></a><span class="in">           ylab = "Demand")</span></span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-59"><a href="#cb27-59" aria-hidden="true" tabindex="-1"></a>As a starting point a simple linear regression model is assumed. Lets look at the summary to get an equation for the <span class="co">[</span><span class="ot">least-squares fit</span><span class="co">](https://mathworld.wolfram.com/LeastSquaresFitting.html#:~:text=A%20mathematical%20procedure%20for%20finding,the%20points%20from%20the%20curve.)</span>, and analyze variability.</span>
+<span id="cb27-60"><a href="#cb27-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a>lm51 <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex51<span class="sc">$</span>y_.kW. <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51)</span>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm51)</span>
+<span id="cb27-66"><a href="#cb27-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-67"><a href="#cb27-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-68"><a href="#cb27-68" aria-hidden="true" tabindex="-1"></a>From our summary our we can extrapolate our least-squares fit is: $\hat y=-0.83130+0.00368x$</span>
+<span id="cb27-69"><a href="#cb27-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-70"><a href="#cb27-70" aria-hidden="true" tabindex="-1"></a>For this model $R^2=0.7046$; that is about 70% of the variability in demand is accounted for by the straight-line fit to energy usage. The summary statistics do not reveal any obvious problems with this model.</span>
+<span id="cb27-71"><a href="#cb27-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-72"><a href="#cb27-72" aria-hidden="true" tabindex="-1"></a>Below this model is plotted with a red line.</span>
+<span id="cb27-73"><a href="#cb27-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-74"><a href="#cb27-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.cap='Scatter diagram of the energy demand (kW) versus energy usage (kWh) with Simple Linear Model'}</span></span>
+<span id="cb27-75"><a href="#cb27-75" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(ex51$x_.kWh.,</span></span>
+<span id="cb27-76"><a href="#cb27-76" aria-hidden="true" tabindex="-1"></a><span class="in">           ex51$y_.kW.,</span></span>
+<span id="cb27-77"><a href="#cb27-77" aria-hidden="true" tabindex="-1"></a><span class="in">           xlab = "Usage",</span></span>
+<span id="cb27-78"><a href="#cb27-78" aria-hidden="true" tabindex="-1"></a><span class="in">           ylab = "Demand")</span></span>
+<span id="cb27-79"><a href="#cb27-79" aria-hidden="true" tabindex="-1"></a><span class="in">graphics::abline(lm51, col = "red")</span></span>
+<span id="cb27-80"><a href="#cb27-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-81"><a href="#cb27-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-82"><a href="#cb27-82" aria-hidden="true" tabindex="-1"></a>From visual inspection we can see the points on the far left side of the graph are much closer to the best fit line than those in the middle and right side of the graph. We might want to apply a transformation to this model, so lets look at the <span class="co">[</span><span class="ot">Studentized Residual</span><span class="co">](https://en.wikipedia.org/wiki/Studentized_residual#:~:text=In%20statistics%2C%20a%20studentized%20residual,in%20the%20detection%20of%20outliers.)</span> also known as r student.</span>
+<span id="cb27-83"><a href="#cb27-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-84"><a href="#cb27-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.cap= 'Plot of R-Student vs. fitted values'}</span></span>
+<span id="cb27-85"><a href="#cb27-85" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(stats::fitted(lm51),</span></span>
+<span id="cb27-86"><a href="#cb27-86" aria-hidden="true" tabindex="-1"></a><span class="in">           stats::rstudent(lm51),</span></span>
+<span id="cb27-87"><a href="#cb27-87" aria-hidden="true" tabindex="-1"></a><span class="in">           ylab=latex2exp::TeX(r'($t_i$)'),</span></span>
+<span id="cb27-88"><a href="#cb27-88" aria-hidden="true" tabindex="-1"></a><span class="in">           xlab=latex2exp::TeX(r'($\hat{y}_i$)'),</span></span>
+<span id="cb27-89"><a href="#cb27-89" aria-hidden="true" tabindex="-1"></a><span class="in">           pch = 16);graphics::abline(0, 0,lty = 2)</span></span>
+<span id="cb27-90"><a href="#cb27-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-91"><a href="#cb27-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-92"><a href="#cb27-92" aria-hidden="true" tabindex="-1"></a>From this graph we can see that the residuals form an outward-opening funnel, indicating that the error variance is increasing as energy consumption increases. A transformation may be helpful in correcting this model inadequacy. To select the form of the transformation, note that the response variable y may be viewed as a "count" of the number of kilowatts used by a customer during a particular hour. The simplest probabilistic model for count data is the <span class="co">[</span><span class="ot">Poisson distribution</span><span class="co">](https://en.wikipedia.org/wiki/Poisson_distribution)</span>. This suggests regressing $y^*=\sqrt{y}$ on x as a variance-stabilizing transformation.</span>
+<span id="cb27-93"><a href="#cb27-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-97"><a href="#cb27-97" aria-hidden="true" tabindex="-1"></a>ex51<span class="sc">$</span>ystar <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">sqrt</span>(ex51<span class="sc">$</span>y_.kW.)</span>
+<span id="cb27-98"><a href="#cb27-98" aria-hidden="true" tabindex="-1"></a>lm51T <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex51<span class="sc">$</span>ystar <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51)</span>
+<span id="cb27-99"><a href="#cb27-99" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm51T)</span>
+<span id="cb27-100"><a href="#cb27-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-101"><a href="#cb27-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-102"><a href="#cb27-102" aria-hidden="true" tabindex="-1"></a>The resulting least-squares fit is: $\hat y^*=0.5822+0.0009529x$</span>
+<span id="cb27-103"><a href="#cb27-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-106"><a href="#cb27-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-107"><a href="#cb27-107" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm51T),</span>
+<span id="cb27-108"><a href="#cb27-108" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">rstudent</span>(lm51T),</span>
+<span id="cb27-109"><a href="#cb27-109" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($t_i$)'</span>),</span>
+<span id="cb27-110"><a href="#cb27-110" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span>latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}^*_i$)'</span>),</span>
+<span id="cb27-111"><a href="#cb27-111" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb27-112"><a href="#cb27-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-113"><a href="#cb27-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-114"><a href="#cb27-114" aria-hidden="true" tabindex="-1"></a>The impression from examining this plot is that the variance is stable; consequently, we conclude that the transformed model is adequate.</span>
+<span id="cb27-115"><a href="#cb27-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-116"><a href="#cb27-116" aria-hidden="true" tabindex="-1"></a>Note that there is one suspiciously large residual (customer 26) and one customer whose energy usage is somewhat large (customer 50). The effect of these two points on the fit should be studied further before the model is released for use.</span>
+<span id="cb27-117"><a href="#cb27-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-118"><a href="#cb27-118" aria-hidden="true" tabindex="-1"></a><span class="fu"># `3.` Example 5.2: The Windmill Data</span></span>
+<span id="cb27-119"><a href="#cb27-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-120"><a href="#cb27-120" aria-hidden="true" tabindex="-1"></a>A research engineer is investigating the use of a windmill to generate electricity. He has collected data on the DC Output from his windmill and the corresponding wind velocity.</span>
+<span id="cb27-121"><a href="#cb27-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-124"><a href="#cb27-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-125"><a href="#cb27-125" aria-hidden="true" tabindex="-1"></a>ex52 <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"data/ex5-2.csv"</span>)</span>
+<span id="cb27-126"><a href="#cb27-126" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(ex52)</span>
+<span id="cb27-127"><a href="#cb27-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-128"><a href="#cb27-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-129"><a href="#cb27-129" aria-hidden="true" tabindex="-1"></a>The data is plotted below.</span>
+<span id="cb27-130"><a href="#cb27-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-133"><a href="#cb27-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-134"><a href="#cb27-134" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph,</span>
+<span id="cb27-135"><a href="#cb27-135" aria-hidden="true" tabindex="-1"></a>           ex52<span class="sc">$</span>DCOutput_yi,</span>
+<span id="cb27-136"><a href="#cb27-136" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Wind Velocity, X"</span>,</span>
+<span id="cb27-137"><a href="#cb27-137" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"DC Output, Y"</span>)</span>
+<span id="cb27-138"><a href="#cb27-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-139"><a href="#cb27-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-140"><a href="#cb27-140" aria-hidden="true" tabindex="-1"></a>Inspection of the scatter diagram indicates that the relationship between DC output $(y)$ and wind velocity $(x)$ may be nonlinear. However, we initially fit a straight-line model to the data, and look at the summary statistics.</span>
+<span id="cb27-141"><a href="#cb27-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-144"><a href="#cb27-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-145"><a href="#cb27-145" aria-hidden="true" tabindex="-1"></a>lm52 <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex52<span class="sc">$</span>DCOutput_yi <span class="sc">~</span> ex52<span class="sc">$</span>WindVelocity_xi_mph, <span class="at">data =</span> ex52)</span>
+<span id="cb27-146"><a href="#cb27-146" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm52)</span>
+<span id="cb27-147"><a href="#cb27-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-148"><a href="#cb27-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-149"><a href="#cb27-149" aria-hidden="true" tabindex="-1"></a>The summary statistics for this model are $R^2=0.8745$, and $F_0=160.26$ (the P-value is <span class="sc">\&lt;</span>0.0001), and he regression model is: $\hat y=0.1309+0.2411x$, shown in red below.</span>
+<span id="cb27-150"><a href="#cb27-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-153"><a href="#cb27-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-154"><a href="#cb27-154" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph,</span>
+<span id="cb27-155"><a href="#cb27-155" aria-hidden="true" tabindex="-1"></a>           ex52<span class="sc">$</span>DCOutput_yi,</span>
+<span id="cb27-156"><a href="#cb27-156" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Wind Velocity, x"</span>,</span>
+<span id="cb27-157"><a href="#cb27-157" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"DC Output, Y"</span>)</span>
+<span id="cb27-158"><a href="#cb27-158" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">abline</span>(lm52, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb27-159"><a href="#cb27-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-160"><a href="#cb27-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-161"><a href="#cb27-161" aria-hidden="true" tabindex="-1"></a>Below we can extract the fitted and residual values from our linear model, and then arrange them in order of increasing wind speed.</span>
+<span id="cb27-162"><a href="#cb27-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-165"><a href="#cb27-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-166"><a href="#cb27-166" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>fitted <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">fitted</span>(lm52)</span>
+<span id="cb27-167"><a href="#cb27-167" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>resid <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">resid</span>(lm52)</span>
+<span id="cb27-168"><a href="#cb27-168" aria-hidden="true" tabindex="-1"></a>ex52 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="sc">-</span>dplyr<span class="sc">::</span><span class="fu">desc</span>(ex52<span class="sc">$</span>WindVelocity_xi_mph)) </span>
+<span id="cb27-169"><a href="#cb27-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-170"><a href="#cb27-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-171"><a href="#cb27-171" aria-hidden="true" tabindex="-1"></a>The residuals show a distinct pattern, that is, they move systematically from negative to positive and back to negative again as wind speed increases.</span>
+<span id="cb27-172"><a href="#cb27-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-175"><a href="#cb27-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-176"><a href="#cb27-176" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm52),</span>
+<span id="cb27-177"><a href="#cb27-177" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">resid</span>(lm52),</span>
+<span id="cb27-178"><a href="#cb27-178" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span><span class="fu">TeX</span>(r<span class="st">'($e_i$)'</span>),</span>
+<span id="cb27-179"><a href="#cb27-179" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}_i$)'</span>),</span>
+<span id="cb27-180"><a href="#cb27-180" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb27-181"><a href="#cb27-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-182"><a href="#cb27-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-183"><a href="#cb27-183" aria-hidden="true" tabindex="-1"></a>This residual plot indicates model inadequacy and implies that the linear relationship has not captured all of the information in the wind speed variable. Note that the curvature was apparent in the earlier scatter diagram, but is greatly amplified in the residual plot</span>
+<span id="cb27-184"><a href="#cb27-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-185"><a href="#cb27-185" aria-hidden="true" tabindex="-1"></a>Clearly some other model form must be considered. We might initially consider using a quadratic model such as: $y=\beta_0+\beta_1x+\beta_2x^2+\epsilon$ to account for the curvature. However since the quadratic model will eventually bend downward as wind speed increases, it would not be appropriate for these data. A more reasonable model for windmill data that incorporates an upper asymptote would be: $y=\beta_0+\beta_1(\frac{1}{x})+\epsilon$.</span>
+<span id="cb27-186"><a href="#cb27-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-189"><a href="#cb27-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-190"><a href="#cb27-190" aria-hidden="true" tabindex="-1"></a>ex52<span class="sc">$</span>xstar <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>ex52<span class="sc">$</span>WindVelocity_xi_mph</span>
+<span id="cb27-191"><a href="#cb27-191" aria-hidden="true" tabindex="-1"></a>lm52T <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">lm</span>(ex52<span class="sc">$</span>DCOutput_yi <span class="sc">~</span> ex52<span class="sc">$</span>xstar, <span class="at">data =</span> ex52)</span>
+<span id="cb27-192"><a href="#cb27-192" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">summary</span>(lm52T)</span>
+<span id="cb27-193"><a href="#cb27-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-194"><a href="#cb27-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-195"><a href="#cb27-195" aria-hidden="true" tabindex="-1"></a>The fitted regression model is $\hat y=2.9789-6.9345x'$</span>
+<span id="cb27-196"><a href="#cb27-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-197"><a href="#cb27-197" aria-hidden="true" tabindex="-1"></a>The summary statistics for this model are $R^2=0.98$, and $F_0=1128$ (the p value is <span class="sc">\&lt;</span>0.0001).</span>
+<span id="cb27-198"><a href="#cb27-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-201"><a href="#cb27-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-202"><a href="#cb27-202" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(stats<span class="sc">::</span><span class="fu">fitted</span>(lm52T),</span>
+<span id="cb27-203"><a href="#cb27-203" aria-hidden="true" tabindex="-1"></a>           stats<span class="sc">::</span><span class="fu">rstudent</span>(lm52T),</span>
+<span id="cb27-204"><a href="#cb27-204" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab=</span><span class="fu">TeX</span>(r<span class="st">'($t_i$)'</span>),</span>
+<span id="cb27-205"><a href="#cb27-205" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab=</span><span class="fu">TeX</span>(r<span class="st">'($\hat{y}_i$)'</span>),</span>
+<span id="cb27-206"><a href="#cb27-206" aria-hidden="true" tabindex="-1"></a>           <span class="at">pch =</span> <span class="dv">16</span>);graphics<span class="sc">::</span><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>,<span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb27-207"><a href="#cb27-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-208"><a href="#cb27-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-209"><a href="#cb27-209" aria-hidden="true" tabindex="-1"></a>This plot does not reveal any serious problems.</span>
+<span id="cb27-210"><a href="#cb27-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-211"><a href="#cb27-211" aria-hidden="true" tabindex="-1"></a><span class="fu"># `4. Example 5.3: The Electic Utility Data`</span></span>
+<span id="cb27-212"><a href="#cb27-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-213"><a href="#cb27-213" aria-hidden="true" tabindex="-1"></a>We use the <span class="co">[</span><span class="ot">Box-Cox</span><span class="co">](https://www.statisticshowto.com/probability-and-statistics/normal-distributions/box-cox-transformation/)</span> procedure to select a variance-stabilizing transformation. The values of $SS_{Res}(\lambda)$ for various values are shown in the table.</span>
+<span id="cb27-214"><a href="#cb27-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-217"><a href="#cb27-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-218"><a href="#cb27-218" aria-hidden="true" tabindex="-1"></a>boxcoxResult <span class="ot">=</span> MASS<span class="sc">::</span><span class="fu">boxcox</span>(ex51<span class="sc">$</span>y_.kW. <span class="sc">~</span> ex51<span class="sc">$</span>x_.kWh., <span class="at">data =</span> ex51, <span class="at">lambda =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.125</span>))</span>
+<span id="cb27-219"><a href="#cb27-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-220"><a href="#cb27-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-221"><a href="#cb27-221" aria-hidden="true" tabindex="-1"></a>The Box-Cox graph shows most of the data is below the 95% confidence interval.</span>
+<span id="cb27-222"><a href="#cb27-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-225"><a href="#cb27-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-226"><a href="#cb27-226" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> boxcoxResult<span class="sc">$</span>x[<span class="fu">which.max</span>(boxcoxResult<span class="sc">$</span>y)]</span>
+<span id="cb27-227"><a href="#cb27-227" aria-hidden="true" tabindex="-1"></a>lambda</span>
+<span id="cb27-228"><a href="#cb27-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-229"><a href="#cb27-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-230"><a href="#cb27-230" aria-hidden="true" tabindex="-1"></a>Where $\lambda\approx$ <span class="in">`r lambda`</span> could be used as an appropriate exponent to use to transform the data into a “normal shape.”</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

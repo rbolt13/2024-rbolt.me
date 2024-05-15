@@ -264,12 +264,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Portland R User Group: Aggregate making tables with gt packag</h1>
+<div class="quarto-title-block"><div><h1 class="title">Portland R User Group: Aggregate making tables with gt packag</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
+    <div class="quarto-category">Workshop</div>
+    <div class="quarto-category">PDXRUG</div>
     <div class="quarto-category">R</div>
     <div class="quarto-category">Data Visuals</div>
-    <div class="quarto-category">PDXRUG</div>
-    <div class="quarto-category">Workshop</div>
   </div>
   </div>
 
@@ -293,21 +293,27 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </header>
 
 
-<p><a href="https://laderast.github.io/">Ted Landeras</a> led this event for <a href="https://pdxrlang.com/">Portland R user Group</a> where we watched <a href="https://www.youtube.com/watch?v=z0UGmMOxl-c">Rich Lannone|| Making Beautiful Tables with <code>{gt}</code>|| RStudio</a> as a group on Youtube, and then went through some other examples.</p>
+<p><a href="https://laderast.github.io/">Ted Landeras</a> led this event for <a href="https://pdxrlang.com/">Portland R user Group</a> where we watched <a href="https://www.youtube.com/watch?v=z0UGmMOxl-c">Rich Lannone|| Making Beautiful Tables with <code>{gt}</code>|| RStudio</a>, and other examples.</p>
+<p><img src="images/clipboard-3850076764.png" class="img-fluid"></p>
 <section id="set-up" class="level1">
 <h1><code>1. Set Up</code></h1>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="penguins" class="level1">
 <h1><code>2. Penguins</code></h1>
 <p>This examples follows the video: <a href="https://www.youtube.com/watch?v=z0UGmMOxl-c">Rich Lannone|| Making Beautiful Tables with <code>{gt}</code>|| RStudio</a>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_at</span>(</span>
@@ -383,25 +389,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_font</span>(<span class="at">font =</span> <span class="fu">google_font</span>(<span class="st">"Montserrat"</span>), </span>
 <span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight =</span> <span class="dv">600</span>, </span>
 <span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>                 <span class="at">style =</span> <span class="st">"italic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div id="iezzgmxlhy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lirtwlfvgj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#iezzgmxlhy table {
+#lirtwlfvgj table {
   font-family: Montserrat, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iezzgmxlhy thead, #iezzgmxlhy tbody, #iezzgmxlhy tfoot, #iezzgmxlhy tr, #iezzgmxlhy td, #iezzgmxlhy th {
+#lirtwlfvgj thead, #lirtwlfvgj tbody, #lirtwlfvgj tfoot, #lirtwlfvgj tr, #lirtwlfvgj td, #lirtwlfvgj th {
   border-style: none;
 }
 
-#iezzgmxlhy p {
+#lirtwlfvgj p {
   margin: 0;
   padding: 0;
 }
 
-#iezzgmxlhy .gt_table {
+#lirtwlfvgj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -427,12 +434,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_caption {
+#lirtwlfvgj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iezzgmxlhy .gt_title {
+#lirtwlfvgj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -444,7 +451,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#iezzgmxlhy .gt_subtitle {
+#lirtwlfvgj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -456,7 +463,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#iezzgmxlhy .gt_heading {
+#lirtwlfvgj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -468,13 +475,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_bottom_border {
+#lirtwlfvgj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_col_headings {
+#lirtwlfvgj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -489,7 +496,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_col_heading {
+#lirtwlfvgj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -509,7 +516,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#iezzgmxlhy .gt_column_spanner_outer {
+#lirtwlfvgj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -521,15 +528,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#iezzgmxlhy .gt_column_spanner_outer:first-child {
+#lirtwlfvgj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iezzgmxlhy .gt_column_spanner_outer:last-child {
+#lirtwlfvgj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iezzgmxlhy .gt_column_spanner {
+#lirtwlfvgj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -541,11 +548,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#iezzgmxlhy .gt_spanner_row {
+#lirtwlfvgj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iezzgmxlhy .gt_group_heading {
+#lirtwlfvgj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -571,7 +578,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#iezzgmxlhy .gt_empty_group_heading {
+#lirtwlfvgj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -586,15 +593,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#iezzgmxlhy .gt_from_md > :first-child {
+#lirtwlfvgj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iezzgmxlhy .gt_from_md > :last-child {
+#lirtwlfvgj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iezzgmxlhy .gt_row {
+#lirtwlfvgj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -613,7 +620,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#iezzgmxlhy .gt_stub {
+#lirtwlfvgj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -626,7 +633,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iezzgmxlhy .gt_stub_row_group {
+#lirtwlfvgj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -640,15 +647,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#iezzgmxlhy .gt_row_group_first td {
+#lirtwlfvgj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iezzgmxlhy .gt_row_group_first th {
+#lirtwlfvgj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iezzgmxlhy .gt_summary_row {
+#lirtwlfvgj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -658,16 +665,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iezzgmxlhy .gt_first_summary_row {
+#lirtwlfvgj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_first_summary_row.thick {
+#lirtwlfvgj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iezzgmxlhy .gt_last_summary_row {
+#lirtwlfvgj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -677,7 +684,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_grand_summary_row {
+#lirtwlfvgj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -687,7 +694,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iezzgmxlhy .gt_first_grand_summary_row {
+#lirtwlfvgj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -697,7 +704,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_last_grand_summary_row_top {
+#lirtwlfvgj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -707,11 +714,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_striped {
+#lirtwlfvgj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iezzgmxlhy .gt_table_body {
+#lirtwlfvgj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -720,7 +727,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_footnotes {
+#lirtwlfvgj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -734,7 +741,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_footnote {
+#lirtwlfvgj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -743,7 +750,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iezzgmxlhy .gt_sourcenotes {
+#lirtwlfvgj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -757,7 +764,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#iezzgmxlhy .gt_sourcenote {
+#lirtwlfvgj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -765,63 +772,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#iezzgmxlhy .gt_left {
+#lirtwlfvgj .gt_left {
   text-align: left;
 }
 
-#iezzgmxlhy .gt_center {
+#lirtwlfvgj .gt_center {
   text-align: center;
 }
 
-#iezzgmxlhy .gt_right {
+#lirtwlfvgj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iezzgmxlhy .gt_font_normal {
+#lirtwlfvgj .gt_font_normal {
   font-weight: normal;
 }
 
-#iezzgmxlhy .gt_font_bold {
+#lirtwlfvgj .gt_font_bold {
   font-weight: bold;
 }
 
-#iezzgmxlhy .gt_font_italic {
+#lirtwlfvgj .gt_font_italic {
   font-style: italic;
 }
 
-#iezzgmxlhy .gt_super {
+#lirtwlfvgj .gt_super {
   font-size: 65%;
 }
 
-#iezzgmxlhy .gt_footnote_marks {
+#lirtwlfvgj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iezzgmxlhy .gt_asterisk {
+#lirtwlfvgj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iezzgmxlhy .gt_indent_1 {
+#lirtwlfvgj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iezzgmxlhy .gt_indent_2 {
+#lirtwlfvgj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iezzgmxlhy .gt_indent_3 {
+#lirtwlfvgj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iezzgmxlhy .gt_indent_4 {
+#lirtwlfvgj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iezzgmxlhy .gt_indent_5 {
+#lirtwlfvgj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -889,7 +896,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="example-1" class="level2">
 <h2 class="anchored" data-anchor-id="example-1"><code>Example 1</code></h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  area    peri     shape perm
 1 4990 2791.90 0.0903296  6.3
@@ -901,28 +911,31 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rock <span class="sc">%&gt;%</span> <span class="co"># Get 'rock' data</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="co"># First 5 lines only</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="co"># Make a table, it just works.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="ltcspjttlr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ltcspjttlr table {
+<div id="ngoieutpzg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ngoieutpzg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ltcspjttlr thead, #ltcspjttlr tbody, #ltcspjttlr tfoot, #ltcspjttlr tr, #ltcspjttlr td, #ltcspjttlr th {
+#ngoieutpzg thead, #ngoieutpzg tbody, #ngoieutpzg tfoot, #ngoieutpzg tr, #ngoieutpzg td, #ngoieutpzg th {
   border-style: none;
 }
 
-#ltcspjttlr p {
+#ngoieutpzg p {
   margin: 0;
   padding: 0;
 }
 
-#ltcspjttlr .gt_table {
+#ngoieutpzg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -948,12 +961,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_caption {
+#ngoieutpzg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ltcspjttlr .gt_title {
+#ngoieutpzg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -965,7 +978,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#ltcspjttlr .gt_subtitle {
+#ngoieutpzg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -977,7 +990,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#ltcspjttlr .gt_heading {
+#ngoieutpzg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -989,13 +1002,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_bottom_border {
+#ngoieutpzg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_col_headings {
+#ngoieutpzg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1010,7 +1023,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_col_heading {
+#ngoieutpzg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1030,7 +1043,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#ltcspjttlr .gt_column_spanner_outer {
+#ngoieutpzg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1042,15 +1055,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#ltcspjttlr .gt_column_spanner_outer:first-child {
+#ngoieutpzg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ltcspjttlr .gt_column_spanner_outer:last-child {
+#ngoieutpzg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ltcspjttlr .gt_column_spanner {
+#ngoieutpzg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1062,11 +1075,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#ltcspjttlr .gt_spanner_row {
+#ngoieutpzg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ltcspjttlr .gt_group_heading {
+#ngoieutpzg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1092,7 +1105,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#ltcspjttlr .gt_empty_group_heading {
+#ngoieutpzg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1107,15 +1120,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#ltcspjttlr .gt_from_md > :first-child {
+#ngoieutpzg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ltcspjttlr .gt_from_md > :last-child {
+#ngoieutpzg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ltcspjttlr .gt_row {
+#ngoieutpzg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1134,7 +1147,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#ltcspjttlr .gt_stub {
+#ngoieutpzg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1147,7 +1160,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ltcspjttlr .gt_stub_row_group {
+#ngoieutpzg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1161,15 +1174,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#ltcspjttlr .gt_row_group_first td {
+#ngoieutpzg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ltcspjttlr .gt_row_group_first th {
+#ngoieutpzg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ltcspjttlr .gt_summary_row {
+#ngoieutpzg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1179,16 +1192,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ltcspjttlr .gt_first_summary_row {
+#ngoieutpzg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_first_summary_row.thick {
+#ngoieutpzg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ltcspjttlr .gt_last_summary_row {
+#ngoieutpzg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1198,7 +1211,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_grand_summary_row {
+#ngoieutpzg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1208,7 +1221,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ltcspjttlr .gt_first_grand_summary_row {
+#ngoieutpzg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1218,7 +1231,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_last_grand_summary_row_top {
+#ngoieutpzg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1228,11 +1241,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_striped {
+#ngoieutpzg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ltcspjttlr .gt_table_body {
+#ngoieutpzg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1241,7 +1254,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_footnotes {
+#ngoieutpzg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1255,7 +1268,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_footnote {
+#ngoieutpzg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1264,7 +1277,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ltcspjttlr .gt_sourcenotes {
+#ngoieutpzg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1278,7 +1291,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ltcspjttlr .gt_sourcenote {
+#ngoieutpzg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1286,63 +1299,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ltcspjttlr .gt_left {
+#ngoieutpzg .gt_left {
   text-align: left;
 }
 
-#ltcspjttlr .gt_center {
+#ngoieutpzg .gt_center {
   text-align: center;
 }
 
-#ltcspjttlr .gt_right {
+#ngoieutpzg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ltcspjttlr .gt_font_normal {
+#ngoieutpzg .gt_font_normal {
   font-weight: normal;
 }
 
-#ltcspjttlr .gt_font_bold {
+#ngoieutpzg .gt_font_bold {
   font-weight: bold;
 }
 
-#ltcspjttlr .gt_font_italic {
+#ngoieutpzg .gt_font_italic {
   font-style: italic;
 }
 
-#ltcspjttlr .gt_super {
+#ngoieutpzg .gt_super {
   font-size: 65%;
 }
 
-#ltcspjttlr .gt_footnote_marks {
+#ngoieutpzg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ltcspjttlr .gt_asterisk {
+#ngoieutpzg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ltcspjttlr .gt_indent_1 {
+#ngoieutpzg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ltcspjttlr .gt_indent_2 {
+#ngoieutpzg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ltcspjttlr .gt_indent_3 {
+#ngoieutpzg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ltcspjttlr .gt_indent_4 {
+#ngoieutpzg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ltcspjttlr .gt_indent_5 {
+#ngoieutpzg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1398,7 +1411,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="example-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2"><code>Example 2</code></h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BOD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Time demand
 1    1    8.3
@@ -1410,6 +1426,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>BOD <span class="sc">%&gt;%</span> <span class="co"># Get the data...</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="co"># use 'gt' to make an awesome table...</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>( </span>
@@ -1424,25 +1442,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span> <span class="co"># I want this column to have one decimal place</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">Time =</span> <span class="st">"Time (hours)"</span>, <span class="at">demand =</span> <span class="st">"Demand (mg/L)"</span>) <span class="co"># Update labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="luybbiddnj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#luybbiddnj table {
+<div id="pvkytmzadt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pvkytmzadt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#luybbiddnj thead, #luybbiddnj tbody, #luybbiddnj tfoot, #luybbiddnj tr, #luybbiddnj td, #luybbiddnj th {
+#pvkytmzadt thead, #pvkytmzadt tbody, #pvkytmzadt tfoot, #pvkytmzadt tr, #pvkytmzadt td, #pvkytmzadt th {
   border-style: none;
 }
 
-#luybbiddnj p {
+#pvkytmzadt p {
   margin: 0;
   padding: 0;
 }
 
-#luybbiddnj .gt_table {
+#pvkytmzadt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1468,12 +1487,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_caption {
+#pvkytmzadt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#luybbiddnj .gt_title {
+#pvkytmzadt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1485,7 +1504,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#luybbiddnj .gt_subtitle {
+#pvkytmzadt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1497,7 +1516,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#luybbiddnj .gt_heading {
+#pvkytmzadt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1509,13 +1528,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_bottom_border {
+#pvkytmzadt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_col_headings {
+#pvkytmzadt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1530,7 +1549,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_col_heading {
+#pvkytmzadt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1550,7 +1569,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#luybbiddnj .gt_column_spanner_outer {
+#pvkytmzadt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1562,15 +1581,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#luybbiddnj .gt_column_spanner_outer:first-child {
+#pvkytmzadt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#luybbiddnj .gt_column_spanner_outer:last-child {
+#pvkytmzadt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#luybbiddnj .gt_column_spanner {
+#pvkytmzadt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1582,11 +1601,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#luybbiddnj .gt_spanner_row {
+#pvkytmzadt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#luybbiddnj .gt_group_heading {
+#pvkytmzadt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1612,7 +1631,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#luybbiddnj .gt_empty_group_heading {
+#pvkytmzadt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1627,15 +1646,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#luybbiddnj .gt_from_md > :first-child {
+#pvkytmzadt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#luybbiddnj .gt_from_md > :last-child {
+#pvkytmzadt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#luybbiddnj .gt_row {
+#pvkytmzadt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1654,7 +1673,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#luybbiddnj .gt_stub {
+#pvkytmzadt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1667,7 +1686,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#luybbiddnj .gt_stub_row_group {
+#pvkytmzadt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1681,15 +1700,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#luybbiddnj .gt_row_group_first td {
+#pvkytmzadt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#luybbiddnj .gt_row_group_first th {
+#pvkytmzadt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#luybbiddnj .gt_summary_row {
+#pvkytmzadt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1699,16 +1718,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#luybbiddnj .gt_first_summary_row {
+#pvkytmzadt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_first_summary_row.thick {
+#pvkytmzadt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#luybbiddnj .gt_last_summary_row {
+#pvkytmzadt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1718,7 +1737,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_grand_summary_row {
+#pvkytmzadt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1728,7 +1747,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#luybbiddnj .gt_first_grand_summary_row {
+#pvkytmzadt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1738,7 +1757,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_last_grand_summary_row_top {
+#pvkytmzadt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1748,11 +1767,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_striped {
+#pvkytmzadt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#luybbiddnj .gt_table_body {
+#pvkytmzadt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1761,7 +1780,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_footnotes {
+#pvkytmzadt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1775,7 +1794,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_footnote {
+#pvkytmzadt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1784,7 +1803,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#luybbiddnj .gt_sourcenotes {
+#pvkytmzadt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1798,7 +1817,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#luybbiddnj .gt_sourcenote {
+#pvkytmzadt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1806,63 +1825,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#luybbiddnj .gt_left {
+#pvkytmzadt .gt_left {
   text-align: left;
 }
 
-#luybbiddnj .gt_center {
+#pvkytmzadt .gt_center {
   text-align: center;
 }
 
-#luybbiddnj .gt_right {
+#pvkytmzadt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#luybbiddnj .gt_font_normal {
+#pvkytmzadt .gt_font_normal {
   font-weight: normal;
 }
 
-#luybbiddnj .gt_font_bold {
+#pvkytmzadt .gt_font_bold {
   font-weight: bold;
 }
 
-#luybbiddnj .gt_font_italic {
+#pvkytmzadt .gt_font_italic {
   font-style: italic;
 }
 
-#luybbiddnj .gt_super {
+#pvkytmzadt .gt_super {
   font-size: 65%;
 }
 
-#luybbiddnj .gt_footnote_marks {
+#pvkytmzadt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#luybbiddnj .gt_asterisk {
+#pvkytmzadt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#luybbiddnj .gt_indent_1 {
+#pvkytmzadt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#luybbiddnj .gt_indent_2 {
+#pvkytmzadt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#luybbiddnj .gt_indent_3 {
+#pvkytmzadt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#luybbiddnj .gt_indent_4 {
+#pvkytmzadt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#luybbiddnj .gt_indent_5 {
+#pvkytmzadt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1916,6 +1935,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="example-3" class="level2">
 <h2 class="anchored" data-anchor-id="example-3"><code>Example 3</code></h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BOD <span class="sc">%&gt;%</span> <span class="co"># Get the data...</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="co"># use 'gt' to make an awesome table...</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>( </span>
@@ -1930,25 +1951,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span> <span class="co"># I want this column to have one decimal place</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">Time =</span> <span class="st">"Time (hours)"</span>, <span class="at">demand =</span> <span class="st">"Demand (mg/L)"</span>) <span class="co"># Update labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="raodvrvjbs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#raodvrvjbs table {
+<div id="bmnsaqwjry" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bmnsaqwjry table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#raodvrvjbs thead, #raodvrvjbs tbody, #raodvrvjbs tfoot, #raodvrvjbs tr, #raodvrvjbs td, #raodvrvjbs th {
+#bmnsaqwjry thead, #bmnsaqwjry tbody, #bmnsaqwjry tfoot, #bmnsaqwjry tr, #bmnsaqwjry td, #bmnsaqwjry th {
   border-style: none;
 }
 
-#raodvrvjbs p {
+#bmnsaqwjry p {
   margin: 0;
   padding: 0;
 }
 
-#raodvrvjbs .gt_table {
+#bmnsaqwjry .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1974,12 +1996,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_caption {
+#bmnsaqwjry .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#raodvrvjbs .gt_title {
+#bmnsaqwjry .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1991,7 +2013,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#raodvrvjbs .gt_subtitle {
+#bmnsaqwjry .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2003,7 +2025,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#raodvrvjbs .gt_heading {
+#bmnsaqwjry .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2015,13 +2037,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_bottom_border {
+#bmnsaqwjry .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_col_headings {
+#bmnsaqwjry .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2036,7 +2058,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_col_heading {
+#bmnsaqwjry .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2056,7 +2078,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#raodvrvjbs .gt_column_spanner_outer {
+#bmnsaqwjry .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2068,15 +2090,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#raodvrvjbs .gt_column_spanner_outer:first-child {
+#bmnsaqwjry .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#raodvrvjbs .gt_column_spanner_outer:last-child {
+#bmnsaqwjry .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#raodvrvjbs .gt_column_spanner {
+#bmnsaqwjry .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2088,11 +2110,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#raodvrvjbs .gt_spanner_row {
+#bmnsaqwjry .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#raodvrvjbs .gt_group_heading {
+#bmnsaqwjry .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2118,7 +2140,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#raodvrvjbs .gt_empty_group_heading {
+#bmnsaqwjry .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2133,15 +2155,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#raodvrvjbs .gt_from_md > :first-child {
+#bmnsaqwjry .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#raodvrvjbs .gt_from_md > :last-child {
+#bmnsaqwjry .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#raodvrvjbs .gt_row {
+#bmnsaqwjry .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2160,7 +2182,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#raodvrvjbs .gt_stub {
+#bmnsaqwjry .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2173,7 +2195,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#raodvrvjbs .gt_stub_row_group {
+#bmnsaqwjry .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2187,15 +2209,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#raodvrvjbs .gt_row_group_first td {
+#bmnsaqwjry .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#raodvrvjbs .gt_row_group_first th {
+#bmnsaqwjry .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#raodvrvjbs .gt_summary_row {
+#bmnsaqwjry .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2205,16 +2227,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#raodvrvjbs .gt_first_summary_row {
+#bmnsaqwjry .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_first_summary_row.thick {
+#bmnsaqwjry .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#raodvrvjbs .gt_last_summary_row {
+#bmnsaqwjry .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2224,7 +2246,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_grand_summary_row {
+#bmnsaqwjry .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2234,7 +2256,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#raodvrvjbs .gt_first_grand_summary_row {
+#bmnsaqwjry .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2244,7 +2266,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_last_grand_summary_row_top {
+#bmnsaqwjry .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2254,11 +2276,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_striped {
+#bmnsaqwjry .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#raodvrvjbs .gt_table_body {
+#bmnsaqwjry .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2267,7 +2289,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_footnotes {
+#bmnsaqwjry .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2281,7 +2303,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_footnote {
+#bmnsaqwjry .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2290,7 +2312,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#raodvrvjbs .gt_sourcenotes {
+#bmnsaqwjry .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2304,7 +2326,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#raodvrvjbs .gt_sourcenote {
+#bmnsaqwjry .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2312,63 +2334,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#raodvrvjbs .gt_left {
+#bmnsaqwjry .gt_left {
   text-align: left;
 }
 
-#raodvrvjbs .gt_center {
+#bmnsaqwjry .gt_center {
   text-align: center;
 }
 
-#raodvrvjbs .gt_right {
+#bmnsaqwjry .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#raodvrvjbs .gt_font_normal {
+#bmnsaqwjry .gt_font_normal {
   font-weight: normal;
 }
 
-#raodvrvjbs .gt_font_bold {
+#bmnsaqwjry .gt_font_bold {
   font-weight: bold;
 }
 
-#raodvrvjbs .gt_font_italic {
+#bmnsaqwjry .gt_font_italic {
   font-style: italic;
 }
 
-#raodvrvjbs .gt_super {
+#bmnsaqwjry .gt_super {
   font-size: 65%;
 }
 
-#raodvrvjbs .gt_footnote_marks {
+#bmnsaqwjry .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#raodvrvjbs .gt_asterisk {
+#bmnsaqwjry .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#raodvrvjbs .gt_indent_1 {
+#bmnsaqwjry .gt_indent_1 {
   text-indent: 5px;
 }
 
-#raodvrvjbs .gt_indent_2 {
+#bmnsaqwjry .gt_indent_2 {
   text-indent: 10px;
 }
 
-#raodvrvjbs .gt_indent_3 {
+#bmnsaqwjry .gt_indent_3 {
   text-indent: 15px;
 }
 
-#raodvrvjbs .gt_indent_4 {
+#bmnsaqwjry .gt_indent_4 {
   text-indent: 20px;
 }
 
-#raodvrvjbs .gt_indent_5 {
+#bmnsaqwjry .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2422,6 +2444,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="example-4" class="level2">
 <h2 class="anchored" data-anchor-id="example-4"><code>Example 4</code></h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tooth_length <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(supp, dose) <span class="sc">%&gt;%</span> </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
@@ -2484,25 +2508,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">vars</span>(dose) <span class="co"># Associated with column 'dose'</span></span>
 <span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="ozdjjcbdlx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ozdjjcbdlx table {
+<div id="lpzhotjuoj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lpzhotjuoj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ozdjjcbdlx thead, #ozdjjcbdlx tbody, #ozdjjcbdlx tfoot, #ozdjjcbdlx tr, #ozdjjcbdlx td, #ozdjjcbdlx th {
+#lpzhotjuoj thead, #lpzhotjuoj tbody, #lpzhotjuoj tfoot, #lpzhotjuoj tr, #lpzhotjuoj td, #lpzhotjuoj th {
   border-style: none;
 }
 
-#ozdjjcbdlx p {
+#lpzhotjuoj p {
   margin: 0;
   padding: 0;
 }
 
-#ozdjjcbdlx .gt_table {
+#lpzhotjuoj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2528,12 +2553,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_caption {
+#lpzhotjuoj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ozdjjcbdlx .gt_title {
+#lpzhotjuoj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2545,7 +2570,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#ozdjjcbdlx .gt_subtitle {
+#lpzhotjuoj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2557,7 +2582,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#ozdjjcbdlx .gt_heading {
+#lpzhotjuoj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2569,13 +2594,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_bottom_border {
+#lpzhotjuoj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_col_headings {
+#lpzhotjuoj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2590,7 +2615,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_col_heading {
+#lpzhotjuoj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2610,7 +2635,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#ozdjjcbdlx .gt_column_spanner_outer {
+#lpzhotjuoj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2622,15 +2647,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#ozdjjcbdlx .gt_column_spanner_outer:first-child {
+#lpzhotjuoj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ozdjjcbdlx .gt_column_spanner_outer:last-child {
+#lpzhotjuoj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ozdjjcbdlx .gt_column_spanner {
+#lpzhotjuoj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2642,11 +2667,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#ozdjjcbdlx .gt_spanner_row {
+#lpzhotjuoj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ozdjjcbdlx .gt_group_heading {
+#lpzhotjuoj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2672,7 +2697,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#ozdjjcbdlx .gt_empty_group_heading {
+#lpzhotjuoj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2687,15 +2712,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#ozdjjcbdlx .gt_from_md > :first-child {
+#lpzhotjuoj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ozdjjcbdlx .gt_from_md > :last-child {
+#lpzhotjuoj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ozdjjcbdlx .gt_row {
+#lpzhotjuoj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2714,7 +2739,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#ozdjjcbdlx .gt_stub {
+#lpzhotjuoj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2727,7 +2752,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ozdjjcbdlx .gt_stub_row_group {
+#lpzhotjuoj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2741,15 +2766,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#ozdjjcbdlx .gt_row_group_first td {
+#lpzhotjuoj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ozdjjcbdlx .gt_row_group_first th {
+#lpzhotjuoj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ozdjjcbdlx .gt_summary_row {
+#lpzhotjuoj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2759,16 +2784,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ozdjjcbdlx .gt_first_summary_row {
+#lpzhotjuoj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_first_summary_row.thick {
+#lpzhotjuoj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ozdjjcbdlx .gt_last_summary_row {
+#lpzhotjuoj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2778,7 +2803,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_grand_summary_row {
+#lpzhotjuoj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2788,7 +2813,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ozdjjcbdlx .gt_first_grand_summary_row {
+#lpzhotjuoj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2798,7 +2823,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_last_grand_summary_row_top {
+#lpzhotjuoj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2808,11 +2833,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_striped {
+#lpzhotjuoj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ozdjjcbdlx .gt_table_body {
+#lpzhotjuoj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2821,7 +2846,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_footnotes {
+#lpzhotjuoj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2835,7 +2860,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_footnote {
+#lpzhotjuoj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2844,7 +2869,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ozdjjcbdlx .gt_sourcenotes {
+#lpzhotjuoj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2858,7 +2883,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#ozdjjcbdlx .gt_sourcenote {
+#lpzhotjuoj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2866,63 +2891,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#ozdjjcbdlx .gt_left {
+#lpzhotjuoj .gt_left {
   text-align: left;
 }
 
-#ozdjjcbdlx .gt_center {
+#lpzhotjuoj .gt_center {
   text-align: center;
 }
 
-#ozdjjcbdlx .gt_right {
+#lpzhotjuoj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ozdjjcbdlx .gt_font_normal {
+#lpzhotjuoj .gt_font_normal {
   font-weight: normal;
 }
 
-#ozdjjcbdlx .gt_font_bold {
+#lpzhotjuoj .gt_font_bold {
   font-weight: bold;
 }
 
-#ozdjjcbdlx .gt_font_italic {
+#lpzhotjuoj .gt_font_italic {
   font-style: italic;
 }
 
-#ozdjjcbdlx .gt_super {
+#lpzhotjuoj .gt_super {
   font-size: 65%;
 }
 
-#ozdjjcbdlx .gt_footnote_marks {
+#lpzhotjuoj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ozdjjcbdlx .gt_asterisk {
+#lpzhotjuoj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ozdjjcbdlx .gt_indent_1 {
+#lpzhotjuoj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ozdjjcbdlx .gt_indent_2 {
+#lpzhotjuoj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ozdjjcbdlx .gt_indent_3 {
+#lpzhotjuoj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ozdjjcbdlx .gt_indent_4 {
+#lpzhotjuoj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ozdjjcbdlx .gt_indent_5 {
+#lpzhotjuoj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2993,8 +3018,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1><code>4. Animal Crossing</code></h1>
 <p>This is an example using the Animal Crossing data set from Tidy Tuesday. In this data set, you’ll see that the <code>items</code> column is a URL.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-05/items.csv'</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(items)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 16
   num_id id          name  category orderable sell_value sell_currency buy_value
@@ -3012,6 +3040,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>We display the most expensive items in Animal Crossing below:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>items <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, buy_value) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(buy_value)) <span class="sc">%&gt;%</span></span>
@@ -3027,25 +3057,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="qjdcbvhdlg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qjdcbvhdlg table {
+<div id="vwobronptn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vwobronptn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qjdcbvhdlg thead, #qjdcbvhdlg tbody, #qjdcbvhdlg tfoot, #qjdcbvhdlg tr, #qjdcbvhdlg td, #qjdcbvhdlg th {
+#vwobronptn thead, #vwobronptn tbody, #vwobronptn tfoot, #vwobronptn tr, #vwobronptn td, #vwobronptn th {
   border-style: none;
 }
 
-#qjdcbvhdlg p {
+#vwobronptn p {
   margin: 0;
   padding: 0;
 }
 
-#qjdcbvhdlg .gt_table {
+#vwobronptn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3071,12 +3102,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_caption {
+#vwobronptn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qjdcbvhdlg .gt_title {
+#vwobronptn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3088,7 +3119,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#qjdcbvhdlg .gt_subtitle {
+#vwobronptn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3100,7 +3131,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#qjdcbvhdlg .gt_heading {
+#vwobronptn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3112,13 +3143,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_bottom_border {
+#vwobronptn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_col_headings {
+#vwobronptn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3133,7 +3164,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_col_heading {
+#vwobronptn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3153,7 +3184,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#qjdcbvhdlg .gt_column_spanner_outer {
+#vwobronptn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3165,15 +3196,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#qjdcbvhdlg .gt_column_spanner_outer:first-child {
+#vwobronptn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qjdcbvhdlg .gt_column_spanner_outer:last-child {
+#vwobronptn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qjdcbvhdlg .gt_column_spanner {
+#vwobronptn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3185,11 +3216,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#qjdcbvhdlg .gt_spanner_row {
+#vwobronptn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qjdcbvhdlg .gt_group_heading {
+#vwobronptn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3215,7 +3246,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#qjdcbvhdlg .gt_empty_group_heading {
+#vwobronptn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3230,15 +3261,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#qjdcbvhdlg .gt_from_md > :first-child {
+#vwobronptn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qjdcbvhdlg .gt_from_md > :last-child {
+#vwobronptn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qjdcbvhdlg .gt_row {
+#vwobronptn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3257,7 +3288,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#qjdcbvhdlg .gt_stub {
+#vwobronptn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3270,7 +3301,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qjdcbvhdlg .gt_stub_row_group {
+#vwobronptn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3284,15 +3315,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#qjdcbvhdlg .gt_row_group_first td {
+#vwobronptn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qjdcbvhdlg .gt_row_group_first th {
+#vwobronptn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qjdcbvhdlg .gt_summary_row {
+#vwobronptn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3302,16 +3333,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qjdcbvhdlg .gt_first_summary_row {
+#vwobronptn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_first_summary_row.thick {
+#vwobronptn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qjdcbvhdlg .gt_last_summary_row {
+#vwobronptn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3321,7 +3352,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_grand_summary_row {
+#vwobronptn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3331,7 +3362,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qjdcbvhdlg .gt_first_grand_summary_row {
+#vwobronptn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3341,7 +3372,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_last_grand_summary_row_top {
+#vwobronptn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3351,11 +3382,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_striped {
+#vwobronptn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qjdcbvhdlg .gt_table_body {
+#vwobronptn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3364,7 +3395,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_footnotes {
+#vwobronptn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3378,7 +3409,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_footnote {
+#vwobronptn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3387,7 +3418,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qjdcbvhdlg .gt_sourcenotes {
+#vwobronptn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3401,7 +3432,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#qjdcbvhdlg .gt_sourcenote {
+#vwobronptn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3409,63 +3440,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#qjdcbvhdlg .gt_left {
+#vwobronptn .gt_left {
   text-align: left;
 }
 
-#qjdcbvhdlg .gt_center {
+#vwobronptn .gt_center {
   text-align: center;
 }
 
-#qjdcbvhdlg .gt_right {
+#vwobronptn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qjdcbvhdlg .gt_font_normal {
+#vwobronptn .gt_font_normal {
   font-weight: normal;
 }
 
-#qjdcbvhdlg .gt_font_bold {
+#vwobronptn .gt_font_bold {
   font-weight: bold;
 }
 
-#qjdcbvhdlg .gt_font_italic {
+#vwobronptn .gt_font_italic {
   font-style: italic;
 }
 
-#qjdcbvhdlg .gt_super {
+#vwobronptn .gt_super {
   font-size: 65%;
 }
 
-#qjdcbvhdlg .gt_footnote_marks {
+#vwobronptn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qjdcbvhdlg .gt_asterisk {
+#vwobronptn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qjdcbvhdlg .gt_indent_1 {
+#vwobronptn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qjdcbvhdlg .gt_indent_2 {
+#vwobronptn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qjdcbvhdlg .gt_indent_3 {
+#vwobronptn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qjdcbvhdlg .gt_indent_4 {
+#vwobronptn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qjdcbvhdlg .gt_indent_5 {
+#vwobronptn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3571,8 +3602,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>Tom Mock has created a package called <code>{gtExtras}</code> which can be installed with the following command:</p>
 <p>This example is from one of Tom’s tweets. Gist is here: https://gist.github.com/jthomasmock/923604deb65682b0364c9220a85ddb36</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>stream_data  <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"../../../../data/stream_data.csv"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>stream_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  distributor  type      Ratio Nominee Winner
 1     Netflix  wifi 0.27678571     224     62
@@ -3587,6 +3621,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(stream_data) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#transform Nominee and Winner columns into a bullet plot</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_plt_bullet</span>(<span class="at">column =</span> Nominee, <span class="at">target =</span> Winner) <span class="sc">%&gt;%</span> </span>
@@ -3596,28 +3632,29 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#format ratio column with percentage</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_symbol_first</span>(<span class="at">column =</span> Ratio, <span class="at">suffix =</span> <span class="st">"%"</span>, <span class="at">decimals =</span> <span class="dv">1</span>, <span class="at">scale_by =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="idgddwqbsm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dmurwqvmaq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#idgddwqbsm table {
+#dmurwqvmaq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#idgddwqbsm thead, #idgddwqbsm tbody, #idgddwqbsm tfoot, #idgddwqbsm tr, #idgddwqbsm td, #idgddwqbsm th {
+#dmurwqvmaq thead, #dmurwqvmaq tbody, #dmurwqvmaq tfoot, #dmurwqvmaq tr, #dmurwqvmaq td, #dmurwqvmaq th {
   border-style: none;
 }
 
-#idgddwqbsm p {
+#dmurwqvmaq p {
   margin: 0;
   padding: 0;
 }
 
-#idgddwqbsm .gt_table {
+#dmurwqvmaq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3643,12 +3680,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_caption {
+#dmurwqvmaq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#idgddwqbsm .gt_title {
+#dmurwqvmaq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3660,7 +3697,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#idgddwqbsm .gt_subtitle {
+#dmurwqvmaq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3672,7 +3709,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#idgddwqbsm .gt_heading {
+#dmurwqvmaq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3684,13 +3721,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_bottom_border {
+#dmurwqvmaq .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_col_headings {
+#dmurwqvmaq .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3705,7 +3742,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_col_heading {
+#dmurwqvmaq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -3725,7 +3762,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#idgddwqbsm .gt_column_spanner_outer {
+#dmurwqvmaq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -3737,15 +3774,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#idgddwqbsm .gt_column_spanner_outer:first-child {
+#dmurwqvmaq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#idgddwqbsm .gt_column_spanner_outer:last-child {
+#dmurwqvmaq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#idgddwqbsm .gt_column_spanner {
+#dmurwqvmaq .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -3757,11 +3794,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#idgddwqbsm .gt_spanner_row {
+#dmurwqvmaq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#idgddwqbsm .gt_group_heading {
+#dmurwqvmaq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3787,7 +3824,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#idgddwqbsm .gt_empty_group_heading {
+#dmurwqvmaq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3802,15 +3839,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#idgddwqbsm .gt_from_md > :first-child {
+#dmurwqvmaq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#idgddwqbsm .gt_from_md > :last-child {
+#dmurwqvmaq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#idgddwqbsm .gt_row {
+#dmurwqvmaq .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -3829,7 +3866,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#idgddwqbsm .gt_stub {
+#dmurwqvmaq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3842,7 +3879,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#idgddwqbsm .gt_stub_row_group {
+#dmurwqvmaq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3856,15 +3893,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#idgddwqbsm .gt_row_group_first td {
+#dmurwqvmaq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#idgddwqbsm .gt_row_group_first th {
+#dmurwqvmaq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#idgddwqbsm .gt_summary_row {
+#dmurwqvmaq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3874,16 +3911,16 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#idgddwqbsm .gt_first_summary_row {
+#dmurwqvmaq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_first_summary_row.thick {
+#dmurwqvmaq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#idgddwqbsm .gt_last_summary_row {
+#dmurwqvmaq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3893,7 +3930,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_grand_summary_row {
+#dmurwqvmaq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3903,7 +3940,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#idgddwqbsm .gt_first_grand_summary_row {
+#dmurwqvmaq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3913,7 +3950,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_last_grand_summary_row_top {
+#dmurwqvmaq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3923,11 +3960,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_striped {
+#dmurwqvmaq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#idgddwqbsm .gt_table_body {
+#dmurwqvmaq .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3936,7 +3973,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-bottom-color: #FFFFFF;
 }
 
-#idgddwqbsm .gt_footnotes {
+#dmurwqvmaq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3950,7 +3987,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_footnote {
+#dmurwqvmaq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3959,7 +3996,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#idgddwqbsm .gt_sourcenotes {
+#dmurwqvmaq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3973,7 +4010,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#idgddwqbsm .gt_sourcenote {
+#dmurwqvmaq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3981,63 +4018,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#idgddwqbsm .gt_left {
+#dmurwqvmaq .gt_left {
   text-align: left;
 }
 
-#idgddwqbsm .gt_center {
+#dmurwqvmaq .gt_center {
   text-align: center;
 }
 
-#idgddwqbsm .gt_right {
+#dmurwqvmaq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#idgddwqbsm .gt_font_normal {
+#dmurwqvmaq .gt_font_normal {
   font-weight: normal;
 }
 
-#idgddwqbsm .gt_font_bold {
+#dmurwqvmaq .gt_font_bold {
   font-weight: bold;
 }
 
-#idgddwqbsm .gt_font_italic {
+#dmurwqvmaq .gt_font_italic {
   font-style: italic;
 }
 
-#idgddwqbsm .gt_super {
+#dmurwqvmaq .gt_super {
   font-size: 65%;
 }
 
-#idgddwqbsm .gt_footnote_marks {
+#dmurwqvmaq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#idgddwqbsm .gt_asterisk {
+#dmurwqvmaq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#idgddwqbsm .gt_indent_1 {
+#dmurwqvmaq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#idgddwqbsm .gt_indent_2 {
+#dmurwqvmaq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#idgddwqbsm .gt_indent_3 {
+#dmurwqvmaq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#idgddwqbsm .gt_indent_4 {
+#dmurwqvmaq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#idgddwqbsm .gt_indent_5 {
+#dmurwqvmaq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4224,6 +4261,8 @@ Tv
 <p>Example from <a href="https://cran.r-project.org/web/packages/gtsummary/vignettes/gallery.html">FAQ + Gallery</a></p>
 <p>For bio-statisticians, one of the most annoying tasks to build is a Table 1: a breakdown of research subjects by various demographics. The {gtsummary} package simplifies building these tables.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trial <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trt, age, grade) <span class="sc">%&gt;%</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
@@ -4235,25 +4274,26 @@ Tv
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_n</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_spanning_header</span>(<span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**Chemotherapy Treatment**"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="ymqtmippra" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ymqtmippra table {
+<div id="nqphpvhuzu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nqphpvhuzu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ymqtmippra thead, #ymqtmippra tbody, #ymqtmippra tfoot, #ymqtmippra tr, #ymqtmippra td, #ymqtmippra th {
+#nqphpvhuzu thead, #nqphpvhuzu tbody, #nqphpvhuzu tfoot, #nqphpvhuzu tr, #nqphpvhuzu td, #nqphpvhuzu th {
   border-style: none;
 }
 
-#ymqtmippra p {
+#nqphpvhuzu p {
   margin: 0;
   padding: 0;
 }
 
-#ymqtmippra .gt_table {
+#nqphpvhuzu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4279,12 +4319,12 @@ Tv
   border-left-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_caption {
+#nqphpvhuzu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ymqtmippra .gt_title {
+#nqphpvhuzu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4296,7 +4336,7 @@ Tv
   border-bottom-width: 0;
 }
 
-#ymqtmippra .gt_subtitle {
+#nqphpvhuzu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4308,7 +4348,7 @@ Tv
   border-top-width: 0;
 }
 
-#ymqtmippra .gt_heading {
+#nqphpvhuzu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4320,13 +4360,13 @@ Tv
   border-right-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_bottom_border {
+#nqphpvhuzu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_col_headings {
+#nqphpvhuzu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4341,7 +4381,7 @@ Tv
   border-right-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_col_heading {
+#nqphpvhuzu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4361,7 +4401,7 @@ Tv
   overflow-x: hidden;
 }
 
-#ymqtmippra .gt_column_spanner_outer {
+#nqphpvhuzu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4373,15 +4413,15 @@ Tv
   padding-right: 4px;
 }
 
-#ymqtmippra .gt_column_spanner_outer:first-child {
+#nqphpvhuzu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ymqtmippra .gt_column_spanner_outer:last-child {
+#nqphpvhuzu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ymqtmippra .gt_column_spanner {
+#nqphpvhuzu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4393,11 +4433,11 @@ Tv
   width: 100%;
 }
 
-#ymqtmippra .gt_spanner_row {
+#nqphpvhuzu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ymqtmippra .gt_group_heading {
+#nqphpvhuzu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4423,7 +4463,7 @@ Tv
   text-align: left;
 }
 
-#ymqtmippra .gt_empty_group_heading {
+#nqphpvhuzu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4438,15 +4478,15 @@ Tv
   vertical-align: middle;
 }
 
-#ymqtmippra .gt_from_md > :first-child {
+#nqphpvhuzu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ymqtmippra .gt_from_md > :last-child {
+#nqphpvhuzu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ymqtmippra .gt_row {
+#nqphpvhuzu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4465,7 +4505,7 @@ Tv
   overflow-x: hidden;
 }
 
-#ymqtmippra .gt_stub {
+#nqphpvhuzu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4478,7 +4518,7 @@ Tv
   padding-right: 5px;
 }
 
-#ymqtmippra .gt_stub_row_group {
+#nqphpvhuzu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4492,15 +4532,15 @@ Tv
   vertical-align: top;
 }
 
-#ymqtmippra .gt_row_group_first td {
+#nqphpvhuzu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ymqtmippra .gt_row_group_first th {
+#nqphpvhuzu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ymqtmippra .gt_summary_row {
+#nqphpvhuzu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4510,16 +4550,16 @@ Tv
   padding-right: 5px;
 }
 
-#ymqtmippra .gt_first_summary_row {
+#nqphpvhuzu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_first_summary_row.thick {
+#nqphpvhuzu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ymqtmippra .gt_last_summary_row {
+#nqphpvhuzu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4529,7 +4569,7 @@ Tv
   border-bottom-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_grand_summary_row {
+#nqphpvhuzu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4539,7 +4579,7 @@ Tv
   padding-right: 5px;
 }
 
-#ymqtmippra .gt_first_grand_summary_row {
+#nqphpvhuzu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4549,7 +4589,7 @@ Tv
   border-top-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_last_grand_summary_row_top {
+#nqphpvhuzu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4559,11 +4599,11 @@ Tv
   border-bottom-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_striped {
+#nqphpvhuzu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ymqtmippra .gt_table_body {
+#nqphpvhuzu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4572,7 +4612,7 @@ Tv
   border-bottom-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_footnotes {
+#nqphpvhuzu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4586,7 +4626,7 @@ Tv
   border-right-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_footnote {
+#nqphpvhuzu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4595,7 +4635,7 @@ Tv
   padding-right: 5px;
 }
 
-#ymqtmippra .gt_sourcenotes {
+#nqphpvhuzu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4609,7 +4649,7 @@ Tv
   border-right-color: #D3D3D3;
 }
 
-#ymqtmippra .gt_sourcenote {
+#nqphpvhuzu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4617,63 +4657,63 @@ Tv
   padding-right: 5px;
 }
 
-#ymqtmippra .gt_left {
+#nqphpvhuzu .gt_left {
   text-align: left;
 }
 
-#ymqtmippra .gt_center {
+#nqphpvhuzu .gt_center {
   text-align: center;
 }
 
-#ymqtmippra .gt_right {
+#nqphpvhuzu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ymqtmippra .gt_font_normal {
+#nqphpvhuzu .gt_font_normal {
   font-weight: normal;
 }
 
-#ymqtmippra .gt_font_bold {
+#nqphpvhuzu .gt_font_bold {
   font-weight: bold;
 }
 
-#ymqtmippra .gt_font_italic {
+#nqphpvhuzu .gt_font_italic {
   font-style: italic;
 }
 
-#ymqtmippra .gt_super {
+#nqphpvhuzu .gt_super {
   font-size: 65%;
 }
 
-#ymqtmippra .gt_footnote_marks {
+#nqphpvhuzu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ymqtmippra .gt_asterisk {
+#nqphpvhuzu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ymqtmippra .gt_indent_1 {
+#nqphpvhuzu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ymqtmippra .gt_indent_2 {
+#nqphpvhuzu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ymqtmippra .gt_indent_3 {
+#nqphpvhuzu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ymqtmippra .gt_indent_4 {
+#nqphpvhuzu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ymqtmippra .gt_indent_5 {
+#nqphpvhuzu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4742,6 +4782,8 @@ N = 102 (51%)<span class="gt_footnote_marks" style="white-space:nowrap;font-styl
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 
@@ -4825,6 +4867,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -5158,21 +5251,337 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Portland R User Group: Aggregate making tables with gt packag"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2022-04-25"</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Workshop, PDXRUG, R, Data Visuals]</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Ted Landeras</span><span class="co">](https://laderast.github.io/)</span> led this event for <span class="co">[</span><span class="ot">Portland R user Group</span><span class="co">](https://pdxrlang.com/)</span> where we watched <span class="co">[</span><span class="ot">Rich Lannone\|\| Making Beautiful Tables with `{gt}`\|\| RStudio</span><span class="co">](https://www.youtube.com/watch?v=z0UGmMOxl-c)</span>, and other examples.</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-3850076764.png)</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, message=F, error=F, echo=F}</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(error=FALSE, </span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="in">                      message= FALSE,</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="in">                      warning=FALSE)</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="fu"># `1. Set Up`</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libraries}</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="in">library(gt)</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="in">library(gtExtras)</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">library(gtsummary)</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">library(palmerpenguins)</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># `2. Penguins`</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>This examples follows the video: <span class="co">[</span><span class="ot">Rich Lannone\|\| Making Beautiful Tables with `{gt}`\|\| RStudio</span><span class="co">](https://www.youtube.com/watch?v=z0UGmMOxl-c)</span>.</span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_at</span>(</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">.vars =</span> <span class="fu">c</span>(</span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>      <span class="st">"bill_length_mm"</span>, </span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>      <span class="st">"bill_depth_mm"</span>,</span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>      <span class="st">"flipper_length_mm"</span>,</span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>      <span class="st">"body_mass_g"</span></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">.funs =</span> <span class="sc">~</span> <span class="fu">mean</span>(.,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"The penguins dataset"</span>),</span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"**Three** years of data on penguins on _three_ islands."</span>)</span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_length_mm =</span> <span class="fu">md</span>(<span class="st">"Bill Length,&lt;br&gt;mm"</span>),</span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_depth_mm =</span> <span class="fu">md</span>(<span class="st">"Bill Depth,&lt;br&gt;mm"</span>),</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">flipper_length_mm =</span> <span class="fu">md</span>(<span class="st">"Flipper Length,&lt;br&gt;mm"</span>),</span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">body_mass_g =</span> <span class="fu">md</span>(<span class="st">"Body Mass,&lt;br&gt;g"</span>)</span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> bill_length_mm, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> bill_depth_mm, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> flipper_length_mm, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> body_mass_g, <span class="at">scale_by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">1000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(</span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a>    bill_length_mm <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">120</span>),</span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a>    bill_depth_mm <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">120</span>),</span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a>    flipper_length_mm <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">120</span>),</span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>    body_mass_g <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">120</span>),</span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">everything</span>() <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>)</span>
+<span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"Dataset is from the `palmerpenguins` **R** package."</span>)</span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a>  <span class="co"># tab_footnote(</span></span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   footnote = "The Largest of the three penguins studied.",</span></span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   locations = cells_stub(rows = "Gentoo")</span></span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>  <span class="co"># )</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Flipper Length was measured with a tape measure."</span>,</span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> flipper_length_mm)</span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Tap measure suffered some frost damage."</span>,</span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(</span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> flipper_length_mm),</span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cells_body</span>(<span class="at">columns =</span> flipper_length_mm)</span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a>  <span class="co"># tab_style(</span></span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   locations = cells_body(</span></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     columns = c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g")</span></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     ),</span></span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   style = list(</span></span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     cell_fill(color = "steelblue"),</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     cell_text(color = "white")</span></span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     )</span></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ) %&gt;%</span></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(bill_depth_mm),</span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">palett =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"orange"</span>, <span class="st">"brown"</span>),</span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>)) </span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data_color</span>(</span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(bill_length_mm),</span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a>      <span class="at">palett =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"orange"</span>, <span class="st">"green"</span>),</span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">50</span>)) </span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Penguin *Species*"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_font</span>(<span class="at">font =</span> <span class="fu">google_font</span>(<span class="st">"Montserrat"</span>), </span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight =</span> <span class="dv">600</span>, </span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a>                 <span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a><span class="fu"># `3. Allison Horst's Examples`</span></span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>These examples are from <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://allisonhorst.com/allison-horst)</span></span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## `Example 1`</span></span>
+<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rock)</span>
+<span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>rock <span class="sc">%&gt;%</span> <span class="co"># Get 'rock' data</span></span>
+<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="co"># First 5 lines only</span></span>
+<span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="co"># Make a table, it just works.</span></span>
+<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## `Example 2`</span></span>
+<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BOD)</span>
+<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a>BOD <span class="sc">%&gt;%</span> <span class="co"># Get the data...</span></span>
+<span id="cb18-150"><a href="#cb18-150" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="co"># use 'gt' to make an awesome table...</span></span>
+<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>( </span>
+<span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"BOD Table Woooooo!"</span>, <span class="co"># ...with this title</span></span>
+<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Hooray gt!"</span>) <span class="sc">%&gt;%</span> <span class="co"># and this subtitle</span></span>
+<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># A column (numeric data)</span></span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(Time), <span class="co"># What column variable? BOD$Time</span></span>
+<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span> <span class="co"># With two decimal places</span></span>
+<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># Another column (also numeric data)</span></span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(demand), <span class="co"># What column variable? BOD$demand</span></span>
+<span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span> <span class="co"># I want this column to have one decimal place</span></span>
+<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">Time =</span> <span class="st">"Time (hours)"</span>, <span class="at">demand =</span> <span class="st">"Demand (mg/L)"</span>) <span class="co"># Update labels</span></span>
+<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## `Example 3`</span></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a>BOD <span class="sc">%&gt;%</span> <span class="co"># Get the data...</span></span>
+<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="co"># use 'gt' to make an awesome table...</span></span>
+<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>( </span>
+<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"BOD Table Woooooo!"</span>, <span class="co"># ...with this title</span></span>
+<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Hooray gt!"</span>) <span class="sc">%&gt;%</span> <span class="co"># and this subtitle</span></span>
+<span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># A column (numeric data)</span></span>
+<span id="cb18-176"><a href="#cb18-176" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(Time), <span class="co"># What column variable? BOD$Time</span></span>
+<span id="cb18-177"><a href="#cb18-177" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span> <span class="co"># With two decimal places</span></span>
+<span id="cb18-178"><a href="#cb18-178" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-179"><a href="#cb18-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># Another column (also numeric data)</span></span>
+<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(demand), <span class="co"># What column variable? BOD$demand</span></span>
+<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span> <span class="co"># I want this column to have one decimal place</span></span>
+<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-183"><a href="#cb18-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">Time =</span> <span class="st">"Time (hours)"</span>, <span class="at">demand =</span> <span class="st">"Demand (mg/L)"</span>) <span class="co"># Update labels</span></span>
+<span id="cb18-184"><a href="#cb18-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-185"><a href="#cb18-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-186"><a href="#cb18-186" aria-hidden="true" tabindex="-1"></a><span class="fu">## `Example 4`</span></span>
+<span id="cb18-187"><a href="#cb18-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-190"><a href="#cb18-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a>tooth_length <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> </span>
+<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(supp, dose) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-193"><a href="#cb18-193" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb18-194"><a href="#cb18-194" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_len =</span> <span class="fu">mean</span>(len)</span>
+<span id="cb18-195"><a href="#cb18-195" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-196"><a href="#cb18-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() </span>
+<span id="cb18-197"><a href="#cb18-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a><span class="co"># A gt table: </span></span>
+<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a>tooth_length <span class="sc">%&gt;%</span> <span class="co"># Take tooth_length</span></span>
+<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="co"># Make a gt table with it</span></span>
+<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"A title just like that"</span>, <span class="co"># Add a title</span></span>
+<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"(with something below it!)"</span> <span class="co"># And a subtitle</span></span>
+<span id="cb18-204"><a href="#cb18-204" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-205"><a href="#cb18-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_passthrough</span>( <span class="co"># Not sure about this but it works...</span></span>
+<span id="cb18-206"><a href="#cb18-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(supp) <span class="co"># First column: supp (character)</span></span>
+<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-208"><a href="#cb18-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb18-209"><a href="#cb18-209" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(mean_len), <span class="co"># Second column: mean_len (numeric)</span></span>
+<span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span> <span class="co"># With 4 decimal places</span></span>
+<span id="cb18-211"><a href="#cb18-211" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-212"><a href="#cb18-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(dose), <span class="co"># Third column: dose (numeric)</span></span>
+<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span> <span class="co"># With 2 decimal places</span></span>
+<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-216"><a href="#cb18-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>( <span class="co"># Update cell colors...</span></span>
+<span id="cb18-217"><a href="#cb18-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(supp), <span class="co"># ...for supp column!</span></span>
+<span id="cb18-218"><a href="#cb18-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_factor</span>( <span class="co"># &lt;- bc it's a factor</span></span>
+<span id="cb18-219"><a href="#cb18-219" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(</span>
+<span id="cb18-220"><a href="#cb18-220" aria-hidden="true" tabindex="-1"></a>        <span class="st">"green"</span>,<span class="st">"cyan"</span>), <span class="co"># Two factor levels, two colors</span></span>
+<span id="cb18-221"><a href="#cb18-221" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="st">"OJ"</span>,<span class="st">"VC"</span>)<span class="co"># Levels</span></span>
+<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>( <span class="co"># Update cell colors...</span></span>
+<span id="cb18-225"><a href="#cb18-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(dose), <span class="co"># ...for dose column </span></span>
+<span id="cb18-226"><a href="#cb18-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>( <span class="co"># &lt;- bc it's numeric</span></span>
+<span id="cb18-227"><a href="#cb18-227" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(</span>
+<span id="cb18-228"><a href="#cb18-228" aria-hidden="true" tabindex="-1"></a>        <span class="st">"yellow"</span>,<span class="st">"orange"</span>), <span class="co"># A color scheme (gradient)</span></span>
+<span id="cb18-229"><a href="#cb18-229" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="dv">2</span>) <span class="co"># Column scale endpoints</span></span>
+<span id="cb18-230"><a href="#cb18-230" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-231"><a href="#cb18-231" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-232"><a href="#cb18-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>( <span class="co"># Update cell colors...</span></span>
+<span id="cb18-233"><a href="#cb18-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(mean_len), <span class="co"># ...for mean_len column</span></span>
+<span id="cb18-234"><a href="#cb18-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
+<span id="cb18-235"><a href="#cb18-235" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(</span>
+<span id="cb18-236"><a href="#cb18-236" aria-hidden="true" tabindex="-1"></a>        <span class="st">"red"</span>, <span class="st">"purple"</span>), <span class="co"># Overboard colors! </span></span>
+<span id="cb18-237"><a href="#cb18-237" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">27</span>) <span class="co"># Column scale endpoints</span></span>
+<span id="cb18-238"><a href="#cb18-238" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-239"><a href="#cb18-239" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-240"><a href="#cb18-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">supp =</span> <span class="st">"Supplement"</span>, <span class="at">dose =</span> <span class="st">"Dosage (mg/d)"</span>, <span class="at">mean_len =</span> <span class="st">"Mean Tooth Length"</span>) <span class="sc">%&gt;%</span> <span class="co"># Make the column headers</span></span>
+<span id="cb18-241"><a href="#cb18-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb18-242"><a href="#cb18-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Baby footnote test"</span>, <span class="co"># This is the footnote text</span></span>
+<span id="cb18-243"><a href="#cb18-243" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb18-244"><a href="#cb18-244" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">vars</span>(supp) <span class="co"># Associated with column 'supp'</span></span>
+<span id="cb18-245"><a href="#cb18-245" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-246"><a href="#cb18-246" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-247"><a href="#cb18-247" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_footnote</span>(</span>
+<span id="cb18-248"><a href="#cb18-248" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"A second footnote"</span>, <span class="co"># Another line of footnote text</span></span>
+<span id="cb18-249"><a href="#cb18-249" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>( </span>
+<span id="cb18-250"><a href="#cb18-250" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">vars</span>(dose) <span class="co"># Associated with column 'dose'</span></span>
+<span id="cb18-251"><a href="#cb18-251" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-252"><a href="#cb18-252" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-253"><a href="#cb18-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-254"><a href="#cb18-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-255"><a href="#cb18-255" aria-hidden="true" tabindex="-1"></a><span class="fu"># `4. Animal Crossing`</span></span>
+<span id="cb18-256"><a href="#cb18-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-257"><a href="#cb18-257" aria-hidden="true" tabindex="-1"></a>This is an example using the Animal Crossing data set from Tidy Tuesday. In this data set, you'll see that the <span class="in">`items`</span> column is a URL.</span>
+<span id="cb18-258"><a href="#cb18-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-261"><a href="#cb18-261" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-262"><a href="#cb18-262" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-05/items.csv'</span>)</span>
+<span id="cb18-263"><a href="#cb18-263" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(items)</span>
+<span id="cb18-264"><a href="#cb18-264" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-265"><a href="#cb18-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-266"><a href="#cb18-266" aria-hidden="true" tabindex="-1"></a>We display the most expensive items in Animal Crossing below:</span>
+<span id="cb18-267"><a href="#cb18-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-270"><a href="#cb18-270" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-271"><a href="#cb18-271" aria-hidden="true" tabindex="-1"></a>items <span class="sc">%&gt;%</span> </span>
+<span id="cb18-272"><a href="#cb18-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, buy_value) <span class="sc">%&gt;%</span></span>
+<span id="cb18-273"><a href="#cb18-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(buy_value)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-274"><a href="#cb18-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sell_value, buy_value, category, <span class="at">image=</span>image_url) <span class="sc">%&gt;%</span></span>
+<span id="cb18-275"><a href="#cb18-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-276"><a href="#cb18-276" aria-hidden="true" tabindex="-1"></a>   <span class="fu">text_transform</span>(</span>
+<span id="cb18-277"><a href="#cb18-277" aria-hidden="true" tabindex="-1"></a>     <span class="co">#tell gt that the image column </span></span>
+<span id="cb18-278"><a href="#cb18-278" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="fu">vars</span>(image)),</span>
+<span id="cb18-279"><a href="#cb18-279" aria-hidden="true" tabindex="-1"></a>    <span class="at">fn =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb18-280"><a href="#cb18-280" aria-hidden="true" tabindex="-1"></a>      <span class="fu">web_image</span>(</span>
+<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a>        <span class="at">url =</span> x,</span>
+<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="dv">50</span></span>
+<span id="cb18-283"><a href="#cb18-283" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-284"><a href="#cb18-284" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-285"><a href="#cb18-285" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-286"><a href="#cb18-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-287"><a href="#cb18-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a><span class="fu"># `5. Stream Data`</span></span>
+<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a>Tom Mock has created a package called <span class="in">`{gtExtras}`</span> which can be installed with the following command:</span>
+<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>This example is from one of Tom's tweets. Gist is here: https://gist.github.com/jthomasmock/923604deb65682b0364c9220a85ddb36</span>
+<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a>stream_data  <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">read.csv</span>(<span class="st">"../../../../data/stream_data.csv"</span>)</span>
+<span id="cb18-299"><a href="#cb18-299" aria-hidden="true" tabindex="-1"></a>stream_data</span>
+<span id="cb18-300"><a href="#cb18-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-301"><a href="#cb18-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-304"><a href="#cb18-304" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-305"><a href="#cb18-305" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(stream_data) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-306"><a href="#cb18-306" aria-hidden="true" tabindex="-1"></a>  <span class="co">#transform Nominee and Winner columns into a bullet plot</span></span>
+<span id="cb18-307"><a href="#cb18-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_plt_bullet</span>(<span class="at">column =</span> Nominee, <span class="at">target =</span> Winner) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-308"><a href="#cb18-308" aria-hidden="true" tabindex="-1"></a>  <span class="co">#take the type column and retrieve a font awesome symbol</span></span>
+<span id="cb18-309"><a href="#cb18-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_fa_column</span>(<span class="at">column =</span> type) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-310"><a href="#cb18-310" aria-hidden="true" tabindex="-1"></a>  <span class="co">#format table with nytimes style formating</span></span>
+<span id="cb18-311"><a href="#cb18-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_theme_nytimes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-312"><a href="#cb18-312" aria-hidden="true" tabindex="-1"></a>  <span class="co">#format ratio column with percentage</span></span>
+<span id="cb18-313"><a href="#cb18-313" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_symbol_first</span>(<span class="at">column =</span> Ratio, <span class="at">suffix =</span> <span class="st">"%"</span>, <span class="at">decimals =</span> <span class="dv">1</span>, <span class="at">scale_by =</span> <span class="dv">100</span>)</span>
+<span id="cb18-314"><a href="#cb18-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-315"><a href="#cb18-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-316"><a href="#cb18-316" aria-hidden="true" tabindex="-1"></a><span class="fu"># `6. Biostats`</span></span>
+<span id="cb18-317"><a href="#cb18-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-318"><a href="#cb18-318" aria-hidden="true" tabindex="-1"></a>Example from <span class="co">[</span><span class="ot">FAQ + Gallery</span><span class="co">](https://cran.r-project.org/web/packages/gtsummary/vignettes/gallery.html)</span></span>
+<span id="cb18-319"><a href="#cb18-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-320"><a href="#cb18-320" aria-hidden="true" tabindex="-1"></a>For bio-statisticians, one of the most annoying tasks to build is a Table 1: a breakdown of research subjects by various demographics. The {gtsummary} package simplifies building these tables.</span>
+<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-324"><a href="#cb18-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-325"><a href="#cb18-325" aria-hidden="true" tabindex="-1"></a>trial <span class="sc">%&gt;%</span></span>
+<span id="cb18-326"><a href="#cb18-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trt, age, grade) <span class="sc">%&gt;%</span></span>
+<span id="cb18-327"><a href="#cb18-327" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb18-328"><a href="#cb18-328" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> trt, </span>
+<span id="cb18-329"><a href="#cb18-329" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">"no"</span>,</span>
+<span id="cb18-330"><a href="#cb18-330" aria-hidden="true" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{median} ({p25}, {p75})"</span></span>
+<span id="cb18-331"><a href="#cb18-331" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-332"><a href="#cb18-332" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**{level}**&lt;br&gt;N =  {n} ({style_percent(p)}%)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-333"><a href="#cb18-333" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_n</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-334"><a href="#cb18-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-335"><a href="#cb18-335" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_spanning_header</span>(<span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">"**Chemotherapy Treatment**"</span>)</span>
+<span id="cb18-336"><a href="#cb18-336" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

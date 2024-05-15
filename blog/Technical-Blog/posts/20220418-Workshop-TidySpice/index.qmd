@@ -1,12 +1,17 @@
 ---
 title: "Tidy Spice"
 date: "2022-04-18"
-categories: [R, NLP, Data Visuals]
+categories: [Workshop, R, Data Visuals, NLP, Topic Model]
 toc: true
-draft: true
+draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-This post is my reproduction of Julia Silge's blogpost [Topic Modeling for #TidyTuesday Spice Girls Lyrics](https://juliasilge.com/blog/spice-girls/), with some added inspiration from a blogpost by Ariane Aumaitre called [Tutorial: Text analysis and data visualization with Taylor Swift songs](https://arianeaumaitre.com/2019/09/15/tutorial-text-analysis-and-data-visualization-with-taylor-swift-songs/). 
+Inspired by Julia Silge's [Topic Modeling for #TidyTuesday Spice Girls Lyrics](https://juliasilge.com/blog/spice-girls/), and Ariane Aumaitre's, [Tutorial: Text analysis and data visualization with Taylor Swift songs](https://arianeaumaitre.com/2019/09/15/tutorial-text-analysis-and-data-visualization-with-taylor-swift-songs/). 
 
 
 ```{r, message=F, error=F}

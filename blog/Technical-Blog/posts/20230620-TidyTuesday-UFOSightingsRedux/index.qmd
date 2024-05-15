@@ -1,11 +1,16 @@
 ---
 title: "Week 25 Tidy Tuesday: UFO Sightings Redux"
 date: "2023-06-20"
-categories: ["#TidyTuesday", R, "Data Visuals"]
+categories: ["#TidyTuesday", "R", "Data Visuals"]
 draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-Explore the mysterious realm of unidentified flying objects as I dive into my Week 25 [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) submission. In this otherworldly data visual I uncover intriguing patterns about sightings lasting less than 5 minutes in Oregon, all classified according to their reported shapes.  
+Explore the mystery of UFOs in my Week 25 [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) submission, uncovering patterns in Oregon sightings under 5 minutes, classified by shape.
 
 # UFO Sightings Redux
 

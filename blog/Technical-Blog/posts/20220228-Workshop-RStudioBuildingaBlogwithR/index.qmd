@@ -1,110 +1,119 @@
 ---
 title: "RStudio: Building a Blog with R"
 date: "2022-02-28"
-categories: [R]
+categories: [Workshop, R]
 toc: true
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-These are my notes from Posit's (formerly R Studio) ["Building a Blog with R"](https://youtu.be/MrW5XFf7aps) tutorial, which was presented by [Isabella Velasquez](https://ivelasq.rbind.io/about.html) on January 25th, 2022. [Materials for this presentation](https://github.com/ivelasq/2022-01-25_building-a-blog-with-r) are available on Github. Check out [Posit meet-up](https://www.meetup.com/posit-enterprise-community-meetup/) for more from Posit.
+These are my notes from Posit's (formerly R Studio) ["Building a Blog with R"](https://youtu.be/MrW5XFf7aps) tutorial, which was presented by [Isabella Velasquez](https://ivelasq.rbind.io/about.html). [Materials](https://github.com/ivelasq/2022-01-25_building-a-blog-with-r) available on Github.
 
-![](blog.jpeg)
+![](images/clipboard-3410174469.png)
 
 # `1. About Isabella Velesquez`
 
-Email: isabella.velasquez@rstudio.com 
+Email: isabella.velasquez\@rstudio.com
 
-* Works at Posit.
+-   Works at Posit.
 
-* Seattle Lady Co-Organizer.
+-   Seattle Lady Co-Organizer.
 
-* First R-Ladies talk in 2018.
+-   First R-Ladies talk in 2018.
 
 # `2. Agenda`
 
-* Why create a blog?
+-   Why create a blog?
 
-* Deciding on a topic.
+-   Deciding on a topic.
 
-* Tools for building a blog. 
+-   Tools for building a blog.
 
 # `3. Why create a blog?`
 
-* When you're given the same advice 3 times, write a blog post. 
+-   When you're given the same advice 3 times, write a blog post.
 
-* Share what you've learned. 
+-   Share what you've learned.
 
-* Write your opinions.
+-   Write your opinions.
 
-* Share updates, and news.
+-   Share updates, and news.
 
-* External blogs (for business)
+-   External blogs (for business)
 
-    * Posit has 4 different external blogs: 
-    
-      * [The Posit Blog](https://posit.co/blog/)
-      
-      * [Posit AI Blog](https://blogs.rstudio.com/ai/)
-      
-      * [Tidyverse](https://www.tidyverse.org/blog/)
-      
-      * [R Views](https://rviews.rstudio.com/)
-  
-* Internal blogs (for business)
+    -   Posit has 4 different external blogs:
 
-  * Share information more easily and effectively.
-  
-  * Improve collaboration.
-  
-  * Serving as a bulletin board for projects. 
-  
+        -   [The Posit Blog](https://posit.co/blog/)
+
+        -   [Posit AI Blog](https://blogs.rstudio.com/ai/)
+
+        -   [Tidyverse](https://www.tidyverse.org/blog/)
+
+        -   [R Views](https://rviews.rstudio.com/)
+
+-   Internal blogs (for business)
+
+    -   Share information more easily and effectively.
+
+    -   Improve collaboration.
+
+    -   Serving as a bulletin board for projects.
+
 # `4. Types of Posts`
 
-* Standard lists
+-   Standard lists
 
-* How To's / tutorials
+-   How To's / tutorials
 
-* New posts
+-   New posts
 
-* Problem - and - solution
+-   Problem - and - solution
 
-* FAQ
+-   FAQ
 
-* Cheat sheets
+-   Cheat sheets
 
-* Checklists
+-   Checklists
 
-* Info graphics 
+-   Info graphics
 
-* Presentations
+-   Presentations
 
-* Debates
+-   Debates
 
-* Inspiration
+-   Inspiration
 
-* Interviews
+-   Interviews
 
 # `5. Seperating Posts`
 
-* Tutorials (learning oriented)
+-   Tutorials (learning oriented)
 
-* How To's (task oriented)
+-   How To's (task oriented)
 
-* Explanation (understanding oriented)
+-   Explanation (understanding oriented)
 
-* Reference (information oriented)
+-   Reference (information oriented)
 
 # `6. Building a Blog with R`
 
-* Knowledge of R and R Markdown.
+-   Knowledge of R and R Markdown.
 
-* Version Control (Github)
+-   Version Control (Github)
 
-* Netlify
+-   Netlify
 
 # `7. Overall Thoughts`
 
-While this was called "Building a blog", there wasn't a lot of blog building. It was very business and product information heavy. 
+While this was called "Building a blog", there wasn't a lot of blog building. It was very business and product information heavy.
 
 # `8. Recommended Blog (from chat)`
 
-[Machine Learning Mastery](https://machinelearningmastery.com/ )
+[Machine Learning Mastery](https://machinelearningmastery.com/)
+
+------------------------------------------------------------------------
+
+Check out [Posit meet-up](https://www.meetup.com/posit-enterprise-community-meetup/) for more from Posit.

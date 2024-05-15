@@ -3,23 +3,22 @@ title: "Week 14 Tidy Tuesday: Du Bois Visualization Challenge"
 date: "2024-04-02"
 categories: ["#TidyTuesday", "R", "Data Visuals"]
 draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-For this week's TidyTuesday, I've recreated W.E.B. Du Bois's 'A Series of Statistical Charts, Illustrating the Conditions of Descendants of Former African Slaves Now Resident in the United States of America,' utilizing R and the Tidyverse for a modern analysis.
+For TidyTuesday, I recreated W.E.B. Du Bois's charts on African American conditions using R and Tidyverse for a modern analysis.
 
 # Du Bois Visualization Challenge 2024
 
-<table>
-  <tr>
-    <td><img src="plot.png" width="300" /></td>
-    <td><img src="dubois.png" width="700" /></td>
-  </tr>
-  <tr>
-    <td style="text-align:center">Randi's Chart (Rendition)</td>
-    <td style="text-align:center">Du Bois's Chart (Original)</td>
-  </tr>
-</table>
-
++---------------------------+----------------------------+
+| ![](plot.png)             | ![](dubois.png)            |
++---------------------------+----------------------------+
+| Randi's Chart (Rendition) | Du Bois's Chart (Original) |
++---------------------------+----------------------------+
 
 The challenge this year pays homage to the profound data visualization legacy of W.E.B. Du Bois, inviting participants to reinterpret the groundbreaking visualizations he presented at the 1900 Paris Exposition with contemporary tools. Anchored by the vibrant colors of the Pan-African Flag, the challenge provides a unique opportunity to explore the intersection of history, culture, and data science.
 
@@ -29,12 +28,11 @@ Participants are encouraged to channel the essence of Plate 37 from Du Bois's se
 
 For comprehensive details and to join the challenge, visit the [GitHub repository](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-04-02/readme.md)!
 
-# Code 
+# Code
 
 This code follows a streamlined structure organized into four distinct phases: Set-Up, Clean, Graph, and Save.
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Set-Up
 
 ```{r set-up}
@@ -82,17 +80,17 @@ caption_text <- "Randi Bolt \nApril 2024 \n#TidyTuesday \nDu Bois"
 
 **Set-Up**
 
-* Packages
+-   Packages
 
-* Data
+-   Data
 
-* Fonts
+-   Fonts
 
-* Colors
+-   Colors
 
-* Text
+-   Text
 
-### Clean 
+### Clean
 
 ```{r clean}
 #| code-fold: true
@@ -113,13 +111,13 @@ dubois <- dubois |>
     pos = dplyr::if_else(base::is.na(pos), Percentage/2, pos))
 ```
 
-**Clean **
+**Clean**
 
-1. Calculate the cumulative sum of 'Percentage' column in reverse order.
+1.  Calculate the cumulative sum of 'Percentage' column in reverse order.
 
-2. Calculate the position for labels. 
+2.  Calculate the position for labels.
 
-3. Replace NA values in 'pos' with half of the 'Percentage' value.
+3.  Replace NA values in 'pos' with half of the 'Percentage' value.
 
 ### Graph
 
@@ -127,7 +125,7 @@ dubois <- dubois |>
 #| code-fold: true
 #| code-summary: "Show Code"
 #| warning: false
-#### Pie Chart ###
+#### Pie Chart ####
 # Data: dubois (modified with position column)
 # Aesthetics: x = blank, y = Percentage, fill = fct_inorder(Occupation)
 # Geometry: width = 1
@@ -233,25 +231,25 @@ pie <- ggplot2::ggplot(
 
 **Graph**
 
-* Data: dubois (modified with position column)
+-   Data: dubois (modified with position column)
 
-* Aesthetics: x = blank, y = Percentage, fill = fct_inorder(Occupation)
+-   Aesthetics: x = blank, y = Percentage, fill = fct_inorder(Occupation)
 
-* Geometry: width = 1
+-   Geometry: width = 1
 
-* Polarize Coordinate: theta = y, start = 1.5, directional = 1 (clockwise)
+-   Polarize Coordinate: theta = y, start = 1.5, directional = 1 (clockwise)
 
-* Define fill color and order
+-   Define fill color and order
 
-* Add labels outside of pie chart. 
+-   Add labels outside of pie chart.
 
-* Legend title
+-   Legend title
 
-* Define labels
+-   Define labels
 
-* Remove Grid from Pie Chart
+-   Remove Grid from Pie Chart
 
-* Theme: title, subtitle, caption, legend, background, plot margins
+-   Theme: title, subtitle, caption, legend, background, plot margins
 
 ### Save
 
@@ -277,25 +275,22 @@ Save plot as `plot.png`!
 [R for Data Science's #TidyTuesday Repo](https://github.com/rfordatascience/tidytuesday?tab=readme-ov-file)
 
 [Randi Bolt's #TidyTuesday Repo](https://github.com/rbolt13/tidytuesday)
-
 :::
 
 # Quick Notes
 
-* The `ggrepel()` package includes the `geom_label_repel()` function, which is utilized to place chart labels outside of pie chart segments, ensuring that values are displayed clearly without overlapping the chart itself. 
+-   The `ggrepel()` package includes the `geom_label_repel()` function, which is utilized to place chart labels outside of pie chart segments, ensuring that values are displayed clearly without overlapping the chart itself.
 
-* The `pos` variable, defined when cleaning, is calculated as a position for placing labels by first determining the midpoint of each item's `Percentage` value and then adjusting this position based on the cumulative sum of percentages below it. This adjustment is made by adding half of an item's own percentage to the cumulative sum of percentages of all items below it, shifted upwards by one position (dplyr::lead(csum, 1)), ensuring labels are centered appropriately on or near their respective segments. In cases where this calculation results in NA (specifically for the last item due to the lead function shifting values), pos is set to half of the item's own percentage, ensuring every item has a defined position for its label.
+-   The `pos` variable, defined when cleaning, is calculated as a position for placing labels by first determining the midpoint of each item's `Percentage` value and then adjusting this position based on the cumulative sum of percentages below it. This adjustment is made by adding half of an item's own percentage to the cumulative sum of percentages of all items below it, shifted upwards by one position (dplyr::lead(csum, 1)), ensuring labels are centered appropriately on or near their respective segments. In cases where this calculation results in NA (specifically for the last item due to the lead function shifting values), pos is set to half of the item's own percentage, ensuring every item has a defined position for its label.
 
-* The `coord_polar()` function customization options include:
+-   The `coord_polar()` function customization options include:
 
-    * Specifying the $\theta$ component based on either the x or y aesthetic.
-    
-    * Adjusting the starting offset from the default 12 o'clock position, expressed in radians.
-    
-    * Setting the direction parameter to 1 for clockwise orientation or -1 for counterclockwise orientation.
-    
-* The `plot.title.position()` argument aligns the plot's title centrally over the entire plot area, rather than just centering it above the pie chart, for improved layout balance and title visibility.
+    -   Specifying the $\theta$ component based on either the x or y aesthetic.
 
-* Due to the integrated design of `geom_label_repel()` within the `ggrepel` package, altering the color of the connecting lines between the chart and the percentage values would concurrently change the text color of the percentage values. Opting to maintain these lines in black provided a visually appealing contrast, deemed superior to alternative colors such as white. This choice also streamlined the visualization process, circumventing the more time-consuming task of manually positioning percentage labels.
+    -   Adjusting the starting offset from the default 12 o'clock position, expressed in radians.
 
+    -   Setting the direction parameter to 1 for clockwise orientation or -1 for counterclockwise orientation.
 
+-   The `plot.title.position()` argument aligns the plot's title centrally over the entire plot area, rather than just centering it above the pie chart, for improved layout balance and title visibility.
+
+-   Due to the integrated design of `geom_label_repel()` within the `ggrepel` package, altering the color of the connecting lines between the chart and the percentage values would concurrently change the text color of the percentage values. Opting to maintain these lines in black provided a visually appealing contrast, deemed superior to alternative colors such as white. This choice also streamlined the visualization process, circumventing the more time-consuming task of manually positioning percentage labels.

@@ -5,10 +5,11 @@ categories: ["R", "Data Analysis", "Spread Sheets", "Data Visualization"]
 toc: true
 draft: true
 warning: false
-format:
+format: 
   html:
     code-fold: true
-    code-summary: "Show the code"
+    code-summary: "Show code"
+    code-tools: true
 ---
 
 [HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) provides $30M of [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) for underserved students in 2024. Learn to track grants in Google Sheets or R for clear analysis and insights. 

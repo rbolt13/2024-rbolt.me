@@ -1,18 +1,19 @@
 ---
 title: "Statistics 451: Applied Statistics for Engineers and Scientists - Homework 1"
-author: "Randi Bolt"
 date: "2021-06-28"
-categories: [Statistics]
+categories: ["School", "Statistics", "Data Visuals"]
 toc: true
-draft: true
+draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
 The problems on this page are from Probability & Statistics for Engineering & Sciences 9th Edition by Jay L. Devore - Duxbury Publisher, and the work is mine.
 
-![](../../00_img/concreate-beams-flex-strength.png)
-```{r}
-
-```
+![](images/clipboard-998308538.png)
 
 ```{r, message=F, echo=F}
 library(dplyr)

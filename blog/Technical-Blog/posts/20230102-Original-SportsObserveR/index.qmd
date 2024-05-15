@@ -1,50 +1,55 @@
 ---
 title: "SportsObserveR - Part 2: Creating a Package in R"
 date: "2023-01-02"
-categories: [Package Building, R, NBA, SportsObserveR, Original]
+categories: [Original, NBA, R, Package Building]
 toc: true
-draft: true
+draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-In this tutorial I will be taking the functions I created in my previous post, [SportsObserveR - Part 1: Scraping Functions](https://www.rbolt.me/01_blog/2022_11_07_nba-functions/), and using them to create my own package, [SportsObserveR](https://github.com/rbolt13/SportsObserveR). 
+In this tutorial I create my own package, [SportsObserveR](https://github.com/rbolt13/SportsObserveR), with functions from my previous post, [SportsObserveR - Part 1: Scraping Functions](https://www.rbolt.me/01_blog/2022_11_07_nba-functions/).
 
-
+![](images/clipboard-3009433408.png)
 
 # `0.` Introduction
 
-Recently I have been looking to create more mathematical models of NBA statistics. However the process of scrapping and downloading data has become more tedious as the models scale. To save time, and lines of code I am creating a package in R to do a lot of the web scraping heavy lifting. 
+Recently I have been looking to create more mathematical models of NBA statistics. However the process of scrapping and downloading data has become more tedious as the models scale. To save time, and lines of code I am creating a package in R to do a lot of the web scraping heavy lifting.
 
 To start I will be creating two functions:
 
-1. Scrape NBA Team Data
+1.  Scrape NBA Team Data
 
-2. Scrape NBA Player Data
+2.  Scrape NBA Player Data
 
 ## `0.1` Technologies
 
 To build a package in R you need three things:
 
-1. [R](https://ftp.osuosl.org/pub/cran/) installed on your computer. 
+1.  [R](https://ftp.osuosl.org/pub/cran/) installed on your computer.
 
-2. A coding editor such as [R Studio](https://posit.co/download/rstudio-desktop/), or [Sublime](https://www.sublimetext.com/).
+2.  A coding editor such as [R Studio](https://posit.co/download/rstudio-desktop/), or [Sublime](https://www.sublimetext.com/).
 
-3. A [bash](https://formulae.brew.sh/formula/bash) terminal.
+3.  A [bash](https://formulae.brew.sh/formula/bash) terminal.
 
-# `1.` Initial Set Up  
+# `1.` Initial Set Up
 
-Start in a **Bash Terminal** and move to the folder where you want want to build your package. For me, I organize my projects by year, so I would use the following command: 
+Start in a **Bash Terminal** and move to the folder where you want want to build your package. For me, I organize my projects by year, so I would use the following command:
 
 ```{r, eval=FALSE}
 cd Desktop/2023
 ```
 
-From this folder you then use the command `R` to open R in the terminal. 
+From this folder you then use the command `R` to open R in the terminal.
 
 ```{r, eval=FALSE}
 R
 ```
 
-With R open load the following libraries: 
+With R open load the following libraries:
 
 ```{r, eval=FALSE}
 library(usethis)
@@ -54,7 +59,7 @@ library(usethis)
 library(devtools)
 ```
 
-If you do not have these packages installed, you can use the following code to install them: 
+If you do not have these packages installed, you can use the following code to install them:
 
 ```{r, eval=FALSE}
 install.packages("usethis", "devtools")
@@ -72,19 +77,19 @@ Then use `q()` to quit R, and `y` to save.
 q()
 ```
 
-Check that a "SportsObserveR" folder now exists within your original directory with `ls` for "list". 
+Check that a "SportsObserveR" folder now exists within your original directory with `ls` for "list".
 
 ```{r,eval=FALSE}
 ls
 ```
 
-Then move into that directory. 
+Then move into that directory.
 
 ```{r,eval=FALSE}
 cd SportsObserveR
 ```
 
-# `2.` Github Repository 
+# `2.` Github Repository
 
 Open your [Github](https://github.com/) and create a repository with the same name as your project. From the **Bash Terminal** type in the following commands (similar to what is given on your Github page) to connect your project folder to your Github repo.
 
@@ -112,7 +117,7 @@ git commit -m"my first commit"
 git branch -M main
 ```
 
-Note: You will want to replace 'rbolt13' with your own username. 
+Note: You will want to replace 'rbolt13' with your own username.
 
 ```{r,eval=FALSE}
 git remote add origin https://github.com/rbolt13/SportsObserveR.git
@@ -122,7 +127,7 @@ git remote add origin https://github.com/rbolt13/SportsObserveR.git
 git push -u origin main
 ```
 
-Refresh your github repo page to verify that your files have been successfully uploaded. 
+Refresh your github repo page to verify that your files have been successfully uploaded.
 
 # `3.` Creating the First Function
 
@@ -136,7 +141,7 @@ library(usethis)
 library(devtools)
 ```
 
-To create a function in r use `use_r()`, and then `load_all()`.  
+To create a function in r use `use_r()`, and then `load_all()`.
 
 ```{r,eval=FALSE}
 use_r("scrape_nba_team_stats")
@@ -146,18 +151,17 @@ use_r("scrape_nba_team_stats")
 load_all()
 ```
 
-Now use the `check()` function to look at any potential errors. 
+Now use the `check()` function to look at any potential errors.
 
 ```{r,eval=FALSE}
 check()
 ```
 
-There will probably be one warning about a Non-standard license specification (see image below). 
+There will probably be one warning about a Non-standard license specification (see image below).
 
 ![](../../00_img/mit-license-warning.PNG)
 
-
-Use the `use_mit_license()` function to update the license and check your project again for errors. 
+Use the `use_mit_license()` function to update the license and check your project again for errors.
 
 ```{r,eval=FALSE}
 use_mit_license()
@@ -225,7 +229,7 @@ Run one more `check()` for good measure.
 check()
 ```
 
-If everything looks good, from the **Bash Terminal**  push this code to github. 
+If everything looks good, from the **Bash Terminal** push this code to github.
 
 ```{r,eval=FALSE}
 git status
@@ -247,15 +251,15 @@ git commit -m"Created first function"
 git push origin main
 ```
 
-# `4.` Create raw-data 
+# `4.` Create raw-data
 
-In the **R Studio Console** use the `use_data_raw()` function to create a raw-data folder that includes a `DATASET.R` file. In the future I want to use this data to test my functions, as well as create complimentary data to use with the SportsObserveR package. 
+In the **R Studio Console** use the `use_data_raw()` function to create a raw-data folder that includes a `DATASET.R` file. In the future I want to use this data to test my functions, as well as create complimentary data to use with the SportsObserveR package.
 
 ```{r, eval=FALSE}
 usethis::use_data_raw()
 ```
 
-From here save the total statistics for the 1998 Chicago bulls, and the check to see if the data looks correct. 
+From here save the total statistics for the 1998 Chicago bulls, and the check to see if the data looks correct.
 
 ```{r,eval=FALSE}
 bulls_totals <- scrape_nba_team_stats("CHI",
@@ -263,7 +267,7 @@ bulls_totals <- scrape_nba_team_stats("CHI",
                                       "#totals")
 ```
 
-Now save this data as a .csv into the raw-data folder. 
+Now save this data as a .csv into the raw-data folder.
 
 ```{r,eval=FALSE}
 write.csv(bulls_totals,
@@ -282,7 +286,7 @@ Run another check:
 check()
 ```
 
-If everything looks good, it is time to push this code to github again. 
+If everything looks good, it is time to push this code to github again.
 
 ```{r,eval=FALSE}
 git status
@@ -331,7 +335,7 @@ Check for errors.
 check()
 ```
 
-If everything looks green, from the **Bash Terminal** push to Github. 
+If everything looks green, from the **Bash Terminal** push to Github.
 
 ```{r,eval=FALSE}
 git status
@@ -406,21 +410,21 @@ git push origin main
 
 # `7.` Create README
 
-To create a README file where you can show code examples in R, in the **R Studio Console** use the `use_readme_rmd()` function. This file will come with a lot of information already pre-filled in.  
+To create a README file where you can show code examples in R, in the **R Studio Console** use the `use_readme_rmd()` function. This file will come with a lot of information already pre-filled in.
 
 ```{r,eval=FALSE}
 use_readme_rmd()
 ```
 
-Fill out the appropriate information such as the goal of the package, how to install it, and some examples on how to use it. Check out my [readme](https://github.com/rbolt13/SportsObserveR) if you need help or inspiration. 
+Fill out the appropriate information such as the goal of the package, how to install it, and some examples on how to use it. Check out my [readme](https://github.com/rbolt13/SportsObserveR) if you need help or inspiration.
 
-Next to create a README file in markdown, use the function `build_readme()` to render the .rmd file as such. Note that you will need to use this function every time you update the .Rmd, because your github will only display the README.md file. 
+Next to create a README file in markdown, use the function `build_readme()` to render the .rmd file as such. Note that you will need to use this function every time you update the .Rmd, because your github will only display the README.md file.
 
 ```{r,eval=FALSE}
 build_readme()
 ```
 
-If everything looks good, from the **Bash Terminal** push again to github. 
+If everything looks good, from the **Bash Terminal** push again to github.
 
 ```{r,eval=FALSE}
 git status
@@ -444,11 +448,11 @@ git push origin main
 
 # `8.` Add Player Statistics Function
 
-Now lets add one more function, `scrape_nba_player_stats` by repeating steps 3, 5, and 7. 
+Now lets add one more function, `scrape_nba_player_stats` by repeating steps 3, 5, and 7.
 
-## `8.1` Creating the Function 
+## `8.1` Creating the Function
 
-From the **R Studio Console**, create the function file, and load it into your enviroment. 
+From the **R Studio Console**, create the function file, and load it into your enviroment.
 
 ```{r,eval=FALSE}
 use_r("scrape_nba_player_stats")
@@ -528,13 +532,13 @@ Check that the documentation works:
 ?scrape_nba_player_stats()
 ```
 
-Use the `check()` function to look at any potential errors. 
+Use the `check()` function to look at any potential errors.
 
 ```{r,eval=FALSE}
 check()
 ```
 
-If everything looks good, from the **Bash Terminal** push this code to github. 
+If everything looks good, from the **Bash Terminal** push this code to github.
 
 ```{r,eval=FALSE}
 git status
@@ -573,13 +577,13 @@ test_that("Returns that typeof is list.", {
 })
 ```
 
-Check for errors. 
+Check for errors.
 
 ```{r,eval=FALSE}
 check()
 ```
 
-If everything looks green, from the **Bash Terminal** push to Github. 
+If everything looks green, from the **Bash Terminal** push to Github.
 
 ```{r,eval=FALSE}
 git status
@@ -603,13 +607,13 @@ git push origin main
 
 ## `8.3` Update README
 
-Add another example to the readme.rmd file using the `scrape_nba_player_stats()` function, and then update the .md file. 
+Add another example to the readme.rmd file using the `scrape_nba_player_stats()` function, and then update the .md file.
 
 ```{r,eval=FALSE}
 build_readme()
 ```
 
-From the **Bash Terminal** push this update to Github. 
+From the **Bash Terminal** push this update to Github.
 
 ```{r,eval=FALSE}
 git status
@@ -654,10 +658,10 @@ ai <- scrape_nba_player_stats("Allen Iverson", "#per_game")
 utils::head(ai, 10)
 ```
 
-# `10.` Conclusion 
+# `10.` Conclusion
 
-This package will be helpful in collecting a large amount of NBA related data, and be a great place to put future functions, data, and models all related to sports statistics. 
+This package will be helpful in collecting a large amount of NBA related data, and be a great place to put future functions, data, and models all related to sports statistics.
 
-Please leave me a comment below if you have any questions, need further clarification, or want to get involved in expanding the capabilities of this package. 
+Please leave me a comment below if you have any questions, need further clarification, or want to get involved in expanding the capabilities of this package.
 
-Note: You may have a hard time using this package if you are accessing it with a VPN. 
+Note: You may have a hard time using this package if you are accessing it with a VPN.

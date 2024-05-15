@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-11-07">
 
-<title>Randi Bolt - SportsObserveR - Part 1: Scraping Functions</title>
+<title>Randi Bolt - SportsObserveR - Part 1: Scrapping Functions</title>
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GPSGHZ166H"></script>
@@ -272,12 +272,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SportsObserveR - Part 1: Scraping Functions</h1>
+<div class="quarto-title-block"><div><h1 class="title">SportsObserveR - Part 1: Scrapping Functions</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
-    <div class="quarto-category">NBA</div>
-    <div class="quarto-category">Web-Scraping</div>
+    <div class="quarto-category">Original</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">SportsObserveR</div>
+    <div class="quarto-category">NBA</div>
+    <div class="quarto-category">Web-Scrapping</div>
   </div>
   </div>
 
@@ -302,6 +302,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 
 <p>In this tutorial I will be creating functions to scrape NBA data. The goal here is to prepare these functions to use in a package for future analysis.</p>
+<p><img src="images/clipboard-1584024838.png" class="img-fluid"></p>
 <section id="introduction" class="level1">
 <h1><code>0_0. Introduction</code></h1>
 <p>Two essential chapters in every data scientists playbook are functions and web scrapping. In this blog post I will be making three main scrapping functions that will each include smaller nested functions. The three main functions will output specific data frames of NBA data. The nested functions will help scrape the data, and clean it so it’s in a readable form.</p>
@@ -313,14 +314,20 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="package-installs"><code>0_2. Package Installs</code></h2>
 <p>The packages I will be using are <a href="https://rvest.tidyverse.org/">rvest</a> to scrape the data and <a href="https://magrittr.tidyverse.org/">magrittr</a> to pipe it. To install these packages, copy the code below and remove the first comment hash (command - shift - c).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rvest",  "magrittr")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Then load:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest) </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 </section>
@@ -336,6 +343,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="team-statistics"><code>1_1. Team Statistics</code>:</h2>
 <p>The first function I’m creating scrapes team statistics, which will need the user to input the teams url <strong>slug</strong>, the <strong>year</strong> that team attended or attends the NBA playoffs, and the <strong>stats_tb</strong> or statistics table that corresponds to what is shown on <a href="https://www.basketball-reference.com/">Basketball Reference</a>. Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>scrape_team_data <span class="ot">&lt;-</span> <span class="cf">function</span>(slug, year, stats_tb){</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of team statistics. </span></span>
@@ -366,14 +375,18 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(stats_tb)</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="examples" class="level3">
 <h3 class="anchored" data-anchor-id="examples">Examples</h3>
 <section id="a.-current-blazers-roster" class="level4">
 <h4 class="anchored" data-anchor-id="a.-current-blazers-roster">A. Current Blazers Roster</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>zers_roster <span class="ot">&lt;-</span> <span class="fu">scrape_team_data</span>(<span class="st">"POR"</span>,<span class="st">"2022"</span>,<span class="st">"#roster"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(zers_roster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  No.              Name Pos  Ht  Wt         Birth.Date Var.7 Exp
 1  21    Keljin Blevins  SF 6-4 200  November 24, 1995    us   1
@@ -395,8 +408,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="b.-1997-chicago-bulls-total-statistics" class="level4">
 <h4 class="anchored" data-anchor-id="b.-1997-chicago-bulls-total-statistics">B. 1997 Chicago Bulls Total Statistics</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bulls_totals <span class="ot">&lt;-</span> <span class="fu">scrape_team_data</span>(<span class="st">"CHI"</span>, <span class="st">"1998"</span>, <span class="st">"#totals"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(bulls_totals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Rk           Name Age  G GS   MP  FG  FGA   FG. X3P X3PA  X3P. X2P X2PA  X2P.
 1  1 Michael Jordan  34 82 82 3181 881 1893 0.465  30  126 0.238 851 1767 0.482
@@ -422,6 +438,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="player-statistics"><code>1_2. Player Statistics</code></h2>
 <p>The second function will scrape player statistics. The user will need to input the players <strong>name</strong>, and the <strong>stats_tb</strong> or statistics table that corresponds to what is shown on <a href="https://www.basketball-reference.com/">Basketball Reference</a>. Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>scrape_player_data <span class="ot">&lt;-</span> <span class="cf">function</span>(name, stats_tb){</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of player statistics. </span></span>
@@ -470,14 +488,18 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
 <span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="examples-1" class="level3">
 <h3 class="anchored" data-anchor-id="examples-1">Examples</h3>
 <section id="c.-allen-iverson-per-game-stats" class="level4">
 <h4 class="anchored" data-anchor-id="c.-allen-iverson-per-game-stats">C. <a href="https://en.wikipedia.org/wiki/Allen_Iverson">Allen Iverson</a> Per Game Stats</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ai_per_game <span class="ot">&lt;-</span> <span class="fu">scrape_player_data</span>(<span class="st">"Allen Iverson"</span>, <span class="st">"#per_game"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ai_per_game)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Season Name  Tm  Lg Pos  G GS   MP   FG  FGA  FG. X3P X3PA X3P. X2P X2PA
 1 1996-97   21 PHI NBA  PG 76 74 40.1  8.2 19.8 .416 2.0  6.0 .341 6.2 13.8
@@ -507,8 +529,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="d.-kareem-abdul-jabbar-totals" class="level4">
 <h4 class="anchored" data-anchor-id="d.-kareem-abdul-jabbar-totals">D. <a href="https://en.wikipedia.org/wiki/Kareem_Abdul-Jabbar">Kareem Abdul-Jabbar</a> Totals</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>kaj_totals <span class="ot">&lt;-</span> <span class="fu">scrape_player_data</span>(<span class="st">"Kareem Abdul-Jabbar"</span>, <span class="st">"#totals"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(kaj_totals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Season Name  Tm  Lg Pos  G GS   MP   FG  FGA   FG. X3P X3PA X3P.  X2P X2PA
 1 1969-70   22 MIL NBA   C 82  0 3534  938 1810 0.518   0    0    0  938 1810
@@ -541,6 +566,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>The last function still needs a bit of work, but will pull box scores of all the NBA games on a given day. The user will need to enter the <strong>game_day</strong> or day of the games they want box scores for.</p>
 <p>Note: Ideally this function would return a list with each game being its own df, but for now it only prints one data frame that includes all games played on that date. There also seem to be issues when only one game is played, or it is the first game of the season (see examples below), but for now those issues are manageable.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>box_scores <span class="ot">&lt;-</span> <span class="cf">function</span>(game_day){</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of box scores. </span></span>
@@ -589,14 +616,18 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
 <span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
 <section id="e.-box-scores-for-10-19-2022-works-correctly" class="level4">
 <h4 class="anchored" data-anchor-id="e.-box-scores-for-10-19-2022-works-correctly">E. Box Scores for 10-19-2022 (works correctly)</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>oct_19 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"2022-10-19"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>oct_19</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       X1 X2 X3 X4 X5        X1.1 X2.1 X3.1 X4.1 X5.1    X1.2 X2.2 X3.2 X4.2
 2 Houston 20 30 30 27 New Orleans   32   26   40   32 Orlando   28   27   28
@@ -619,8 +650,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="f.-box-scores-for-the-first-day-of-the-2223-nba-season-issues" class="level4">
 <h4 class="anchored" data-anchor-id="f.-box-scores-for-the-first-day-of-the-2223-nba-season-issues">F. Box scores for the first day of the ’22/’23 NBA season (issues)</h4>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>oct_18 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"2022-10-18"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>oct_18</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            X1 X2 X3 X4 X5         X1.1 X2.1 X3.1 X4.1 X5.1                X1.2
 2 Philadelphia 29 34 25 29    LA Lakers   22   30   19   38 Philadelphia 76ers*
@@ -639,8 +673,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p><span style="color: red;">Issue: For the first game of the season there is an are NA tables that are being pulled in.</span></p>
 <p>G. First game of the 1992 NBA Finals AKA <a href="https://www.youtube.com/watch?v=hynjpv8y1pA&amp;t=16s">Michael Jordan’s famous Shrug</a> (issues)</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>finals_92_g1 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"1992-6-3"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>finals_92_g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        X1 X2 X3 X4 X5     X1.1 X2.1 X3.1 X4.1 X5.1
 2 Portland 30 21 17 21 Portland   30   21   17   21
@@ -649,6 +686,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p><span style="color: red;">Issue: For days where only one game is played the one game is printed twice in the data frame.</span></p>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -735,6 +774,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1068,21 +1158,288 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "SportsObserveR - Part 1: Scrapping Functions"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2022-11-07"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Original, R, NBA, Web-Scrapping]</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>In this tutorial I will be creating functions to scrape NBA data. The goal here is to prepare these functions to use in a package for future analysis.</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-1584024838.png)</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># `0_0. Introduction`</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>Two essential chapters in every data scientists playbook are functions and web scrapping. In this blog post I will be making three main scrapping functions that will each include smaller nested functions. The three main functions will output specific data frames of NBA data. The nested functions will help scrape the data, and clean it so it's in a readable form.</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## `0_1. About-The-Data`</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>I will be scrapping data from <span class="co">[</span><span class="ot">Basketball Reference</span><span class="co">](https://www.basketball-reference.com/)</span> which gets thier data updated regularly by a handful of <span class="co">[</span><span class="ot">contributors and sources</span><span class="co">](https://www.basketball-reference.com/about/sources.html)</span>. The main reasons I like using this data is because it's reliable, updated regularly, and similar sites exist for other non-NBA Sports (such as: <span class="co">[</span><span class="ot">WNBA</span><span class="co">](https://www.basketball-reference.com/wnba/)</span>, <span class="co">[</span><span class="ot">Baseball</span><span class="co">](https://www.baseball-reference.com/)</span>, <span class="co">[</span><span class="ot">Football</span><span class="co">](https://www.pro-football-reference.com/)</span>, and others) if I wanted to expand my research outside the NBA.</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## `0_2. Package Installs`</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>The packages I will be using are <span class="co">[</span><span class="ot">rvest</span><span class="co">](https://rvest.tidyverse.org/)</span> to scrape the data and <span class="co">[</span><span class="ot">magrittr</span><span class="co">](https://magrittr.tidyverse.org/)</span> to pipe it. To install these packages, copy the code below and remove the first comment hash (command - shift - c).</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="do">## install packages</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rvest",  "magrittr")</span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>Then load:</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, message=FALSE, warning=FALSE}</span></span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a><span class="in"># load packages </span></span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a><span class="in">library(rvest) </span></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="in">library(magrittr)</span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a><span class="fu"># `1_0. Functions`</span></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>To start I will be creating three function:</span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Team Statistics</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Player Statistics</span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Box Scores</span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1_1. Team Statistics`:</span></span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>The first function I'm creating scrapes team statistics, which will need the user to input the teams url **slug**, the **year** that team attended or attends the NBA playoffs, and the **stats_tb** or statistics table that corresponds to what is shown on <span class="co">[</span><span class="ot">Basketball Reference</span><span class="co">](https://www.basketball-reference.com/)</span>. Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced.</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>scrape_team_data <span class="ot">&lt;-</span> <span class="cf">function</span>(slug, year, stats_tb){</span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span></span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of team statistics. </span></span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a><span class="st">  @param slug is string of three letters that represents the teams url. </span></span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a><span class="st">  @param year is a string that corresponds to the NBA finals.</span></span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a><span class="st">  @param stats_tb is a string that corresponds to the statistics table on BasketBall Reference such as #per_game, #totals, #per_36_minutes, and #advanced</span></span>
+<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a><span class="st">  @return a df of team statistics</span></span>
+<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span></span>
+<span id="cb20-72"><a href="#cb20-72" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define team page URL</span></span>
+<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">paste0</span>(<span class="st">"https://www.basketball-reference.com/teams/"</span>,</span>
+<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a>                slug,<span class="st">"/"</span>, year, <span class="st">".html"</span>)</span>
+<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Read stats table</span></span>
+<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>  stats_tb <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span></span>
+<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a>  read_html <span class="sc">%&gt;%</span></span>
+<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_node</span>(stats_tb) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_table</span>()</span>
+<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rename Column 2 to Name </span></span>
+<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">names</span>(stats_tb)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"Name"</span></span>
+<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace NA values with 0 (for stat functions)</span></span>
+<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a>  stats_tb[base<span class="sc">::</span><span class="fu">is.na</span>(stats_tb)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a>  <span class="co"># make data frame</span></span>
+<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(stats_tb)</span>
+<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
+<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Examples</span></span>
+<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a><span class="fu">#### A. Current Blazers Roster</span></span>
+<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a>zers_roster <span class="ot">&lt;-</span> <span class="fu">scrape_team_data</span>(<span class="st">"POR"</span>,<span class="st">"2022"</span>,<span class="st">"#roster"</span>)</span>
+<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(zers_roster)</span>
+<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a><span class="fu">#### B. 1997 Chicago Bulls Total Statistics</span></span>
+<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a>bulls_totals <span class="ot">&lt;-</span> <span class="fu">scrape_team_data</span>(<span class="st">"CHI"</span>, <span class="st">"1998"</span>, <span class="st">"#totals"</span>)</span>
+<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(bulls_totals)</span>
+<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a>*Here we can see when Michael Jordan won his 6th ring with the Chicago Bulls he was also the leagues leading point scorer with 2,357 total points that season. Dennis Rodman was also a league leader that season in rebounds collecting a total of 1,201 rebounds.*</span>
+<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1_2. Player Statistics`</span></span>
+<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a>The second function will scrape player statistics. The user will need to input the players **name**, and the **stats_tb** or statistics table that corresponds to what is shown on <span class="co">[</span><span class="ot">Basketball Reference</span><span class="co">](https://www.basketball-reference.com/)</span>. Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced.</span>
+<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-123"><a href="#cb20-123" aria-hidden="true" tabindex="-1"></a>scrape_player_data <span class="ot">&lt;-</span> <span class="cf">function</span>(name, stats_tb){</span>
+<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span></span>
+<span id="cb20-125"><a href="#cb20-125" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of player statistics. </span></span>
+<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a><span class="st">  @param name is a string that represnets an NBA players name</span></span>
+<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a><span class="st">  @param stats_tb is a string that corresponds to the statistics table on BasketBall Reference such as #per_game, #totals, #per_36_minutes, and #advanced</span></span>
+<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a><span class="st">  @return a df of player statistics</span></span>
+<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span></span>
+<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a>  <span class="co"># make name lower case</span></span>
+<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a>  lower_case_name <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">tolower</span>(name)</span>
+<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a>  <span class="co"># split name </span></span>
+<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a>  split_name <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">strsplit</span>(lower_case_name, <span class="st">" +"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb20-137"><a href="#cb20-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-138"><a href="#cb20-138" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define first and last name</span></span>
+<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a>  first_name <span class="ot">&lt;-</span> split_name[[<span class="dv">1</span>]]</span>
+<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a>  last_name <span class="ot">&lt;-</span> split_name[[<span class="dv">2</span>]]</span>
+<span id="cb20-141"><a href="#cb20-141" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a>  <span class="co"># first letter of last name</span></span>
+<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a>  letter <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">substr</span>(last_name, <span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a>  <span class="co"># first five letters of last name </span></span>
+<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a>  last_5 <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">substr</span>(last_name, <span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a>  <span class="co"># first two letters of first name</span></span>
+<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a>  first_2 <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">substr</span>(first_name, <span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-151"><a href="#cb20-151" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define team page URL</span></span>
+<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">paste0</span>(<span class="st">"https://www.basketball-reference.com/players/"</span>,letter ,<span class="st">"/"</span>,last_5,first_2,<span class="st">"01.html"</span>)</span>
+<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Read stats table</span></span>
+<span id="cb20-155"><a href="#cb20-155" aria-hidden="true" tabindex="-1"></a>  stats_tb <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span></span>
+<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a>  read_html <span class="sc">%&gt;%</span></span>
+<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_node</span>(stats_tb) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_table</span>()</span>
+<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rename Column 2 to Name </span></span>
+<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(stats_tb)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"Name"</span></span>
+<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace NA values with 0 (for stat functions)</span></span>
+<span id="cb20-164"><a href="#cb20-164" aria-hidden="true" tabindex="-1"></a>  stats_tb[base<span class="sc">::</span><span class="fu">is.na</span>(stats_tb)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-166"><a href="#cb20-166" aria-hidden="true" tabindex="-1"></a>  <span class="co"># make list a dataframe</span></span>
+<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(stats_tb)</span>
+<span id="cb20-168"><a href="#cb20-168" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-169"><a href="#cb20-169" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
+<span id="cb20-170"><a href="#cb20-170" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-171"><a href="#cb20-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-172"><a href="#cb20-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-173"><a href="#cb20-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Examples</span></span>
+<span id="cb20-174"><a href="#cb20-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-175"><a href="#cb20-175" aria-hidden="true" tabindex="-1"></a><span class="fu">#### C. [Allen Iverson](https://en.wikipedia.org/wiki/Allen_Iverson) Per Game Stats</span></span>
+<span id="cb20-176"><a href="#cb20-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-179"><a href="#cb20-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-180"><a href="#cb20-180" aria-hidden="true" tabindex="-1"></a>ai_per_game <span class="ot">&lt;-</span> <span class="fu">scrape_player_data</span>(<span class="st">"Allen Iverson"</span>, <span class="st">"#per_game"</span>)</span>
+<span id="cb20-181"><a href="#cb20-181" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ai_per_game)</span>
+<span id="cb20-182"><a href="#cb20-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-183"><a href="#cb20-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-184"><a href="#cb20-184" aria-hidden="true" tabindex="-1"></a>*Notice that when Allen Iverson won the NBA's MVP in 2001 he was putting up about 31 points a game.*</span>
+<span id="cb20-185"><a href="#cb20-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-186"><a href="#cb20-186" aria-hidden="true" tabindex="-1"></a><span class="fu">#### D. [Kareem Abdul-Jabbar](https://en.wikipedia.org/wiki/Kareem_Abdul-Jabbar) Totals</span></span>
+<span id="cb20-187"><a href="#cb20-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-190"><a href="#cb20-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-191"><a href="#cb20-191" aria-hidden="true" tabindex="-1"></a>kaj_totals <span class="ot">&lt;-</span> <span class="fu">scrape_player_data</span>(<span class="st">"Kareem Abdul-Jabbar"</span>, <span class="st">"#totals"</span>)</span>
+<span id="cb20-192"><a href="#cb20-192" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(kaj_totals)</span>
+<span id="cb20-193"><a href="#cb20-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-194"><a href="#cb20-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-195"><a href="#cb20-195" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1_3. Box Scores`</span></span>
+<span id="cb20-196"><a href="#cb20-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-197"><a href="#cb20-197" aria-hidden="true" tabindex="-1"></a>The last function still needs a bit of work, but will pull box scores of all the NBA games on a given day. The user will need to enter the **game_day** or day of the games they want box scores for.</span>
+<span id="cb20-198"><a href="#cb20-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-199"><a href="#cb20-199" aria-hidden="true" tabindex="-1"></a>Note: Ideally this function would return a list with each game being its own df, but for now it only prints one data frame that includes all games played on that date. There also seem to be issues when only one game is played, or it is the first game of the season (see examples below), but for now those issues are manageable.</span>
+<span id="cb20-200"><a href="#cb20-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-203"><a href="#cb20-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-204"><a href="#cb20-204" aria-hidden="true" tabindex="-1"></a>box_scores <span class="ot">&lt;-</span> <span class="cf">function</span>(game_day){</span>
+<span id="cb20-205"><a href="#cb20-205" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span></span>
+<span id="cb20-206"><a href="#cb20-206" aria-hidden="true" tabindex="-1"></a><span class="st">  A function that returns a data frame of box scores. </span></span>
+<span id="cb20-207"><a href="#cb20-207" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-208"><a href="#cb20-208" aria-hidden="true" tabindex="-1"></a><span class="st">  @param game_day is a string that represents the date in the form Y-M-D</span></span>
+<span id="cb20-209"><a href="#cb20-209" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb20-210"><a href="#cb20-210" aria-hidden="true" tabindex="-1"></a><span class="st">  @return a df of box scores from that day.</span></span>
+<span id="cb20-211"><a href="#cb20-211" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span></span>
+<span id="cb20-212"><a href="#cb20-212" aria-hidden="true" tabindex="-1"></a>  <span class="co"># split by dash</span></span>
+<span id="cb20-213"><a href="#cb20-213" aria-hidden="true" tabindex="-1"></a>  split_date <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">strsplit</span>(game_day, <span class="st">"-"</span>)</span>
+<span id="cb20-214"><a href="#cb20-214" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-215"><a href="#cb20-215" aria-hidden="true" tabindex="-1"></a>  <span class="co"># year - month - day </span></span>
+<span id="cb20-216"><a href="#cb20-216" aria-hidden="true" tabindex="-1"></a>  year <span class="ot">&lt;-</span> split_date[[<span class="dv">1</span>]][[<span class="dv">1</span>]]</span>
+<span id="cb20-217"><a href="#cb20-217" aria-hidden="true" tabindex="-1"></a>  month <span class="ot">&lt;-</span> split_date[[<span class="dv">1</span>]][[<span class="dv">2</span>]]</span>
+<span id="cb20-218"><a href="#cb20-218" aria-hidden="true" tabindex="-1"></a>  day <span class="ot">&lt;-</span> split_date[[<span class="dv">1</span>]][[<span class="dv">3</span>]]</span>
+<span id="cb20-219"><a href="#cb20-219" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-220"><a href="#cb20-220" aria-hidden="true" tabindex="-1"></a>  <span class="co">#url</span></span>
+<span id="cb20-221"><a href="#cb20-221" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">paste0</span>(<span class="st">"https://www.basketball-reference.com/boxscores/?month="</span>,</span>
+<span id="cb20-222"><a href="#cb20-222" aria-hidden="true" tabindex="-1"></a>                month ,<span class="st">"&amp;day="</span>, day,<span class="st">"&amp;year="</span>, year)</span>
+<span id="cb20-223"><a href="#cb20-223" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-224"><a href="#cb20-224" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read url</span></span>
+<span id="cb20-225"><a href="#cb20-225" aria-hidden="true" tabindex="-1"></a>  html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb20-226"><a href="#cb20-226" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-227"><a href="#cb20-227" aria-hidden="true" tabindex="-1"></a>  <span class="co"># extract all the 'div" items from the html as tables</span></span>
+<span id="cb20-228"><a href="#cb20-228" aria-hidden="true" tabindex="-1"></a>  div <span class="ot">&lt;-</span> html <span class="sc">%&gt;%</span> </span>
+<span id="cb20-229"><a href="#cb20-229" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(<span class="st">"div"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-230"><a href="#cb20-230" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_table</span>()</span>
+<span id="cb20-231"><a href="#cb20-231" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-232"><a href="#cb20-232" aria-hidden="true" tabindex="-1"></a>  <span class="co">#remove empties</span></span>
+<span id="cb20-233"><a href="#cb20-233" aria-hidden="true" tabindex="-1"></a>  div <span class="ot">&lt;-</span> div[base<span class="sc">::</span><span class="fu">sapply</span>(div, <span class="cf">function</span>(i) <span class="fu">dim</span>(i)[<span class="dv">1</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb20-234"><a href="#cb20-234" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-235"><a href="#cb20-235" aria-hidden="true" tabindex="-1"></a>  <span class="co"># only keep rows == 7</span></span>
+<span id="cb20-236"><a href="#cb20-236" aria-hidden="true" tabindex="-1"></a>  div <span class="ot">&lt;-</span> div[base<span class="sc">::</span><span class="fu">sapply</span>(div, <span class="cf">function</span>(i) <span class="fu">nrow</span>(i)[<span class="dv">1</span>]) <span class="sc">==</span> <span class="dv">7</span>]</span>
+<span id="cb20-237"><a href="#cb20-237" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-238"><a href="#cb20-238" aria-hidden="true" tabindex="-1"></a>  <span class="co"># empty list</span></span>
+<span id="cb20-239"><a href="#cb20-239" aria-hidden="true" tabindex="-1"></a>  my_vec <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">list</span>()</span>
+<span id="cb20-240"><a href="#cb20-240" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-241"><a href="#cb20-241" aria-hidden="true" tabindex="-1"></a>  <span class="co">#for loop</span></span>
+<span id="cb20-242"><a href="#cb20-242" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>base<span class="sc">::</span><span class="fu">length</span>(div)) {        </span>
+<span id="cb20-243"><a href="#cb20-243" aria-hidden="true" tabindex="-1"></a>  my_out <span class="ot">&lt;-</span> div[[i]][<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>,] </span>
+<span id="cb20-244"><a href="#cb20-244" aria-hidden="true" tabindex="-1"></a>  my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(my_vec, my_out)</span>
+<span id="cb20-245"><a href="#cb20-245" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(my_vec)</span>
+<span id="cb20-246"><a href="#cb20-246" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-247"><a href="#cb20-247" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-248"><a href="#cb20-248" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> df[<span class="sc">-</span><span class="dv">1</span>,]</span>
+<span id="cb20-249"><a href="#cb20-249" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-250"><a href="#cb20-250" aria-hidden="true" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">return</span>(df)</span>
+<span id="cb20-251"><a href="#cb20-251" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-252"><a href="#cb20-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-253"><a href="#cb20-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-254"><a href="#cb20-254" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example</span></span>
+<span id="cb20-255"><a href="#cb20-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-256"><a href="#cb20-256" aria-hidden="true" tabindex="-1"></a><span class="fu">#### E. Box Scores for 10-19-2022 (works correctly)</span></span>
+<span id="cb20-257"><a href="#cb20-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-260"><a href="#cb20-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-261"><a href="#cb20-261" aria-hidden="true" tabindex="-1"></a>oct_19 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"2022-10-19"</span>)</span>
+<span id="cb20-262"><a href="#cb20-262" aria-hidden="true" tabindex="-1"></a>oct_19</span>
+<span id="cb20-263"><a href="#cb20-263" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-264"><a href="#cb20-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-265"><a href="#cb20-265" aria-hidden="true" tabindex="-1"></a><span class="fu">#### F. Box scores for the first day of the '22/'23 NBA season (issues)</span></span>
+<span id="cb20-266"><a href="#cb20-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-269"><a href="#cb20-269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-270"><a href="#cb20-270" aria-hidden="true" tabindex="-1"></a>oct_18 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"2022-10-18"</span>)</span>
+<span id="cb20-271"><a href="#cb20-271" aria-hidden="true" tabindex="-1"></a>oct_18</span>
+<span id="cb20-272"><a href="#cb20-272" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-273"><a href="#cb20-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-274"><a href="#cb20-274" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Issue: For the first game of the season there is an are NA tables that are being pulled in.</span><span class="co">]</span>{style="color: red;"}</span>
+<span id="cb20-275"><a href="#cb20-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-276"><a href="#cb20-276" aria-hidden="true" tabindex="-1"></a>G. First game of the 1992 NBA Finals AKA <span class="co">[</span><span class="ot">Michael Jordan's famous Shrug</span><span class="co">](https://www.youtube.com/watch?v=hynjpv8y1pA&amp;t=16s)</span> (issues)</span>
+<span id="cb20-277"><a href="#cb20-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-280"><a href="#cb20-280" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-281"><a href="#cb20-281" aria-hidden="true" tabindex="-1"></a>finals_92_g1 <span class="ot">&lt;-</span> <span class="fu">box_scores</span>(<span class="st">"1992-6-3"</span>)</span>
+<span id="cb20-282"><a href="#cb20-282" aria-hidden="true" tabindex="-1"></a>finals_92_g1</span>
+<span id="cb20-283"><a href="#cb20-283" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-284"><a href="#cb20-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-285"><a href="#cb20-285" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Issue: For days where only one game is played the one game is printed twice in the data frame.</span><span class="co">]</span>{style="color: red;"}</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

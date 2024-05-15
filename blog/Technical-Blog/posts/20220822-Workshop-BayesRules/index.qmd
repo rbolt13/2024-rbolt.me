@@ -1,9 +1,15 @@
 ---
 title: "Bayes Rules! - Salt Lake City R User Group"
 date: "2022-08-22"
-categories: [R, Bayes]
+categories: [Workshop, R, Bayes]
 toc: true
-draft: true
+draft: false
+warning: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
 [Alicia Johnson](https://ajohns24.github.io/portfolio/) led this [R User Connect Philadelphia](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct) to discus the book she co-authored, [Bayes Rules!](https://www.bayesrulesbook.com/).

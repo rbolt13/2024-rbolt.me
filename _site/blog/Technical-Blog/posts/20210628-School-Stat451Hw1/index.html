@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Randi Bolt">
 <meta name="dcterms.date" content="2021-06-28">
 
 <title>Randi Bolt - Statistics 451: Applied Statistics for Engineers and Scientists - Homework 1</title>
@@ -289,9 +288,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistics 451: Applied Statistics for Engineers and Scientists - Homework 1</h1>
+<div class="quarto-title-block"><div><h1 class="title">Statistics 451: Applied Statistics for Engineers and Scientists - Homework 1</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
+    <div class="quarto-category">School</div>
     <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">Data Visuals</div>
   </div>
   </div>
 
@@ -299,12 +300,6 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Randi Bolt </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -322,7 +317,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 
 <p>The problems on this page are from Probability &amp; Statistics for Engineering &amp; Sciences 9th Edition by Jay L. Devore - Duxbury Publisher, and the work is mine.</p>
-<p><img src="../../00_img/concreate-beams-flex-strength.png" class="img-fluid"></p>
+<p><img src="images/clipboard-998308538.png" class="img-fluid"></p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'ggplot2' was built under R version 4.3.2</code></pre>
@@ -333,9 +328,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="a.-construct-a-stem-and-leaf-display-of-the-data.-what-appears-to-be-a-representative-strength-value-do-the-observations-appear-to-be-highly-concentrated-about-the-representative-value-or-rather-spread-out" class="level3">
 <h3 class="anchored" data-anchor-id="a.-construct-a-stem-and-leaf-display-of-the-data.-what-appears-to-be-a-representative-strength-value-do-the-observations-appear-to-be-highly-concentrated-about-the-representative-value-or-rather-spread-out"><code>a.</code> Construct a stem-and leaf display of the data. What appears to be a representative strength value? Do the observations appear to be highly concentrated about the representative value or rather spread out?</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>beam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.9</span>, <span class="fl">7.2</span>, <span class="fl">7.3</span>, <span class="fl">6.3</span>, <span class="fl">8.1</span>, <span class="fl">6.8</span>, <span class="fl">7.0</span>, <span class="fl">7.6</span>, <span class="fl">6.8</span>, <span class="fl">6.5</span>, <span class="fl">7.0</span>, <span class="fl">6.3</span>, <span class="fl">7.9</span>, <span class="fl">9.0</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>         <span class="fl">8.2</span>, <span class="fl">8.7</span>, <span class="fl">7.8</span>, <span class="fl">9.7</span>, <span class="fl">7.4</span>, <span class="fl">7.7</span>, <span class="fl">9.7</span>, <span class="fl">7.8</span>, <span class="fl">7.7</span>, <span class="fl">11.6</span>, <span class="fl">11.3</span>, <span class="fl">11.8</span>, <span class="fl">10.7</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(beam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is at the |
@@ -357,7 +355,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -381,10 +379,13 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="the-accompanying-specific-gravity-values-for-various-wood-types-used-in-construction-appeared-in-the-article-bolted-connection-design-values-based-on-european-yield-model-j.-of-structural-engr.-1993-2169-2186" class="level2">
 <h2 class="anchored" data-anchor-id="the-accompanying-specific-gravity-values-for-various-wood-types-used-in-construction-appeared-in-the-article-bolted-connection-design-values-based-on-european-yield-model-j.-of-structural-engr.-1993-2169-2186"><code>1.12</code> The accompanying specific gravity values for various wood types used in construction appeared in the article “Bolted Connection Design Values Based on European Yield Model” (J. of Structural Engr., 1993: 2169-2186):</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wood.g <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">31</span>, .<span class="dv">35</span>, .<span class="dv">36</span>, .<span class="dv">36</span>, .<span class="dv">37</span>, .<span class="dv">38</span>, .<span class="dv">40</span>, .<span class="dv">40</span>, .<span class="dv">40</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">41</span>, .<span class="dv">41</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">43</span>, .<span class="dv">44</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">45</span>, .<span class="dv">46</span>, .<span class="dv">46</span>, .<span class="dv">47</span>, .<span class="dv">48</span>, .<span class="dv">48</span>, .<span class="dv">48</span>, .<span class="dv">51</span>, .<span class="dv">54</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">54</span>, .<span class="dv">55</span>, .<span class="dv">58</span>, .<span class="dv">62</span>, .<span class="dv">66</span>, .<span class="dv">66</span>, .<span class="dv">67</span>, .<span class="dv">68</span>, .<span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="construct-a-stem-and-leaf-display-using-repeated-stems-see-the-previous-exercise-and-comment-on-any-interesting-features-of-the-display." class="level3">
 <h3 class="anchored" data-anchor-id="construct-a-stem-and-leaf-display-using-repeated-stems-see-the-previous-exercise-and-comment-on-any-interesting-features-of-the-display.">Construct a stem-and-leaf display using repeated stems (see the previous exercise), and comment on any interesting features of the display.</h3>
@@ -428,8 +429,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="the-article-cited-in-example-1.2-also-gave-the-accompanying-strengths-observations-for-cylinders" class="level2">
 <h2 class="anchored" data-anchor-id="the-article-cited-in-example-1.2-also-gave-the-accompanying-strengths-observations-for-cylinders"><code>1.16</code> The article cited in Example 1.2 also gave the accompanying strengths observations for cylinders:</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cylinders <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.1</span>, <span class="fl">5.8</span>, <span class="fl">7.8</span>, <span class="fl">7.1</span>, <span class="fl">7.2</span>, <span class="fl">9.2</span>, <span class="fl">6.6</span>, <span class="fl">8.3</span>, <span class="fl">7.0</span>, <span class="fl">8.3</span>,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>           <span class="fl">7.8</span>, <span class="fl">8.1</span>, <span class="fl">7.4</span>, <span class="fl">8.5</span>, <span class="fl">8.9</span>, <span class="fl">9.8</span>, <span class="fl">9.7</span>, <span class="fl">14.1</span>, <span class="fl">12.6</span>, <span class="fl">11.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="a.-construct-a-comparative-stem-and-leaf-display-see-the-previous-exercise-of-the-beam-and-cylinder-data-and-then-answer-the-questions-in-parts-b-d-of-exercise-10-for-the-observations-on-cylinders." class="level3">
 <h3 class="anchored" data-anchor-id="a.-construct-a-comparative-stem-and-leaf-display-see-the-previous-exercise-of-the-beam-and-cylinder-data-and-then-answer-the-questions-in-parts-b-d-of-exercise-10-for-the-observations-on-cylinders."><code>a.</code> Construct a comparative stem-and-leaf display (see the previous exercise) of the beam and cylinder data and then answer the questions in parts (b)-(d) of Exercise 10 for the observations on cylinders.</h3>
@@ -502,17 +506,26 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="exposure-to-microbial-products-especially-endotoxin-may-have-an-impact-on-vulnerability-to-allergic-diseases.-the-article-dust-sampling-methods-for-endotoxin-an-essential-but-underestimated-issue-indoor-air-2006-20-27-considered-various-issues-associated-with-determining-endotoxin-concentration.-the-following-data-on-concentration-eumg-in-settled-dust-for-one-sample-of-urban-homes-and-another-of-farm-homes-was-kindly-supplied-by-the-authors-of-the-cited-article." class="level2">
 <h2 class="anchored" data-anchor-id="exposure-to-microbial-products-especially-endotoxin-may-have-an-impact-on-vulnerability-to-allergic-diseases.-the-article-dust-sampling-methods-for-endotoxin-an-essential-but-underestimated-issue-indoor-air-2006-20-27-considered-various-issues-associated-with-determining-endotoxin-concentration.-the-following-data-on-concentration-eumg-in-settled-dust-for-one-sample-of-urban-homes-and-another-of-farm-homes-was-kindly-supplied-by-the-authors-of-the-cited-article."><code>1.34</code> Exposure to microbial products, especially endotoxin, may have an impact on vulnerability to allergic diseases. The article “Dust Sampling Methods for Endotoxin – An Essential, But Underestimated Issue” (Indoor Air, 2006: 20-27) considered various issues associated with determining endotoxin concentration. The following data on concentration (EU/mg) in settled dust for one sample of urban homes and another of farm homes was kindly supplied by the authors of the cited article.</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>urban <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.0</span>, <span class="fl">5.0</span>, <span class="fl">11.0</span>, <span class="fl">33.0</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">80.0</span>, <span class="fl">18.0</span>, <span class="fl">35.0</span>, <span class="fl">17.0</span>, <span class="fl">23.0</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>farm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="fl">14.0</span>, <span class="fl">11.0</span>, <span class="fl">9.0</span>, <span class="fl">9.0</span>, <span class="fl">8.0</span>, <span class="fl">4.0</span>, <span class="fl">20.0</span>, <span class="fl">5.0</span>, <span class="fl">8.9</span>, <span class="fl">21.0</span>, <span class="fl">9.2</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>, <span class="fl">0.3</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="a.-determine-the-sample-mean-for-each-sample.-how-do-they-compare" class="level3">
 <h3 class="anchored" data-anchor-id="a.-determine-the-sample-mean-for-each-sample.-how-do-they-compare"><code>a.</code> Determine the sample mean for each sample. How do they compare?</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21.54545</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.56</code></pre>
 </div>
@@ -522,11 +535,17 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="b.-determine-the-sample-median-for-each-sample.-how-do-they-compare-why-is-the-median-for-the-urban-sample-so-different-from-the-mean-for-that-sample" class="level3">
 <h3 class="anchored" data-anchor-id="b.-determine-the-sample-median-for-each-sample.-how-do-they-compare-why-is-the-median-for-the-urban-sample-so-different-from-the-mean-for-that-sample"><code>b.</code> Determine the sample median for each sample. How do they compare? Why is the median for the urban sample so different from the mean for that sample?</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.9</code></pre>
 </div>
@@ -538,27 +557,42 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="c.-calculate-the-trimmed-mean-for-each-sample-by-deleting-the-smallest-and-largest-observation.-what-are-the-corresponding-trimming-percentages-how-do-the-values-of-these-trimmed-means-compare-to-the-corresponding-means-and-medians"><code>c.</code> Calculate the trimmed mean for each sample by deleting the smallest and largest observation. What are the corresponding trimming percentages? How do the values of these trimmed means compare to the corresponding means and medians?</h3>
 <p>To start I will sort the data to see what are the largest and smallest observations for both.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  4  5  5  6 11 17 18 23 33 35 80</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  0.3  2.0  3.0  4.0  4.0  5.0  8.0  8.9  9.0  9.0  9.2 11.0 14.0 20.0 21.0</code></pre>
 </div>
 </div>
 <p>From the sorted data I can see the lowest and highest values for urban are c(4,80), and for farm they are c(0.3,21). These values are removed from the urban.trim and farm.trim shown below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>urban.trim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.0</span>, <span class="fl">5.0</span>, <span class="fl">11.0</span>, <span class="fl">33.0</span>, <span class="fl">5.0</span>, <span class="fl">18.0</span>, <span class="fl">35.0</span>, <span class="fl">17.0</span>, <span class="fl">23.0</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>farm.trim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="fl">14.0</span>, <span class="fl">11.0</span>, <span class="fl">9.0</span>, <span class="fl">9.0</span>, <span class="fl">8.0</span>, <span class="fl">4.0</span>, <span class="fl">20.0</span>, <span class="fl">5.0</span>, <span class="fl">8.9</span>, <span class="fl">9.2</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>To find the corresponding trimming percentages I subtracted the sum of the subtracted values from the sums of the urban and farm data sets respectively, and then divide each by the length of each data set respectively.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(urban)<span class="sc">-</span><span class="dv">84</span>)<span class="sc">/</span><span class="fu">length</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13.90909</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(farm)<span class="sc">-</span><span class="fl">21.3</span>)<span class="sc">/</span><span class="fu">length</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.14</code></pre>
 </div>
@@ -566,18 +600,27 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>The two values removed from the urban dataset is about 14% of the data, slightly more then the 7.14% variation of the farm data set.</p>
 <p>Now to look at the trimmed means.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(urban.trim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(farm.trim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.238462</code></pre>
 </div>
 </div>
 <p>The trimmed mean of the urban data is closer to the median of the urban data, whereas the trimmed mean for the farm data is farther away from the mean and median of the untrimmed data. After this analysis it would seem that trimming the first data set may be appropriate, whereas trimming the second may lead to misleading data. Looking at the stem-and-leaf displays are helpful in visualizing distributions and outliers.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(urban, <span class="at">scale =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is 1 digit(s) to the right of the |
@@ -592,7 +635,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   7 | 
   8 | 0</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(farm, <span class="at">scale =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is 1 digit(s) to the right of the |
@@ -607,11 +653,17 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="exercise-34-presented-the-following-data-on-endotoxin-concentration-in-settled-dust-both-for-a-sample-of-urban-homes-and-for-a-sample-of-farm-homes" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-34-presented-the-following-data-on-endotoxin-concentration-in-settled-dust-both-for-a-sample-of-urban-homes-and-for-a-sample-of-farm-homes"><code>1.48</code> Exercise 34 presented the following data on endotoxin concentration in settled dust both for a sample of urban homes and for a sample of farm homes:</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>urban</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  6  5 11 33  4  5 80 18 35 17 23</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>farm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  4.0 14.0 11.0  9.0  9.0  8.0  4.0 20.0  5.0  8.9 21.0  9.2  3.0  2.0  0.3</code></pre>
 </div>
@@ -619,11 +671,17 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="a.-determine-the-value-of-the-sample-standard-deviation-for-each-sample-interpret-these-values-and-then-contrast-variability-in-the-two-samples." class="level3">
 <h3 class="anchored" data-anchor-id="a.-determine-the-value-of-the-sample-standard-deviation-for-each-sample-interpret-these-values-and-then-contrast-variability-in-the-two-samples."><code>a.</code> Determine the value of the sample standard deviation for each sample, interpret these values, and then contrast variability in the two samples.</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.29961</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.087669</code></pre>
 </div>
@@ -631,6 +689,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>Another way we could find the standard deviation given the hint and the following equation given in class :</p>
 <p>[s^2=_{i=1}^{n}(x_i - x)^2] [=[_{i=1}<sup>{n}x_i</sup>2 - ]]</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># hint</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>sigma_x_i.u <span class="ot">&lt;-</span> <span class="fl">237.0</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>sigma_x_i.f <span class="ot">&lt;-</span> <span class="fl">128.4</span></span>
@@ -643,10 +703,14 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>sv.u <span class="ot">&lt;-</span> constant.u<span class="sc">*</span>(sigma_x_i_2.u <span class="sc">-</span> (sigma_x_i.u)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n.u)</span>
 <span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>sv.f <span class="ot">&lt;-</span> constant.f<span class="sc">*</span>(sigma_x_i_2.f <span class="sc">-</span> (sigma_x_i.f)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n.f)</span>
 <span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(sv.u)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.29961</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(sv.f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.087669</code></pre>
 </div>
@@ -656,12 +720,18 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="b.-compute-the-fourth-spread-for-each-sample-and-compare.-do-the-fourth-spreads-convey-the-same-message-about-variability-that-the-standard-deviations-do-explain."><code>b.</code> Compute the fourth spread for each sample and compare. Do the fourth spreads convey the same message about variability that the standard deviations do? Explain.</h3>
 <p>The quickest way to do this in r is with quantile().</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
  4.0  5.5 17.0 28.0 80.0 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
  0.3  4.0  8.9 10.1 21.0 </code></pre>
@@ -670,73 +740,118 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>Explanation : coming soon</p>
 <p>Another way to find the forth spread is by first computing the upper fourth and lower fourth . To do that I first sorted the data, and then split it in half. Notice that because n for both data sets is odd, I figure out the middle value that is included in both, before I create the new data sets.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sort </span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>sorted.u <span class="ot">&lt;-</span> <span class="fu">sort</span>(urban)</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>sorted.f <span class="ot">&lt;-</span> <span class="fu">sort</span>(farm)</span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>sorted.u</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  4  5  5  6 11 17 18 23 33 35 80</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>sorted.f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  0.3  2.0  3.0  4.0  4.0  5.0  8.0  8.9  9.0  9.0  9.2 11.0 14.0 20.0 21.0</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># find included value </span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>include.u <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(n.u<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span><span class="dv">1</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>include.f <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(n.f<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span><span class="dv">1</span></span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>sorted.u[include.u]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>sorted.f[include.f]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.9</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># upper and lower forth </span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>urban.lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,  <span class="dv">5</span>,  <span class="dv">5</span>,  <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">17</span>)</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>urban.upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">33</span>, <span class="dv">35</span>, <span class="dv">80</span>)</span>
 <span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>farm.lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,  <span class="fl">2.0</span>,  <span class="fl">3.0</span>,  <span class="fl">4.0</span>,  <span class="fl">4.0</span>,  <span class="fl">5.0</span>,  <span class="fl">8.0</span>,  <span class="fl">8.9</span>)</span>
 <span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>farm.upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">8.9</span>,  <span class="fl">9.0</span>,  <span class="fl">9.0</span>,  <span class="fl">9.2</span>, <span class="fl">11.0</span>, <span class="fl">14.0</span>, <span class="fl">20.0</span>, <span class="fl">21.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now that the data is sorted, the middle values of 17 and 8.9 have been found, and the data has been split into two chunks I can compute the minimum,lower forth median, median, upper forth median, and the largest value.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban.lower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.5</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban.upper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 28</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(urban)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 80</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm.lower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.9</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm.upper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10.1</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(farm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21</code></pre>
 </div>
@@ -745,15 +860,21 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <li>The authors of the cited article also provided endotoxin concentrations in dust bag dust:</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>urban.bag <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">34.0</span>, <span class="fl">49.0</span>, <span class="fl">13.0</span>, <span class="fl">33.0</span>, <span class="fl">24.0</span>, <span class="fl">24.0</span>, <span class="fl">35.0</span>, <span class="fl">104.0</span>, <span class="fl">34.0</span>, <span class="fl">40.0</span>, <span class="fl">38.0</span>, <span class="fl">1.0</span>)</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>farm.bag <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.0</span>, <span class="fl">64.0</span>, <span class="fl">6.0</span>, <span class="fl">17.0</span>, <span class="fl">35.0</span>, <span class="fl">11.0</span>, <span class="fl">17.0</span>, <span class="fl">13.0</span>, <span class="fl">5.0</span>, <span class="fl">27.0</span>, <span class="fl">23.0</span>,</span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>              <span class="fl">28.0</span>, <span class="fl">10.0</span>, <span class="fl">13.0</span>, <span class="fl">0.2</span>)</span>
 <span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(urban.bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   0%   25%   50%   75%  100% 
   1.0  24.0  34.0  38.5 104.0 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(farm.bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
  0.2  8.0 13.0 25.0 64.0 </code></pre>
@@ -761,23 +882,29 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Construct a comparative boxplot (as did the cited paper) and compare and contrast the four samples.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(urban)</span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(urban.bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(farm)</span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(farm.bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-27-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -787,19 +914,28 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="the-article-a-thin-film-oxygen-uptake-test-for-the-evaluation-of-automotive-crankcase-lubricants-lubric.-engr.-1984-75-83-reported-the-following-data-on-oxidation-induction-time-min-for-various-commercial-oils" class="level2">
 <h2 class="anchored" data-anchor-id="the-article-a-thin-film-oxygen-uptake-test-for-the-evaluation-of-automotive-crankcase-lubricants-lubric.-engr.-1984-75-83-reported-the-following-data-on-oxidation-induction-time-min-for-various-commercial-oils"><code>1.51</code> The article “A Thin-Film Oxygen Uptake Test for the Evaluation of Automotive Crankcase Lubricants” (Lubric. Engr., 1984: 75-83) reported the following data on oxidation-induction time (min) for various commercial oils:</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>oxi.induct.time.min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">87</span>, <span class="dv">103</span>, <span class="dv">130</span>, <span class="dv">160</span>, <span class="dv">180</span>, <span class="dv">195</span>, <span class="dv">132</span>, <span class="dv">145</span>, <span class="dv">211</span>, <span class="dv">105</span>, <span class="dv">145</span>,</span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">153</span>, <span class="dv">152</span>, <span class="dv">138</span>, <span class="dv">87</span>, <span class="dv">99</span>, <span class="dv">93</span>, <span class="dv">119</span>, <span class="dv">129</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="a.-calculate-the-sample-variance-and-the-standard-deviation." class="level3">
 <h3 class="anchored" data-anchor-id="a.-calculate-the-sample-variance-and-the-standard-deviation."><code>a.</code> Calculate the sample variance and the standard deviation.</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>oxi.var <span class="ot">&lt;-</span> <span class="fu">var</span>(oxi.induct.time.min)</span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>oxi.sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(oxi.induct.time.min)</span>
 <span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>oxi.var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1264.766</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>oxi.sd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 35.56355</code></pre>
 </div>
@@ -809,21 +945,33 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="b.-if-the-observations-were-re-expressed-in-hours-what-would-be-the-resulting-values-of-the-sample-variance-and-sample-standard-deviation-answer-without-actually-performing-the-re-expression."><code>b.</code> If the observations were re-expressed in hours, what would be the resulting values of the sample variance and sample standard deviation? Answer without actually performing the re-expression.</h3>
 <p>The standard deviation has the same units as the data values (minutes) so in hours the standard deviation would be 35.56/60 (or a little over half an hour) whereas the variance is the standard deviation squared, so the values would be converted 1264.766/60^2.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>oxi.var<span class="sc">/</span><span class="dv">60</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3513239</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>oxi.sd<span class="sc">/</span><span class="dv">60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5927258</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># verification </span></span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>oxi.induct.time.hour <span class="ot">&lt;-</span> oxi.induct.time.min<span class="sc">/</span><span class="dv">60</span></span>
 <span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oxi.induct.time.hour)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3513239</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(oxi.induct.time.hour) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5927258</code></pre>
 </div>
@@ -833,48 +981,71 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <section id="observations-on-burst-strength-lbin2-were-obtained-both-for-test-nozzle-welds-proper-procedures-are-the-key-to-welding-radioactive-waste-canisters-welding-j.-auud.-1997-61-67" class="level2">
 <h2 class="anchored" data-anchor-id="observations-on-burst-strength-lbin2-were-obtained-both-for-test-nozzle-welds-proper-procedures-are-the-key-to-welding-radioactive-waste-canisters-welding-j.-auud.-1997-61-67"><code>1.60</code> Observations on burst strength (lb/in2) were obtained both for test nozzle welds (“Proper Procedures Are the Key to Welding Radioactive Waste Canisters,” Welding J., Auud. 1997: 61-67)</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>Test <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">7200</span>, <span class="dv">6100</span>, <span class="dv">7300</span>, <span class="dv">7300</span>, <span class="dv">8000</span>, <span class="dv">7400</span>,</span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>         <span class="dv">7300</span>, <span class="dv">7300</span>, <span class="dv">8000</span>, <span class="dv">6700</span>, <span class="dv">8300</span>)         </span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>Cannister <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5250</span>, <span class="dv">5625</span>, <span class="dv">5900</span>, <span class="dv">5900</span>, <span class="dv">5700</span>, <span class="dv">6050</span>,</span>
 <span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">5800</span>, <span class="dv">6000</span>, <span class="dv">5875</span>, <span class="dv">6100</span>, <span class="dv">5850</span>, <span class="dv">6600</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="a.-construct-a-comparative-boxplot-and-comment-on-interesting-features-the-cited-article-did-not-include-such-a-picture-but-the-authors-commented-that-they-had-looked-at-one." class="level3">
 <h3 class="anchored" data-anchor-id="a.-construct-a-comparative-boxplot-and-comment-on-interesting-features-the-cited-article-did-not-include-such-a-picture-but-the-authors-commented-that-they-had-looked-at-one."><code>a.</code> Construct a comparative boxplot and comment on interesting features (the cited article did not include such a picture, but the authors commented that they had looked at one).</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Test, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">8500</span>), <span class="at">main =</span> <span class="st">"Test"</span>)</span>
 <span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Cannister, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">8500</span>), <span class="at">main =</span> <span class="st">"Cannister"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Test)<span class="sc">-</span><span class="fu">mean</span>(Cannister)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1467.045</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7354.545</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Cannister)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5887.5</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 613.7811</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Cannister)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 317.9301</code></pre>
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -959,6 +1130,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1292,21 +1514,385 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb120" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Statistics 451: Applied Statistics for Engineers and Scientists - Homework 1"</span></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2021-06-28"</span></span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["School", "Statistics", "Data Visuals"]</span></span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb120-9"><a href="#cb120-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb120-10"><a href="#cb120-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb120-11"><a href="#cb120-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb120-12"><a href="#cb120-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb120-13"><a href="#cb120-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-14"><a href="#cb120-14" aria-hidden="true" tabindex="-1"></a>The problems on this page are from Probability &amp; Statistics for Engineering &amp; Sciences 9th Edition by Jay L. Devore - Duxbury Publisher, and the work is mine.</span>
+<span id="cb120-15"><a href="#cb120-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-16"><a href="#cb120-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-998308538.png)</span></span>
+<span id="cb120-17"><a href="#cb120-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-18"><a href="#cb120-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, message=F, echo=F}</span></span>
+<span id="cb120-19"><a href="#cb120-19" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
+<span id="cb120-20"><a href="#cb120-20" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb120-21"><a href="#cb120-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-22"><a href="#cb120-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-23"><a href="#cb120-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.10` Consider the strength data for beams.</span></span>
+<span id="cb120-24"><a href="#cb120-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-25"><a href="#cb120-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Construct a stem-and leaf display of the data. What appears to be a representative strength value? Do the observations appear to be highly concentrated about the representative value or rather spread out?</span></span>
+<span id="cb120-26"><a href="#cb120-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-29"><a href="#cb120-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-30"><a href="#cb120-30" aria-hidden="true" tabindex="-1"></a>beam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.9</span>, <span class="fl">7.2</span>, <span class="fl">7.3</span>, <span class="fl">6.3</span>, <span class="fl">8.1</span>, <span class="fl">6.8</span>, <span class="fl">7.0</span>, <span class="fl">7.6</span>, <span class="fl">6.8</span>, <span class="fl">6.5</span>, <span class="fl">7.0</span>, <span class="fl">6.3</span>, <span class="fl">7.9</span>, <span class="fl">9.0</span>,</span>
+<span id="cb120-31"><a href="#cb120-31" aria-hidden="true" tabindex="-1"></a>         <span class="fl">8.2</span>, <span class="fl">8.7</span>, <span class="fl">7.8</span>, <span class="fl">9.7</span>, <span class="fl">7.4</span>, <span class="fl">7.7</span>, <span class="fl">9.7</span>, <span class="fl">7.8</span>, <span class="fl">7.7</span>, <span class="fl">11.6</span>, <span class="fl">11.3</span>, <span class="fl">11.8</span>, <span class="fl">10.7</span>)</span>
+<span id="cb120-32"><a href="#cb120-32" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(beam)</span>
+<span id="cb120-33"><a href="#cb120-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-34"><a href="#cb120-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-35"><a href="#cb120-35" aria-hidden="true" tabindex="-1"></a>A representative strength value would be 7.7, as more observations are concentrated around this value than any other.</span>
+<span id="cb120-36"><a href="#cb120-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-37"><a href="#cb120-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### `b.` Does the display appear to be reasonably symmetric about a representative value, or would you describe its shape in some other way?</span></span>
+<span id="cb120-38"><a href="#cb120-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-39"><a href="#cb120-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-40"><a href="#cb120-40" aria-hidden="true" tabindex="-1"></a><span class="in">hist(beam, </span></span>
+<span id="cb120-41"><a href="#cb120-41" aria-hidden="true" tabindex="-1"></a><span class="in">     col = topo.colors(7), </span></span>
+<span id="cb120-42"><a href="#cb120-42" aria-hidden="true" tabindex="-1"></a><span class="in">     ylim = c(0,10), </span></span>
+<span id="cb120-43"><a href="#cb120-43" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab= "Flexural Strength (in MegaPascal)",</span></span>
+<span id="cb120-44"><a href="#cb120-44" aria-hidden="true" tabindex="-1"></a><span class="in">     main = "Flexural Strength of Concreate Beams")</span></span>
+<span id="cb120-45"><a href="#cb120-45" aria-hidden="true" tabindex="-1"></a><span class="in">abline(v=mean(beam), col="orange", lwd = 6)</span></span>
+<span id="cb120-46"><a href="#cb120-46" aria-hidden="true" tabindex="-1"></a><span class="in">abline(v=median(beam), col="red", lwd = 8)</span></span>
+<span id="cb120-47"><a href="#cb120-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-48"><a href="#cb120-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-49"><a href="#cb120-49" aria-hidden="true" tabindex="-1"></a>No, I would argue that the data has a slight positive skewed to the right. I say this because the higher frequency values (in blues) seem to be to the left of the representative value (indicated by the red line), which is to the left of the mean (indicated by the orange line).</span>
+<span id="cb120-50"><a href="#cb120-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-51"><a href="#cb120-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### `c.` Do there appear to be any outlying strength values?</span></span>
+<span id="cb120-52"><a href="#cb120-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-53"><a href="#cb120-53" aria-hidden="true" tabindex="-1"></a>Yes there seems to be a small density of values outlying around 11.</span>
+<span id="cb120-54"><a href="#cb120-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-55"><a href="#cb120-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### `d.` What proportion of strength observations in this sample exceed 10 MPa?</span></span>
+<span id="cb120-56"><a href="#cb120-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-57"><a href="#cb120-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-58"><a href="#cb120-58" aria-hidden="true" tabindex="-1"></a><span class="in">proportion &lt;- mean(as.integer(beam &gt; 10))</span></span>
+<span id="cb120-59"><a href="#cb120-59" aria-hidden="true" tabindex="-1"></a><span class="in">print(paste(round(proportion*100,2), "%"))</span></span>
+<span id="cb120-60"><a href="#cb120-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-61"><a href="#cb120-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-62"><a href="#cb120-62" aria-hidden="true" tabindex="-1"></a>An unlikely 14.81% of values exceed 10 MPa.</span>
+<span id="cb120-63"><a href="#cb120-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-64"><a href="#cb120-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.12` The accompanying specific gravity values for various wood types used in construction appeared in the article "Bolted Connection Design Values Based on European Yield Model" (J. of Structural Engr., 1993: 2169-2186):</span></span>
+<span id="cb120-65"><a href="#cb120-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-68"><a href="#cb120-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-69"><a href="#cb120-69" aria-hidden="true" tabindex="-1"></a>wood.g <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">31</span>, .<span class="dv">35</span>, .<span class="dv">36</span>, .<span class="dv">36</span>, .<span class="dv">37</span>, .<span class="dv">38</span>, .<span class="dv">40</span>, .<span class="dv">40</span>, .<span class="dv">40</span>,</span>
+<span id="cb120-70"><a href="#cb120-70" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">41</span>, .<span class="dv">41</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">42</span>, .<span class="dv">43</span>, .<span class="dv">44</span>,</span>
+<span id="cb120-71"><a href="#cb120-71" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">45</span>, .<span class="dv">46</span>, .<span class="dv">46</span>, .<span class="dv">47</span>, .<span class="dv">48</span>, .<span class="dv">48</span>, .<span class="dv">48</span>, .<span class="dv">51</span>, .<span class="dv">54</span>,</span>
+<span id="cb120-72"><a href="#cb120-72" aria-hidden="true" tabindex="-1"></a>            .<span class="dv">54</span>, .<span class="dv">55</span>, .<span class="dv">58</span>, .<span class="dv">62</span>, .<span class="dv">66</span>, .<span class="dv">66</span>, .<span class="dv">67</span>, .<span class="dv">68</span>, .<span class="dv">75</span>)</span>
+<span id="cb120-73"><a href="#cb120-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-74"><a href="#cb120-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-75"><a href="#cb120-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Construct a stem-and-leaf display using repeated stems (see the previous exercise), and comment on any interesting features of the display.</span></span>
+<span id="cb120-76"><a href="#cb120-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-77"><a href="#cb120-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-78"><a href="#cb120-78" aria-hidden="true" tabindex="-1"></a><span class="in">stem(wood.g, scale = 0.1)</span></span>
+<span id="cb120-79"><a href="#cb120-79" aria-hidden="true" tabindex="-1"></a><span class="in">stem(wood.g, scale = 0.5)</span></span>
+<span id="cb120-80"><a href="#cb120-80" aria-hidden="true" tabindex="-1"></a><span class="in">stem(wood.g)</span></span>
+<span id="cb120-81"><a href="#cb120-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-82"><a href="#cb120-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-83"><a href="#cb120-83" aria-hidden="true" tabindex="-1"></a>Looking at the three stem-and-leaf displays there are a few interesting features about the gravity for various wood types used in construction data that stands out. Dropping the last digit in the data, the first stem-and-leaf display shows us that there's an even number of values that are <span class="sc">\&gt;</span>0.5 and 0.5that appear most dense around 0.4. The second and third stem-and-leaf displays show us that these values are most dense about 0.42, with a small blip around 6.6 and obvious outlier for value 0.75.</span>
+<span id="cb120-84"><a href="#cb120-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-85"><a href="#cb120-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.16` The article cited in Example 1.2 also gave the accompanying strengths observations for cylinders:</span></span>
+<span id="cb120-86"><a href="#cb120-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-89"><a href="#cb120-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-90"><a href="#cb120-90" aria-hidden="true" tabindex="-1"></a>cylinders <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.1</span>, <span class="fl">5.8</span>, <span class="fl">7.8</span>, <span class="fl">7.1</span>, <span class="fl">7.2</span>, <span class="fl">9.2</span>, <span class="fl">6.6</span>, <span class="fl">8.3</span>, <span class="fl">7.0</span>, <span class="fl">8.3</span>,</span>
+<span id="cb120-91"><a href="#cb120-91" aria-hidden="true" tabindex="-1"></a>           <span class="fl">7.8</span>, <span class="fl">8.1</span>, <span class="fl">7.4</span>, <span class="fl">8.5</span>, <span class="fl">8.9</span>, <span class="fl">9.8</span>, <span class="fl">9.7</span>, <span class="fl">14.1</span>, <span class="fl">12.6</span>, <span class="fl">11.2</span>)</span>
+<span id="cb120-92"><a href="#cb120-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-93"><a href="#cb120-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-94"><a href="#cb120-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Construct a comparative stem-and-leaf display (see the previous exercise) of the beam and cylinder data and then answer the questions in parts (b)-(d) of Exercise 10 for the observations on cylinders.</span></span>
+<span id="cb120-95"><a href="#cb120-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-96"><a href="#cb120-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-97"><a href="#cb120-97" aria-hidden="true" tabindex="-1"></a><span class="in">stem(cylinders, scale = 2)</span></span>
+<span id="cb120-98"><a href="#cb120-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-99"><a href="#cb120-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-100"><a href="#cb120-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Does the display appear to be reasonably symmetric about a representative value, or would you describe its shape in some other way?</span>
+<span id="cb120-101"><a href="#cb120-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-102"><a href="#cb120-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-103"><a href="#cb120-103" aria-hidden="true" tabindex="-1"></a><span class="in"># find mode </span></span>
+<span id="cb120-104"><a href="#cb120-104" aria-hidden="true" tabindex="-1"></a><span class="in">sort(table(cylinders))</span></span>
+<span id="cb120-105"><a href="#cb120-105" aria-hidden="true" tabindex="-1"></a><span class="in">mode &lt;- ((8.3-7.8)/2)+7.8</span></span>
+<span id="cb120-106"><a href="#cb120-106" aria-hidden="true" tabindex="-1"></a><span class="in">mean(cylinders)</span></span>
+<span id="cb120-107"><a href="#cb120-107" aria-hidden="true" tabindex="-1"></a><span class="in">median(cylinders)</span></span>
+<span id="cb120-108"><a href="#cb120-108" aria-hidden="true" tabindex="-1"></a><span class="in"># hist(cylinders, </span></span>
+<span id="cb120-109"><a href="#cb120-109" aria-hidden="true" tabindex="-1"></a><span class="in">#      col = topo.colors(7), </span></span>
+<span id="cb120-110"><a href="#cb120-110" aria-hidden="true" tabindex="-1"></a><span class="in">#      ylim = c(0,6),</span></span>
+<span id="cb120-111"><a href="#cb120-111" aria-hidden="true" tabindex="-1"></a><span class="in">#      xlim = c(0, 15),</span></span>
+<span id="cb120-112"><a href="#cb120-112" aria-hidden="true" tabindex="-1"></a><span class="in">#      xlab= "Flexural Strength (in MegaPascal)",</span></span>
+<span id="cb120-113"><a href="#cb120-113" aria-hidden="true" tabindex="-1"></a><span class="in">#      main = "Flexural Strength of Concrete Cylinders",</span></span>
+<span id="cb120-114"><a href="#cb120-114" aria-hidden="true" tabindex="-1"></a><span class="in">#      breaks = c(4,5,6,7,8,9,10,11,12,13,14,15))</span></span>
+<span id="cb120-115"><a href="#cb120-115" aria-hidden="true" tabindex="-1"></a><span class="in"># abline(v=mean(cylinders), col="orange", lwd = 6)</span></span>
+<span id="cb120-116"><a href="#cb120-116" aria-hidden="true" tabindex="-1"></a><span class="in"># abline(v=median(cylinders), col="red", lwd = 8)</span></span>
+<span id="cb120-117"><a href="#cb120-117" aria-hidden="true" tabindex="-1"></a><span class="in"># abline(v=mode, col="yellow", lwd = 6)</span></span>
+<span id="cb120-118"><a href="#cb120-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-119"><a href="#cb120-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-120"><a href="#cb120-120" aria-hidden="true" tabindex="-1"></a>This data of cylinders also appears to have a slight positive skew, shown by mean (orange line) to the right of the median (red line) and mode (yellow line). However the mean is a lot closer to the median and mode in this than in the previous graph because there appear to bee less extreme observations.</span>
+<span id="cb120-121"><a href="#cb120-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-122"><a href="#cb120-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Do there appear to be any outlying strength values?</span>
+<span id="cb120-123"><a href="#cb120-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-124"><a href="#cb120-124" aria-hidden="true" tabindex="-1"></a>14.1 appears to be an outlying strength value, as well as 11.2 and 12.6. Without these three values the mean and median are almost identical, shown below in cylinders.clean.</span>
+<span id="cb120-125"><a href="#cb120-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-126"><a href="#cb120-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-127"><a href="#cb120-127" aria-hidden="true" tabindex="-1"></a><span class="in">cylinders.clean &lt;- c(6.1, 5.8, 7.8, 7.1, 7.2, 9.2, 6.6, 8.3, 7.0, 8.3,</span></span>
+<span id="cb120-128"><a href="#cb120-128" aria-hidden="true" tabindex="-1"></a><span class="in">           7.8, 8.1, 7.4, 8.5, 8.9, 9.8, 9.7)</span></span>
+<span id="cb120-129"><a href="#cb120-129" aria-hidden="true" tabindex="-1"></a><span class="in">cylinders.clean</span></span>
+<span id="cb120-130"><a href="#cb120-130" aria-hidden="true" tabindex="-1"></a><span class="in">mean(cylinders.clean)</span></span>
+<span id="cb120-131"><a href="#cb120-131" aria-hidden="true" tabindex="-1"></a><span class="in">median(cylinders.clean)</span></span>
+<span id="cb120-132"><a href="#cb120-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-133"><a href="#cb120-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-134"><a href="#cb120-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What proportion of strength observations in this sample exceed 10 MPa?</span>
+<span id="cb120-135"><a href="#cb120-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-136"><a href="#cb120-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=F}</span></span>
+<span id="cb120-137"><a href="#cb120-137" aria-hidden="true" tabindex="-1"></a><span class="in">proportion2 &lt;- mean(as.integer(cylinders &gt; 10))</span></span>
+<span id="cb120-138"><a href="#cb120-138" aria-hidden="true" tabindex="-1"></a><span class="in">print(paste(round(proportion2*100,2), "%"))</span></span>
+<span id="cb120-139"><a href="#cb120-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-140"><a href="#cb120-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-141"><a href="#cb120-141" aria-hidden="true" tabindex="-1"></a>About 15% of the data observations exceed 10 Mpa.</span>
+<span id="cb120-142"><a href="#cb120-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-143"><a href="#cb120-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### `b.` In what ways are the two sides of the display similar? Are there any obvious differences between the beam observations and the cylinder observations?</span></span>
+<span id="cb120-144"><a href="#cb120-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-145"><a href="#cb120-145" aria-hidden="true" tabindex="-1"></a>Both displays show relatively normal distributions with slight skews to the right. Similarly both the beam and cylinders have approximately 15% of the data outside the normal distribution. An obvious difference between the two is that the beam data was more skewed than the cylinder. A reason for this may be that the range of values for the beam is smaller than the range of values for cylinders, so the beam mean is more sensitive to outlying data.</span>
+<span id="cb120-146"><a href="#cb120-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-147"><a href="#cb120-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.34` Exposure to microbial products, especially endotoxin, may have an impact on vulnerability to allergic diseases. The article "Dust Sampling Methods for Endotoxin -- An Essential, But Underestimated Issue" (Indoor Air, 2006: 20-27) considered various issues associated with determining endotoxin concentration. The following data on concentration (EU/mg) in settled dust for one sample of urban homes and another of farm homes was kindly supplied by the authors of the cited article.</span></span>
+<span id="cb120-148"><a href="#cb120-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-151"><a href="#cb120-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-152"><a href="#cb120-152" aria-hidden="true" tabindex="-1"></a>urban <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.0</span>, <span class="fl">5.0</span>, <span class="fl">11.0</span>, <span class="fl">33.0</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">80.0</span>, <span class="fl">18.0</span>, <span class="fl">35.0</span>, <span class="fl">17.0</span>, <span class="fl">23.0</span>)</span>
+<span id="cb120-153"><a href="#cb120-153" aria-hidden="true" tabindex="-1"></a>farm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="fl">14.0</span>, <span class="fl">11.0</span>, <span class="fl">9.0</span>, <span class="fl">9.0</span>, <span class="fl">8.0</span>, <span class="fl">4.0</span>, <span class="fl">20.0</span>, <span class="fl">5.0</span>, <span class="fl">8.9</span>, <span class="fl">21.0</span>, <span class="fl">9.2</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>, <span class="fl">0.3</span> )</span>
+<span id="cb120-154"><a href="#cb120-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-155"><a href="#cb120-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-156"><a href="#cb120-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Determine the sample mean for each sample. How do they compare?</span></span>
+<span id="cb120-157"><a href="#cb120-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-160"><a href="#cb120-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-161"><a href="#cb120-161" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(urban)</span>
+<span id="cb120-162"><a href="#cb120-162" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(farm)</span>
+<span id="cb120-163"><a href="#cb120-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-164"><a href="#cb120-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-165"><a href="#cb120-165" aria-hidden="true" tabindex="-1"></a>The mean endotoxin concentration is greater in urban homes than farm homes.</span>
+<span id="cb120-166"><a href="#cb120-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-167"><a href="#cb120-167" aria-hidden="true" tabindex="-1"></a><span class="fu">### `b.` Determine the sample median for each sample. How do they compare? Why is the median for the urban sample so different from the mean for that sample?</span></span>
+<span id="cb120-168"><a href="#cb120-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-171"><a href="#cb120-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-172"><a href="#cb120-172" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban)</span>
+<span id="cb120-173"><a href="#cb120-173" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm)</span>
+<span id="cb120-174"><a href="#cb120-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-175"><a href="#cb120-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-176"><a href="#cb120-176" aria-hidden="true" tabindex="-1"></a>The median endotoxin concentration is greater in urban homes than farm homes.</span>
+<span id="cb120-177"><a href="#cb120-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-178"><a href="#cb120-178" aria-hidden="true" tabindex="-1"></a>The urban sample's median is so different from the mean, because the mean is more sensitive to outliers in the data (such as 80 EU/mg) than the median is.</span>
+<span id="cb120-179"><a href="#cb120-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-180"><a href="#cb120-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### `c.` Calculate the trimmed mean for each sample by deleting the smallest and largest observation. What are the corresponding trimming percentages? How do the values of these trimmed means compare to the corresponding means and medians?</span></span>
+<span id="cb120-181"><a href="#cb120-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-182"><a href="#cb120-182" aria-hidden="true" tabindex="-1"></a>To start I will sort the data to see what are the largest and smallest observations for both.</span>
+<span id="cb120-183"><a href="#cb120-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-186"><a href="#cb120-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-187"><a href="#cb120-187" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(urban)</span>
+<span id="cb120-188"><a href="#cb120-188" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(farm)</span>
+<span id="cb120-189"><a href="#cb120-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-190"><a href="#cb120-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-191"><a href="#cb120-191" aria-hidden="true" tabindex="-1"></a>From the sorted data I can see the lowest and highest values for urban are c(4,80), and for farm they are c(0.3,21). These values are removed from the urban.trim and farm.trim shown below.</span>
+<span id="cb120-192"><a href="#cb120-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-195"><a href="#cb120-195" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-196"><a href="#cb120-196" aria-hidden="true" tabindex="-1"></a>urban.trim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6.0</span>, <span class="fl">5.0</span>, <span class="fl">11.0</span>, <span class="fl">33.0</span>, <span class="fl">5.0</span>, <span class="fl">18.0</span>, <span class="fl">35.0</span>, <span class="fl">17.0</span>, <span class="fl">23.0</span>)</span>
+<span id="cb120-197"><a href="#cb120-197" aria-hidden="true" tabindex="-1"></a>farm.trim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="fl">14.0</span>, <span class="fl">11.0</span>, <span class="fl">9.0</span>, <span class="fl">9.0</span>, <span class="fl">8.0</span>, <span class="fl">4.0</span>, <span class="fl">20.0</span>, <span class="fl">5.0</span>, <span class="fl">8.9</span>, <span class="fl">9.2</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>)</span>
+<span id="cb120-198"><a href="#cb120-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-199"><a href="#cb120-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-200"><a href="#cb120-200" aria-hidden="true" tabindex="-1"></a>To find the corresponding trimming percentages I subtracted the sum of the subtracted values from the sums of the urban and farm data sets respectively, and then divide each by the length of each data set respectively.</span>
+<span id="cb120-201"><a href="#cb120-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-204"><a href="#cb120-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-205"><a href="#cb120-205" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(urban)<span class="sc">-</span><span class="dv">84</span>)<span class="sc">/</span><span class="fu">length</span>(urban)</span>
+<span id="cb120-206"><a href="#cb120-206" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(farm)<span class="sc">-</span><span class="fl">21.3</span>)<span class="sc">/</span><span class="fu">length</span>(farm)</span>
+<span id="cb120-207"><a href="#cb120-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-208"><a href="#cb120-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-209"><a href="#cb120-209" aria-hidden="true" tabindex="-1"></a>The two values removed from the urban dataset is about 14% of the data, slightly more then the 7.14% variation of the farm data set.</span>
+<span id="cb120-210"><a href="#cb120-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-211"><a href="#cb120-211" aria-hidden="true" tabindex="-1"></a>Now to look at the trimmed means.</span>
+<span id="cb120-212"><a href="#cb120-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-215"><a href="#cb120-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-216"><a href="#cb120-216" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(urban.trim)</span>
+<span id="cb120-217"><a href="#cb120-217" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(farm.trim)</span>
+<span id="cb120-218"><a href="#cb120-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-219"><a href="#cb120-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-220"><a href="#cb120-220" aria-hidden="true" tabindex="-1"></a>The trimmed mean of the urban data is closer to the median of the urban data, whereas the trimmed mean for the farm data is farther away from the mean and median of the untrimmed data. After this analysis it would seem that trimming the first data set may be appropriate, whereas trimming the second may lead to misleading data. Looking at the stem-and-leaf displays are helpful in visualizing distributions and outliers.</span>
+<span id="cb120-221"><a href="#cb120-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-224"><a href="#cb120-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-225"><a href="#cb120-225" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(urban, <span class="at">scale =</span> <span class="dv">2</span>)</span>
+<span id="cb120-226"><a href="#cb120-226" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(farm, <span class="at">scale =</span> .<span class="dv">5</span>)</span>
+<span id="cb120-227"><a href="#cb120-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-228"><a href="#cb120-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-229"><a href="#cb120-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.48` Exercise 34 presented the following data on endotoxin concentration in settled dust both for a sample of urban homes and for a sample of farm homes:</span></span>
+<span id="cb120-230"><a href="#cb120-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-233"><a href="#cb120-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-234"><a href="#cb120-234" aria-hidden="true" tabindex="-1"></a>urban</span>
+<span id="cb120-235"><a href="#cb120-235" aria-hidden="true" tabindex="-1"></a>farm</span>
+<span id="cb120-236"><a href="#cb120-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-237"><a href="#cb120-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-238"><a href="#cb120-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Determine the value of the sample standard deviation for each sample, interpret these values, and then contrast variability in the two samples.</span></span>
+<span id="cb120-239"><a href="#cb120-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-242"><a href="#cb120-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-243"><a href="#cb120-243" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(urban)</span>
+<span id="cb120-244"><a href="#cb120-244" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(farm)</span>
+<span id="cb120-245"><a href="#cb120-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-246"><a href="#cb120-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-247"><a href="#cb120-247" aria-hidden="true" tabindex="-1"></a>Another way we could find the standard deviation given the hint and the following equation given in class :</span>
+<span id="cb120-248"><a href="#cb120-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-249"><a href="#cb120-249" aria-hidden="true" tabindex="-1"></a><span class="sc">\[</span>s\^2=\frac{1}{n-1}\sum<span class="sc">\_</span>{i=1}\^{n}(x_i - x)\^2<span class="sc">\]</span> <span class="sc">\[</span>=\frac{1}{n-1}<span class="sc">\[</span>\sum<span class="sc">\_</span>{i=1}^{n}x_i^2 - \frac{(\sum_{i=1}^{n}x_i)^2}{n}<span class="sc">\]\]</span></span>
+<span id="cb120-250"><a href="#cb120-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-253"><a href="#cb120-253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-254"><a href="#cb120-254" aria-hidden="true" tabindex="-1"></a><span class="co"># hint</span></span>
+<span id="cb120-255"><a href="#cb120-255" aria-hidden="true" tabindex="-1"></a>sigma_x_i.u <span class="ot">&lt;-</span> <span class="fl">237.0</span></span>
+<span id="cb120-256"><a href="#cb120-256" aria-hidden="true" tabindex="-1"></a>sigma_x_i.f <span class="ot">&lt;-</span> <span class="fl">128.4</span></span>
+<span id="cb120-257"><a href="#cb120-257" aria-hidden="true" tabindex="-1"></a>sigma_x_i_2.u <span class="ot">&lt;-</span> <span class="dv">10079</span></span>
+<span id="cb120-258"><a href="#cb120-258" aria-hidden="true" tabindex="-1"></a>sigma_x_i_2.f <span class="ot">&lt;-</span> <span class="fl">1617.94</span></span>
+<span id="cb120-259"><a href="#cb120-259" aria-hidden="true" tabindex="-1"></a>n.u <span class="ot">&lt;-</span> <span class="fu">length</span>(urban)</span>
+<span id="cb120-260"><a href="#cb120-260" aria-hidden="true" tabindex="-1"></a>n.f <span class="ot">&lt;-</span> <span class="fu">length</span>(farm)</span>
+<span id="cb120-261"><a href="#cb120-261" aria-hidden="true" tabindex="-1"></a>constant.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(n.u<span class="dv">-1</span>)</span>
+<span id="cb120-262"><a href="#cb120-262" aria-hidden="true" tabindex="-1"></a>constant.f <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(n.f<span class="dv">-1</span>)</span>
+<span id="cb120-263"><a href="#cb120-263" aria-hidden="true" tabindex="-1"></a>sv.u <span class="ot">&lt;-</span> constant.u<span class="sc">*</span>(sigma_x_i_2.u <span class="sc">-</span> (sigma_x_i.u)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n.u)</span>
+<span id="cb120-264"><a href="#cb120-264" aria-hidden="true" tabindex="-1"></a>sv.f <span class="ot">&lt;-</span> constant.f<span class="sc">*</span>(sigma_x_i_2.f <span class="sc">-</span> (sigma_x_i.f)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n.f)</span>
+<span id="cb120-265"><a href="#cb120-265" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(sv.u)</span>
+<span id="cb120-266"><a href="#cb120-266" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(sv.f)</span>
+<span id="cb120-267"><a href="#cb120-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-268"><a href="#cb120-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-269"><a href="#cb120-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### `b.` Compute the fourth spread for each sample and compare. Do the fourth spreads convey the same message about variability that the standard deviations do? Explain.</span></span>
+<span id="cb120-270"><a href="#cb120-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-271"><a href="#cb120-271" aria-hidden="true" tabindex="-1"></a>The quickest way to do this in r is with quantile().</span>
+<span id="cb120-272"><a href="#cb120-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-275"><a href="#cb120-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-276"><a href="#cb120-276" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(urban)</span>
+<span id="cb120-277"><a href="#cb120-277" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(farm)</span>
+<span id="cb120-278"><a href="#cb120-278" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-279"><a href="#cb120-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-280"><a href="#cb120-280" aria-hidden="true" tabindex="-1"></a>Explanation : coming soon</span>
+<span id="cb120-281"><a href="#cb120-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-282"><a href="#cb120-282" aria-hidden="true" tabindex="-1"></a>Another way to find the forth spread is by first computing the upper fourth and lower fourth . To do that I first sorted the data, and then split it in half. Notice that because n for both data sets is odd, I figure out the middle value that is included in both, before I create the new data sets.</span>
+<span id="cb120-283"><a href="#cb120-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-286"><a href="#cb120-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-287"><a href="#cb120-287" aria-hidden="true" tabindex="-1"></a><span class="co"># sort </span></span>
+<span id="cb120-288"><a href="#cb120-288" aria-hidden="true" tabindex="-1"></a>sorted.u <span class="ot">&lt;-</span> <span class="fu">sort</span>(urban)</span>
+<span id="cb120-289"><a href="#cb120-289" aria-hidden="true" tabindex="-1"></a>sorted.f <span class="ot">&lt;-</span> <span class="fu">sort</span>(farm)</span>
+<span id="cb120-290"><a href="#cb120-290" aria-hidden="true" tabindex="-1"></a>sorted.u</span>
+<span id="cb120-291"><a href="#cb120-291" aria-hidden="true" tabindex="-1"></a>sorted.f</span>
+<span id="cb120-292"><a href="#cb120-292" aria-hidden="true" tabindex="-1"></a><span class="co"># find included value </span></span>
+<span id="cb120-293"><a href="#cb120-293" aria-hidden="true" tabindex="-1"></a>include.u <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(n.u<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb120-294"><a href="#cb120-294" aria-hidden="true" tabindex="-1"></a>include.f <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(n.f<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb120-295"><a href="#cb120-295" aria-hidden="true" tabindex="-1"></a>sorted.u[include.u]</span>
+<span id="cb120-296"><a href="#cb120-296" aria-hidden="true" tabindex="-1"></a>sorted.f[include.f]</span>
+<span id="cb120-297"><a href="#cb120-297" aria-hidden="true" tabindex="-1"></a><span class="co"># upper and lower forth </span></span>
+<span id="cb120-298"><a href="#cb120-298" aria-hidden="true" tabindex="-1"></a>urban.lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,  <span class="dv">5</span>,  <span class="dv">5</span>,  <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">17</span>)</span>
+<span id="cb120-299"><a href="#cb120-299" aria-hidden="true" tabindex="-1"></a>urban.upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">33</span>, <span class="dv">35</span>, <span class="dv">80</span>)</span>
+<span id="cb120-300"><a href="#cb120-300" aria-hidden="true" tabindex="-1"></a>farm.lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,  <span class="fl">2.0</span>,  <span class="fl">3.0</span>,  <span class="fl">4.0</span>,  <span class="fl">4.0</span>,  <span class="fl">5.0</span>,  <span class="fl">8.0</span>,  <span class="fl">8.9</span>)</span>
+<span id="cb120-301"><a href="#cb120-301" aria-hidden="true" tabindex="-1"></a>farm.upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">8.9</span>,  <span class="fl">9.0</span>,  <span class="fl">9.0</span>,  <span class="fl">9.2</span>, <span class="fl">11.0</span>, <span class="fl">14.0</span>, <span class="fl">20.0</span>, <span class="fl">21.0</span>)</span>
+<span id="cb120-302"><a href="#cb120-302" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-303"><a href="#cb120-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-304"><a href="#cb120-304" aria-hidden="true" tabindex="-1"></a>Now that the data is sorted, the middle values of 17 and 8.9 have been found, and the data has been split into two chunks I can compute the minimum,lower forth median, median, upper forth median, and the largest value.</span>
+<span id="cb120-305"><a href="#cb120-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-308"><a href="#cb120-308" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-309"><a href="#cb120-309" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(urban)</span>
+<span id="cb120-310"><a href="#cb120-310" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban.lower)</span>
+<span id="cb120-311"><a href="#cb120-311" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban)</span>
+<span id="cb120-312"><a href="#cb120-312" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(urban.upper)</span>
+<span id="cb120-313"><a href="#cb120-313" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(urban)</span>
+<span id="cb120-314"><a href="#cb120-314" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(farm)</span>
+<span id="cb120-315"><a href="#cb120-315" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm.lower)</span>
+<span id="cb120-316"><a href="#cb120-316" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm)</span>
+<span id="cb120-317"><a href="#cb120-317" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(farm.upper)</span>
+<span id="cb120-318"><a href="#cb120-318" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(farm)</span>
+<span id="cb120-319"><a href="#cb120-319" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-320"><a href="#cb120-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-321"><a href="#cb120-321" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The authors of the cited article also provided endotoxin concentrations in dust bag dust:</span>
+<span id="cb120-322"><a href="#cb120-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-325"><a href="#cb120-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-326"><a href="#cb120-326" aria-hidden="true" tabindex="-1"></a>urban.bag <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">34.0</span>, <span class="fl">49.0</span>, <span class="fl">13.0</span>, <span class="fl">33.0</span>, <span class="fl">24.0</span>, <span class="fl">24.0</span>, <span class="fl">35.0</span>, <span class="fl">104.0</span>, <span class="fl">34.0</span>, <span class="fl">40.0</span>, <span class="fl">38.0</span>, <span class="fl">1.0</span>)</span>
+<span id="cb120-327"><a href="#cb120-327" aria-hidden="true" tabindex="-1"></a>farm.bag <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.0</span>, <span class="fl">64.0</span>, <span class="fl">6.0</span>, <span class="fl">17.0</span>, <span class="fl">35.0</span>, <span class="fl">11.0</span>, <span class="fl">17.0</span>, <span class="fl">13.0</span>, <span class="fl">5.0</span>, <span class="fl">27.0</span>, <span class="fl">23.0</span>,</span>
+<span id="cb120-328"><a href="#cb120-328" aria-hidden="true" tabindex="-1"></a>              <span class="fl">28.0</span>, <span class="fl">10.0</span>, <span class="fl">13.0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb120-329"><a href="#cb120-329" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(urban.bag)</span>
+<span id="cb120-330"><a href="#cb120-330" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(farm.bag)</span>
+<span id="cb120-331"><a href="#cb120-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-332"><a href="#cb120-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-333"><a href="#cb120-333" aria-hidden="true" tabindex="-1"></a>Construct a comparative boxplot (as did the cited paper) and compare and contrast the four samples.</span>
+<span id="cb120-334"><a href="#cb120-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-337"><a href="#cb120-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-338"><a href="#cb120-338" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb120-339"><a href="#cb120-339" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(urban)</span>
+<span id="cb120-340"><a href="#cb120-340" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(urban.bag)</span>
+<span id="cb120-341"><a href="#cb120-341" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb120-342"><a href="#cb120-342" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(farm)</span>
+<span id="cb120-343"><a href="#cb120-343" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(farm.bag)</span>
+<span id="cb120-344"><a href="#cb120-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-345"><a href="#cb120-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-346"><a href="#cb120-346" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.51` The article "A Thin-Film Oxygen Uptake Test for the Evaluation of Automotive Crankcase Lubricants" (Lubric. Engr., 1984: 75-83) reported the following data on oxidation-induction time (min) for various commercial oils:</span></span>
+<span id="cb120-347"><a href="#cb120-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-350"><a href="#cb120-350" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-351"><a href="#cb120-351" aria-hidden="true" tabindex="-1"></a>oxi.induct.time.min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">87</span>, <span class="dv">103</span>, <span class="dv">130</span>, <span class="dv">160</span>, <span class="dv">180</span>, <span class="dv">195</span>, <span class="dv">132</span>, <span class="dv">145</span>, <span class="dv">211</span>, <span class="dv">105</span>, <span class="dv">145</span>,</span>
+<span id="cb120-352"><a href="#cb120-352" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">153</span>, <span class="dv">152</span>, <span class="dv">138</span>, <span class="dv">87</span>, <span class="dv">99</span>, <span class="dv">93</span>, <span class="dv">119</span>, <span class="dv">129</span>)</span>
+<span id="cb120-353"><a href="#cb120-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-354"><a href="#cb120-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-355"><a href="#cb120-355" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Calculate the sample variance and the standard deviation.</span></span>
+<span id="cb120-356"><a href="#cb120-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-359"><a href="#cb120-359" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-360"><a href="#cb120-360" aria-hidden="true" tabindex="-1"></a>oxi.var <span class="ot">&lt;-</span> <span class="fu">var</span>(oxi.induct.time.min)</span>
+<span id="cb120-361"><a href="#cb120-361" aria-hidden="true" tabindex="-1"></a>oxi.sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(oxi.induct.time.min)</span>
+<span id="cb120-362"><a href="#cb120-362" aria-hidden="true" tabindex="-1"></a>oxi.var</span>
+<span id="cb120-363"><a href="#cb120-363" aria-hidden="true" tabindex="-1"></a>oxi.sd</span>
+<span id="cb120-364"><a href="#cb120-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-365"><a href="#cb120-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-366"><a href="#cb120-366" aria-hidden="true" tabindex="-1"></a><span class="fu">### `b.` If the observations were re-expressed in hours, what would be the resulting values of the sample variance and sample standard deviation? Answer without actually performing the re-expression.</span></span>
+<span id="cb120-367"><a href="#cb120-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-368"><a href="#cb120-368" aria-hidden="true" tabindex="-1"></a>The standard deviation has the same units as the data values (minutes) so in hours the standard deviation would be 35.56/60 (or a little over half an hour) whereas the variance is the standard deviation squared, so the values would be converted 1264.766/60\^2.</span>
+<span id="cb120-369"><a href="#cb120-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-372"><a href="#cb120-372" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-373"><a href="#cb120-373" aria-hidden="true" tabindex="-1"></a>oxi.var<span class="sc">/</span><span class="dv">60</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb120-374"><a href="#cb120-374" aria-hidden="true" tabindex="-1"></a>oxi.sd<span class="sc">/</span><span class="dv">60</span></span>
+<span id="cb120-375"><a href="#cb120-375" aria-hidden="true" tabindex="-1"></a><span class="co"># verification </span></span>
+<span id="cb120-376"><a href="#cb120-376" aria-hidden="true" tabindex="-1"></a>oxi.induct.time.hour <span class="ot">&lt;-</span> oxi.induct.time.min<span class="sc">/</span><span class="dv">60</span></span>
+<span id="cb120-377"><a href="#cb120-377" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oxi.induct.time.hour)</span>
+<span id="cb120-378"><a href="#cb120-378" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(oxi.induct.time.hour) </span>
+<span id="cb120-379"><a href="#cb120-379" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-380"><a href="#cb120-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-381"><a href="#cb120-381" aria-hidden="true" tabindex="-1"></a><span class="fu">## `1.60` Observations on burst strength (lb/in2) were obtained both for test nozzle welds ("Proper Procedures Are the Key to Welding Radioactive Waste Canisters," Welding J., Auud. 1997: 61-67)</span></span>
+<span id="cb120-382"><a href="#cb120-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-385"><a href="#cb120-385" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-386"><a href="#cb120-386" aria-hidden="true" tabindex="-1"></a>Test <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">7200</span>, <span class="dv">6100</span>, <span class="dv">7300</span>, <span class="dv">7300</span>, <span class="dv">8000</span>, <span class="dv">7400</span>,</span>
+<span id="cb120-387"><a href="#cb120-387" aria-hidden="true" tabindex="-1"></a>         <span class="dv">7300</span>, <span class="dv">7300</span>, <span class="dv">8000</span>, <span class="dv">6700</span>, <span class="dv">8300</span>)         </span>
+<span id="cb120-388"><a href="#cb120-388" aria-hidden="true" tabindex="-1"></a>Cannister <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5250</span>, <span class="dv">5625</span>, <span class="dv">5900</span>, <span class="dv">5900</span>, <span class="dv">5700</span>, <span class="dv">6050</span>,</span>
+<span id="cb120-389"><a href="#cb120-389" aria-hidden="true" tabindex="-1"></a>               <span class="dv">5800</span>, <span class="dv">6000</span>, <span class="dv">5875</span>, <span class="dv">6100</span>, <span class="dv">5850</span>, <span class="dv">6600</span>)</span>
+<span id="cb120-390"><a href="#cb120-390" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-391"><a href="#cb120-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-392"><a href="#cb120-392" aria-hidden="true" tabindex="-1"></a><span class="fu">### `a.` Construct a comparative boxplot and comment on interesting features (the cited article did not include such a picture, but the authors commented that they had looked at one).</span></span>
+<span id="cb120-393"><a href="#cb120-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-396"><a href="#cb120-396" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-397"><a href="#cb120-397" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb120-398"><a href="#cb120-398" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Test, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">8500</span>), <span class="at">main =</span> <span class="st">"Test"</span>)</span>
+<span id="cb120-399"><a href="#cb120-399" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Cannister, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">8500</span>), <span class="at">main =</span> <span class="st">"Cannister"</span>)</span>
+<span id="cb120-400"><a href="#cb120-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-401"><a href="#cb120-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-404"><a href="#cb120-404" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-405"><a href="#cb120-405" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Test)<span class="sc">-</span><span class="fu">mean</span>(Cannister)</span>
+<span id="cb120-406"><a href="#cb120-406" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Test)</span>
+<span id="cb120-407"><a href="#cb120-407" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Cannister)</span>
+<span id="cb120-408"><a href="#cb120-408" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Test)</span>
+<span id="cb120-409"><a href="#cb120-409" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Cannister)</span>
+<span id="cb120-410"><a href="#cb120-410" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

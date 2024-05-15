@@ -1,15 +1,12 @@
 ---
 title: "Proving that the Set of Symmetries of Non-Square Rhombus is a Group Under Composition"
-author: "Randi Bolt"
 date: "2021-07-26"
-categories: ["Geometry", "Math", "Proof", "School"]
+categories: ["School", "Mathematics", "Proofs"]
 toc: true
-draft: true
+draft: false
 ---
 
 This is a "presentation" style proof for Math-338: Modern College Geometry, and looks at the symmetries of a non-square rectangle. 
-
-![](https://media.giphy.com/media/26vUucK24XyuAy9a0/giphy.gif)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(error=FALSE,
@@ -31,8 +28,6 @@ _Prove for the following statement using course resources such as our notes and 
 ---
 
 # `1.` Definitions
-
-![](https://media.giphy.com/media/3FQvdeipKo9Ywvx09W/giphy.gif)
 
 ## `1.1` Parallelogram
 

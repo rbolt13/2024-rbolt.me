@@ -1,16 +1,15 @@
 ---
 title: "Quarto Links"
 date: "2022-11-21"
-categories: [Quarto]
+categories: [Original, Quarto]
 toc: true
 ---
 
-Here is a list of links I used to help create this Quarto blog. As well as links for web accessibility, examples of other quarto blogs, and examples of non-quarto blogs. 
+Here is a list of links I used to help create this Quarto blog. As well as links for web accessibility, examples of other quarto blogs, and examples of non-quarto blogs.
 
 ![](quarto.png)
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Quarto Links
 
 [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/)
@@ -53,9 +52,11 @@ Here is a list of links I used to help create this Quarto blog. As well as links
 
 [Danielle Navarro - Notes from a data witch](https://blog.djnavarro.net/): [Repo](https://github.com/djnavarro/quarto-blog)
 
-[Deesha menghani](https://deepshamenghani.quarto.pub/dmenghani/):  [Repo](https://github.com/deepshamenghani/Portfolio_DeepshaM)
+[Deesha menghani](https://deepshamenghani.quarto.pub/dmenghani/): [Repo](https://github.com/deepshamenghani/Portfolio_DeepshaM)
 
 [Jesse Adler](https://www.jessesadler.com/)
+
+[Lydia Gibson](https://lgibson7.quarto.pub/once-upon-a-time-series/): [Repo](https://github.com/lgibson7/Blog-Source-Code)
 
 [Meghan Harris](https://thetidytrekker.com/): [Repo](https://github.com/Meghansaha/thetidytrekker-quarto)
 
@@ -67,7 +68,7 @@ Here is a list of links I used to help create this Quarto blog. As well as links
 
 ### Other Blogs
 
-[Alicia Johnson (Made with blogdown))](https://ajohns24.github.io/portfolio/) 
+[Alicia Johnson (Made with blogdown))](https://ajohns24.github.io/portfolio/)
 
 [Allison Hill, PhD](https://www.apreshill.com/)
 
@@ -81,7 +82,7 @@ Here is a list of links I used to help create this Quarto blog. As well as links
 
 [Jon Harmon](http://jonthegeek.com/)
 
-[Julia Silge (Made with Blogdown and Hugo)](https://juliasilge.com/): [Repo](https://github.com/juliasilge/juliasilge.com) 
+[Julia Silge (Made with Blogdown and Hugo)](https://juliasilge.com/): [Repo](https://github.com/juliasilge/juliasilge.com)
 
 [Machine Learning Mastery!](https://machinelearningmastery.com/)
 
@@ -94,6 +95,4 @@ Here is a list of links I used to help create this Quarto blog. As well as links
 [Yanina Bellini Saibene](https://yabellini.netlify.app/)
 
 [Yihui Xie](https://yihui.org/en/)
-
 :::
-

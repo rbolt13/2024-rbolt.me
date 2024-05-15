@@ -1,16 +1,23 @@
 ---
-title: "SportsObserveR - Part 1: Scraping Functions"
+title: "SportsObserveR - Part 1: Scrapping Functions"
 date: "2022-11-07"
-categories: [NBA, Web-Scraping, R, SportsObserveR]
+categories: [Original, R, NBA, Web-Scrapping]
 toc: true
-draft: true
+draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
 In this tutorial I will be creating functions to scrape NBA data. The goal here is to prepare these functions to use in a package for future analysis.
 
+![](images/clipboard-1584024838.png)
+
 # `0_0. Introduction`
 
-Two essential chapters in every data scientists playbook are functions and web scrapping. In this blog post I will be making three main scrapping functions that will each include smaller nested functions. The three main functions will output specific data frames of NBA data. The nested functions will help scrape the data, and clean it so it's in a readable form. 
+Two essential chapters in every data scientists playbook are functions and web scrapping. In this blog post I will be making three main scrapping functions that will each include smaller nested functions. The three main functions will output specific data frames of NBA data. The nested functions will help scrape the data, and clean it so it's in a readable form.
 
 ## `0_1. About-The-Data`
 
@@ -35,17 +42,17 @@ library(magrittr)
 
 # `1_0. Functions`
 
-To start I will be creating three function: 
+To start I will be creating three function:
 
-1. Team Statistics
+1.  Team Statistics
 
-2. Player Statistics
+2.  Player Statistics
 
-3. Box Scores 
+3.  Box Scores
 
 ## `1_1. Team Statistics`:
 
-The first function I'm creating scrapes team statistics, which will need the user to input the teams url **slug**, the **year** that team attended or attends the NBA playoffs, and the **stats_tb** or statistics table that corresponds to what is shown on [Basketball Reference](https://www.basketball-reference.com/). Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced. 
+The first function I'm creating scrapes team statistics, which will need the user to input the teams url **slug**, the **year** that team attended or attends the NBA playoffs, and the **stats_tb** or statistics table that corresponds to what is shown on [Basketball Reference](https://www.basketball-reference.com/). Currently not all tables work, but it should work for: #per_game, #totals, #per_36_minutes, and #advanced.
 
 ```{r}
 scrape_team_data <- function(slug, year, stats_tb){
@@ -96,7 +103,7 @@ bulls_totals <- scrape_team_data("CHI", "1998", "#totals")
 utils::head(bulls_totals)
 ```
 
-_Here we can see when Michael Jordan won his 6th ring with the Chicago Bulls he was also the leagues leading point scorer with 2,357 total points that season. Dennis Rodman was also a league leader that season in rebounds collecting a total of 1,201 rebounds._
+*Here we can see when Michael Jordan won his 6th ring with the Chicago Bulls he was also the leagues leading point scorer with 2,357 total points that season. Dennis Rodman was also a league leader that season in rebounds collecting a total of 1,201 rebounds.*
 
 ## `1_2. Player Statistics`
 
@@ -162,7 +169,7 @@ ai_per_game <- scrape_player_data("Allen Iverson", "#per_game")
 head(ai_per_game)
 ```
 
-_Notice that when Allen Iverson won the NBA's MVP in 2001 he was putting up about 31 points a game._
+*Notice that when Allen Iverson won the NBA's MVP in 2001 he was putting up about 31 points a game.*
 
 #### D. [Kareem Abdul-Jabbar](https://en.wikipedia.org/wiki/Kareem_Abdul-Jabbar) Totals
 
@@ -173,9 +180,9 @@ utils::head(kaj_totals)
 
 ## `1_3. Box Scores`
 
-The last function still needs a bit of work, but will pull box scores of all the NBA games on a given day. The user will need to enter the **game_day** or day of the games they want box scores for. 
+The last function still needs a bit of work, but will pull box scores of all the NBA games on a given day. The user will need to enter the **game_day** or day of the games they want box scores for.
 
-Note: Ideally this function would return a list with each game being its own df, but for now it only prints one data frame that includes all games played on that date. There also seem to be issues when only one game is played, or it is the first game of the season (see examples below), but for now those issues are manageable. 
+Note: Ideally this function would return a list with each game being its own df, but for now it only prints one data frame that includes all games played on that date. There also seem to be issues when only one game is played, or it is the first game of the season (see examples below), but for now those issues are manageable.
 
 ```{r}
 box_scores <- function(game_day){
@@ -228,8 +235,7 @@ box_scores <- function(game_day){
 }
 ```
 
-
-### Example 
+### Example
 
 #### E. Box Scores for 10-19-2022 (works correctly)
 
@@ -245,7 +251,7 @@ oct_18 <- box_scores("2022-10-18")
 oct_18
 ```
 
-<span style="color: red;">Issue: For the first game of the season there is an are NA tables that are being pulled in.</span> 
+[Issue: For the first game of the season there is an are NA tables that are being pulled in.]{style="color: red;"}
 
 G. First game of the 1992 NBA Finals AKA [Michael Jordan's famous Shrug](https://www.youtube.com/watch?v=hynjpv8y1pA&t=16s) (issues)
 
@@ -254,5 +260,4 @@ finals_92_g1 <- box_scores("1992-6-3")
 finals_92_g1
 ```
 
-<span style="color: red;">Issue: For days where only one game is played the one game is printed twice in the data frame.</span>
-
+[Issue: For days where only one game is played the one game is printed twice in the data frame.]{style="color: red;"}

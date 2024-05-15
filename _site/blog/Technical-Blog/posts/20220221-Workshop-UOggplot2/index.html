@@ -270,11 +270,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">UO: ggplot2 Part 2</h1>
+<div class="quarto-title-block"><div><h1 class="title">UO: ggplot2 Part 2</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
   <div class="quarto-categories">
+    <div class="quarto-category">Workshop</div>
     <div class="quarto-category">R</div>
     <div class="quarto-category">Data Visuals</div>
-    <div class="quarto-category">Workshop</div>
   </div>
   </div>
 
@@ -298,8 +298,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </header>
 
 
-<p>These are my notes from the University of Oregon’s Data Service Consultants workshop on ggplot2, part 2. Cameron Mulder ran this workshop. He can be contacted via U of O’s <a href="https://library.uoregon.edu/research-data-management/consultations">consultation page</a>.</p>
-<p><img src="ggplot2.png" class="img-fluid"></p>
+<p>Here are my notes from the University of Oregon’s Data Service Consultants workshop on ggplot2, part 2, led by <a href="https://library.uoregon.edu/research-data-management/consultations">Cameron Mulder</a>.</p>
 <section id="set-up" class="level1">
 <h1><code>1. Set Up</code></h1>
 <p>For this post we used the following packages:</p>
@@ -313,6 +312,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <li><p>plotly: to create interactive plots.</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(magrittr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(dplyr)</span>
@@ -320,6 +321,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(ozmaps)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(rmapshaper)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>And the following data sets:</p>
 <ul>
@@ -327,8 +329,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <li><p><a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/BOD.html">BOD</a>(Biochemical Oxygen Demand)</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">data</span>(<span class="st">"cars"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">data</span> (<span class="st">"BOD"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="ggplot2-review" class="level1">
@@ -336,6 +341,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>To start we made a simple point plot using the cars data set.</p>
 <p>Note: <code>ggplot(data= &lt;DATA&gt;, mapping = aes(&lt;MAPPING&gt;))+ &lt;GEOM FUNCTION&gt;()</code></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> mpg, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
@@ -343,6 +350,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> hwy)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -354,7 +362,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>We can compare this to a simple plot in base R.</p>
 <p>Note : the <code>$</code> is how we id the specific variable we are wanting to work with.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(mpg<span class="sc">$</span>displ, mpg<span class="sc">$</span>hwy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -369,12 +380,15 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>Starting with base R:</p>
 <p>Note: <code>help(pressure)</code> is the same as <code>?pressure</code></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(pressure<span class="sc">$</span>temperature, pressure<span class="sc">$</span>pressure, <span class="at">type =</span> <span class="st">"l"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add points</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">points</span>(pressure<span class="sc">$</span>temperature, pressure<span class="sc">$</span>pressure)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add lines (and points)</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">lines</span>(pressure<span class="sc">$</span>temperature, pressure<span class="sc">$</span>pressure<span class="sc">/</span><span class="dv">2</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">points</span>(pressure<span class="sc">$</span>temperature, pressure<span class="sc">$</span>pressure<span class="sc">/</span><span class="dv">2</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -385,11 +399,14 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>ggplot:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(pressure, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> temperature, <span class="at">y =</span> pressure)) <span class="sc">+</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>() <span class="sc">+</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> temperature, <span class="at">y =</span> pressure<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span> </span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> temperature, <span class="at">y =</span> pressure<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -403,7 +420,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1><code>4. Bar Graphs</code></h1>
 <p>Base R:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">barplot</span>(BOD<span class="sc">$</span>demand, <span class="at">names.arg =</span> BOD<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -413,7 +433,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">barplot</span>(base<span class="sc">::</span><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -424,8 +447,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>ggplot2:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(BOD, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> base<span class="sc">::</span><span class="fu">factor</span>(Time), <span class="at">y =</span> demand)) <span class="sc">+</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -437,8 +463,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>Notice that the 6 isn’t there because of <code>factor()</code>.</p>
 <p>Note : geom_bar does counts, but column has the height of the bar based on the data.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x=</span>cyl)) <span class="sc">+</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -452,7 +481,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1><code>5. Histogram</code></h1>
 <p>Base R:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg, <span class="at">breaks =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -463,8 +495,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>ggplot2:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mtcars, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x=</span>mpg)) <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -478,7 +513,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1><code>6. Boxplot</code></h1>
 <p>Base R:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ToothGrowth<span class="sc">$</span>supp, ToothGrowth<span class="sc">$</span>len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -489,8 +527,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Base R: Formula Syntax</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(len <span class="sc">~</span> supp <span class="sc">+</span> dose, <span class="at">data =</span> ToothGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -508,8 +549,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>ggplot2:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ToothGrowth, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x=</span> supp, <span class="at">y =</span> len)) <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -524,25 +568,31 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <p>ggplot2 will automatically recognize the variable as a date as long as the variable is imported as a date.</p>
 <p>To start create some dummy data:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">day =</span> base<span class="sc">::</span><span class="fu">as.Date</span>(<span class="st">"2017-06-14"</span>)<span class="sc">-</span><span class="dv">0</span><span class="sc">:</span><span class="dv">364</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> stats<span class="sc">::</span><span class="fu">runif</span>(<span class="dv">365</span>)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>         day      value
-1 2017-06-14 0.05664671
-2 2017-06-13 0.75414689
-3 2017-06-12 0.30676448
-4 2017-06-11 0.95362965
-5 2017-06-10 0.85218560
-6 2017-06-09 0.41689394</code></pre>
+<pre><code>         day     value
+1 2017-06-14 0.9737408
+2 2017-06-13 0.4143008
+3 2017-06-12 0.2775387
+4 2017-06-11 0.9027036
+5 2017-06-10 0.7378426
+6 2017-06-09 0.4124674</code></pre>
 </div>
 </div>
 <p>Then plot it with ggplot2:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> day, <span class="at">y =</span> value)) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -553,8 +603,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Now to make a plot with the economics data set which is included in ggplot2.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> economics, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> pop)) <span class="sc">+</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -565,13 +618,19 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Next create a subset of the data from 2006 and beyond:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>subset <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>economics <span class="sc">%&gt;%</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(date<span class="sc">&gt;</span>base<span class="sc">::</span><span class="fu">as.Date</span>(<span class="st">"2006-1-1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now to create a different line graph of the subset data over time where the size of the line is based on the value of unemployment (which is the number of unemployment in thousands).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(economics, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> pop)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">size =</span> unemploy), <span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -585,9 +644,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1><code>8. Maps</code></h1>
 <p>Using <code>map_data()</code> get lat and long data for counties in Oregon:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>or_counties <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">map_data</span>(<span class="st">"county"</span>, <span class="st">"oregon"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">lon =</span> long, lat, group, <span class="at">id =</span> subregion)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(or_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        lon      lat group    id
 1 -117.2042 44.30683     1 baker
@@ -600,9 +662,12 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Using or_counties data create a ggplot2 map:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(or_counties, ggplot2<span class="sc">::</span><span class="fu">aes</span>(lon, lat, <span class="at">group =</span> group))<span class="sc">+</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_polygon</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_quickmap</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -613,8 +678,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <p>Using <code>ozmap_states</code> get the names of the different states in Australia.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>oz_stats <span class="ot">&lt;-</span> ozmaps<span class="sc">::</span>ozmap_states</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>oz_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 9 features and 1 field
 Geometry type: MULTIPOLYGON
@@ -637,9 +705,12 @@ Geodetic CRS:  GDA94
 </div>
 <p>Then create a ggplot2 map of Australia:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(oz_stats)<span class="sc">+</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -650,16 +721,22 @@ Geodetic CRS:  GDA94
 </div>
 <p>Next we remove the “Other territories”, and create a multi-polygon data set of Australian Bureau of Statistics.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>oz_stats <span class="ot">&lt;-</span> ozmaps<span class="sc">::</span>ozmap_states <span class="sc">%&gt;%</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(NAME <span class="sc">!=</span> <span class="st">"Other Territories"</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>oz_votes <span class="ot">&lt;-</span> rmapshaper<span class="sc">::</span><span class="fu">ms_simplify</span>(ozmaps<span class="sc">::</span>abs_ced)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Then create another map of Australian territories:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()<span class="sc">+</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>(<span class="at">data =</span> oz_stats, <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">fill =</span> NAME)) <span class="sc">+</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>(<span class="at">data =</span> oz_votes, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -673,31 +750,40 @@ Geodetic CRS:  GDA94
 <h1><code>9. Plotly</code></h1>
 <p>An interactive graph of the iris data:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> plotly<span class="sc">::</span><span class="fu">plot_ly</span>(</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> iris, </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="sc">~</span>Sepal.Length, </span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="sc">~</span>Petal.Length)</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>fig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d004340c32595a802172" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d004340c32595a802172">{"x":{"visdat":{"6777271a2835":["function () ","plotlyVisDat"]},"cur_data":"6777271a2835","attrs":{"6777271a2835":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Sepal.Length"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Petal.Length"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.0999999999999996,4.9000000000000004,4.7000000000000002,4.5999999999999996,5,5.4000000000000004,4.5999999999999996,5,4.4000000000000004,4.9000000000000004,5.4000000000000004,4.7999999999999998,4.7999999999999998,4.2999999999999998,5.7999999999999998,5.7000000000000002,5.4000000000000004,5.0999999999999996,5.7000000000000002,5.0999999999999996,5.4000000000000004,5.0999999999999996,4.5999999999999996,5.0999999999999996,4.7999999999999998,5,5,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7999999999999998,5.4000000000000004,5.2000000000000002,5.5,4.9000000000000004,5,5.5,4.9000000000000004,4.4000000000000004,5.0999999999999996,5,4.5,4.4000000000000004,5,5.0999999999999996,4.7999999999999998,5.0999999999999996,4.5999999999999996,5.2999999999999998,5,7,6.4000000000000004,6.9000000000000004,5.5,6.5,5.7000000000000002,6.2999999999999998,4.9000000000000004,6.5999999999999996,5.2000000000000002,5,5.9000000000000004,6,6.0999999999999996,5.5999999999999996,6.7000000000000002,5.5999999999999996,5.7999999999999998,6.2000000000000002,5.5999999999999996,5.9000000000000004,6.0999999999999996,6.2999999999999998,6.0999999999999996,6.4000000000000004,6.5999999999999996,6.7999999999999998,6.7000000000000002,6,5.7000000000000002,5.5,5.5,5.7999999999999998,6,5.4000000000000004,6,6.7000000000000002,6.2999999999999998,5.5999999999999996,5.5,5.5,6.0999999999999996,5.7999999999999998,5,5.5999999999999996,5.7000000000000002,5.7000000000000002,6.2000000000000002,5.0999999999999996,5.7000000000000002,6.2999999999999998,5.7999999999999998,7.0999999999999996,6.2999999999999998,6.5,7.5999999999999996,4.9000000000000004,7.2999999999999998,6.7000000000000002,7.2000000000000002,6.5,6.4000000000000004,6.7999999999999998,5.7000000000000002,5.7999999999999998,6.4000000000000004,6.5,7.7000000000000002,7.7000000000000002,6,6.9000000000000004,5.5999999999999996,7.7000000000000002,6.2999999999999998,6.7000000000000002,7.2000000000000002,6.2000000000000002,6.0999999999999996,6.4000000000000004,7.2000000000000002,7.4000000000000004,7.9000000000000004,6.4000000000000004,6.2999999999999998,6.0999999999999996,7.7000000000000002,6.2999999999999998,6.4000000000000004,6,6.9000000000000004,6.7000000000000002,6.9000000000000004,5.7999999999999998,6.7999999999999998,6.7000000000000002,6.7000000000000002,6.2999999999999998,6.5,6.2000000000000002,5.9000000000000004],"y":[1.3999999999999999,1.3999999999999999,1.3,1.5,1.3999999999999999,1.7,1.3999999999999999,1.5,1.3999999999999999,1.5,1.5,1.6000000000000001,1.3999999999999999,1.1000000000000001,1.2,1.5,1.3,1.3999999999999999,1.7,1.5,1.7,1.5,1,1.7,1.8999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.3999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.5,1.3999999999999999,1.5,1.2,1.3,1.3999999999999999,1.3,1.5,1.3,1.3,1.3,1.6000000000000001,1.8999999999999999,1.3999999999999999,1.6000000000000001,1.3999999999999999,1.5,1.3999999999999999,4.7000000000000002,4.5,4.9000000000000004,4,4.5999999999999996,4.5,4.7000000000000002,3.2999999999999998,4.5999999999999996,3.8999999999999999,3.5,4.2000000000000002,4,4.7000000000000002,3.6000000000000001,4.4000000000000004,4.5,4.0999999999999996,4.5,3.8999999999999999,4.7999999999999998,4,4.9000000000000004,4.7000000000000002,4.2999999999999998,4.4000000000000004,4.7999999999999998,5,4.5,3.5,3.7999999999999998,3.7000000000000002,3.8999999999999999,5.0999999999999996,4.5,4.5,4.7000000000000002,4.4000000000000004,4.0999999999999996,4,4.4000000000000004,4.5999999999999996,4,3.2999999999999998,4.2000000000000002,4.2000000000000002,4.2000000000000002,4.2999999999999998,3,4.0999999999999996,6,5.0999999999999996,5.9000000000000004,5.5999999999999996,5.7999999999999998,6.5999999999999996,4.5,6.2999999999999998,5.7999999999999998,6.0999999999999996,5.0999999999999996,5.2999999999999998,5.5,5,5.0999999999999996,5.2999999999999998,5.5,6.7000000000000002,6.9000000000000004,5,5.7000000000000002,4.9000000000000004,6.7000000000000002,4.9000000000000004,5.7000000000000002,6,4.7999999999999998,4.9000000000000004,5.5999999999999996,5.7999999999999998,6.0999999999999996,6.4000000000000004,5.5999999999999996,5.0999999999999996,5.5999999999999996,6.0999999999999996,5.5999999999999996,5.5,4.7999999999999998,5.4000000000000004,5.5999999999999996,5.0999999999999996,5.0999999999999996,5.9000000000000004,5.7000000000000002,5.2000000000000002,5,5.2000000000000002,5.4000000000000004,5.0999999999999996],"type":"scatter","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a3e8dfa2e9087191e912" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a3e8dfa2e9087191e912">{"x":{"visdat":{"95fc374099ff":["function () ","plotlyVisDat"]},"cur_data":"95fc374099ff","attrs":{"95fc374099ff":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Sepal.Length"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Petal.Length"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.0999999999999996,4.9000000000000004,4.7000000000000002,4.5999999999999996,5,5.4000000000000004,4.5999999999999996,5,4.4000000000000004,4.9000000000000004,5.4000000000000004,4.7999999999999998,4.7999999999999998,4.2999999999999998,5.7999999999999998,5.7000000000000002,5.4000000000000004,5.0999999999999996,5.7000000000000002,5.0999999999999996,5.4000000000000004,5.0999999999999996,4.5999999999999996,5.0999999999999996,4.7999999999999998,5,5,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7999999999999998,5.4000000000000004,5.2000000000000002,5.5,4.9000000000000004,5,5.5,4.9000000000000004,4.4000000000000004,5.0999999999999996,5,4.5,4.4000000000000004,5,5.0999999999999996,4.7999999999999998,5.0999999999999996,4.5999999999999996,5.2999999999999998,5,7,6.4000000000000004,6.9000000000000004,5.5,6.5,5.7000000000000002,6.2999999999999998,4.9000000000000004,6.5999999999999996,5.2000000000000002,5,5.9000000000000004,6,6.0999999999999996,5.5999999999999996,6.7000000000000002,5.5999999999999996,5.7999999999999998,6.2000000000000002,5.5999999999999996,5.9000000000000004,6.0999999999999996,6.2999999999999998,6.0999999999999996,6.4000000000000004,6.5999999999999996,6.7999999999999998,6.7000000000000002,6,5.7000000000000002,5.5,5.5,5.7999999999999998,6,5.4000000000000004,6,6.7000000000000002,6.2999999999999998,5.5999999999999996,5.5,5.5,6.0999999999999996,5.7999999999999998,5,5.5999999999999996,5.7000000000000002,5.7000000000000002,6.2000000000000002,5.0999999999999996,5.7000000000000002,6.2999999999999998,5.7999999999999998,7.0999999999999996,6.2999999999999998,6.5,7.5999999999999996,4.9000000000000004,7.2999999999999998,6.7000000000000002,7.2000000000000002,6.5,6.4000000000000004,6.7999999999999998,5.7000000000000002,5.7999999999999998,6.4000000000000004,6.5,7.7000000000000002,7.7000000000000002,6,6.9000000000000004,5.5999999999999996,7.7000000000000002,6.2999999999999998,6.7000000000000002,7.2000000000000002,6.2000000000000002,6.0999999999999996,6.4000000000000004,7.2000000000000002,7.4000000000000004,7.9000000000000004,6.4000000000000004,6.2999999999999998,6.0999999999999996,7.7000000000000002,6.2999999999999998,6.4000000000000004,6,6.9000000000000004,6.7000000000000002,6.9000000000000004,5.7999999999999998,6.7999999999999998,6.7000000000000002,6.7000000000000002,6.2999999999999998,6.5,6.2000000000000002,5.9000000000000004],"y":[1.3999999999999999,1.3999999999999999,1.3,1.5,1.3999999999999999,1.7,1.3999999999999999,1.5,1.3999999999999999,1.5,1.5,1.6000000000000001,1.3999999999999999,1.1000000000000001,1.2,1.5,1.3,1.3999999999999999,1.7,1.5,1.7,1.5,1,1.7,1.8999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.3999999999999999,1.6000000000000001,1.6000000000000001,1.5,1.5,1.3999999999999999,1.5,1.2,1.3,1.3999999999999999,1.3,1.5,1.3,1.3,1.3,1.6000000000000001,1.8999999999999999,1.3999999999999999,1.6000000000000001,1.3999999999999999,1.5,1.3999999999999999,4.7000000000000002,4.5,4.9000000000000004,4,4.5999999999999996,4.5,4.7000000000000002,3.2999999999999998,4.5999999999999996,3.8999999999999999,3.5,4.2000000000000002,4,4.7000000000000002,3.6000000000000001,4.4000000000000004,4.5,4.0999999999999996,4.5,3.8999999999999999,4.7999999999999998,4,4.9000000000000004,4.7000000000000002,4.2999999999999998,4.4000000000000004,4.7999999999999998,5,4.5,3.5,3.7999999999999998,3.7000000000000002,3.8999999999999999,5.0999999999999996,4.5,4.5,4.7000000000000002,4.4000000000000004,4.0999999999999996,4,4.4000000000000004,4.5999999999999996,4,3.2999999999999998,4.2000000000000002,4.2000000000000002,4.2000000000000002,4.2999999999999998,3,4.0999999999999996,6,5.0999999999999996,5.9000000000000004,5.5999999999999996,5.7999999999999998,6.5999999999999996,4.5,6.2999999999999998,5.7999999999999998,6.0999999999999996,5.0999999999999996,5.2999999999999998,5.5,5,5.0999999999999996,5.2999999999999998,5.5,6.7000000000000002,6.9000000000000004,5,5.7000000000000002,4.9000000000000004,6.7000000000000002,4.9000000000000004,5.7000000000000002,6,4.7999999999999998,4.9000000000000004,5.5999999999999996,5.7999999999999998,6.0999999999999996,6.4000000000000004,5.5999999999999996,5.0999999999999996,5.5999999999999996,6.0999999999999996,5.5999999999999996,5.5,4.7999999999999998,5.4000000000000004,5.5999999999999996,5.0999999999999996,5.0999999999999996,5.9000000000000004,5.7000000000000002,5.2000000000000002,5,5.2000000000000002,5.4000000000000004,5.0999999999999996],"type":"scatter","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>An interactive plot of the cars data set:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> plotly<span class="sc">::</span><span class="fu">plot_ly</span>(<span class="at">x =</span> <span class="sc">~</span>displ, <span class="at">y =</span> <span class="sc">~</span>mpg, <span class="at">color =</span> <span class="sc">~</span>class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bc56e9ba3d50519aa398" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-bc56e9ba3d50519aa398">{"x":{"visdat":{"67772e2e92a8":["function () ","plotlyVisDat"]},"cur_data":"67772e2e92a8","attrs":{"67772e2e92a8":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"displ"},"yaxis":{"domain":[0,1],"automargin":true,"title":"mpg"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.7000000000000002,5.7000000000000002,6.2000000000000002,6.2000000000000002,7],"y":{"manufacturer":["audi","audi","audi","audi","audi"],"model":["a4","a4","a4","a4","a4"],"displ":[1.8,1.8,2,2,2.7999999999999998],"year":[1999,1999,2008,2008,1999],"cyl":[4,4,4,4,6],"trans":["auto(l5)","manual(m5)","manual(m6)","auto(av)","auto(l5)"],"drv":["f","f","f","f","f"],"cty":[18,21,20,21,16],"hwy":[29,29,31,30,26],"fl":["p","p","p","p","p"],"class":["compact","compact","compact","compact","compact"]},"type":"scatter","mode":"markers","name":"2seater","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,3.1000000000000001,2.3999999999999999,2.3999999999999999,2.5,2.5,2.5,2.5,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.2999999999999998,1.8,1.8,1.8,1.8,1.8,2,2,2,2,2.7999999999999998,1.8999999999999999,2,2,2,2,2.5,2.5,2.7999999999999998,2.7999999999999998],"y":{"manufacturer":["audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge"],"model":["a4","a4","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a6 quattro","a6 quattro","a6 quattro","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","corvette","corvette","corvette","corvette","corvette","k1500 tahoe 4wd","k1500 tahoe 4wd","k1500 tahoe 4wd","k1500 tahoe 4wd","malibu","malibu","malibu","malibu","malibu","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd"],"displ":[2.7999999999999998,3.1000000000000001,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,3.1000000000000001,2.7999999999999998,3.1000000000000001,4.2000000000000002,5.2999999999999998,5.2999999999999998,5.2999999999999998,5.7000000000000002,6,5.7000000000000002,5.7000000000000002,6.2000000000000002,6.2000000000000002,7,5.2999999999999998,5.2999999999999998,5.7000000000000002,6.5,2.3999999999999999,2.3999999999999999,3.1000000000000001,3.5,3.6000000000000001,2.3999999999999999,3,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.7999999999999998,3.7999999999999998,3.7999999999999998,4,3.7000000000000002,3.7000000000000002,3.8999999999999999,3.8999999999999999],"year":[1999,2008,1999,1999,2008,2008,1999,1999,2008,2008,1999,2008,2008,2008,2008,2008,1999,2008,1999,1999,2008,2008,2008,2008,2008,1999,1999,1999,2008,1999,2008,2008,1999,1999,1999,1999,2008,2008,2008,1999,1999,2008,2008,2008,2008,1999,1999],"cyl":[6,6,4,4,4,4,6,6,6,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,4,4,6,6,6,4,6,6,6,6,6,6,6,6,6,6,6,6,6,6],"trans":["manual(m5)","auto(av)","manual(m5)","auto(l5)","manual(m6)","auto(s6)","auto(l5)","manual(m5)","auto(s6)","manual(m6)","auto(l5)","auto(s6)","auto(s6)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","manual(m6)","auto(l4)","manual(m6)","auto(s6)","manual(m6)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(s6)","auto(l3)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l6)","auto(l6)","manual(m6)","auto(l4)","auto(l4)","manual(m5)"],"drv":["f","f","4","4","4","4","4","4","4","4","4","4","4","r","r","r","r","r","r","r","r","r","r","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4"],"cty":[18,18,18,16,20,19,15,17,17,15,15,17,16,14,11,14,13,12,16,15,16,15,15,14,11,11,14,19,22,18,18,17,18,17,16,16,17,17,11,15,15,16,16,15,14,13,14],"hwy":[26,27,26,25,28,27,25,25,25,25,24,25,23,20,15,20,17,17,26,23,26,25,24,19,14,15,17,27,30,26,29,26,24,24,22,22,24,24,17,22,21,23,23,19,18,17,17],"fl":["p","p","p","p","p","p","p","p","p","p","p","p","p","r","e","r","r","r","p","p","p","p","p","r","e","r","d","r","r","r","r","r","r","r","r","r","r","r","e","r","r","r","r","r","r","r","r"],"class":["compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","midsize","midsize","midsize","suv","suv","suv","suv","suv","2seater","2seater","2seater","2seater","2seater","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","pickup","pickup","pickup","pickup"]},"type":"scatter","mode":"markers","name":"compact","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.7999999999999998,3.1000000000000001,4.2000000000000002,2.3999999999999999,2.3999999999999999,3.1000000000000001,3.5,3.6000000000000001,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.5,2.5,3.2999999999999998,2.5,2.5,3.5,3.5,3,3,3.5,3.1000000000000001,3.7999999999999998,3.7999999999999998,3.7999999999999998,5.2999999999999998,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.5,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.6000000000000001],"y":{"manufacturer":["dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford"],"model":["dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","expedition 2wd","expedition 2wd","expedition 2wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","mustang","mustang","mustang"],"displ":[4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,4,4,4,4,4.5999999999999996,5,4.2000000000000002,4.2000000000000002,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,5.4000000000000004,3.7999999999999998,3.7999999999999998,4],"year":[2008,2008,2008,1999,1999,1999,2008,2008,2008,1999,2008,1999,2008,2008,2008,2008,2008,2008,1999,1999,2008,1999,1999,1999,2008,1999,1999,1999,2008,2008,1999,1999,1999,1999,1999,2008,1999,2008,1999,1999,2008],"cyl":[8,8,8,8,8,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,6,6,6,8,8,6,6,8,8,8,8,8,6,6,6],"trans":["auto(l5)","auto(l5)","auto(l5)","manual(m5)","auto(l4)","auto(l4)","auto(l5)","auto(l5)","auto(l5)","auto(l4)","auto(l5)","auto(l4)","manual(m6)","auto(l5)","auto(l5)","auto(l5)","manual(m6)","manual(m6)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","auto(l4)","auto(l4)","auto(l6)","auto(l5)","manual(m5)","auto(l5)","auto(l5)","auto(l6)","auto(l4)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","manual(m5)","auto(l4)","manual(m5)"],"drv":["4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r","4","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r"],"cty":[14,14,9,11,11,13,13,9,13,11,13,11,12,9,13,13,12,9,11,11,13,11,11,11,12,14,15,14,13,13,13,14,14,13,13,13,11,13,18,18,17],"hwy":[19,19,12,17,15,17,17,12,17,16,18,15,16,12,17,17,16,12,15,16,17,15,17,17,18,17,19,17,19,19,17,17,17,16,16,17,15,17,26,25,26],"fl":["r","r","e","r","r","r","r","e","r","r","r","r","r","e","r","r","r","e","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r"],"class":["pickup","pickup","pickup","pickup","pickup","suv","suv","suv","suv","suv","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","suv","suv","suv","suv","suv","suv","suv","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","subcompact","subcompact","subcompact"]},"type":"scatter","mode":"markers","name":"midsize","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.3999999999999999,3,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.7999999999999998,3.7999999999999998,3.7999999999999998,4],"y":{"manufacturer":["ford","ford","ford","ford","ford","ford","honda","honda","honda","honda","honda"],"model":["mustang","mustang","mustang","mustang","mustang","mustang","civic","civic","civic","civic","civic"],"displ":[4,4.5999999999999996,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001],"year":[2008,1999,1999,2008,2008,2008,1999,1999,1999,1999,1999],"cyl":[6,8,8,8,8,8,4,4,4,4,4],"trans":["auto(l5)","auto(l4)","manual(m5)","manual(m5)","auto(l5)","manual(m6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)"],"drv":["r","r","r","r","r","r","f","f","f","f","f"],"cty":[16,15,15,15,15,14,28,24,25,23,24],"hwy":[24,21,22,23,22,20,33,32,32,29,32],"fl":["r","r","r","r","r","p","r","r","r","p","r"],"class":["subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact"]},"type":"scatter","mode":"markers","name":"minivan","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.7000000000000002,3.7000000000000002,3.8999999999999999,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.2000000000000002,4.2000000000000002,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,5.4000000000000004,2.7000000000000002,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4],"y":{"manufacturer":["honda","honda","honda","honda","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","jeep","jeep","jeep","jeep","jeep","jeep","jeep","jeep","land rover","land rover","land rover","land rover","lincoln","lincoln","lincoln"],"model":["civic","civic","civic","civic","sonata","sonata","sonata","sonata","sonata","sonata","sonata","tiburon","tiburon","tiburon","tiburon","tiburon","tiburon","tiburon","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","range rover","range rover","range rover","range rover","navigator 2wd","navigator 2wd","navigator 2wd"],"displ":[1.8,1.8,1.8,2,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.5,2.5,3.2999999999999998,2,2,2,2,2.7000000000000002,2.7000000000000002,2.7000000000000002,3,3.7000000000000002,4,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.7000000000000002,6.0999999999999996,4,4.2000000000000002,4.4000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,5.4000000000000004],"year":[2008,2008,2008,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,2008,2008,2008,2008,2008,2008,2008,1999,1999,2008,2008,2008,2008,1999,2008,2008,1999,1999,1999,2008],"cyl":[4,4,4,4,4,4,4,4,6,6,6,4,4,4,4,6,6,6,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8],"trans":["manual(m5)","auto(l5)","auto(l5)","manual(m6)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","manual(m6)","manual(m5)","auto(l5)","auto(l5)","auto(l4)","auto(l4)","auto(l5)","auto(l5)","auto(l5)","auto(l5)","auto(l4)","auto(s6)","auto(s6)","auto(l4)","auto(l4)","auto(l4)","auto(l6)"],"drv":["f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r"],"cty":[26,25,24,21,18,18,21,21,18,18,19,19,19,20,20,17,16,17,17,15,15,14,9,14,13,11,11,12,12,11,11,11,12],"hwy":[34,36,36,29,26,27,30,31,26,26,28,26,29,28,27,24,24,24,22,19,20,17,12,19,18,14,15,18,18,15,17,16,18],"fl":["r","r","c","p","r","r","r","r","r","r","r","r","r","r","r","r","r","r","d","r","r","r","e","r","r","p","p","r","r","p","r","p","r"],"class":["subcompact","subcompact","subcompact","subcompact","midsize","midsize","midsize","midsize","midsize","midsize","midsize","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv"]},"type":"scatter","mode":"markers","name":"pickup","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.7999999999999998,3.7999999999999998,4,4,4.5999999999999996,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.8,1.8,1.8,2,2,2,2,2,2.7000000000000002,2.7000000000000002,2.7000000000000002,2.2000000000000002,2.2000000000000002,2.5,2.5,1.8999999999999999,1.8999999999999999,2,2,2.5,2.5],"y":{"manufacturer":["mercury","mercury","mercury","mercury","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","pontiac","pontiac","pontiac","pontiac","pontiac","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru"],"model":["mountaineer 4wd","mountaineer 4wd","mountaineer 4wd","mountaineer 4wd","altima","altima","altima","altima","altima","altima","maxima","maxima","maxima","pathfinder 4wd","pathfinder 4wd","pathfinder 4wd","pathfinder 4wd","grand prix","grand prix","grand prix","grand prix","grand prix","forester awd","forester awd","forester awd","forester awd","forester awd","forester awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd"],"displ":[4,4,4.5999999999999996,5,2.3999999999999999,2.3999999999999999,2.5,2.5,3.5,3.5,3,3,3.5,3.2999999999999998,3.2999999999999998,4,5.5999999999999996,3.1000000000000001,3.7999999999999998,3.7999999999999998,3.7999999999999998,5.2999999999999998,2.5,2.5,2.5,2.5,2.5,2.5,2.2000000000000002,2.2000000000000002,2.5,2.5,2.5,2.5,2.5],"year":[1999,2008,2008,1999,1999,1999,2008,2008,2008,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,1999,2008,2008,1999,1999,2008,2008,2008,2008,1999,1999,1999,1999,2008,2008,2008],"cyl":[6,6,8,8,4,4,4,4,6,6,6,6,6,6,6,6,8,6,6,6,6,8,4,4,4,4,4,4,4,4,4,4,4,4,4],"trans":["auto(l5)","auto(l5)","auto(l6)","auto(l4)","manual(m5)","auto(l4)","auto(av)","manual(m6)","manual(m6)","auto(av)","auto(l4)","manual(m5)","auto(av)","auto(l4)","manual(m5)","auto(l5)","auto(s5)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(s4)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(s4)","auto(s4)","manual(m5)"],"drv":["4","4","4","4","f","f","f","f","f","f","f","f","f","4","4","4","4","f","f","f","f","f","4","4","4","4","4","4","4","4","4","4","4","4","4"],"cty":[14,13,13,13,21,19,23,23,19,19,18,19,19,14,15,14,12,18,16,17,18,16,18,18,20,19,20,18,21,19,19,19,20,20,19],"hwy":[17,19,19,17,29,27,31,32,27,26,26,25,25,17,17,20,18,26,26,27,28,25,25,24,27,25,26,23,26,26,26,26,25,27,25],"fl":["r","r","r","r","r","r","r","r","p","p","r","r","p","r","r","p","p","r","p","r","r","p","r","r","r","p","r","p","r","r","r","r","p","r","p"],"class":["suv","suv","suv","suv","compact","compact","midsize","midsize","midsize","midsize","midsize","midsize","midsize","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","suv","suv","suv","suv","suv","suv","subcompact","subcompact","subcompact","subcompact","compact","compact","compact"]},"type":"scatter","mode":"markers","name":"subcompact","marker":{"color":"rgba(255,217,47,1)","line":{"color":"rgba(255,217,47,1)"}},"textfont":{"color":"rgba(255,217,47,1)"},"error_y":{"color":"rgba(255,217,47,1)"},"error_x":{"color":"rgba(255,217,47,1)"},"line":{"color":"rgba(255,217,47,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.2999999999999998,5.2999999999999998,5.2999999999999998,5.7000000000000002,6,5.2999999999999998,5.2999999999999998,5.7000000000000002,6.5,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,4,4,4,4,4.5999999999999996,5,3,3.7000000000000002,4,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.7000000000000002,6.0999999999999996,4,4.2000000000000002,4.4000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,5.4000000000000004,4,4,4.5999999999999996,5,3.2999999999999998,3.2999999999999998,4,5.5999999999999996,2.5,2.5,2.5,2.5,2.5,2.5,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4.7000000000000002,4.7000000000000002,5.7000000000000002],"y":{"manufacturer":["subaru","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen"],"model":["impreza awd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","camry","camry","camry","camry","camry","camry","camry","camry solara","camry solara","camry solara","camry solara","camry solara","camry solara","camry solara","corolla","corolla","corolla","corolla","corolla","land cruiser wagon 4wd","land cruiser wagon 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","gti","gti","gti","gti","gti","jetta","jetta","jetta","jetta","jetta","jetta","jetta","jetta","jetta","new beetle","new beetle","new beetle","new beetle","new beetle","new beetle","passat","passat","passat","passat","passat","passat","passat"],"displ":[2.5,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4.7000000000000002,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.5,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.2999999999999998,1.8,1.8,1.8,1.8,1.8,4.7000000000000002,5.7000000000000002,2.7000000000000002,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4,2,2,2,2,2.7999999999999998,1.8999999999999999,2,2,2,2,2.5,2.5,2.7999999999999998,2.7999999999999998,1.8999999999999999,1.8999999999999999,2,2,2.5,2.5,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.6000000000000001],"year":[2008,1999,1999,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,1999,2008,2008,1999,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,1999,1999,2008,2008,2008,2008,1999,1999,1999,1999,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,2008],"cyl":[4,4,4,6,6,6,8,4,4,4,4,6,6,6,4,4,4,4,6,6,6,4,4,4,4,4,8,8,4,4,4,6,6,6,6,4,4,4,4,6,4,4,4,4,4,5,5,6,6,4,4,4,4,5,5,4,4,4,4,6,6,6],"trans":["manual(m5)","manual(m5)","auto(l4)","auto(l4)","manual(m5)","auto(l5)","auto(l5)","manual(m5)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","manual(m5)","auto(s6)","auto(l4)","manual(m5)","manual(m5)","auto(s5)","auto(l4)","manual(m5)","auto(s5)","auto(l3)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(s6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","manual(m6)","auto(l5)","manual(m5)","auto(l4)","manual(m6)","auto(s6)","manual(m5)","manual(m5)","manual(m5)","auto(l4)","auto(s6)","manual(m6)","auto(s6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(s6)","manual(m5)","auto(l5)","auto(s6)","manual(m6)","auto(l5)","manual(m5)","auto(s6)"],"drv":["4","4","4","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4","4","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f"],"cty":[20,15,16,15,15,16,14,21,21,21,21,18,18,19,21,21,21,22,18,18,18,24,24,26,28,26,11,13,15,16,17,15,15,15,16,21,19,21,22,17,33,21,19,22,21,21,21,16,17,35,29,21,19,20,20,21,18,19,21,16,18,17],"hwy":[27,20,20,19,17,20,17,29,27,31,31,26,26,28,27,29,31,31,26,26,27,30,33,35,37,35,15,18,20,20,22,17,19,18,20,29,26,29,29,24,44,29,26,29,29,29,29,23,24,44,41,29,26,28,29,29,29,28,29,26,26,26],"fl":["r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","p","p","r","d","r","r","p","p","r","r","r","r","d","d","r","r","r","r","p","p","p","p","p","p","p"],"class":["compact","suv","suv","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","midsize","midsize","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","midsize","midsize","midsize","midsize","midsize","midsize","midsize"]},"type":"scatter","mode":"markers","name":"suv","marker":{"color":"rgba(229,196,148,1)","line":{"color":"rgba(229,196,148,1)"}},"textfont":{"color":"rgba(229,196,148,1)"},"error_y":{"color":"rgba(229,196,148,1)"},"error_x":{"color":"rgba(229,196,148,1)"},"line":{"color":"rgba(229,196,148,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-762828b71e300fd0b092" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-762828b71e300fd0b092">{"x":{"visdat":{"95fc59234bc1":["function () ","plotlyVisDat"]},"cur_data":"95fc59234bc1","attrs":{"95fc59234bc1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"displ"},"yaxis":{"domain":[0,1],"automargin":true,"title":"mpg"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[5.7000000000000002,5.7000000000000002,6.2000000000000002,6.2000000000000002,7],"y":{"manufacturer":["audi","audi","audi","audi","audi"],"model":["a4","a4","a4","a4","a4"],"displ":[1.8,1.8,2,2,2.7999999999999998],"year":[1999,1999,2008,2008,1999],"cyl":[4,4,4,4,6],"trans":["auto(l5)","manual(m5)","manual(m6)","auto(av)","auto(l5)"],"drv":["f","f","f","f","f"],"cty":[18,21,20,21,16],"hwy":[29,29,31,30,26],"fl":["p","p","p","p","p"],"class":["compact","compact","compact","compact","compact"]},"type":"scatter","mode":"markers","name":"2seater","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,3.1000000000000001,2.3999999999999999,2.3999999999999999,2.5,2.5,2.5,2.5,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.2999999999999998,1.8,1.8,1.8,1.8,1.8,2,2,2,2,2.7999999999999998,1.8999999999999999,2,2,2,2,2.5,2.5,2.7999999999999998,2.7999999999999998],"y":{"manufacturer":["audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","audi","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","chevrolet","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge"],"model":["a4","a4","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a4 quattro","a6 quattro","a6 quattro","a6 quattro","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","c1500 suburban 2wd","corvette","corvette","corvette","corvette","corvette","k1500 tahoe 4wd","k1500 tahoe 4wd","k1500 tahoe 4wd","k1500 tahoe 4wd","malibu","malibu","malibu","malibu","malibu","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","caravan 2wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd"],"displ":[2.7999999999999998,3.1000000000000001,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.1000000000000001,3.1000000000000001,2.7999999999999998,3.1000000000000001,4.2000000000000002,5.2999999999999998,5.2999999999999998,5.2999999999999998,5.7000000000000002,6,5.7000000000000002,5.7000000000000002,6.2000000000000002,6.2000000000000002,7,5.2999999999999998,5.2999999999999998,5.7000000000000002,6.5,2.3999999999999999,2.3999999999999999,3.1000000000000001,3.5,3.6000000000000001,2.3999999999999999,3,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.7999999999999998,3.7999999999999998,3.7999999999999998,4,3.7000000000000002,3.7000000000000002,3.8999999999999999,3.8999999999999999],"year":[1999,2008,1999,1999,2008,2008,1999,1999,2008,2008,1999,2008,2008,2008,2008,2008,1999,2008,1999,1999,2008,2008,2008,2008,2008,1999,1999,1999,2008,1999,2008,2008,1999,1999,1999,1999,2008,2008,2008,1999,1999,2008,2008,2008,2008,1999,1999],"cyl":[6,6,4,4,4,4,6,6,6,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,4,4,6,6,6,4,6,6,6,6,6,6,6,6,6,6,6,6,6,6],"trans":["manual(m5)","auto(av)","manual(m5)","auto(l5)","manual(m6)","auto(s6)","auto(l5)","manual(m5)","auto(s6)","manual(m6)","auto(l5)","auto(s6)","auto(s6)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","manual(m6)","auto(l4)","manual(m6)","auto(s6)","manual(m6)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(s6)","auto(l3)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(l6)","auto(l6)","manual(m6)","auto(l4)","auto(l4)","manual(m5)"],"drv":["f","f","4","4","4","4","4","4","4","4","4","4","4","r","r","r","r","r","r","r","r","r","r","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4"],"cty":[18,18,18,16,20,19,15,17,17,15,15,17,16,14,11,14,13,12,16,15,16,15,15,14,11,11,14,19,22,18,18,17,18,17,16,16,17,17,11,15,15,16,16,15,14,13,14],"hwy":[26,27,26,25,28,27,25,25,25,25,24,25,23,20,15,20,17,17,26,23,26,25,24,19,14,15,17,27,30,26,29,26,24,24,22,22,24,24,17,22,21,23,23,19,18,17,17],"fl":["p","p","p","p","p","p","p","p","p","p","p","p","p","r","e","r","r","r","p","p","p","p","p","r","e","r","d","r","r","r","r","r","r","r","r","r","r","r","e","r","r","r","r","r","r","r","r"],"class":["compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","midsize","midsize","midsize","suv","suv","suv","suv","suv","2seater","2seater","2seater","2seater","2seater","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","minivan","pickup","pickup","pickup","pickup"]},"type":"scatter","mode":"markers","name":"compact","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.7999999999999998,3.1000000000000001,4.2000000000000002,2.3999999999999999,2.3999999999999999,3.1000000000000001,3.5,3.6000000000000001,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.5,2.5,3.2999999999999998,2.5,2.5,3.5,3.5,3,3,3.5,3.1000000000000001,3.7999999999999998,3.7999999999999998,3.7999999999999998,5.2999999999999998,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.5,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.6000000000000001],"y":{"manufacturer":["dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","dodge","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford","ford"],"model":["dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","dakota pickup 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","durango 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","ram 1500 pickup 4wd","expedition 2wd","expedition 2wd","expedition 2wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","explorer 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","f150 pickup 4wd","mustang","mustang","mustang"],"displ":[4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,4,4,4,4,4.5999999999999996,5,4.2000000000000002,4.2000000000000002,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,5.4000000000000004,3.7999999999999998,3.7999999999999998,4],"year":[2008,2008,2008,1999,1999,1999,2008,2008,2008,1999,2008,1999,2008,2008,2008,2008,2008,2008,1999,1999,2008,1999,1999,1999,2008,1999,1999,1999,2008,2008,1999,1999,1999,1999,1999,2008,1999,2008,1999,1999,2008],"cyl":[8,8,8,8,8,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,6,6,6,8,8,6,6,8,8,8,8,8,6,6,6],"trans":["auto(l5)","auto(l5)","auto(l5)","manual(m5)","auto(l4)","auto(l4)","auto(l5)","auto(l5)","auto(l5)","auto(l4)","auto(l5)","auto(l4)","manual(m6)","auto(l5)","auto(l5)","auto(l5)","manual(m6)","manual(m6)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","auto(l4)","auto(l4)","auto(l6)","auto(l5)","manual(m5)","auto(l5)","auto(l5)","auto(l6)","auto(l4)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","manual(m5)","auto(l4)","manual(m5)"],"drv":["4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r","4","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r"],"cty":[14,14,9,11,11,13,13,9,13,11,13,11,12,9,13,13,12,9,11,11,13,11,11,11,12,14,15,14,13,13,13,14,14,13,13,13,11,13,18,18,17],"hwy":[19,19,12,17,15,17,17,12,17,16,18,15,16,12,17,17,16,12,15,16,17,15,17,17,18,17,19,17,19,19,17,17,17,16,16,17,15,17,26,25,26],"fl":["r","r","e","r","r","r","r","e","r","r","r","r","r","e","r","r","r","e","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r"],"class":["pickup","pickup","pickup","pickup","pickup","suv","suv","suv","suv","suv","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","pickup","suv","suv","suv","suv","suv","suv","suv","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","subcompact","subcompact","subcompact"]},"type":"scatter","mode":"markers","name":"midsize","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.3999999999999999,3,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.2999999999999998,3.7999999999999998,3.7999999999999998,3.7999999999999998,4],"y":{"manufacturer":["ford","ford","ford","ford","ford","ford","honda","honda","honda","honda","honda"],"model":["mustang","mustang","mustang","mustang","mustang","mustang","civic","civic","civic","civic","civic"],"displ":[4,4.5999999999999996,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001],"year":[2008,1999,1999,2008,2008,2008,1999,1999,1999,1999,1999],"cyl":[6,8,8,8,8,8,4,4,4,4,4],"trans":["auto(l5)","auto(l4)","manual(m5)","manual(m5)","auto(l5)","manual(m6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)"],"drv":["r","r","r","r","r","r","f","f","f","f","f"],"cty":[16,15,15,15,15,14,28,24,25,23,24],"hwy":[24,21,22,23,22,20,33,32,32,29,32],"fl":["r","r","r","r","r","p","r","r","r","p","r"],"class":["subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact"]},"type":"scatter","mode":"markers","name":"minivan","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.7000000000000002,3.7000000000000002,3.8999999999999999,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.2000000000000002,4.2000000000000002,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,5.4000000000000004,2.7000000000000002,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4],"y":{"manufacturer":["honda","honda","honda","honda","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","hyundai","jeep","jeep","jeep","jeep","jeep","jeep","jeep","jeep","land rover","land rover","land rover","land rover","lincoln","lincoln","lincoln"],"model":["civic","civic","civic","civic","sonata","sonata","sonata","sonata","sonata","sonata","sonata","tiburon","tiburon","tiburon","tiburon","tiburon","tiburon","tiburon","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","grand cherokee 4wd","range rover","range rover","range rover","range rover","navigator 2wd","navigator 2wd","navigator 2wd"],"displ":[1.8,1.8,1.8,2,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.3999999999999999,2.5,2.5,3.2999999999999998,2,2,2,2,2.7000000000000002,2.7000000000000002,2.7000000000000002,3,3.7000000000000002,4,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.7000000000000002,6.0999999999999996,4,4.2000000000000002,4.4000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,5.4000000000000004],"year":[2008,2008,2008,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,2008,2008,2008,2008,2008,2008,2008,1999,1999,2008,2008,2008,2008,1999,2008,2008,1999,1999,1999,2008],"cyl":[4,4,4,4,4,4,4,4,6,6,6,4,4,4,4,6,6,6,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8],"trans":["manual(m5)","auto(l5)","auto(l5)","manual(m6)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","manual(m6)","manual(m5)","auto(l5)","auto(l5)","auto(l4)","auto(l4)","auto(l5)","auto(l5)","auto(l5)","auto(l5)","auto(l4)","auto(s6)","auto(s6)","auto(l4)","auto(l4)","auto(l4)","auto(l6)"],"drv":["f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4","4","4","4","4","4","4","4","4","r","r","r"],"cty":[26,25,24,21,18,18,21,21,18,18,19,19,19,20,20,17,16,17,17,15,15,14,9,14,13,11,11,12,12,11,11,11,12],"hwy":[34,36,36,29,26,27,30,31,26,26,28,26,29,28,27,24,24,24,22,19,20,17,12,19,18,14,15,18,18,15,17,16,18],"fl":["r","r","c","p","r","r","r","r","r","r","r","r","r","r","r","r","r","r","d","r","r","r","e","r","r","p","p","r","r","p","r","p","r"],"class":["subcompact","subcompact","subcompact","subcompact","midsize","midsize","midsize","midsize","midsize","midsize","midsize","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv","suv"]},"type":"scatter","mode":"markers","name":"pickup","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"textfont":{"color":"rgba(166,216,84,1)"},"error_y":{"color":"rgba(166,216,84,1)"},"error_x":{"color":"rgba(166,216,84,1)"},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.7999999999999998,3.7999999999999998,4,4,4.5999999999999996,4.5999999999999996,4.5999999999999996,4.5999999999999996,5.4000000000000004,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.6000000000000001,1.8,1.8,1.8,2,2,2,2,2,2.7000000000000002,2.7000000000000002,2.7000000000000002,2.2000000000000002,2.2000000000000002,2.5,2.5,1.8999999999999999,1.8999999999999999,2,2,2.5,2.5],"y":{"manufacturer":["mercury","mercury","mercury","mercury","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","nissan","pontiac","pontiac","pontiac","pontiac","pontiac","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru","subaru"],"model":["mountaineer 4wd","mountaineer 4wd","mountaineer 4wd","mountaineer 4wd","altima","altima","altima","altima","altima","altima","maxima","maxima","maxima","pathfinder 4wd","pathfinder 4wd","pathfinder 4wd","pathfinder 4wd","grand prix","grand prix","grand prix","grand prix","grand prix","forester awd","forester awd","forester awd","forester awd","forester awd","forester awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd","impreza awd"],"displ":[4,4,4.5999999999999996,5,2.3999999999999999,2.3999999999999999,2.5,2.5,3.5,3.5,3,3,3.5,3.2999999999999998,3.2999999999999998,4,5.5999999999999996,3.1000000000000001,3.7999999999999998,3.7999999999999998,3.7999999999999998,5.2999999999999998,2.5,2.5,2.5,2.5,2.5,2.5,2.2000000000000002,2.2000000000000002,2.5,2.5,2.5,2.5,2.5],"year":[1999,2008,2008,1999,1999,1999,2008,2008,2008,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,1999,2008,2008,1999,1999,2008,2008,2008,2008,1999,1999,1999,1999,2008,2008,2008],"cyl":[6,6,8,8,4,4,4,4,6,6,6,6,6,6,6,6,8,6,6,6,6,8,4,4,4,4,4,4,4,4,4,4,4,4,4],"trans":["auto(l5)","auto(l5)","auto(l6)","auto(l4)","manual(m5)","auto(l4)","auto(av)","manual(m6)","manual(m6)","auto(av)","auto(l4)","manual(m5)","auto(av)","auto(l4)","manual(m5)","auto(l5)","auto(s5)","auto(l4)","auto(l4)","auto(l4)","auto(l4)","auto(s4)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(s4)","auto(s4)","manual(m5)"],"drv":["4","4","4","4","f","f","f","f","f","f","f","f","f","4","4","4","4","f","f","f","f","f","4","4","4","4","4","4","4","4","4","4","4","4","4"],"cty":[14,13,13,13,21,19,23,23,19,19,18,19,19,14,15,14,12,18,16,17,18,16,18,18,20,19,20,18,21,19,19,19,20,20,19],"hwy":[17,19,19,17,29,27,31,32,27,26,26,25,25,17,17,20,18,26,26,27,28,25,25,24,27,25,26,23,26,26,26,26,25,27,25],"fl":["r","r","r","r","r","r","r","r","p","p","r","r","p","r","r","p","p","r","p","r","r","p","r","r","r","p","r","p","r","r","r","r","p","r","p"],"class":["suv","suv","suv","suv","compact","compact","midsize","midsize","midsize","midsize","midsize","midsize","midsize","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","suv","suv","suv","suv","suv","suv","subcompact","subcompact","subcompact","subcompact","compact","compact","compact"]},"type":"scatter","mode":"markers","name":"subcompact","marker":{"color":"rgba(255,217,47,1)","line":{"color":"rgba(255,217,47,1)"}},"textfont":{"color":"rgba(255,217,47,1)"},"error_y":{"color":"rgba(255,217,47,1)"},"error_x":{"color":"rgba(255,217,47,1)"},"line":{"color":"rgba(255,217,47,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.2999999999999998,5.2999999999999998,5.2999999999999998,5.7000000000000002,6,5.2999999999999998,5.2999999999999998,5.7000000000000002,6.5,3.8999999999999999,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.2000000000000002,5.7000000000000002,5.9000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,4,4,4,4,4.5999999999999996,5,3,3.7000000000000002,4,4.7000000000000002,4.7000000000000002,4.7000000000000002,5.7000000000000002,6.0999999999999996,4,4.2000000000000002,4.4000000000000004,4.5999999999999996,5.4000000000000004,5.4000000000000004,5.4000000000000004,4,4,4.5999999999999996,5,3.2999999999999998,3.2999999999999998,4,5.5999999999999996,2.5,2.5,2.5,2.5,2.5,2.5,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4.7000000000000002,4.7000000000000002,5.7000000000000002],"y":{"manufacturer":["subaru","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","toyota","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen","volkswagen"],"model":["impreza awd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","4runner 4wd","camry","camry","camry","camry","camry","camry","camry","camry solara","camry solara","camry solara","camry solara","camry solara","camry solara","camry solara","corolla","corolla","corolla","corolla","corolla","land cruiser wagon 4wd","land cruiser wagon 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","toyota tacoma 4wd","gti","gti","gti","gti","gti","jetta","jetta","jetta","jetta","jetta","jetta","jetta","jetta","jetta","new beetle","new beetle","new beetle","new beetle","new beetle","new beetle","passat","passat","passat","passat","passat","passat","passat"],"displ":[2.5,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4.7000000000000002,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.5,2.2000000000000002,2.2000000000000002,2.3999999999999999,2.3999999999999999,3,3,3.2999999999999998,1.8,1.8,1.8,1.8,1.8,4.7000000000000002,5.7000000000000002,2.7000000000000002,2.7000000000000002,2.7000000000000002,3.3999999999999999,3.3999999999999999,4,4,2,2,2,2,2.7999999999999998,1.8999999999999999,2,2,2,2,2.5,2.5,2.7999999999999998,2.7999999999999998,1.8999999999999999,1.8999999999999999,2,2,2.5,2.5,1.8,1.8,2,2,2.7999999999999998,2.7999999999999998,3.6000000000000001],"year":[2008,1999,1999,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,2008,1999,1999,1999,2008,2008,1999,2008,1999,1999,2008,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,1999,1999,2008,2008,2008,2008,1999,1999,1999,1999,1999,1999,2008,2008,1999,1999,2008,2008,1999,1999,2008],"cyl":[4,4,4,6,6,6,8,4,4,4,4,6,6,6,4,4,4,4,6,6,6,4,4,4,4,4,8,8,4,4,4,6,6,6,6,4,4,4,4,6,4,4,4,4,4,5,5,6,6,4,4,4,4,5,5,4,4,4,4,6,6,6],"trans":["manual(m5)","manual(m5)","auto(l4)","auto(l4)","manual(m5)","auto(l5)","auto(l5)","manual(m5)","auto(l4)","manual(m5)","auto(l5)","auto(l4)","manual(m5)","auto(s6)","auto(l4)","manual(m5)","manual(m5)","auto(s5)","auto(l4)","manual(m5)","auto(s5)","auto(l3)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","auto(l4)","auto(s6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","manual(m6)","auto(l5)","manual(m5)","auto(l4)","manual(m6)","auto(s6)","manual(m5)","manual(m5)","manual(m5)","auto(l4)","auto(s6)","manual(m6)","auto(s6)","manual(m5)","auto(l4)","manual(m5)","manual(m5)","auto(l4)","manual(m5)","auto(l4)","manual(m5)","auto(s6)","manual(m5)","auto(l5)","auto(s6)","manual(m6)","auto(l5)","manual(m5)","auto(s6)"],"drv":["4","4","4","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","4","4","4","4","4","4","4","4","4","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f"],"cty":[20,15,16,15,15,16,14,21,21,21,21,18,18,19,21,21,21,22,18,18,18,24,24,26,28,26,11,13,15,16,17,15,15,15,16,21,19,21,22,17,33,21,19,22,21,21,21,16,17,35,29,21,19,20,20,21,18,19,21,16,18,17],"hwy":[27,20,20,19,17,20,17,29,27,31,31,26,26,28,27,29,31,31,26,26,27,30,33,35,37,35,15,18,20,20,22,17,19,18,20,29,26,29,29,24,44,29,26,29,29,29,29,23,24,44,41,29,26,28,29,29,29,28,29,26,26,26],"fl":["r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","r","p","p","r","d","r","r","p","p","r","r","r","r","d","d","r","r","r","r","p","p","p","p","p","p","p"],"class":["compact","suv","suv","suv","suv","suv","suv","midsize","midsize","midsize","midsize","midsize","midsize","midsize","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","suv","suv","pickup","pickup","pickup","pickup","pickup","pickup","pickup","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","compact","subcompact","subcompact","subcompact","subcompact","subcompact","subcompact","midsize","midsize","midsize","midsize","midsize","midsize","midsize"]},"type":"scatter","mode":"markers","name":"suv","marker":{"color":"rgba(229,196,148,1)","line":{"color":"rgba(229,196,148,1)"}},"textfont":{"color":"rgba(229,196,148,1)"},"error_y":{"color":"rgba(229,196,148,1)"},"error_x":{"color":"rgba(229,196,148,1)"},"line":{"color":"rgba(229,196,148,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Note: you can double click on the legend to see a subset of the data.</p>
 <p>Another plot with ggplot2:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mpg, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> class)) <span class="sc">+</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_smooth</span>()</span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -708,12 +794,17 @@ Geodetic CRS:  GDA94
 </div>
 <p>Use <code>ggplotly</code> to make it interactive:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plotly::ggplotly(plot)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="art" class="level1">
 <h1><code>10. Art</code></h1>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>shades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"orange"</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> flametree<span class="sc">::</span><span class="fu">flametree_grow</span>(<span class="at">time =</span> <span class="dv">10</span>, <span class="at">trees =</span> <span class="dv">10</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> flametree<span class="sc">::</span><span class="fu">flametree_plot</span>(</span>
@@ -721,6 +812,7 @@ Geodetic CRS:  GDA94
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> shades,</span>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"nativeflora"</span></span>
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -731,6 +823,8 @@ Geodetic CRS:  GDA94
 </div>
 <p>Package by Danielle Navarro. Check out her <a href="https://art.djnavarro.net/">art</a>.</p>
 
+
+<!-- -->
 
 </section>
 
@@ -814,6 +908,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1147,21 +1292,339 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb35" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "UO: ggplot2 Part 2"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2022-02-21"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Workshop, R, Data Visuals]</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>Here are my notes from the University of Oregon's Data Service Consultants workshop on ggplot2, part 2, led by <span class="co">[</span><span class="ot">Cameron Mulder</span><span class="co">](https://library.uoregon.edu/research-data-management/consultations)</span>. </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, error=FALSE, message=FALSE, echo=FALSE}</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(error=FALSE, </span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="in">                      message= FALSE,</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="in">                      warning=FALSE)</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># `1. Set Up`</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>For this post we used the following packages:</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>ggplot2: to create nice looking plots. </span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>magrittr: to pipe <span class="in">`%&gt;%`</span>.</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>dplyr: to use <span class="in">`filter()`</span>.</span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>flametree: to make art.</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>ozmaps: to make Australian Maps.</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>rmapshaper: to use <span class="in">`ms_simplyfy`</span> to simplify polygons.</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>plotly: to create interactive plots.</span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libraries}</span></span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(ggplot2)</span></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(magrittr)</span></span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(dplyr)</span></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(flametree)</span></span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(ozmaps)</span></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(rmapshaper)</span></span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a><span class="in">base::library(plotly)</span></span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>And the following data sets: </span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>cars</span>
+<span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">BOD</span><span class="co">](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/BOD.html)</span>(Biochemical Oxygen Demand) </span>
+<span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r data}</span></span>
+<span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a><span class="in">utils::data("cars")</span></span>
+<span id="cb35-58"><a href="#cb35-58" aria-hidden="true" tabindex="-1"></a><span class="in">utils::data ("BOD")</span></span>
+<span id="cb35-59"><a href="#cb35-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-60"><a href="#cb35-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-61"><a href="#cb35-61" aria-hidden="true" tabindex="-1"></a><span class="fu"># `2. ggplot2 Review`</span></span>
+<span id="cb35-62"><a href="#cb35-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-63"><a href="#cb35-63" aria-hidden="true" tabindex="-1"></a>To start we made a simple point plot using the cars data set.</span>
+<span id="cb35-64"><a href="#cb35-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-65"><a href="#cb35-65" aria-hidden="true" tabindex="-1"></a>Note: <span class="in">`ggplot(data= &lt;DATA&gt;, mapping = aes(&lt;MAPPING&gt;))+ &lt;GEOM FUNCTION&gt;()`</span> </span>
+<span id="cb35-66"><a href="#cb35-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-67"><a href="#cb35-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r gg plot}</span></span>
+<span id="cb35-68"><a href="#cb35-68" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot2::ggplot(</span></span>
+<span id="cb35-69"><a href="#cb35-69" aria-hidden="true" tabindex="-1"></a><span class="in">  data = mpg, </span></span>
+<span id="cb35-70"><a href="#cb35-70" aria-hidden="true" tabindex="-1"></a><span class="in">  mapping = ggplot2::aes(</span></span>
+<span id="cb35-71"><a href="#cb35-71" aria-hidden="true" tabindex="-1"></a><span class="in">    x = displ, </span></span>
+<span id="cb35-72"><a href="#cb35-72" aria-hidden="true" tabindex="-1"></a><span class="in">    y = hwy)</span></span>
+<span id="cb35-73"><a href="#cb35-73" aria-hidden="true" tabindex="-1"></a><span class="in">  ) + </span></span>
+<span id="cb35-74"><a href="#cb35-74" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_point()</span></span>
+<span id="cb35-75"><a href="#cb35-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-76"><a href="#cb35-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-77"><a href="#cb35-77" aria-hidden="true" tabindex="-1"></a>We can compare this to a simple plot in base R. </span>
+<span id="cb35-78"><a href="#cb35-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-79"><a href="#cb35-79" aria-hidden="true" tabindex="-1"></a>Note : the <span class="in">`$`</span> is how we id the specific variable we are wanting to work with. </span>
+<span id="cb35-80"><a href="#cb35-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-81"><a href="#cb35-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r base plot}</span></span>
+<span id="cb35-82"><a href="#cb35-82" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(mpg$displ, mpg$hwy)</span></span>
+<span id="cb35-83"><a href="#cb35-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-84"><a href="#cb35-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-85"><a href="#cb35-85" aria-hidden="true" tabindex="-1"></a><span class="fu"># `3. Line Graph`</span></span>
+<span id="cb35-86"><a href="#cb35-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-87"><a href="#cb35-87" aria-hidden="true" tabindex="-1"></a>Starting with base R: </span>
+<span id="cb35-88"><a href="#cb35-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-89"><a href="#cb35-89" aria-hidden="true" tabindex="-1"></a>Note: <span class="in">`help(pressure)`</span> is the same as <span class="in">`?pressure`</span></span>
+<span id="cb35-90"><a href="#cb35-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-91"><a href="#cb35-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r line graph }</span></span>
+<span id="cb35-92"><a href="#cb35-92" aria-hidden="true" tabindex="-1"></a><span class="in">base::plot(pressure$temperature, pressure$pressure, type = "l")</span></span>
+<span id="cb35-93"><a href="#cb35-93" aria-hidden="true" tabindex="-1"></a><span class="in"># add points</span></span>
+<span id="cb35-94"><a href="#cb35-94" aria-hidden="true" tabindex="-1"></a><span class="in">graphics::points(pressure$temperature, pressure$pressure)</span></span>
+<span id="cb35-95"><a href="#cb35-95" aria-hidden="true" tabindex="-1"></a><span class="in"># add lines (and points)</span></span>
+<span id="cb35-96"><a href="#cb35-96" aria-hidden="true" tabindex="-1"></a><span class="in">graphics::lines(pressure$temperature, pressure$pressure/2, col = "red")</span></span>
+<span id="cb35-97"><a href="#cb35-97" aria-hidden="true" tabindex="-1"></a><span class="in">graphics::points(pressure$temperature, pressure$pressure/2, col = "red")</span></span>
+<span id="cb35-98"><a href="#cb35-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-99"><a href="#cb35-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-100"><a href="#cb35-100" aria-hidden="true" tabindex="-1"></a>ggplot: </span>
+<span id="cb35-101"><a href="#cb35-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-102"><a href="#cb35-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r line graph ggplot}</span></span>
+<span id="cb35-103"><a href="#cb35-103" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot2::ggplot(pressure, ggplot2::aes(x = temperature, y = pressure)) + </span></span>
+<span id="cb35-104"><a href="#cb35-104" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_line() + </span></span>
+<span id="cb35-105"><a href="#cb35-105" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_point() + </span></span>
+<span id="cb35-106"><a href="#cb35-106" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_line(ggplot2::aes(x = temperature, y = pressure/2), color = "red") + </span></span>
+<span id="cb35-107"><a href="#cb35-107" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_point(ggplot2::aes(x = temperature, y = pressure/2), color = "red") </span></span>
+<span id="cb35-108"><a href="#cb35-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-109"><a href="#cb35-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-110"><a href="#cb35-110" aria-hidden="true" tabindex="-1"></a><span class="fu"># `4. Bar Graphs`</span></span>
+<span id="cb35-111"><a href="#cb35-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-112"><a href="#cb35-112" aria-hidden="true" tabindex="-1"></a>Base R:</span>
+<span id="cb35-113"><a href="#cb35-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-114"><a href="#cb35-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r bar graph base r}</span></span>
+<span id="cb35-115"><a href="#cb35-115" aria-hidden="true" tabindex="-1"></a><span class="in">graphics::barplot(BOD$demand, names.arg = BOD$Time)</span></span>
+<span id="cb35-116"><a href="#cb35-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-117"><a href="#cb35-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-120"><a href="#cb35-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-121"><a href="#cb35-121" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">barplot</span>(base<span class="sc">::</span><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span>
+<span id="cb35-122"><a href="#cb35-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-123"><a href="#cb35-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-124"><a href="#cb35-124" aria-hidden="true" tabindex="-1"></a>ggplot2:</span>
+<span id="cb35-125"><a href="#cb35-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-128"><a href="#cb35-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-129"><a href="#cb35-129" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(BOD, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> base<span class="sc">::</span><span class="fu">factor</span>(Time), <span class="at">y =</span> demand)) <span class="sc">+</span> </span>
+<span id="cb35-130"><a href="#cb35-130" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_col</span>()</span>
+<span id="cb35-131"><a href="#cb35-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-132"><a href="#cb35-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-133"><a href="#cb35-133" aria-hidden="true" tabindex="-1"></a>Notice that the 6 isn't there because of <span class="in">`factor()`</span>. </span>
+<span id="cb35-134"><a href="#cb35-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-135"><a href="#cb35-135" aria-hidden="true" tabindex="-1"></a>Note : geom_bar does counts, but column has the height of the bar based on the data. </span>
+<span id="cb35-136"><a href="#cb35-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-137"><a href="#cb35-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r bargraph ggplot cars}</span></span>
+<span id="cb35-138"><a href="#cb35-138" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot2::ggplot(mtcars, aes(x=cyl)) +</span></span>
+<span id="cb35-139"><a href="#cb35-139" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot2::geom_bar()</span></span>
+<span id="cb35-140"><a href="#cb35-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-141"><a href="#cb35-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-142"><a href="#cb35-142" aria-hidden="true" tabindex="-1"></a><span class="fu"># `5. Histogram`</span></span>
+<span id="cb35-143"><a href="#cb35-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-144"><a href="#cb35-144" aria-hidden="true" tabindex="-1"></a>Base R: </span>
+<span id="cb35-145"><a href="#cb35-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-148"><a href="#cb35-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-149"><a href="#cb35-149" aria-hidden="true" tabindex="-1"></a>graphics<span class="sc">::</span><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg, <span class="at">breaks =</span> <span class="dv">4</span>)</span>
+<span id="cb35-150"><a href="#cb35-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-151"><a href="#cb35-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-152"><a href="#cb35-152" aria-hidden="true" tabindex="-1"></a>ggplot2: </span>
+<span id="cb35-153"><a href="#cb35-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-156"><a href="#cb35-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-157"><a href="#cb35-157" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mtcars, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x=</span>mpg)) <span class="sc">+</span></span>
+<span id="cb35-158"><a href="#cb35-158" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">4</span>)</span>
+<span id="cb35-159"><a href="#cb35-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-160"><a href="#cb35-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-161"><a href="#cb35-161" aria-hidden="true" tabindex="-1"></a><span class="fu"># `6. Boxplot`</span></span>
+<span id="cb35-162"><a href="#cb35-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-163"><a href="#cb35-163" aria-hidden="true" tabindex="-1"></a>Base R: </span>
+<span id="cb35-164"><a href="#cb35-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-167"><a href="#cb35-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-168"><a href="#cb35-168" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(ToothGrowth<span class="sc">$</span>supp, ToothGrowth<span class="sc">$</span>len)</span>
+<span id="cb35-169"><a href="#cb35-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-170"><a href="#cb35-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-171"><a href="#cb35-171" aria-hidden="true" tabindex="-1"></a>Base R: Formula Syntax</span>
+<span id="cb35-172"><a href="#cb35-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-175"><a href="#cb35-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-176"><a href="#cb35-176" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth)</span>
+<span id="cb35-177"><a href="#cb35-177" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">plot</span>(len <span class="sc">~</span> supp <span class="sc">+</span> dose, <span class="at">data =</span> ToothGrowth)</span>
+<span id="cb35-178"><a href="#cb35-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-179"><a href="#cb35-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-180"><a href="#cb35-180" aria-hidden="true" tabindex="-1"></a>ggplot2:</span>
+<span id="cb35-181"><a href="#cb35-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-184"><a href="#cb35-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-185"><a href="#cb35-185" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ToothGrowth, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x=</span> supp, <span class="at">y =</span> len)) <span class="sc">+</span></span>
+<span id="cb35-186"><a href="#cb35-186" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>()</span>
+<span id="cb35-187"><a href="#cb35-187" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-188"><a href="#cb35-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-189"><a href="#cb35-189" aria-hidden="true" tabindex="-1"></a><span class="fu"># `7. Time Series`</span></span>
+<span id="cb35-190"><a href="#cb35-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-191"><a href="#cb35-191" aria-hidden="true" tabindex="-1"></a>ggplot2 will automatically recognize the variable as a date as long as the variable is imported as a date. </span>
+<span id="cb35-192"><a href="#cb35-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-193"><a href="#cb35-193" aria-hidden="true" tabindex="-1"></a>To start create some dummy data:</span>
+<span id="cb35-194"><a href="#cb35-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-197"><a href="#cb35-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-198"><a href="#cb35-198" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(</span>
+<span id="cb35-199"><a href="#cb35-199" aria-hidden="true" tabindex="-1"></a>  <span class="at">day =</span> base<span class="sc">::</span><span class="fu">as.Date</span>(<span class="st">"2017-06-14"</span>)<span class="sc">-</span><span class="dv">0</span><span class="sc">:</span><span class="dv">364</span>,</span>
+<span id="cb35-200"><a href="#cb35-200" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> stats<span class="sc">::</span><span class="fu">runif</span>(<span class="dv">365</span>)</span>
+<span id="cb35-201"><a href="#cb35-201" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-202"><a href="#cb35-202" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(data)</span>
+<span id="cb35-203"><a href="#cb35-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-204"><a href="#cb35-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-205"><a href="#cb35-205" aria-hidden="true" tabindex="-1"></a>Then plot it with ggplot2: </span>
+<span id="cb35-206"><a href="#cb35-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-209"><a href="#cb35-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-210"><a href="#cb35-210" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> day, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb35-211"><a href="#cb35-211" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>()</span>
+<span id="cb35-212"><a href="#cb35-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-213"><a href="#cb35-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-214"><a href="#cb35-214" aria-hidden="true" tabindex="-1"></a>Now to make a plot with the economics data set which is included in ggplot2. </span>
+<span id="cb35-215"><a href="#cb35-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-218"><a href="#cb35-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-219"><a href="#cb35-219" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> economics, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> pop)) <span class="sc">+</span></span>
+<span id="cb35-220"><a href="#cb35-220" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>()</span>
+<span id="cb35-221"><a href="#cb35-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-222"><a href="#cb35-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-223"><a href="#cb35-223" aria-hidden="true" tabindex="-1"></a>Next create a subset of the data from 2006 and beyond:</span>
+<span id="cb35-224"><a href="#cb35-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-227"><a href="#cb35-227" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-228"><a href="#cb35-228" aria-hidden="true" tabindex="-1"></a>subset <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>economics <span class="sc">%&gt;%</span></span>
+<span id="cb35-229"><a href="#cb35-229" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(date<span class="sc">&gt;</span>base<span class="sc">::</span><span class="fu">as.Date</span>(<span class="st">"2006-1-1"</span>))</span>
+<span id="cb35-230"><a href="#cb35-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-231"><a href="#cb35-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-232"><a href="#cb35-232" aria-hidden="true" tabindex="-1"></a>Now to create a different line graph of the subset data over time where the size of the line is based on the value of unemployment (which is the number of unemployment in thousands). </span>
+<span id="cb35-233"><a href="#cb35-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-236"><a href="#cb35-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-237"><a href="#cb35-237" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(economics, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> pop)) <span class="sc">+</span></span>
+<span id="cb35-238"><a href="#cb35-238" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">size =</span> unemploy), <span class="at">color =</span> <span class="st">"red"</span>)</span>
+<span id="cb35-239"><a href="#cb35-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-240"><a href="#cb35-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-241"><a href="#cb35-241" aria-hidden="true" tabindex="-1"></a><span class="fu"># `8. Maps`</span></span>
+<span id="cb35-242"><a href="#cb35-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-243"><a href="#cb35-243" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`map_data()`</span> get lat and long data for counties in Oregon: </span>
+<span id="cb35-244"><a href="#cb35-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-247"><a href="#cb35-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-248"><a href="#cb35-248" aria-hidden="true" tabindex="-1"></a>or_counties <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">map_data</span>(<span class="st">"county"</span>, <span class="st">"oregon"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-249"><a href="#cb35-249" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">lon =</span> long, lat, group, <span class="at">id =</span> subregion)</span>
+<span id="cb35-250"><a href="#cb35-250" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(or_counties)</span>
+<span id="cb35-251"><a href="#cb35-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-252"><a href="#cb35-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-253"><a href="#cb35-253" aria-hidden="true" tabindex="-1"></a>Using or_counties data create a ggplot2 map:</span>
+<span id="cb35-254"><a href="#cb35-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-257"><a href="#cb35-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-258"><a href="#cb35-258" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(or_counties, ggplot2<span class="sc">::</span><span class="fu">aes</span>(lon, lat, <span class="at">group =</span> group))<span class="sc">+</span></span>
+<span id="cb35-259"><a href="#cb35-259" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_polygon</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb35-260"><a href="#cb35-260" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_quickmap</span>()</span>
+<span id="cb35-261"><a href="#cb35-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-262"><a href="#cb35-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-263"><a href="#cb35-263" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`ozmap_states`</span> get the names of the different states in Australia. </span>
+<span id="cb35-264"><a href="#cb35-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-267"><a href="#cb35-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-268"><a href="#cb35-268" aria-hidden="true" tabindex="-1"></a>oz_stats <span class="ot">&lt;-</span> ozmaps<span class="sc">::</span>ozmap_states</span>
+<span id="cb35-269"><a href="#cb35-269" aria-hidden="true" tabindex="-1"></a>oz_stats</span>
+<span id="cb35-270"><a href="#cb35-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-271"><a href="#cb35-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-272"><a href="#cb35-272" aria-hidden="true" tabindex="-1"></a>Then create a ggplot2 map of Australia: </span>
+<span id="cb35-273"><a href="#cb35-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-276"><a href="#cb35-276" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-277"><a href="#cb35-277" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(oz_stats)<span class="sc">+</span></span>
+<span id="cb35-278"><a href="#cb35-278" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb35-279"><a href="#cb35-279" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>()</span>
+<span id="cb35-280"><a href="#cb35-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-281"><a href="#cb35-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-282"><a href="#cb35-282" aria-hidden="true" tabindex="-1"></a>Next we remove the "Other territories", and create a multi-polygon data set of Australian Bureau of Statistics.</span>
+<span id="cb35-283"><a href="#cb35-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-286"><a href="#cb35-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-287"><a href="#cb35-287" aria-hidden="true" tabindex="-1"></a>oz_stats <span class="ot">&lt;-</span> ozmaps<span class="sc">::</span>ozmap_states <span class="sc">%&gt;%</span> </span>
+<span id="cb35-288"><a href="#cb35-288" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(NAME <span class="sc">!=</span> <span class="st">"Other Territories"</span>)</span>
+<span id="cb35-289"><a href="#cb35-289" aria-hidden="true" tabindex="-1"></a>oz_votes <span class="ot">&lt;-</span> rmapshaper<span class="sc">::</span><span class="fu">ms_simplify</span>(ozmaps<span class="sc">::</span>abs_ced)</span>
+<span id="cb35-290"><a href="#cb35-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-291"><a href="#cb35-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-292"><a href="#cb35-292" aria-hidden="true" tabindex="-1"></a>Then create another map of Australian territories: </span>
+<span id="cb35-293"><a href="#cb35-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-296"><a href="#cb35-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-297"><a href="#cb35-297" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb35-298"><a href="#cb35-298" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>(<span class="at">data =</span> oz_stats, <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">fill =</span> NAME)) <span class="sc">+</span></span>
+<span id="cb35-299"><a href="#cb35-299" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>(<span class="at">data =</span> oz_votes, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb35-300"><a href="#cb35-300" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>()</span>
+<span id="cb35-301"><a href="#cb35-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-302"><a href="#cb35-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-303"><a href="#cb35-303" aria-hidden="true" tabindex="-1"></a><span class="fu"># `9. Plotly`</span></span>
+<span id="cb35-304"><a href="#cb35-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-305"><a href="#cb35-305" aria-hidden="true" tabindex="-1"></a>An interactive graph of the iris data:</span>
+<span id="cb35-306"><a href="#cb35-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-307"><a href="#cb35-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r interactive}</span></span>
+<span id="cb35-308"><a href="#cb35-308" aria-hidden="true" tabindex="-1"></a><span class="in">fig &lt;- plotly::plot_ly(</span></span>
+<span id="cb35-309"><a href="#cb35-309" aria-hidden="true" tabindex="-1"></a><span class="in">  data = iris, </span></span>
+<span id="cb35-310"><a href="#cb35-310" aria-hidden="true" tabindex="-1"></a><span class="in">  x = ~Sepal.Length, </span></span>
+<span id="cb35-311"><a href="#cb35-311" aria-hidden="true" tabindex="-1"></a><span class="in">  y = ~Petal.Length)</span></span>
+<span id="cb35-312"><a href="#cb35-312" aria-hidden="true" tabindex="-1"></a><span class="in">fig</span></span>
+<span id="cb35-313"><a href="#cb35-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-314"><a href="#cb35-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-315"><a href="#cb35-315" aria-hidden="true" tabindex="-1"></a>An interactive plot of the cars data set: </span>
+<span id="cb35-316"><a href="#cb35-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-319"><a href="#cb35-319" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-320"><a href="#cb35-320" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> plotly<span class="sc">::</span><span class="fu">plot_ly</span>(<span class="at">x =</span> <span class="sc">~</span>displ, <span class="at">y =</span> <span class="sc">~</span>mpg, <span class="at">color =</span> <span class="sc">~</span>class)</span>
+<span id="cb35-321"><a href="#cb35-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-322"><a href="#cb35-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-323"><a href="#cb35-323" aria-hidden="true" tabindex="-1"></a>Note: you can double click on the legend to see a subset of the data. </span>
+<span id="cb35-324"><a href="#cb35-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-325"><a href="#cb35-325" aria-hidden="true" tabindex="-1"></a>Another plot with ggplot2: </span>
+<span id="cb35-326"><a href="#cb35-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-329"><a href="#cb35-329" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-330"><a href="#cb35-330" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mpg, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb35-331"><a href="#cb35-331" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> class)) <span class="sc">+</span></span>
+<span id="cb35-332"><a href="#cb35-332" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_smooth</span>()</span>
+<span id="cb35-333"><a href="#cb35-333" aria-hidden="true" tabindex="-1"></a>plot</span>
+<span id="cb35-334"><a href="#cb35-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-335"><a href="#cb35-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-336"><a href="#cb35-336" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`ggplotly`</span> to make it interactive: </span>
+<span id="cb35-337"><a href="#cb35-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-340"><a href="#cb35-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-341"><a href="#cb35-341" aria-hidden="true" tabindex="-1"></a><span class="co">#plotly::ggplotly(plot)</span></span>
+<span id="cb35-342"><a href="#cb35-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-343"><a href="#cb35-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-344"><a href="#cb35-344" aria-hidden="true" tabindex="-1"></a><span class="fu"># `10. Art`</span></span>
+<span id="cb35-345"><a href="#cb35-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-348"><a href="#cb35-348" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-349"><a href="#cb35-349" aria-hidden="true" tabindex="-1"></a>shades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"orange"</span>)</span>
+<span id="cb35-350"><a href="#cb35-350" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> flametree<span class="sc">::</span><span class="fu">flametree_grow</span>(<span class="at">time =</span> <span class="dv">10</span>, <span class="at">trees =</span> <span class="dv">10</span>)</span>
+<span id="cb35-351"><a href="#cb35-351" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> flametree<span class="sc">::</span><span class="fu">flametree_plot</span>(</span>
+<span id="cb35-352"><a href="#cb35-352" aria-hidden="true" tabindex="-1"></a>  <span class="at">background =</span> <span class="st">"white"</span>,</span>
+<span id="cb35-353"><a href="#cb35-353" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> shades,</span>
+<span id="cb35-354"><a href="#cb35-354" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"nativeflora"</span></span>
+<span id="cb35-355"><a href="#cb35-355" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-356"><a href="#cb35-356" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-357"><a href="#cb35-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-358"><a href="#cb35-358" aria-hidden="true" tabindex="-1"></a>Package by Danielle Navarro. Check out her <span class="co">[</span><span class="ot">art</span><span class="co">](https://art.djnavarro.net/)</span>. </span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/github.html">
-<p>github.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/github">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../links/linkedin.html">
-<p>linkedin.html</p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.rbolt.me/links/linkedin">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:randibolt93@gmail.com">

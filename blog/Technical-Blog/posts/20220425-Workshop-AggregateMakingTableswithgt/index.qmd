@@ -1,13 +1,19 @@
 ---
 title: "Portland R User Group: Aggregate making tables with gt packag"
 date: "2022-04-25"
-categories: [R, Data Visuals, PDXRUG, Workshop]
+categories: [Workshop, PDXRUG, R, Data Visuals]
 toc: true
-draft: true
+draft: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
 ---
 
-[Ted Landeras](https://laderast.github.io/) led this event for [Portland R user Group](https://pdxrlang.com/) where we watched [Rich Lannone|| Making Beautiful Tables with `{gt}`|| RStudio](https://www.youtube.com/watch?v=z0UGmMOxl-c) as a group on Youtube, and then went through some other examples. 
+[Ted Landeras](https://laderast.github.io/) led this event for [Portland R user Group](https://pdxrlang.com/) where we watched [Rich Lannone\|\| Making Beautiful Tables with `{gt}`\|\| RStudio](https://www.youtube.com/watch?v=z0UGmMOxl-c), and other examples.
 
+![](images/clipboard-3850076764.png)
 
 ```{r, message=F, error=F, echo=F}
 knitr::opts_chunk$set(error=FALSE, 
@@ -27,7 +33,7 @@ library(palmerpenguins)
 
 # `2. Penguins`
 
-This examples follows the video: [Rich Lannone|| Making Beautiful Tables with `{gt}`|| RStudio](https://www.youtube.com/watch?v=z0UGmMOxl-c).
+This examples follows the video: [Rich Lannone\|\| Making Beautiful Tables with `{gt}`\|\| RStudio](https://www.youtube.com/watch?v=z0UGmMOxl-c).
 
 ```{r}
 penguins %>%
@@ -109,7 +115,7 @@ penguins %>%
 
 # `3. Allison Horst's Examples`
 
-These examples are from [Allison Horst](https://allisonhorst.com/allison-horst) 
+These examples are from [Allison Horst](https://allisonhorst.com/allison-horst)
 
 ## `Example 1`
 
@@ -234,14 +240,14 @@ tooth_length %>% # Take tooth_length
 
 # `4. Animal Crossing`
 
-This is an example using the Animal Crossing data set from Tidy Tuesday. In this data set, you'll see that the `items` column is a URL. 
+This is an example using the Animal Crossing data set from Tidy Tuesday. In this data set, you'll see that the `items` column is a URL.
 
 ```{r}
 items <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-05/items.csv')
 head(items)
 ```
 
-We display the most expensive items in Animal Crossing below: 
+We display the most expensive items in Animal Crossing below:
 
 ```{r}
 items %>% 
@@ -287,7 +293,7 @@ gt(stream_data) %>%
 
 # `6. Biostats`
 
-Example from [FAQ + Gallery ](https://cran.r-project.org/web/packages/gtsummary/vignettes/gallery.html)
+Example from [FAQ + Gallery](https://cran.r-project.org/web/packages/gtsummary/vignettes/gallery.html)
 
 For bio-statisticians, one of the most annoying tasks to build is a Table 1: a breakdown of research subjects by various demographics. The {gtsummary} package simplifies building these tables.
 
@@ -304,4 +310,3 @@ trial %>%
   bold_labels() %>%
   modify_spanning_header(all_stat_cols() ~ "**Chemotherapy Treatment**")
 ```
-
