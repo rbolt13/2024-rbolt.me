@@ -17,11 +17,12 @@
   {
     "listing": "/blog/Technical-Blog/blog.html",
     "items": [
-      "/blog/Technical-Blog/posts/20240515-Original-CodetoContentSlides/index.html",
+      "/blog/Technical-Blog/posts/20240508-Original-CodetoContentSlides/index.html",
+      "/blog/Technical-Blog/posts/20240422-Original-TrackingSummerLearningGrants/index.html",
       "/blog/Technical-Blog/posts/20240402-TidyTuesday-dubois/index.html",
       "/blog/Technical-Blog/posts/20240326-TidyTuesday-marchmadness/index.html",
       "/blog/Technical-Blog/posts/20240212-Ready4R-crosstables/index.html",
-      "/blog/Technical-Blog/posts/20240515-Original-CodetoContentSlides/codetocontent.html",
+      "/blog/Technical-Blog/posts/20240508-Original-CodetoContentSlides/codetocontent.html",
       "/blog/Technical-Blog/posts/20240202-Ready4R-skimr/index.html",
       "/blog/Technical-Blog/posts/20230620-TidyTuesday-UFOSightingsRedux/index.html",
       "/blog/Technical-Blog/posts/20230613-TidyTuesday-SAFITeachingData/index.html",

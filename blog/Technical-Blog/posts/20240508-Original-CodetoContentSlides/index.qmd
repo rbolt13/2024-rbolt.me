@@ -1,6 +1,6 @@
 ---
 title: "Code to Content Lighting Talk"
-date: "2024-05-15"
+date: "2024-05-08"
 categories: [Talks, Quarto]
 toc: true
 draft: false
