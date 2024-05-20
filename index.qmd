@@ -10,6 +10,8 @@ I am a statistical data analyst from the city of roses who leverages data scienc
 
 Below are the focal points of my virtual rosarium:
 
+<center>
+
 **Central Display**: [Technical Blog](https://www.rbolt.me/blog/technical-blog/blog)
 
 **Feature Roses**: [Book Reviews](https://www.rbolt.me/blog/book-reviews/blog) & [Personal Blog](https://www.rbolt.me/blog/personal-blog/blog)
@@ -19,3 +21,5 @@ Below are the focal points of my virtual rosarium:
 **Thematic Area** (Links): [Email](randibolt93@gmail.com) , [Github](https://www.rbolt.me/links/github), [Linkedin](https://www.rbolt.me/links/linkedin) , <br>[Letterbox](https://www.rbolt.me/links/letterboxd), and [Spotify](https://www.rbolt.me/links/spotify)
 
 Enjoy!
+
+</center>
