@@ -1,0 +1,511 @@
+---
+title: "Creating Test Data for Grants Claim Submissions"
+date: "2024-05-22"
+categories: ["R", "Data Analysis", "Data Visualization"]
+toc: true
+draft: false
+warning: false
+format: 
+  html:
+    code-fold: show
+    code-summary: "Hide code"
+    code-tools: true
+    code-copy: true
+---
+
+In this blog post I outline the steps I took to create a test data set to verify the functionality of a tracking system for the [Oregon Department of Education (ODE)](https://www.oregon.gov/ode/pages/default.aspx).
+
+![](images/clipboard-2005789366.png)
+
+# Introduction
+
+The Federal Systems Team is piloting a new Summer Learning Grant Program to support historically undeserved students, backed by [House Bill (HB) 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) and \$30 million in funding. With a requirement for detailed expenditure reports, the program aims to ensure equitable access to high-quality summer programming.
+
+To aid in this process a collaborative tracking system was developed in Google Sheets (as requested) to help monitor how often districts are submitting claims and what issues (if any) arise. To show and verify functionality a test data set was created in R, that would satisfy certain criteria. In this post I am going to discuss the steps to recreating this test data, and then make a quick reactable table.
+
+# Setup
+
+To begin setup your environment by loading in the necessary packages, and then saving 30 million as the `total_budget`. This constant is being saved in the setup because this value should not change for this iteration of the tracking system test data, but it might alter for future years. Assuming the rest of the code needs no altering, this will make future updates hopefully quick and painless.
+
+::: panel-tabset
+## Contents
+
+**Tabs**
+
+-   Load Packages
+
+-   Define Constant
+
+## Load Packaged
+
+Load two packages:
+
+-   `dplyr` to mutate the data.
+
+-   `lubridate` to ...
+
+-   `skimr` to check assumptions about the data.
+
+-   `reactable` to create interactive web tables.
+
+```{r load packagse}
+#| warning: false
+base::library(dplyr)
+base::library(lubridate)
+base::library(skimr)
+base::library(reactable)
+```
+
+## Constants
+
+The only constant to define is 30 million for the total budget. In the future this might want to be broken into a monthly or quartly budget as the program grows.
+
+```{r total budget}
+total_budget <- 30000000
+```
+:::
+
+# Requirements
+
+Before beginning it was important to define the requirements for the tracking system, the test data, and each column of test data.
+
+::: panel-tabset
+## Contents
+
+**Tabs**
+
+-   Tracking System
+
+-   Test Data
+
+-   Test Data Columns
+
+## Tracking System
+
+The tracking system developed needed to include the following:
+
+-   Grantee name and lead contact
+
+-   Grantee type (e.g., district, ESD, consortium)
+
+-   Date of submission
+
+-   Submission cycle (i.e. weekly, monthly, quarterly)
+
+-   Total amount of claim
+
+-   Status of claim
+
+-   Issues or questions about the expenditure report
+
+-   Contact information for the grantee
+
+## Test Data
+
+The test data needed to include:
+
+-   Entries for **10 different grantees** to ensure a variety of data points.
+
+-   Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.
+
+-   Different types of grantees such as districts, educational service districts (ESD), and consortiums.
+
+-   Claim statuses should include a mix of 'Approved', 'Pending Review', and 'Needs Revision'.
+
+-   Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.
+
+-   Ensure that every grantee entry includes complete contact information.
+
+-   Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.
+
+-   The total value of all claims does not exceed \$30 million.
+
+## Test Data Columns
+
+Test Data Columns
+
+-   Grantee Name
+
+-   Lead Contact
+
+-   Grantee Type
+
+-   Date of Submission
+
+-   Submission Cycle
+
+-   Total Amount of Claim
+
+-   Status of Claim
+
+-   Issues or Questions
+
+-   Contact Information
+:::
+
+# Define Grantees Data
+
+Now define the grantees, which needs to include:
+
+-   10 Grantees
+
+-   Variation of Types
+
+-   Variation of Frequency
+
+-   Submission date is defined based on reporting frequency
+
+-   Number of claims defined by reporting frequency
+
+::: panel-tabset
+## Contents
+
+**Tabs**
+
+-   Define Grantees
+
+-   Verify Assumptions
+
+## Define Grantees
+
+```{r define grantee_data}
+grantees <- base::data.frame(
+  GranteeName = base::paste("Grantee", 1:10),
+  GranteeType = c(
+    "District", "ESD", "Consortium", 
+    "District", "ESD", "Consortium", 
+    "District", "ESD", "Consortium", 
+    "District"),
+  ReportingFrequency = c(
+    "Monthly", "Weekly", "Quarterly", 
+    "Monthly", "Weekly", "Quarterly", 
+    "Monthly", "Weekly", "Quarterly", 
+    "Monthly"),
+  StartDate = base::as.Date(c(
+    "2024-01-01", "2024-01-07", "2024-03-01", 
+    "2024-01-01", "2024-01-07", "2024-03-01", 
+    "2024-01-01", "2024-01-07", "2024-03-01", 
+    "2024-01-01")),
+  NumClaims = c(
+    12, 52, 4, 
+    12, 52, 4, 
+    12, 52, 4, 
+    12)
+)
+```
+
+## Verify Grantees
+
+Simply eyeball this one to make sure it looks correct, and all assumptions thus far are valid.
+
+```{r}
+grantees
+```
+:::
+
+# Grantee Claim Amounts
+
+Each Grantee needs a piece of the 30 million dollar pie, so to define this randomly:
+
+-   Define a random normalized percent to each grantee.
+
+-   Define a max claim using the normalized percentage and `total_budge` constant.
+
+-   Define an average claim using the max claim and `NumClaims` column of the `grantee1` data.
+
+::: panel-tabset
+## Contents
+
+**Tabs**
+
+-   Define Random Percents
+
+-   Define Max Claim
+
+-   Define Average Claim
+
+## Define Random Percentes
+
+Create the function `rand_norm_perc()` which will assign a random percent value to each grantee and then normalize it. This is important so that all percentage values add up to 100% or 30 million total funds.
+
+```{r random percentage function }
+rand_norm_perc <- function(n) {
+  base::set.seed(123) 
+  rand_perc <- stats::runif(n, min = 0, max = 100)
+  norm_perc <- rand_perc / base::sum(rand_perc)
+  return(norm_perc)
+}
+```
+
+Then generate random normalized percentages for each grantee.
+
+```{r}
+rand_percents <- rand_norm_perc(base::nrow(grantees))
+```
+
+## Define Max Claim
+
+This is the maximum amount that each grantee can spend. Meaning that sum of all their claims for that year cannot exceed this value.
+
+```{r define MaxClaim}
+grantees$MaxClaim <- base::round(rand_percents * total_budget, digits = 2)
+```
+
+## Define Average Claim
+
+Not doing anything too cute here, just dividing the max claim by the number of claims the grantee should submit that year.
+
+```{r}
+grantees$AvgClaim <- grantees$MaxClaim / grantees$NumClaims
+```
+
+# Verify Assumptions
+
+Before we get too far lets check the data for:
+
+-   10 Grantees
+
+-   Mix of grantee types
+
+-   Mix of reporting frequency
+
+-   Start dates
+
+-   Max number of claims submitted (for the year): 4, 12, or 52
+
+```{r}
+grantees
+```
+
+-   The sum of all max claims is equal to or less than 30 million
+
+```{r sum maxclaim}
+base::sum(grantees$MaxClaim)
+```
+:::
+
+# Define Functions
+
+There are three functions we need to create to fill out our test data set:
+
+-   Submission Dates: Generates all the submissions dates for each grantee.
+
+-   Random Status: Generates random status's.
+
+-   Random Issues: Generates random issues.
+
+::: panel-tabset
+## Contents
+
+**Tabs:**
+
+-   Submission Dates Functions
+
+-   Random Status Function
+
+-   Random Issues Function
+
+## Submission Dates Function
+
+Create the function `submission_dates()` to generate submission dates based on reporting frequency.
+
+```{r generate submission dates function}
+submission_dates <- function(
+    start_date, 
+    freq, 
+    num_claims
+    ) {
+  if (freq == "Weekly") {
+    return(base::seq(
+      from = start_date, 
+      by = "7 days", 
+      length.out = num_claims)
+      )
+  } else if (freq == "Monthly") {
+    return(base::seq(
+      from = start_date, 
+      by = "1 month", 
+      length.out = num_claims)
+      )
+  } else if (freq == "Quarterly") {
+    return(base::seq(
+      from = start_date, 
+      by = "3 months", 
+      length.out = num_claims)
+      )
+  }
+}
+```
+
+## Random Status Function
+
+Create the function `random_status` to generate a random status for each submission.
+
+```{r random status}
+random_status <- function(n) {
+  statuses <- c("Approved", "Pending Review", "Needs Revision")
+  return(base::sample(statuses, n, replace = TRUE))
+}
+```
+
+## Random Issues Functions
+
+Create the function `random_issues` to generate a random issue status for each submission.
+
+```{r random issues}
+random_issues <- function(n) {
+  issues <- c("No issues", "Minor discrepancies", "Major discrepancies")
+  return(base::sample(issues, n, replace = TRUE))
+}
+```
+:::
+
+# Define Test Data
+
+Now to put it all together into one test data set.
+
+::: panel-tabset
+## Contents
+
+**Tabs**
+
+-   Test Data
+
+-   Verify Assumptions
+
+## Test Data
+
+```{r test data}
+test <- base::do.call(
+  rbind, 
+  base::lapply(1:nrow(grantees), 
+  function(i) {
+    data.frame(
+      # Grantee Name
+      GranteeName = grantees$GranteeName[i],
+      # Lead Contact
+      LeadContact = base::paste0(
+        grantees$GranteeName[i], 
+        " Smith"),
+      # Grantee Type
+      GranteeType = grantees$GranteeType[i],
+      # Submission Dates
+      SubmissionDate = submission_dates(
+        start_date = grantees$StartDate[i],
+        freq = grantees$ReportingFrequency[i],
+        num_claims = grantees$NumClaims[i]
+        ),
+      # SubmissionCycle
+      Cycle = grantees$ReportingFrequency[i],
+      # Claim Amount
+      Amount = grantees$AvgClaim[i],
+      # Contact Information 
+      Contact = base::paste0(
+        grantees$GranteeName[i],
+        "@gmail.com")
+      )
+}))
+
+test$ClaimStatus <- random_status(nrow(test))
+test$ClaimIssues <- random_issues(nrow(test))
+
+```
+
+## Verfiy Test Data
+
+```{r}
+head(test)
+```
+:::
+
+## Reactable
+
+Lastly lets look at this data in a reactable table.
+
+::: panel-tabset
+## Contents
+
+-   Conditional Formatting Functions
+
+-   Format Reactable 
+
+-   Print Reactable 
+
+## Conditional Formatting Funcitons
+
+```{r}
+# status colors
+status_color <- function(status) {
+  if (status == "Approved") {
+    return("green")
+  } else if (status == "Pending Review") {
+    return("yellow")
+  } else if (status == "Needs Revision") {
+    return("red")
+  } else {
+    return("white")
+  }
+}
+# issue colors
+issue_color <- function(issue) {
+  if (issue == "No issues") {
+    return("green")
+  } else if (issue == "Minor discrepancies") {
+    return("yellow")
+  } else if (issue == "Major discrepancies") {
+    return("red")
+  } else {
+    return("white")
+  }
+}
+```
+
+## Format Reactable
+
+```{r}
+test_reactable <- reactable::reactable(
+  test,
+  # Define Column Formatting
+  columns = list(
+    GranteeName = colDef(name = "Grantee Name"),
+    LeadContact = colDef(show = F),
+    GranteeType = colDef(name = "Grantee Type"),
+    SubmissionDate = colDef(name = "Submission Date"),
+    Cycle = colDef(name = "Submission Cycle"),
+    Amount = colDef(
+      name = "Total Claim Amount",
+      format = colFormat(
+        currency = "USD",
+        digits = 2,
+        separators = TRUE)
+      ),
+    ClaimStatus = colDef(
+      name = "Claim Status",
+      style = function(value) {
+        list(background = status_color(value))}),
+    ClaimIssues = colDef(
+      name = "Claim Issues",
+      style = function(value) {
+        list(background = issue_color(value))}),
+    Contact = colDef(show = F)
+    ),
+  # Define Table Formatting
+  bordered = TRUE,
+  highlight = TRUE,
+  showPageSizeOptions = TRUE,
+  pageSizeOptions = c(5, 10, 20, 50),
+  defaultPageSize = 5)
+```
+
+## Print Reactable
+
+```{r}
+test_reactable
+```
+
+:::
+
+
+# Conclusion
+
+Thanks! ....

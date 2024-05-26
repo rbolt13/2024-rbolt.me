@@ -12,8 +12,7 @@ format:
     code-tools: true
 ---
 
-[HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) provides $30M of [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) for underserved students in 2024. Learn to track grants in Google Sheets or R for clear analysis and insights. 
-
+[HB 4082](https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4082/Enrolled) provides \$30M of [Summer Learning Grants](https://www.oregon.gov/ode/schools-and-districts/grants/Pages/Summer%20Learning/State-Summer-Learning-Grants.aspx) for underserved students in 2024. Learn to track grants in Google Sheets or R for clear analysis and insights.
 
 (image)
 
@@ -25,17 +24,16 @@ First, we'll set up the core structure of the tracking system in each tool, ensu
 
 # Setting up the Tracking System
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## 0. Set-Up
 
 **Setting up the Tracking System**
 
-1. Requirements
+1.  Requirements
 
-2. Google Sheets
+2.  Google Sheets
 
-3. R
+3.  R
 
 ## 1. Requirements
 
@@ -58,8 +56,6 @@ Develop a tracking system that includes the following:
 -   Issues or questions about the expenditure report
 
 -   Contact information for the grantee
-
-
 
 ## 2. Google Sheets
 
@@ -90,28 +86,27 @@ Develop a tracking system that includes the following:
     h.  Issues or Questions
 
     i.  Contact Information
-    
-4. (Optional) Free up the top row:
 
-    * Right-click on the first row to open the context menu.
-    
-    * Scroll to the bottom and click the three vertical dots labeled 'View more row actions'.
-    
-    * Select 'Freeze up to row 1' to lock the top row in place. 
-    
-    
+4.  (Optional) Free up the top row:
+
+    -   Right-click on the first row to open the context menu.
+
+    -   Scroll to the bottom and click the three vertical dots labeled 'View more row actions'.
+
+    -   Select 'Freeze up to row 1' to lock the top row in place.
+
 ## 3. R
 
 **R**
 
-1. Load `dplyr` package to mutate the data. 
+1.  Load `dplyr` package to mutate the data.
 
 ```{r load dplyr}
 #| warning: false
 base::library(dplyr)
 ```
 
-2. Create a new data frame. 
+2.  Create a new data frame.
 
 ```{r create data frame}
 grant_data <- data.frame(
@@ -127,7 +122,7 @@ grant_data <- data.frame(
 )
 ```
 
-3. Convert columns to appropriate data types. 
+3.  Convert columns to appropriate data types.
 
 ```{r convert columns}
 grant_data <- grant_data |>
@@ -142,67 +137,65 @@ grant_data <- grant_data |>
   )
 ```
 
-4. Check results
+4.  Check results
 
 ```{r summary 1 of grant data}
 utils::str(grant_data)
 ```
-
 :::
 
 # Generating Fake Data
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## 0. Data
 
 **Generating Fake Data**
 
-1. Requirements
+1.  Requirements
 
-2. Google Sheets
+2.  Google Sheets
 
-3. R 
+3.  R
 
-4. Reactable
+4.  Reactable
 
 ## 1. Requirements
 
 **Requirements**
 
-- The dataset should include entries for **10 different grantees** to ensure a variety of data points.
+-   The dataset should include entries for **10 different grantees** to ensure a variety of data points.
 
-- Data should represent varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.
+-   Data should represent varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.
 
-- The dataset should include different types of grantees such as districts, educational service districts (ESD), and consortiums.
+-   The dataset should include different types of grantees such as districts, educational service districts (ESD), and consortiums.
 
-- Claim statuses should include a mix of 'Approved', 'Pending Review', 'Needs Revision', and other appropriate statuses to test the system’s ability to handle different scenarios.
+-   Claim statuses should include a mix of 'Approved', 'Pending Review', 'Needs Revision', and other appropriate statuses to test the system’s ability to handle different scenarios.
 
-- Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.
+-   Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.
 
-- Ensure that every grantee entry includes complete contact information. 
+-   Ensure that every grantee entry includes complete contact information.
 
-- Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.
+-   Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.
 
-- The total value of all claims does not exceed $30 million.
+-   The total value of all claims does not exceed \$30 million.
 
 ## 2. Google Sheets
 
-1. Create Grantee Info data for the 10 Grantees. 
+1.  Create Grantee Info data for the 10 Grantees.
 
-    a. 
+    a.  
 
-This is the easiest part... it is the rest that is really tedious, so i recommend just making this in R. 
+This is the easiest part... it is the rest that is really tedious, so i recommend just making this in R.
 
-## 3. R 
+## 3. R
 
-1. Load `lubridate` packages.
+1.  Load `lubridate` packages.
 
 ```{r load lubridate}
 base::library(lubridate)
 ```
 
-2. Create a data frame defining mock Grantee data: Grantee Name, Reporting Frequency, StartDate, and NumClaims.
+2.  Create a data frame defining mock Grantee data: Grantee Name, Reporting Frequency, StartDate, and NumClaims.
 
 ```{r define grantee_data}
 grantee_data <- base::data.frame(
@@ -230,7 +223,7 @@ grantee_data <- base::data.frame(
 )
 ```
 
-3. Create the function `generate_random_percentages()` which will assign a random percent value to each grantee such that is normalized so the sum of percentages for all grantees is 100%. 
+3.  Create the function `generate_random_percentages()` which will assign a random percent value to each grantee such that is normalized so the sum of percentages for all grantees is 100%.
 
 ```{r random percentage function }
 generate_random_percentages <- function(n) {
@@ -241,37 +234,37 @@ generate_random_percentages <- function(n) {
 }
 ```
 
-4. Generate random normalized percentages for each grantee. 
+4.  Generate random normalized percentages for each grantee.
 
 ```{r random percentages}
 rand_percents <- generate_random_percentages(base::nrow(grantee_data))
 ```
 
-5. Define the total budget as 30M. 
+5.  Define the total budget as 30M.
 
 ```{r total budget}
 total_budget <- 30000000
 ```
 
-6. Define a MaxClaim column for grantee_data by multiplying the random percent by the total budget and rounding this value to 2 decimal places. 
+6.  Define a MaxClaim column for grantee_data by multiplying the random percent by the total budget and rounding this value to 2 decimal places.
 
 ```{r define MaxClaim}
 grantee_data$MaxClaim <- base::round(rand_percents * total_budget, digits = 2)
 ```
 
-7. Define AvgClaim for grantee data by dividing MaxClaim by NumClaims. 
+7.  Define AvgClaim for grantee data by dividing MaxClaim by NumClaims.
 
 ```{r define AvgClaim}
 grantee_data$AvgClaim <- grantee_data$MaxClaim / grantee_data$NumClaims
 ```
 
-8. Verify `grantee_data`
+8.  Verify `grantee_data`
 
 ```{r verify grantee_data}
 grantee_data
 ```
 
-9. Create the function `generate_submission_dates()` to generate submission dates based on reporting frequency. 
+9.  Create the function `generate_submission_dates()` to generate submission dates based on reporting frequency.
 
 ```{r generate submission dates function}
 generate_submission_dates <- function(start_date, freq, num_claims) {
@@ -297,7 +290,7 @@ generate_submission_dates <- function(start_date, freq, num_claims) {
 }
 ```
 
-10. Create the functions `generate_random_status` and `generate_random_issues` to generate random status and issues. 
+10. Create the functions `generate_random_status` and `generate_random_issues` to generate random status and issues.
 
 ```{r}
 # Function to generate random statuses of claim
@@ -378,15 +371,14 @@ grant_data_fake <- grant_data_fake |>
 )
 ```
 
-13. Peak at head and tail of data to make sure it looks accurate. 
+13. Peak at head and tail of data to make sure it looks accurate.
 
 ```{r}
 utils::head(grant_data_fake)
 utils::tail(grant_data_fake)
 ```
 
-
-14. Use Skimr to skim and quickly verify assumptions about the data. 
+14. Use Skimr to skim and quickly verify assumptions about the data.
 
 ```{r load skimr}
 base::library(skimr)
@@ -407,13 +399,13 @@ skimr::yank(skim_output, "factor")
 
 ## Reactable
 
-1. Load `reactable` package.
+1.  Load `reactable` package.
 
 ```{r load reactable}
 base::library(reactable)
 ```
 
-2. Create functions `status_color` and `issues_color` to define conditional color formatting to these columns based on status and issues. 
+2.  Create functions `status_color` and `issues_color` to define conditional color formatting to these columns based on status and issues.
 
 ```{r functions for status and issue colors}
 # status colors
@@ -442,7 +434,7 @@ issue_color <- function(issue) {
 }
 ```
 
-3. Create reactable. 
+3.  Create reactable.
 
 ```{r reactable of grant_data_fake}
 reactable::reactable(
@@ -478,8 +470,6 @@ reactable::reactable(
   pageSizeOptions = c(5, 10, 20, 50),
   defaultPageSize = 5)
 ```
-
-
 :::
 
 # Analyzing Submission Frequency
@@ -487,3 +477,7 @@ reactable::reactable(
 # Identifying Issues
 
 # Review Expenditure Report
+
+
+
+
