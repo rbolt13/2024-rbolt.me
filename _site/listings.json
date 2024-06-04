@@ -8,13 +8,6 @@
     ]
   },
   {
-    "listing": "/blog/Personal-Blog/blog.html",
-    "items": [
-      "/blog/Personal-Blog/posts/202405-Garden-MayUpdate/index.html",
-      "/blog/Personal-Blog/posts/202401-Home-MLKStorm/index.html"
-    ]
-  },
-  {
     "listing": "/blog/Technical-Blog/blog.html",
     "items": [
       "/blog/Technical-Blog/posts/20240522-Original-TestDataGrantClaims/index.html",
@@ -67,6 +60,13 @@
       "/blog/Technical-Blog/posts/20210719-School-Quiz1/index.html",
       "/blog/Technical-Blog/posts/20210628-School-Stat451Hw1/index.html",
       "/blog/Technical-Blog/posts/20210621-Original-balletdata/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/Personal-Blog/blog.html",
+    "items": [
+      "/blog/Personal-Blog/posts/202405-Garden-MayUpdate/index.html",
+      "/blog/Personal-Blog/posts/202401-Home-MLKStorm/index.html"
     ]
   }
 ]
