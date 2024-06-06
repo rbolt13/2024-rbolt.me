@@ -309,7 +309,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <h1>Setup</h1>
 <p>To begin setup your environment by loading in the necessary packages, and then saving 30 million as the <code>total_budget</code>. This constant is being saved in the setup because this value should not change for this iteration of the tracking system test data, but it might alter for future years. Assuming the rest of the code needs no altering, this will make future updates hopefully quick and painless.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Contents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Load Packaged</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Constants</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Contents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Load Packages</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Constants</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p><strong>Tabs</strong></p>
@@ -377,7 +377,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>The test data needed to include:</p>
-<ul>
+<ol type="A">
 <li><p>Entries for <strong>10 different grantees</strong> to ensure a variety of data points.</p></li>
 <li><p>Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.</p></li>
 <li><p>Different types of grantees such as districts, educational service districts (ESD), and consortiums.</p></li>
@@ -386,7 +386,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <li><p>Ensure that every grantee entry includes complete contact information.</p></li>
 <li><p>Date of submissions should span across several months within the year 2024, to test the system’s performance over different reporting periods.</p></li>
 <li><p>The total value of all claims does not exceed $30 million.</p></li>
-</ul>
+</ol>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>Test Data Columns</p>
@@ -407,7 +407,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </section>
 <section id="define-grantees-data" class="level1">
 <h1>Define Grantees Data</h1>
-<p>Now define the grantees, which needs to include:</p>
+<p>Now define the <code>grantees</code>, which needs to include:</p>
 <ul>
 <li><p>10 Grantees</p></li>
 <li><p>Variation of Types</p></li>
@@ -457,6 +457,9 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p>Simply eyeball this one to make sure it looks correct, and all assumptions thus far are valid.</p>
+<p>A. 10 different grantees</p>
+<p>B. Various reporting frequencies</p>
+<p>C. Different types of grantees.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Hide code</summary>
@@ -486,7 +489,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 <ul>
 <li><p>Define a random normalized percent to each grantee.</p></li>
 <li><p>Define a max claim using the normalized percentage and <code>total_budge</code> constant.</p></li>
-<li><p>Define an average claim using the max claim and <code>NumClaims</code> column of the <code>grantee1</code> data.</p></li>
+<li><p>Define an average claim using the max claim and <code>NumClaims</code> column of the <code>grantees</code> data.</p></li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Contents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Define Random Percentes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Define Max Claim</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">Define Average Claim</a></li></ul>
@@ -1362,7 +1365,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Constant</span>
 <span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load Packaged</span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load Packages</span></span>
 <span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>Load two packages:</span>
 <span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a></span>
@@ -1430,21 +1433,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-104"><a href="#cb23-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-105"><a href="#cb23-105" aria-hidden="true" tabindex="-1"></a>The test data needed to include:</span>
 <span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Entries for **10 different grantees** to ensure a variety of data points.</span>
+<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a>A.   Entries for **10 different grantees** to ensure a variety of data points.</span>
 <span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.</span>
+<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a>B.   Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.</span>
 <span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Different types of grantees such as districts, educational service districts (ESD), and consortiums.</span>
+<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a>C.   Different types of grantees such as districts, educational service districts (ESD), and consortiums.</span>
 <span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-113"><a href="#cb23-113" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Claim statuses should include a mix of 'Approved', 'Pending Review', and 'Needs Revision'.</span>
+<span id="cb23-113"><a href="#cb23-113" aria-hidden="true" tabindex="-1"></a>D.   Claim statuses should include a mix of 'Approved', 'Pending Review', and 'Needs Revision'.</span>
 <span id="cb23-114"><a href="#cb23-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.</span>
+<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a>E.   Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.</span>
 <span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ensure that every grantee entry includes complete contact information.</span>
+<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a>F.   Ensure that every grantee entry includes complete contact information.</span>
 <span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.</span>
+<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a>G.   Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.</span>
 <span id="cb23-120"><a href="#cb23-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The total value of all claims does not exceed \$30 million.</span>
+<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a>H.   The total value of all claims does not exceed \$30 million.</span>
 <span id="cb23-122"><a href="#cb23-122" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-123"><a href="#cb23-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Test Data Columns</span></span>
 <span id="cb23-124"><a href="#cb23-124" aria-hidden="true" tabindex="-1"></a></span>
@@ -1471,7 +1474,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-145"><a href="#cb23-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-146"><a href="#cb23-146" aria-hidden="true" tabindex="-1"></a><span class="fu"># Define Grantees Data</span></span>
 <span id="cb23-147"><a href="#cb23-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a>Now define the grantees, which needs to include:</span>
+<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a>Now define the <span class="in">`grantees`</span>, which needs to include:</span>
 <span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>10 Grantees</span>
 <span id="cb23-151"><a href="#cb23-151" aria-hidden="true" tabindex="-1"></a></span>
@@ -1524,319 +1527,325 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a>Simply eyeball this one to make sure it looks correct, and all assumptions thus far are valid.</span>
 <span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a>grantees</span>
-<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a><span class="fu"># Grantee Claim Amounts</span></span>
-<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a>Each Grantee needs a piece of the 30 million dollar pie, so to define this randomly:</span>
+<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a>A. 10 different grantees</span>
+<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a>B. Various reporting frequencies</span>
+<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a>C. Different types of grantees.</span>
+<span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{r print grantees data}</span></span>
+<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a><span class="in">grantees</span></span>
+<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a random normalized percent to each grantee.</span>
+<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a><span class="fu"># Grantee Claim Amounts</span></span>
 <span id="cb23-213"><a href="#cb23-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a max claim using the normalized percentage and <span class="in">`total_budge`</span> constant.</span>
+<span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a>Each Grantee needs a piece of the 30 million dollar pie, so to define this randomly:</span>
 <span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define an average claim using the max claim and <span class="in">`NumClaims`</span> column of the <span class="in">`grantee1`</span> data.</span>
+<span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a random normalized percent to each grantee.</span>
 <span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
-<span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a>**Tabs**</span>
-<span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Random Percents</span>
+<span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a max claim using the normalized percentage and <span class="in">`total_budge`</span> constant.</span>
+<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define an average claim using the max claim and <span class="in">`NumClaims`</span> column of the <span class="in">`grantees`</span> data.</span>
+<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
 <span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Max Claim</span>
+<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a>**Tabs**</span>
 <span id="cb23-226"><a href="#cb23-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Average Claim</span>
+<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Random Percents</span>
 <span id="cb23-228"><a href="#cb23-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Random Percentes</span></span>
+<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Max Claim</span>
 <span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`rand_norm_perc()`</span> which will assign a random percent value to each grantee and then normalize it. This is important so that all percentage values add up to 100% or 30 million total funds.</span>
+<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define Average Claim</span>
 <span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random percentage function }</span></span>
-<span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a><span class="in">rand_norm_perc &lt;- function(n) {</span></span>
-<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a><span class="in">  base::set.seed(123) </span></span>
-<span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a><span class="in">  rand_perc &lt;- stats::runif(n, min = 0, max = 100)</span></span>
-<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a><span class="in">  norm_perc &lt;- rand_perc / base::sum(rand_perc)</span></span>
-<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a><span class="in">  return(norm_perc)</span></span>
-<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-242"><a href="#cb23-242" aria-hidden="true" tabindex="-1"></a>Then generate random normalized percentages for each grantee.</span>
-<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a>rand_percents <span class="ot">&lt;-</span> <span class="fu">rand_norm_perc</span>(base<span class="sc">::</span><span class="fu">nrow</span>(grantees))</span>
-<span id="cb23-248"><a href="#cb23-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Max Claim</span></span>
-<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a>This is the maximum amount that each grantee can spend. Meaning that sum of all their claims for that year cannot exceed this value.</span>
+<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Random Percentes</span></span>
+<span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`rand_norm_perc()`</span> which will assign a random percent value to each grantee and then normalize it. This is important so that all percentage values add up to 100% or 30 million total funds.</span>
+<span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random percentage function }</span></span>
+<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a><span class="in">rand_norm_perc &lt;- function(n) {</span></span>
+<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a><span class="in">  base::set.seed(123) </span></span>
+<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a><span class="in">  rand_perc &lt;- stats::runif(n, min = 0, max = 100)</span></span>
+<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a><span class="in">  norm_perc &lt;- rand_perc / base::sum(rand_perc)</span></span>
+<span id="cb23-242"><a href="#cb23-242" aria-hidden="true" tabindex="-1"></a><span class="in">  return(norm_perc)</span></span>
+<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-244"><a href="#cb23-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a>Then generate random normalized percentages for each grantee.</span>
+<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a>rand_percents <span class="ot">&lt;-</span> <span class="fu">rand_norm_perc</span>(base<span class="sc">::</span><span class="fu">nrow</span>(grantees))</span>
+<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{r define MaxClaim}</span></span>
-<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a><span class="in">grantees$MaxClaim &lt;- base::round(rand_percents * total_budget, digits = 2)</span></span>
-<span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Max Claim</span></span>
+<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a>This is the maximum amount that each grantee can spend. Meaning that sum of all their claims for that year cannot exceed this value.</span>
 <span id="cb23-257"><a href="#cb23-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Average Claim</span></span>
-<span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-260"><a href="#cb23-260" aria-hidden="true" tabindex="-1"></a>Not doing anything too cute here, just dividing the max claim by the number of claims the grantee should submit that year.</span>
+<span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{r define MaxClaim}</span></span>
+<span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a><span class="in">grantees$MaxClaim &lt;- base::round(rand_percents * total_budget, digits = 2)</span></span>
+<span id="cb23-260"><a href="#cb23-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-261"><a href="#cb23-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-265"><a href="#cb23-265" aria-hidden="true" tabindex="-1"></a>grantees<span class="sc">$</span>AvgClaim <span class="ot">&lt;-</span> grantees<span class="sc">$</span>MaxClaim <span class="sc">/</span> grantees<span class="sc">$</span>NumClaims</span>
-<span id="cb23-266"><a href="#cb23-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-267"><a href="#cb23-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a><span class="fu"># Verify Assumptions</span></span>
-<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a>Before we get too far lets check the data for:</span>
+<span id="cb23-262"><a href="#cb23-262" aria-hidden="true" tabindex="-1"></a><span class="fu">## Define Average Claim</span></span>
+<span id="cb23-263"><a href="#cb23-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a>Not doing anything too cute here, just dividing the max claim by the number of claims the grantee should submit that year.</span>
+<span id="cb23-265"><a href="#cb23-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a>grantees<span class="sc">$</span>AvgClaim <span class="ot">&lt;-</span> grantees<span class="sc">$</span>MaxClaim <span class="sc">/</span> grantees<span class="sc">$</span>NumClaims</span>
+<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-271"><a href="#cb23-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-272"><a href="#cb23-272" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>10 Grantees</span>
+<span id="cb23-272"><a href="#cb23-272" aria-hidden="true" tabindex="-1"></a><span class="fu"># Verify Assumptions</span></span>
 <span id="cb23-273"><a href="#cb23-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-274"><a href="#cb23-274" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mix of grantee types</span>
+<span id="cb23-274"><a href="#cb23-274" aria-hidden="true" tabindex="-1"></a>Before we get too far lets check the data for:</span>
 <span id="cb23-275"><a href="#cb23-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-276"><a href="#cb23-276" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mix of reporting frequency</span>
+<span id="cb23-276"><a href="#cb23-276" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>10 Grantees</span>
 <span id="cb23-277"><a href="#cb23-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-278"><a href="#cb23-278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Start dates</span>
+<span id="cb23-278"><a href="#cb23-278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mix of grantee types</span>
 <span id="cb23-279"><a href="#cb23-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-280"><a href="#cb23-280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Max number of claims submitted (for the year): 4, 12, or 52</span>
+<span id="cb23-280"><a href="#cb23-280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mix of reporting frequency</span>
 <span id="cb23-281"><a href="#cb23-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-284"><a href="#cb23-284" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a>grantees</span>
-<span id="cb23-286"><a href="#cb23-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-287"><a href="#cb23-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-288"><a href="#cb23-288" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The sum of all max claims is equal to or less than 30 million</span>
-<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-290"><a href="#cb23-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r sum maxclaim}</span></span>
-<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a><span class="in">base::sum(grantees$MaxClaim)</span></span>
-<span id="cb23-292"><a href="#cb23-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a><span class="fu"># Define Functions</span></span>
-<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a>There are three functions we need to create to fill out our test data set:</span>
+<span id="cb23-282"><a href="#cb23-282" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Start dates</span>
+<span id="cb23-283"><a href="#cb23-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-284"><a href="#cb23-284" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Max number of claims submitted (for the year): 4, 12, or 52</span>
+<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-288"><a href="#cb23-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a>grantees</span>
+<span id="cb23-290"><a href="#cb23-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-292"><a href="#cb23-292" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The sum of all max claims is equal to or less than 30 million</span>
+<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r sum maxclaim}</span></span>
+<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a><span class="in">base::sum(grantees$MaxClaim)</span></span>
+<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-298"><a href="#cb23-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Submission Dates: Generates all the submissions dates for each grantee.</span>
+<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a><span class="fu"># Define Functions</span></span>
 <span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Status: Generates random status's.</span>
+<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a>There are three functions we need to create to fill out our test data set:</span>
 <span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Issues: Generates random issues.</span>
+<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Submission Dates: Generates all the submissions dates for each grantee.</span>
 <span id="cb23-304"><a href="#cb23-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
-<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a>**Tabs:**</span>
-<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Submission Dates Functions</span>
+<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Status: Generates random status's.</span>
+<span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Issues: Generates random issues.</span>
+<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
 <span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-312"><a href="#cb23-312" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Status Function</span>
+<span id="cb23-312"><a href="#cb23-312" aria-hidden="true" tabindex="-1"></a>**Tabs:**</span>
 <span id="cb23-313"><a href="#cb23-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Issues Function</span>
+<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Submission Dates Functions</span>
 <span id="cb23-315"><a href="#cb23-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a><span class="fu">## Submission Dates Function</span></span>
+<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Status Function</span>
 <span id="cb23-317"><a href="#cb23-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`submission_dates()`</span> to generate submission dates based on reporting frequency.</span>
+<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Random Issues Function</span>
 <span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r generate submission dates function}</span></span>
-<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="in">submission_dates &lt;- function(</span></span>
-<span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a><span class="in">    start_date, </span></span>
-<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a><span class="in">    freq, </span></span>
-<span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a><span class="in">    num_claims</span></span>
-<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a><span class="in">    ) {</span></span>
-<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a><span class="in">  if (freq == "Weekly") {</span></span>
-<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
-<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
-<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "7 days", </span></span>
-<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
-<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
-<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a><span class="in">  } else if (freq == "Monthly") {</span></span>
-<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
-<span id="cb23-334"><a href="#cb23-334" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
-<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "1 month", </span></span>
-<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
-<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
-<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a><span class="in">  } else if (freq == "Quarterly") {</span></span>
-<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
-<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
-<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "3 months", </span></span>
-<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
-<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
-<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-348"><a href="#cb23-348" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Status Function</span></span>
-<span id="cb23-349"><a href="#cb23-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-350"><a href="#cb23-350" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`random_status`</span> to generate a random status for each submission.</span>
+<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a><span class="fu">## Submission Dates Function</span></span>
+<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`submission_dates()`</span> to generate submission dates based on reporting frequency.</span>
+<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{r generate submission dates function}</span></span>
+<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a><span class="in">submission_dates &lt;- function(</span></span>
+<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a><span class="in">    start_date, </span></span>
+<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a><span class="in">    freq, </span></span>
+<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a><span class="in">    num_claims</span></span>
+<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">    ) {</span></span>
+<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a><span class="in">  if (freq == "Weekly") {</span></span>
+<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
+<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
+<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "7 days", </span></span>
+<span id="cb23-334"><a href="#cb23-334" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
+<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
+<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a><span class="in">  } else if (freq == "Monthly") {</span></span>
+<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
+<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
+<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "1 month", </span></span>
+<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
+<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
+<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a><span class="in">  } else if (freq == "Quarterly") {</span></span>
+<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a><span class="in">    return(base::seq(</span></span>
+<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a><span class="in">      from = start_date, </span></span>
+<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a><span class="in">      by = "3 months", </span></span>
+<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a><span class="in">      length.out = num_claims)</span></span>
+<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
+<span id="cb23-348"><a href="#cb23-348" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb23-349"><a href="#cb23-349" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-350"><a href="#cb23-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-351"><a href="#cb23-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-352"><a href="#cb23-352" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random status}</span></span>
-<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a><span class="in">random_status &lt;- function(n) {</span></span>
-<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a><span class="in">  statuses &lt;- c("Approved", "Pending Review", "Needs Revision")</span></span>
-<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a><span class="in">  return(base::sample(statuses, n, replace = TRUE))</span></span>
-<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Issues Functions</span></span>
-<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`random_issues`</span> to generate a random issue status for each submission.</span>
+<span id="cb23-352"><a href="#cb23-352" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Status Function</span></span>
+<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`random_status`</span> to generate a random status for each submission.</span>
+<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random status}</span></span>
+<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a><span class="in">random_status &lt;- function(n) {</span></span>
+<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a><span class="in">  statuses &lt;- c("Approved", "Pending Review", "Needs Revision")</span></span>
+<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a><span class="in">  return(base::sample(statuses, n, replace = TRUE))</span></span>
+<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-362"><a href="#cb23-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random issues}</span></span>
-<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a><span class="in">random_issues &lt;- function(n) {</span></span>
-<span id="cb23-365"><a href="#cb23-365" aria-hidden="true" tabindex="-1"></a><span class="in">  issues &lt;- c("No issues", "Minor discrepancies", "Major discrepancies")</span></span>
-<span id="cb23-366"><a href="#cb23-366" aria-hidden="true" tabindex="-1"></a><span class="in">  return(base::sample(issues, n, replace = TRUE))</span></span>
-<span id="cb23-367"><a href="#cb23-367" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-368"><a href="#cb23-368" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a><span class="fu"># Define Test Data</span></span>
-<span id="cb23-372"><a href="#cb23-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-373"><a href="#cb23-373" aria-hidden="true" tabindex="-1"></a>Now to put it all together into one test data set.</span>
+<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Issues Functions</span></span>
+<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-365"><a href="#cb23-365" aria-hidden="true" tabindex="-1"></a>Create the function <span class="in">`random_issues`</span> to generate a random issue status for each submission.</span>
+<span id="cb23-366"><a href="#cb23-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-367"><a href="#cb23-367" aria-hidden="true" tabindex="-1"></a><span class="in">```{r random issues}</span></span>
+<span id="cb23-368"><a href="#cb23-368" aria-hidden="true" tabindex="-1"></a><span class="in">random_issues &lt;- function(n) {</span></span>
+<span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a><span class="in">  issues &lt;- c("No issues", "Minor discrepancies", "Major discrepancies")</span></span>
+<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a><span class="in">  return(base::sample(issues, n, replace = TRUE))</span></span>
+<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-372"><a href="#cb23-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-373"><a href="#cb23-373" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-374"><a href="#cb23-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-375"><a href="#cb23-375" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb23-376"><a href="#cb23-376" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
-<span id="cb23-377"><a href="#cb23-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-378"><a href="#cb23-378" aria-hidden="true" tabindex="-1"></a>**Tabs**</span>
-<span id="cb23-379"><a href="#cb23-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-380"><a href="#cb23-380" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Test Data</span>
+<span id="cb23-375"><a href="#cb23-375" aria-hidden="true" tabindex="-1"></a><span class="fu"># Define Test Data</span></span>
+<span id="cb23-376"><a href="#cb23-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-377"><a href="#cb23-377" aria-hidden="true" tabindex="-1"></a>Now to put it all together into one test data set.</span>
+<span id="cb23-378"><a href="#cb23-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-379"><a href="#cb23-379" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb23-380"><a href="#cb23-380" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
 <span id="cb23-381"><a href="#cb23-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-382"><a href="#cb23-382" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Verify Assumptions</span>
+<span id="cb23-382"><a href="#cb23-382" aria-hidden="true" tabindex="-1"></a>**Tabs**</span>
 <span id="cb23-383"><a href="#cb23-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-384"><a href="#cb23-384" aria-hidden="true" tabindex="-1"></a><span class="fu">## Test Data</span></span>
+<span id="cb23-384"><a href="#cb23-384" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Test Data</span>
 <span id="cb23-385"><a href="#cb23-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-386"><a href="#cb23-386" aria-hidden="true" tabindex="-1"></a><span class="in">```{r test data}</span></span>
-<span id="cb23-387"><a href="#cb23-387" aria-hidden="true" tabindex="-1"></a><span class="in">test &lt;- base::do.call(</span></span>
-<span id="cb23-388"><a href="#cb23-388" aria-hidden="true" tabindex="-1"></a><span class="in">  rbind, </span></span>
-<span id="cb23-389"><a href="#cb23-389" aria-hidden="true" tabindex="-1"></a><span class="in">  base::lapply(1:nrow(grantees), </span></span>
-<span id="cb23-390"><a href="#cb23-390" aria-hidden="true" tabindex="-1"></a><span class="in">  function(i) {</span></span>
-<span id="cb23-391"><a href="#cb23-391" aria-hidden="true" tabindex="-1"></a><span class="in">    data.frame(</span></span>
-<span id="cb23-392"><a href="#cb23-392" aria-hidden="true" tabindex="-1"></a><span class="in">      # Grantee Name</span></span>
-<span id="cb23-393"><a href="#cb23-393" aria-hidden="true" tabindex="-1"></a><span class="in">      GranteeName = grantees$GranteeName[i],</span></span>
-<span id="cb23-394"><a href="#cb23-394" aria-hidden="true" tabindex="-1"></a><span class="in">      # Lead Contact</span></span>
-<span id="cb23-395"><a href="#cb23-395" aria-hidden="true" tabindex="-1"></a><span class="in">      LeadContact = base::paste0(</span></span>
-<span id="cb23-396"><a href="#cb23-396" aria-hidden="true" tabindex="-1"></a><span class="in">        grantees$GranteeName[i], </span></span>
-<span id="cb23-397"><a href="#cb23-397" aria-hidden="true" tabindex="-1"></a><span class="in">        " Smith"),</span></span>
-<span id="cb23-398"><a href="#cb23-398" aria-hidden="true" tabindex="-1"></a><span class="in">      # Grantee Type</span></span>
-<span id="cb23-399"><a href="#cb23-399" aria-hidden="true" tabindex="-1"></a><span class="in">      GranteeType = grantees$GranteeType[i],</span></span>
-<span id="cb23-400"><a href="#cb23-400" aria-hidden="true" tabindex="-1"></a><span class="in">      # Submission Dates</span></span>
-<span id="cb23-401"><a href="#cb23-401" aria-hidden="true" tabindex="-1"></a><span class="in">      SubmissionDate = submission_dates(</span></span>
-<span id="cb23-402"><a href="#cb23-402" aria-hidden="true" tabindex="-1"></a><span class="in">        start_date = grantees$StartDate[i],</span></span>
-<span id="cb23-403"><a href="#cb23-403" aria-hidden="true" tabindex="-1"></a><span class="in">        freq = grantees$ReportingFrequency[i],</span></span>
-<span id="cb23-404"><a href="#cb23-404" aria-hidden="true" tabindex="-1"></a><span class="in">        num_claims = grantees$NumClaims[i]</span></span>
-<span id="cb23-405"><a href="#cb23-405" aria-hidden="true" tabindex="-1"></a><span class="in">        ),</span></span>
-<span id="cb23-406"><a href="#cb23-406" aria-hidden="true" tabindex="-1"></a><span class="in">      # SubmissionCycle</span></span>
-<span id="cb23-407"><a href="#cb23-407" aria-hidden="true" tabindex="-1"></a><span class="in">      Cycle = grantees$ReportingFrequency[i],</span></span>
-<span id="cb23-408"><a href="#cb23-408" aria-hidden="true" tabindex="-1"></a><span class="in">      # Claim Amount</span></span>
-<span id="cb23-409"><a href="#cb23-409" aria-hidden="true" tabindex="-1"></a><span class="in">      Amount = grantees$AvgClaim[i],</span></span>
-<span id="cb23-410"><a href="#cb23-410" aria-hidden="true" tabindex="-1"></a><span class="in">      # Contact Information </span></span>
-<span id="cb23-411"><a href="#cb23-411" aria-hidden="true" tabindex="-1"></a><span class="in">      Contact = base::paste0(</span></span>
-<span id="cb23-412"><a href="#cb23-412" aria-hidden="true" tabindex="-1"></a><span class="in">        grantees$GranteeName[i],</span></span>
-<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a><span class="in">        "@gmail.com")</span></span>
-<span id="cb23-414"><a href="#cb23-414" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
-<span id="cb23-415"><a href="#cb23-415" aria-hidden="true" tabindex="-1"></a><span class="in">}))</span></span>
-<span id="cb23-416"><a href="#cb23-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-417"><a href="#cb23-417" aria-hidden="true" tabindex="-1"></a><span class="in">test$ClaimStatus &lt;- random_status(nrow(test))</span></span>
-<span id="cb23-418"><a href="#cb23-418" aria-hidden="true" tabindex="-1"></a><span class="in">test$ClaimIssues &lt;- random_issues(nrow(test))</span></span>
-<span id="cb23-419"><a href="#cb23-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-420"><a href="#cb23-420" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-421"><a href="#cb23-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-422"><a href="#cb23-422" aria-hidden="true" tabindex="-1"></a><span class="fu">## Verfiy Test Data</span></span>
+<span id="cb23-386"><a href="#cb23-386" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Verify Assumptions</span>
+<span id="cb23-387"><a href="#cb23-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-388"><a href="#cb23-388" aria-hidden="true" tabindex="-1"></a><span class="fu">## Test Data</span></span>
+<span id="cb23-389"><a href="#cb23-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-390"><a href="#cb23-390" aria-hidden="true" tabindex="-1"></a><span class="in">```{r test data}</span></span>
+<span id="cb23-391"><a href="#cb23-391" aria-hidden="true" tabindex="-1"></a><span class="in">test &lt;- base::do.call(</span></span>
+<span id="cb23-392"><a href="#cb23-392" aria-hidden="true" tabindex="-1"></a><span class="in">  rbind, </span></span>
+<span id="cb23-393"><a href="#cb23-393" aria-hidden="true" tabindex="-1"></a><span class="in">  base::lapply(1:nrow(grantees), </span></span>
+<span id="cb23-394"><a href="#cb23-394" aria-hidden="true" tabindex="-1"></a><span class="in">  function(i) {</span></span>
+<span id="cb23-395"><a href="#cb23-395" aria-hidden="true" tabindex="-1"></a><span class="in">    data.frame(</span></span>
+<span id="cb23-396"><a href="#cb23-396" aria-hidden="true" tabindex="-1"></a><span class="in">      # Grantee Name</span></span>
+<span id="cb23-397"><a href="#cb23-397" aria-hidden="true" tabindex="-1"></a><span class="in">      GranteeName = grantees$GranteeName[i],</span></span>
+<span id="cb23-398"><a href="#cb23-398" aria-hidden="true" tabindex="-1"></a><span class="in">      # Lead Contact</span></span>
+<span id="cb23-399"><a href="#cb23-399" aria-hidden="true" tabindex="-1"></a><span class="in">      LeadContact = base::paste0(</span></span>
+<span id="cb23-400"><a href="#cb23-400" aria-hidden="true" tabindex="-1"></a><span class="in">        grantees$GranteeName[i], </span></span>
+<span id="cb23-401"><a href="#cb23-401" aria-hidden="true" tabindex="-1"></a><span class="in">        " Smith"),</span></span>
+<span id="cb23-402"><a href="#cb23-402" aria-hidden="true" tabindex="-1"></a><span class="in">      # Grantee Type</span></span>
+<span id="cb23-403"><a href="#cb23-403" aria-hidden="true" tabindex="-1"></a><span class="in">      GranteeType = grantees$GranteeType[i],</span></span>
+<span id="cb23-404"><a href="#cb23-404" aria-hidden="true" tabindex="-1"></a><span class="in">      # Submission Dates</span></span>
+<span id="cb23-405"><a href="#cb23-405" aria-hidden="true" tabindex="-1"></a><span class="in">      SubmissionDate = submission_dates(</span></span>
+<span id="cb23-406"><a href="#cb23-406" aria-hidden="true" tabindex="-1"></a><span class="in">        start_date = grantees$StartDate[i],</span></span>
+<span id="cb23-407"><a href="#cb23-407" aria-hidden="true" tabindex="-1"></a><span class="in">        freq = grantees$ReportingFrequency[i],</span></span>
+<span id="cb23-408"><a href="#cb23-408" aria-hidden="true" tabindex="-1"></a><span class="in">        num_claims = grantees$NumClaims[i]</span></span>
+<span id="cb23-409"><a href="#cb23-409" aria-hidden="true" tabindex="-1"></a><span class="in">        ),</span></span>
+<span id="cb23-410"><a href="#cb23-410" aria-hidden="true" tabindex="-1"></a><span class="in">      # SubmissionCycle</span></span>
+<span id="cb23-411"><a href="#cb23-411" aria-hidden="true" tabindex="-1"></a><span class="in">      Cycle = grantees$ReportingFrequency[i],</span></span>
+<span id="cb23-412"><a href="#cb23-412" aria-hidden="true" tabindex="-1"></a><span class="in">      # Claim Amount</span></span>
+<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a><span class="in">      Amount = grantees$AvgClaim[i],</span></span>
+<span id="cb23-414"><a href="#cb23-414" aria-hidden="true" tabindex="-1"></a><span class="in">      # Contact Information </span></span>
+<span id="cb23-415"><a href="#cb23-415" aria-hidden="true" tabindex="-1"></a><span class="in">      Contact = base::paste0(</span></span>
+<span id="cb23-416"><a href="#cb23-416" aria-hidden="true" tabindex="-1"></a><span class="in">        grantees$GranteeName[i],</span></span>
+<span id="cb23-417"><a href="#cb23-417" aria-hidden="true" tabindex="-1"></a><span class="in">        "@gmail.com")</span></span>
+<span id="cb23-418"><a href="#cb23-418" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
+<span id="cb23-419"><a href="#cb23-419" aria-hidden="true" tabindex="-1"></a><span class="in">}))</span></span>
+<span id="cb23-420"><a href="#cb23-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-421"><a href="#cb23-421" aria-hidden="true" tabindex="-1"></a><span class="in">test$ClaimStatus &lt;- random_status(nrow(test))</span></span>
+<span id="cb23-422"><a href="#cb23-422" aria-hidden="true" tabindex="-1"></a><span class="in">test$ClaimIssues &lt;- random_issues(nrow(test))</span></span>
 <span id="cb23-423"><a href="#cb23-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-426"><a href="#cb23-426" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-427"><a href="#cb23-427" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(test)</span>
-<span id="cb23-428"><a href="#cb23-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-429"><a href="#cb23-429" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-430"><a href="#cb23-430" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-431"><a href="#cb23-431" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reactable</span></span>
-<span id="cb23-432"><a href="#cb23-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a>Lastly lets look at this data in a reactable table.</span>
+<span id="cb23-424"><a href="#cb23-424" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-425"><a href="#cb23-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-426"><a href="#cb23-426" aria-hidden="true" tabindex="-1"></a><span class="fu">## Verfiy Test Data</span></span>
+<span id="cb23-427"><a href="#cb23-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-430"><a href="#cb23-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-431"><a href="#cb23-431" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(test)</span>
+<span id="cb23-432"><a href="#cb23-432" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-434"><a href="#cb23-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
-<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Conditional Formatting Functions</span>
-<span id="cb23-439"><a href="#cb23-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-440"><a href="#cb23-440" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Format Reactable </span>
+<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reactable</span></span>
+<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a>Lastly lets look at this data in a reactable table.</span>
+<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-439"><a href="#cb23-439" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb23-440"><a href="#cb23-440" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
 <span id="cb23-441"><a href="#cb23-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Print Reactable </span>
+<span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Conditional Formatting Functions</span>
 <span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional Formatting Funcitons</span></span>
+<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Format Reactable </span>
 <span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a><span class="co"># status colors</span></span>
-<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a>status_color <span class="ot">&lt;-</span> <span class="cf">function</span>(status) {</span>
-<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Approved"</span>) {</span>
-<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"green"</span>)</span>
-<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Pending Review"</span>) {</span>
-<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"yellow"</span>)</span>
-<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Needs Revision"</span>) {</span>
-<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"red"</span>)</span>
-<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"white"</span>)</span>
-<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a><span class="co"># issue colors</span></span>
-<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a>issue_color <span class="ot">&lt;-</span> <span class="cf">function</span>(issue) {</span>
-<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"No issues"</span>) {</span>
-<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"green"</span>)</span>
-<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"Minor discrepancies"</span>) {</span>
-<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"yellow"</span>)</span>
-<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"Major discrepancies"</span>) {</span>
-<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"red"</span>)</span>
-<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"white"</span>)</span>
-<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a><span class="fu">## Format Reactable</span></span>
-<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a>test_reactable <span class="ot">&lt;-</span> reactable<span class="sc">::</span><span class="fu">reactable</span>(</span>
-<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a>  test,</span>
-<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define Column Formatting</span></span>
-<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a>    <span class="at">GranteeName =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Grantee Name"</span>),</span>
-<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a>    <span class="at">LeadContact =</span> <span class="fu">colDef</span>(<span class="at">show =</span> F),</span>
-<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a>    <span class="at">GranteeType =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Grantee Type"</span>),</span>
-<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a>    <span class="at">SubmissionDate =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Submission Date"</span>),</span>
-<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cycle =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Submission Cycle"</span>),</span>
-<span id="cb23-489"><a href="#cb23-489" aria-hidden="true" tabindex="-1"></a>    <span class="at">Amount =</span> <span class="fu">colDef</span>(</span>
-<span id="cb23-490"><a href="#cb23-490" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Total Claim Amount"</span>,</span>
-<span id="cb23-491"><a href="#cb23-491" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="fu">colFormat</span>(</span>
-<span id="cb23-492"><a href="#cb23-492" aria-hidden="true" tabindex="-1"></a>        <span class="at">currency =</span> <span class="st">"USD"</span>,</span>
-<span id="cb23-493"><a href="#cb23-493" aria-hidden="true" tabindex="-1"></a>        <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb23-494"><a href="#cb23-494" aria-hidden="true" tabindex="-1"></a>        <span class="at">separators =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-495"><a href="#cb23-495" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb23-496"><a href="#cb23-496" aria-hidden="true" tabindex="-1"></a>    <span class="at">ClaimStatus =</span> <span class="fu">colDef</span>(</span>
-<span id="cb23-497"><a href="#cb23-497" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Claim Status"</span>,</span>
-<span id="cb23-498"><a href="#cb23-498" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb23-499"><a href="#cb23-499" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">background =</span> <span class="fu">status_color</span>(value))}),</span>
-<span id="cb23-500"><a href="#cb23-500" aria-hidden="true" tabindex="-1"></a>    <span class="at">ClaimIssues =</span> <span class="fu">colDef</span>(</span>
-<span id="cb23-501"><a href="#cb23-501" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Claim Issues"</span>,</span>
+<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Print Reactable </span>
+<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional Formatting Funcitons</span></span>
+<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a><span class="co"># status colors</span></span>
+<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a>status_color <span class="ot">&lt;-</span> <span class="cf">function</span>(status) {</span>
+<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Approved"</span>) {</span>
+<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"green"</span>)</span>
+<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Pending Review"</span>) {</span>
+<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"yellow"</span>)</span>
+<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (status <span class="sc">==</span> <span class="st">"Needs Revision"</span>) {</span>
+<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"red"</span>)</span>
+<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"white"</span>)</span>
+<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a><span class="co"># issue colors</span></span>
+<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a>issue_color <span class="ot">&lt;-</span> <span class="cf">function</span>(issue) {</span>
+<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"No issues"</span>) {</span>
+<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"green"</span>)</span>
+<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"Minor discrepancies"</span>) {</span>
+<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"yellow"</span>)</span>
+<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (issue <span class="sc">==</span> <span class="st">"Major discrepancies"</span>) {</span>
+<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"red"</span>)</span>
+<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"white"</span>)</span>
+<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a><span class="fu">## Format Reactable</span></span>
+<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a>test_reactable <span class="ot">&lt;-</span> reactable<span class="sc">::</span><span class="fu">reactable</span>(</span>
+<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a>  test,</span>
+<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define Column Formatting</span></span>
+<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
+<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a>    <span class="at">GranteeName =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Grantee Name"</span>),</span>
+<span id="cb23-489"><a href="#cb23-489" aria-hidden="true" tabindex="-1"></a>    <span class="at">LeadContact =</span> <span class="fu">colDef</span>(<span class="at">show =</span> F),</span>
+<span id="cb23-490"><a href="#cb23-490" aria-hidden="true" tabindex="-1"></a>    <span class="at">GranteeType =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Grantee Type"</span>),</span>
+<span id="cb23-491"><a href="#cb23-491" aria-hidden="true" tabindex="-1"></a>    <span class="at">SubmissionDate =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Submission Date"</span>),</span>
+<span id="cb23-492"><a href="#cb23-492" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cycle =</span> <span class="fu">colDef</span>(<span class="at">name =</span> <span class="st">"Submission Cycle"</span>),</span>
+<span id="cb23-493"><a href="#cb23-493" aria-hidden="true" tabindex="-1"></a>    <span class="at">Amount =</span> <span class="fu">colDef</span>(</span>
+<span id="cb23-494"><a href="#cb23-494" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Total Claim Amount"</span>,</span>
+<span id="cb23-495"><a href="#cb23-495" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="fu">colFormat</span>(</span>
+<span id="cb23-496"><a href="#cb23-496" aria-hidden="true" tabindex="-1"></a>        <span class="at">currency =</span> <span class="st">"USD"</span>,</span>
+<span id="cb23-497"><a href="#cb23-497" aria-hidden="true" tabindex="-1"></a>        <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb23-498"><a href="#cb23-498" aria-hidden="true" tabindex="-1"></a>        <span class="at">separators =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-499"><a href="#cb23-499" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb23-500"><a href="#cb23-500" aria-hidden="true" tabindex="-1"></a>    <span class="at">ClaimStatus =</span> <span class="fu">colDef</span>(</span>
+<span id="cb23-501"><a href="#cb23-501" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Claim Status"</span>,</span>
 <span id="cb23-502"><a href="#cb23-502" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb23-503"><a href="#cb23-503" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">background =</span> <span class="fu">issue_color</span>(value))}),</span>
-<span id="cb23-504"><a href="#cb23-504" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contact =</span> <span class="fu">colDef</span>(<span class="at">show =</span> F)</span>
-<span id="cb23-505"><a href="#cb23-505" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb23-506"><a href="#cb23-506" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define Table Formatting</span></span>
-<span id="cb23-507"><a href="#cb23-507" aria-hidden="true" tabindex="-1"></a>  <span class="at">bordered =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb23-508"><a href="#cb23-508" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb23-509"><a href="#cb23-509" aria-hidden="true" tabindex="-1"></a>  <span class="at">showPageSizeOptions =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb23-510"><a href="#cb23-510" aria-hidden="true" tabindex="-1"></a>  <span class="at">pageSizeOptions =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>),</span>
-<span id="cb23-511"><a href="#cb23-511" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">5</span>)</span>
-<span id="cb23-512"><a href="#cb23-512" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-513"><a href="#cb23-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-514"><a href="#cb23-514" aria-hidden="true" tabindex="-1"></a><span class="fu">## Print Reactable</span></span>
-<span id="cb23-515"><a href="#cb23-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-518"><a href="#cb23-518" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-519"><a href="#cb23-519" aria-hidden="true" tabindex="-1"></a>test_reactable</span>
-<span id="cb23-520"><a href="#cb23-520" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-521"><a href="#cb23-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-522"><a href="#cb23-522" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-523"><a href="#cb23-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-524"><a href="#cb23-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-525"><a href="#cb23-525" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
-<span id="cb23-526"><a href="#cb23-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-527"><a href="#cb23-527" aria-hidden="true" tabindex="-1"></a>This post is not fished, but has enough content to get ya going.</span>
+<span id="cb23-503"><a href="#cb23-503" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">background =</span> <span class="fu">status_color</span>(value))}),</span>
+<span id="cb23-504"><a href="#cb23-504" aria-hidden="true" tabindex="-1"></a>    <span class="at">ClaimIssues =</span> <span class="fu">colDef</span>(</span>
+<span id="cb23-505"><a href="#cb23-505" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Claim Issues"</span>,</span>
+<span id="cb23-506"><a href="#cb23-506" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb23-507"><a href="#cb23-507" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">background =</span> <span class="fu">issue_color</span>(value))}),</span>
+<span id="cb23-508"><a href="#cb23-508" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contact =</span> <span class="fu">colDef</span>(<span class="at">show =</span> F)</span>
+<span id="cb23-509"><a href="#cb23-509" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb23-510"><a href="#cb23-510" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define Table Formatting</span></span>
+<span id="cb23-511"><a href="#cb23-511" aria-hidden="true" tabindex="-1"></a>  <span class="at">bordered =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb23-512"><a href="#cb23-512" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb23-513"><a href="#cb23-513" aria-hidden="true" tabindex="-1"></a>  <span class="at">showPageSizeOptions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb23-514"><a href="#cb23-514" aria-hidden="true" tabindex="-1"></a>  <span class="at">pageSizeOptions =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>),</span>
+<span id="cb23-515"><a href="#cb23-515" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">5</span>)</span>
+<span id="cb23-516"><a href="#cb23-516" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-517"><a href="#cb23-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-518"><a href="#cb23-518" aria-hidden="true" tabindex="-1"></a><span class="fu">## Print Reactable</span></span>
+<span id="cb23-519"><a href="#cb23-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-522"><a href="#cb23-522" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-523"><a href="#cb23-523" aria-hidden="true" tabindex="-1"></a>test_reactable</span>
+<span id="cb23-524"><a href="#cb23-524" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-525"><a href="#cb23-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-526"><a href="#cb23-526" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-527"><a href="#cb23-527" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-528"><a href="#cb23-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-529"><a href="#cb23-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-529"><a href="#cb23-529" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
+<span id="cb23-530"><a href="#cb23-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-531"><a href="#cb23-531" aria-hidden="true" tabindex="-1"></a>This post is not fished, but has enough content to get ya going.</span>
+<span id="cb23-532"><a href="#cb23-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-533"><a href="#cb23-533" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

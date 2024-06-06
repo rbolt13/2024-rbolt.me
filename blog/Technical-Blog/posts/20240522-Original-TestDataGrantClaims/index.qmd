@@ -36,7 +36,7 @@ To begin setup your environment by loading in the necessary packages, and then s
 
 -   Define Constant
 
-## Load Packaged
+## Load Packages
 
 Load two packages:
 
@@ -104,21 +104,21 @@ The tracking system developed needed to include the following:
 
 The test data needed to include:
 
--   Entries for **10 different grantees** to ensure a variety of data points.
+A.   Entries for **10 different grantees** to ensure a variety of data points.
 
--   Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.
+B.   Varying frequencies of submission cycles, including weekly, monthly, and quarterly submissions.
 
--   Different types of grantees such as districts, educational service districts (ESD), and consortiums.
+C.   Different types of grantees such as districts, educational service districts (ESD), and consortiums.
 
--   Claim statuses should include a mix of 'Approved', 'Pending Review', and 'Needs Revision'.
+D.   Claim statuses should include a mix of 'Approved', 'Pending Review', and 'Needs Revision'.
 
--   Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.
+E.   Incorporate a range of issues or questions related to expenditure reports to evaluate how the system tracks and flags potential problems.
 
--   Ensure that every grantee entry includes complete contact information.
+F.   Ensure that every grantee entry includes complete contact information.
 
--   Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.
+G.   Date of submissions should span across several months within the year 2024, to test the system's performance over different reporting periods.
 
--   The total value of all claims does not exceed \$30 million.
+H.   The total value of all claims does not exceed \$30 million.
 
 ## Test Data Columns
 
@@ -145,7 +145,7 @@ Test Data Columns
 
 # Define Grantees Data
 
-Now define the grantees, which needs to include:
+Now define the `grantees`, which needs to include:
 
 -   10 Grantees
 
@@ -198,7 +198,13 @@ grantees <- base::data.frame(
 
 Simply eyeball this one to make sure it looks correct, and all assumptions thus far are valid.
 
-```{r}
+A. 10 different grantees
+
+B. Various reporting frequencies
+
+C. Different types of grantees.
+
+```{r print grantees data}
 grantees
 ```
 :::
@@ -211,7 +217,7 @@ Each Grantee needs a piece of the 30 million dollar pie, so to define this rando
 
 -   Define a max claim using the normalized percentage and `total_budge` constant.
 
--   Define an average claim using the max claim and `NumClaims` column of the `grantee1` data.
+-   Define an average claim using the max claim and `NumClaims` column of the `grantees` data.
 
 ::: panel-tabset
 ## Contents
