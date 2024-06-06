@@ -514,7 +514,7 @@ test_reactable
 
 # Conclusion
 
-This post is not fished, but has enough content to get ya going.
+This post is not finished, but has enough content to get ya going.
 
 
 
