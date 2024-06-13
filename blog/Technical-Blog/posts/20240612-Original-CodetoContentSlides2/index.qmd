@@ -1,0 +1,23 @@
+---
+title: "Code to Content Lighting Talk 2"
+date: "2024-06-12"
+categories: [Talks, Quarto]
+toc: true
+draft: false
+---
+
+In this post are the materials for my [Cascadia R Conference](https://cascadiarconf.com/) lightning talk called: Code to Content.
+
+![An image of the title card. The top line reads, "Code to Content". The second from the top line reads, "The Art and Impact of Data Blogging". The thrid from the top line reads, "Randi Bolt". The bottom line reads, "2024-02-06".](titlecard.png)
+
+# Slides
+
+Below is the interactive slide deck. You can click through the slides using your arrow pad or the navigation menu.
+
+<iframe src="codetocontent.html" width="800" height="600">
+
+</iframe>
+
+# Talk 
+
+Coming Soon ...

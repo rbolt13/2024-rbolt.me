@@ -4,7 +4,6 @@ date: "2024-05-08"
 categories: [Talks, Quarto]
 toc: true
 draft: false
-preview-image: "titlecard.png"
 ---
 
 In this post are the materials for my [PDX R](https://www.meetup.com/portland-r-user-group/events/298359537/) lightning talk called: Code to Content.

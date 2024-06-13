@@ -1,0 +1,121 @@
+---
+title: "Code to Content"
+subtitle: "The Art and Impact of Data Blogging"
+author: "[Randi Bolt](https://www.rbolt.me/)"
+date: "5/22/24"
+draft: true
+format:
+  revealjs:
+    theme: solarized
+    logo: img/bolt.png
+    footer: "2024-codetocontent.netlify.app"
+    incremental: true 
+---
+
+## Agenda
+
+-   <u> **Why**</u> start a blog.
+
+-   <u> **How**</u> to create a blog (high level steps).
+
+-   <u> **What**</u> to consider.
+
+-   <u> **Where**</u> to find more information.
+
+![](img/agenda.png){.fragment .absolute top=0 right=0 width="960" height="720" alt="A collage of seven different screenshots of blogs and websites. In the upper right is the most current iteration that has an image of me and my niece. The middle right image is the iteration of my blog from 2023 with a picture of me in Takamatsu, Japan. The second image from the bottom on the right is from my blog from 2022, and has an emoji of me giving a thumbs up and some blog posts. The bottom right image is of an .Rmd site I created to take notes for a class. The image on the upper left is the first .Rmd site I created in 2020 with an image of the letter 'R' on fire. The bottom left image is of the second .Rmd site I created with a table of contents showing what each tab is. The middle bottom image is the first iteration of my blog from 2021."}
+
+## Why
+
+-   Joy in Expression & Self Discovery
+
+-   Own Your Narrative
+
+-   Continuous Growth and Learning
+
+-   Reveal Fresh Perspectives
+
+-   Data Advocacy and Empowerment
+
+-   Embedded in R Culture
+
+![](img/why.png){.fragment .absolute bottom=0 right=0 width="960" height="720" alt="A collage of 6 different screenshots of blog posts I have written over the past few years. The upper right image is a TidyTuesday graph showing NCAA data for 2024. The middle right image is the first TidyTuesday graph I did in 2023 with Bob Ross data. The bottom right image is a post about creating test data for a government tracking system. The far bottom left image is an early post from 2021 that shows a drawing for 'Let Epsilon = min(x-a, b-a)'. The image second from the left on the bottom is a post giving advice to anyone learning LaTeX. The image second from the right on the bottom is a post with notes from a PDX R User Group event about making tables with the GT package."}
+
+## How
+
+::: columns
+::: {.column .fragment width="50%"}
+-   Knowledge Acquisition
+
+    Ideation
+
+    Planning
+:::
+
+::: {.column .fragment width="50%"}
+-   Setup
+
+    Version Control
+
+    Deployment
+:::
+:::
+
+::: columns
+::: {.column .fragment width="50%"}
+-   Configure
+
+    Personalize
+
+    Post
+:::
+
+::: {.column .fragment width="50%"}
+-   Aesthetics
+
+    Ownership
+
+    Analysis
+:::
+:::
+
+## What
+
+-   Prioritize Accessibility
+
+-   Select the Right Tool for the Job
+
+-   Avoid Duplicating Other Profiles
+
+-   Consider Your Audience
+
+![](img/what.png){.fragment .absolute top=0 right=0 width="960" height="720" alt="A collage of six different screenshots. In the upper right is the Quarto logo, with the Blogdown and RMarkdown logos below it. The middle right image is of a LinkedIn profile with a red cross-out mark. The bottom right image is a screenshot of the accessibility ratings for the landing page of my blog. The bottom left image is a site map I added to my current blog to help direct traffic, showing a breakdown of different sections in my blog, including the technical blog, book reviews, dashboards, and links to other profiles."}
+
+## Where (P1)
+
+-   [Quarto \> Websites \> Creating a Blog](https://quarto.org/docs/websites/website-blog.html)
+
+-   [Quarto/RMarkdown - What's Different?](https://www.youtube.com/watch?v=i6rajzMkpD0)
+
+    Ted Laderas - [Quarto Blog](https://laderast.github.io/) ([Repo](https://github.com/laderast/laderast.github.io))
+
+    {{< video https://www.youtube.com/watch?v=i6rajzMkpD0 >}}
+
+-   [Creating a blog with Quarto in 10 steps](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/)
+
+    Bea Milz - [Quarto Blog](https://beamilz.com/) ([Repo](https://github.com/beatrizmilz/blog-en))
+
+## Where (p2)
+
+-   [Create Your Data Science Portfolio with Quarto](https://www.youtube.com/watch?v=xtSFXtDf4cM)
+
+    Deepsha Menghani - [Quarto Blog](https://deepshamenghani.quarto.pub/dmenghani/) ([Repo](https://github.com/deepshamenghani/Portfolio_DeepshaM))
+
+    {{< video https://www.youtube.com/watch?v=xtSFXtDf4cM >}}
+
+-   [Style Your Quarto Blog without Knowing a lot of HTML/CSS](https://www.youtube.com/watch?v=ErRX8plZpQE)
+
+    Albert Rapp - [Blog](https://albert-rapp.de/)
+
+    {{< video https://www.youtube.com/watch?v=ErRX8plZpQE >}}
+
+# Thank You!
