@@ -4,13 +4,16 @@ date: "2024-05-08"
 categories: [Talks, Quarto]
 toc: true
 draft: false
+preview-image: "titlecard.png"
 ---
 
-In this post are the materials for my [2024 Cascadia R Conference](https://cascadiarconf.com/agenda/) lightning talk called: Code to Content. 
+In this post are the materials for my [PDX R](https://www.meetup.com/portland-r-user-group/events/298359537/) lightning talk called: Code to Content.
 
-![Image from slide 4, Blogging Blueprint, of my presentation, Code to Content.](images/clipboard-447114531.png)
+![An image of the title card. The top line reads, "Code to Content". The second from the top line reads, "The Art and Impact of Data Blogging". The thrid from the top line reads, "Randi Bolt". The bottom line reads, "2024-02-06".](titlecard.png)
 
 # Slides
+
+Below is the interactive slide deck. You can click through the slides using your arrow pad or the navigation menu.
 
 <iframe src="codetocontent.html" width="800" height="600">
 
