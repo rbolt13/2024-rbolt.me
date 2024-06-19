@@ -1411,6 +1411,62 @@
     "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html",
     "title": "Code to Content Lighting Talk 2",
     "section": "",
-    "text": "In this post are the materials for my Cascadia R Conference lightning talk called: Code to Content.\n\n\n\nAn image of the title card. The top line reads, “Code to Content”. The second from the top line reads, “The Art and Impact of Data Blogging”. The thrid from the top line reads, “Randi Bolt”. The bottom line reads, “2024-02-06”.\n\n\n\nSlides\nBelow is the interactive slide deck. You can click through the slides using your arrow pad or the navigation menu.\n\n\n\n\nTalk\nComing Soon …"
+    "text": "In this post are the materials for my Cascadia R Conference lightning talk called: Code to Content."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-1-code-to-content",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-1-code-to-content",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 1: Code to Content",
+    "text": "Slide 1: Code to Content\nHello, my name is Randi Bolt. Since rendering my first R markdown file to HTML in 2021, I have been enhancing my technical skills by creating web pages and blogs. Today in my talk, “Code to Content,” I will be discussing the benefits and process of data blogging."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-2-agenda",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-2-agenda",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 2: Agenda",
+    "text": "Slide 2: Agenda\nToday I will be covering four main points:\n\nWhy you should start a blog, where I’ll share key reasons and benefits.\nHow to create a blog, where I’ll outline the high-level steps to get you started.\nWhat to consider, where I’ll provide important tips and advice.\nWhere to find more information, where I’ll give you valuable resources for further exploration.\n\nThe images I’ve included are examples of my past related projects, from R Markdown on GitHub to blogdown with Hugo templates, and now Quarto.\nLet’s get into it!"
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-3-why",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-3-why",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 3: Why",
+    "text": "Slide 3: Why\nTo begin, let’s discuss some of the reasons why someone might embark on their blogging journey. There is joy in expression and self discovery. This can help cultivate a richer process of understanding, confidence, and purpose. Own your narrative, and find yourself more empowered speaking to the work you have done and own. Continuous Growth and Learning, which is crucial in today’s job market. Reveal fresh perspectives, and find you’re able to solve problems more efficiently. Data advocacy and empowerment, which are crucial elements driving informed decision-making, fostering transparency, and allow more people the opportunity to leverage this knowledge and these tools. Lastly it is embedded in R culture, and the principles of collaborative learning.\nThese blog posts illustrate my journey, from humble drawings and cheat sheets to web scraping and package building. Blogging provides a low-stakes way to share work and remember key techniques.\nContinuing on,"
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-4-how",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-4-how",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 4: How",
+    "text": "Slide 4: How\nWhen it comes to how to create a blog there are a variety of approaches. At a high level start by gathering the necessary knowledge, brainstorm your blog’s focus, and plan your content. Then set up your blog, connect it to a version control system like Git, and deploy it on a platform such as Netlify. From there configure your blog with a .yam file, personalize it with unique pages, and publish your first post. Then style the aesthetics of your blog with an .scss file, take ownership by securing a custom URL, and use Google Analytics to track and analyze user engagement.\nNow that you have a high level understanding of the process let discuss what to focus on and away from."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-5-what",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-5-what",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 5: What",
+    "text": "Slide 5: What\nWhen it comes to creating a blog, it is not always easy to know what to prioritize. First and foremost, prioritize accessibility to ensure your content is available to everyone. Select the right tool for the job to suit your specific needs and skills. Avoid duplicating other profiles by creating unique, original content. Finally, always consider your audience to make sure your blog resonates with them and meets their needs.\nThe images on this slide provide examples of these priorities in action. They illustrate how I’ve used different tools, ensured accessibility, organized content for my audience, and maintained originality without duplicating other profiles.\nNow that we’ve covered what to focus on, let’s look at some resources to help you get started."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-6-where-12",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-6-where-12",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 6: Where (1/2)",
+    "text": "Slide 6: Where (1/2)\nTo start, read the Quarto documents for starting a blog. This is a one page scrollable document that should be a fairly quick read. From there I’d check out “Quarto/RMarkdown - What’s Different” by Ted Laderas to not only understand the difference between these two tools, but also learn a lot of the extra capabilities of Quarto. When it comes to creating your first Quarto blog, Bea Milz’s post, “Creating a blog with Quarto in 10 steps,’ is an essential guide to the process."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-7-where-22",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-7-where-22",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 7: Where (2/2)",
+    "text": "Slide 7: Where (2/2)\nOnce you’ve started wrapping your head around blogging with quarto I’d check out the video “Create Your Data Science Portfolio with Quarto” by Deepsha Menghani. This is a fun and hands-on tutorial where Deepsha guides you through creating a data science portfolio for the TV character Wednesday Adams. Lastly, I’d check out Albert Rapp’s video “Style your Quarto Blog without Knowing a lot of HTML/CSS”. This is an uncomplicated tutorial that will empower you with the knowledge to add extra polish to the look of your blog."
+  },
+  {
+    "objectID": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-8-thank-you",
+    "href": "blog/Technical-Blog/posts/20240612-Original-CodetoContentSlides2/index.html#slide-8-thank-you",
+    "title": "Code to Content Lighting Talk 2",
+    "section": "Slide 8: Thank You!",
+    "text": "Slide 8: Thank You!\nAnd there you have it! I have briefly talked you through the why, how, what, and where of creating a blog. Thank you for your time, and I look forward to seeing more R users transforming their code into content\nThank you!"
   }
 ]

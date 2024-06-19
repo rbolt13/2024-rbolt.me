@@ -1,6 +1,6 @@
 ---
 title: "Code to Content"
-subtitle: "The Art and Impact of Data Blogging"
+subtitle: "The Benefits and Process of Data Blogging"
 author: "[Randi Bolt](https://www.rbolt.me/)"
 date: "5/22/24"
 draft: true
@@ -90,7 +90,7 @@ format:
 
 ![](img/what.png){.fragment .absolute top=0 right=0 width="960" height="720" alt="A collage of six different screenshots. In the upper right is the Quarto logo, with the Blogdown and RMarkdown logos below it. The middle right image is of a LinkedIn profile with a red cross-out mark. The bottom right image is a screenshot of the accessibility ratings for the landing page of my blog. The bottom left image is a site map I added to my current blog to help direct traffic, showing a breakdown of different sections in my blog, including the technical blog, book reviews, dashboards, and links to other profiles."}
 
-## Where (P1)
+## Where (1/2)
 
 -   [Quarto \> Websites \> Creating a Blog](https://quarto.org/docs/websites/website-blog.html)
 
@@ -104,7 +104,7 @@ format:
 
     Bea Milz - [Quarto Blog](https://beamilz.com/) ([Repo](https://github.com/beatrizmilz/blog-en))
 
-## Where (p2)
+## Where (2/2)
 
 -   [Create Your Data Science Portfolio with Quarto](https://www.youtube.com/watch?v=xtSFXtDf4cM)
 
@@ -112,9 +112,7 @@ format:
 
     {{< video https://www.youtube.com/watch?v=xtSFXtDf4cM >}}
 
--   [Style Your Quarto Blog without Knowing a lot of HTML/CSS](https://www.youtube.com/watch?v=ErRX8plZpQE)
-
-    Albert Rapp - [Blog](https://albert-rapp.de/)
+-   [Style Your Quarto Blog without Knowing a lot of HTML/CSS](https://www.youtube.com/watch?v=ErRX8plZpQE) - Albert Rapp - [Blog](https://albert-rapp.de/)
 
     {{< video https://www.youtube.com/watch?v=ErRX8plZpQE >}}
 
