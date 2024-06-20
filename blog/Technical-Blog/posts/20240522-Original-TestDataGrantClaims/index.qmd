@@ -42,17 +42,11 @@ Load two packages:
 
 -   `dplyr` to mutate the data.
 
--   `lubridate` to ...
-
--   `skimr` to check assumptions about the data.
-
 -   `reactable` to create interactive web tables.
 
 ```{r load packagse}
 #| warning: false
 base::library(dplyr)
-base::library(lubridate)
-base::library(skimr)
 base::library(reactable)
 ```
 
@@ -421,6 +415,7 @@ test$ClaimIssues <- random_issues(nrow(test))
 
 ```{r}
 head(test)
+tail(test)
 ```
 :::
 
