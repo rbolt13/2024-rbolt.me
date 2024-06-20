@@ -27,6 +27,13 @@ Below is an overview of the key folders and files:
 - **_freeze/**: Directory used by Quarto for frozen content.
 - **_site/**: Output directory for the rendered site.
 - **blog/**: Contains the content and posts for the blog.
+
+    -**Technical-Blog**: Contains the content for the Technical Blog.
+    
+    -**Personal-Blog**: Contains the content for the Personal Blog.
+    
+    -**Book-Reviews**:Contains the content for the Book Blog.
+
 - **data/**: Directory of data used in various blog posts. 
 - **img/**: Directory containing images used on the website.
 - **links/**: Directory for outgoing pages. 
