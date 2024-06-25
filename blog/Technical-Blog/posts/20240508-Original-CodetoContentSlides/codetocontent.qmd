@@ -3,6 +3,7 @@ title: "Code to Content"
 subtitle: "The Art and Impact of Data Blogging"
 author: "[Randi Bolt](https://www.rbolt.me/)"
 date: "2/6/24"
+draft: true
 format:
   revealjs:
     incremental: true 
