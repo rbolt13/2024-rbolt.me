@@ -68,7 +68,9 @@ website:
       
 format:
   html:
-    theme: styles.scss
+    theme:
+      light: style/styles.scss
+      dark: style/night.scss
     template-partials:
       - metadata.html
       

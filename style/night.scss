@@ -1,0 +1,55 @@
+/*-- scss:defaults --*/
+// Central configuration file for defining colors, fonts, and other styling properties.
+
+/* Assigned Colors */
+// Primary UI elements color, e.g., navbar
+// Body background color
+// Text color used throughout the body
+// Color for all hyperlinks
+$primary: #800020; // Adjusted for night mode
+$body-bg: #1c1c1c; // Dark background
+$body-color: #e0e0e0; // Light text color for contrast
+$link-color: #f1414f; // Light link color
+
+/* Fonts */
+// Base font for the body text
+// Font family for headings
+$font-family-base: 'Reddit Sans', "sans-serif";
+$headings-font-family: 'Prata', 'Roboto';
+
+/*-- scss:rules --*/
+// Actual styling rules for HTML elements
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-family: $font-family-base;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none; // Example to remove underline from links
+
+    &:hover {
+        color: lighten($link-color, 10%);
+    }
+}
+
+.navbar {
+    background-color: $primary;
+    color: $light; // Use the light color for text in the navbar for contrast
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font-family;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: $font-family-base; 
+}
+
+.quarto-title-banner {
+    margin-bottom: 1em;
+    color: #fdfefe !important;
+    background: #800020 !important; 
+}
