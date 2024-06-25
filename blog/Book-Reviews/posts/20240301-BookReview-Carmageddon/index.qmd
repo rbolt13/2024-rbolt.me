@@ -1,5 +1,5 @@
 ---
-title: "Book Review: Carmageddon"
+title: "Carmageddon"
 date: "2024-03-01"
 categories: ["09/10", "Social Science"]
 toc: true

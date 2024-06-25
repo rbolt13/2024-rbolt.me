@@ -1,5 +1,5 @@
 ---
-title: "Book Review: The Only Good Indians"
+title: "The Only Good Indians"
 date: "2024-05-01"
 categories: ["10/10", "Horror"]
 toc: true
