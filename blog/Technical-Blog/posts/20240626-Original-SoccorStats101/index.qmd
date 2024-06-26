@@ -1,0 +1,43 @@
+---
+title: "Green is Gold: Soccor Stats 101"
+date: "2024-06-26"
+categories: ["R", "Data Analysis", "NWSL", "MLS"]
+toc: true
+draft: true
+warning: false
+format: 
+  html:
+    code-fold: show
+    code-summary: "Hide code"
+    code-tools: true
+    code-copy: true
+---
+
+Here I introduce soccor statistics and look at evaluate the Portland Throns and Timbers players.
+
+
+# Intro
+
+# Background Knowledge
+
+## Metrics
+
+### Player Metrics
+
+* Goals (G)
+
+* Assists (A)
+
+* Shots on Target (SoT): an intentional shot that goes into the net, or would have gone into the net if not for being stopped by the goalkeeper or the last defender
+
+    * Does not count hitting the post or crossbar.
+    
+* Pass Completion Rate (PCR): $\frac{\text{Successful Passes}}{\text{Total Passes}}\times 100$
+
+
+
+
+## Statistics
+
+## Models
+

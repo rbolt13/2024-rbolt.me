@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-01">
+<meta name="dcterms.date" content="2024-06-26">
 
-<title>Randi Bolt - Money Ball</title>
+<title>Randi Bolt - Green is Gold: Soccor Stats 101</title>
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GPSGHZ166H"></script>
@@ -30,6 +30,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -242,23 +276,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#baseball-metrics-statistics-and-sabermetrics" id="toc-baseball-metrics-statistics-and-sabermetrics" class="nav-link" data-scroll-target="#baseball-metrics-statistics-and-sabermetrics">1. Baseball Metrics, Statistics, and Sabermetrics</a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#background-knowledge" id="toc-background-knowledge" class="nav-link" data-scroll-target="#background-knowledge">Background Knowledge</a>
   <ul class="collapse">
-  <li><a href="#fundamental-statistics" id="toc-fundamental-statistics" class="nav-link" data-scroll-target="#fundamental-statistics">Fundamental Statistics</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a>
+  <ul class="collapse">
+  <li><a href="#player-metrics" id="toc-player-metrics" class="nav-link" data-scroll-target="#player-metrics">Player Metrics</a></li>
+  </ul></li>
   <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a></li>
   </ul></li>
-  <li><a href="#people" id="toc-people" class="nav-link" data-scroll-target="#people">2. People</a>
-  <ul class="collapse">
-  <li><a href="#main-cast" id="toc-main-cast" class="nav-link" data-scroll-target="#main-cast">Main Cast</a></li>
-  <li><a href="#baseball-players" id="toc-baseball-players" class="nav-link" data-scroll-target="#baseball-players">Baseball Players</a></li>
-  </ul></li>
-  <li><a href="#the-history-of-women" id="toc-the-history-of-women" class="nav-link" data-scroll-target="#the-history-of-women">3. The History of Women</a></li>
-  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">4. Themes</a>
-  <ul class="collapse">
-  <li><a href="#financial-gap" id="toc-financial-gap" class="nav-link" data-scroll-target="#financial-gap">Financial Gap</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -267,10 +294,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Money Ball</h1>
+<div class="quarto-title-block"><div><h1 class="title">Green is Gold: Soccor Stats 101</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
-    <div class="quarto-category">06/10</div>
-    <div class="quarto-category">Non-Fiction</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Data Analysis</div>
+    <div class="quarto-category">NWSL</div>
+    <div class="quarto-category">MLS</div>
   </div>
   </div>
 
@@ -282,7 +311,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2024</p>
+      <p class="date">June 26, 2024</p>
     </div>
   </div>
   
@@ -294,79 +323,37 @@ window.Quarto = {
 </header>
 
 
-<p><strong>Rating</strong>: 05/10 <br> <strong>Overview</strong>: Coming soon…</p>
-<p><img src="images/clipboard-1043185434.png" class="img-fluid"></p>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>“Moneyball” by Michael Lewis explores how the Oakland A’s used data and analytics to build a competitive team on a budget. It’s fascinating to see how statistics can revolutionize a traditional sport, but I found the book challenging for three reasons:</p>
-<ol type="1">
-<li><p>I don’t know much about baseball statistics, so I got a crash course while reading.</p></li>
-<li><p>I wasn’t familiar with most of the people mentioned, and some are portrayed much better in the book than they are in real life.</p></li>
-<li><p>I found Michael Lewis’s sexist remarks off-putting and wish they had been edited out before publication.</p></li>
-</ol>
-<p>Because of these challenges, I’ve organized this post to discuss (1) Baseball Statistics and Sabermetrics, (2) People, (3) The History of Women’s Baseball, and (4) Major Themes.</p>
+<p>Here I introduce soccor statistics and look at evaluate the Portland Throns and Timbers players.</p>
+<section id="intro" class="level1">
+<h1>Intro</h1>
 </section>
-<section id="baseball-metrics-statistics-and-sabermetrics" class="level1">
-<h1>1. Baseball Metrics, Statistics, and Sabermetrics</h1>
-<section id="fundamental-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="fundamental-statistics">Fundamental Statistics</h2>
-<ol type="1">
-<li><a href="https://www.mlb.com/glossary/standard-stats/hit">Hits (H)</a></li>
-</ol>
+<section id="background-knowledge" class="level1">
+<h1>Background Knowledge</h1>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">Metrics</h2>
+<section id="player-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="player-metrics">Player Metrics</h3>
 <ul>
-<li><p>A hit occurs when a batter strikes the baseball into fair territory and reaches base without doing so via an error or a fielder’s choice.</p></li>
-<li><p>There are four types of hits in baseball: singles, doubles, triples and home runs.</p></li>
-<li><p>All four are counted equally when deciphering batting average.</p></li>
-</ul>
-<ol start="2" type="1">
-<li><a href="https://www.mlb.com/glossary/standard-stats/walk">Walks (BB)</a></li>
-</ol>
+<li><p>Goals (G)</p></li>
+<li><p>Assists (A)</p></li>
+<li><p>Shots on Target (SoT): an intentional shot that goes into the net, or would have gone into the net if not for being stopped by the goalkeeper or the last defender</p>
 <ul>
-<li><p>When a pitcher throws four pitches out of the strike zone, none of which are swung at by the hitter. After refraining from swinging at four pitches out of the zone, the batter is awarded first base.</p></li>
-<li><p>Also known as base on balls.</p></li>
+<li>Does not count hitting the post or crossbar.</li>
+</ul></li>
+<li><p>Pass Completion Rate (PCR): <span class="math inline">\(\frac{\text{Successful Passes}}{\text{Total Passes}}\times 100\)</span></p></li>
 </ul>
+</section>
 </section>
 <section id="statistics" class="level2">
 <h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
-<p><a href="https://www.baseball-reference.com/bullpen/On_base_percentage#:~:text=On%20Base%20Percentage%20(aka%20OBP,by%20Pitch%20%2B%20Sacrifice%20Flies).">OBP: On Base Percentages</a></p>
-<ul>
-<li><p>How often a batter reaches base per plate appearance.</p></li>
-<li><p><span class="math inline">\(\text{OBP}=\frac{\text{H+BB+HBP}}{\text{AB+BB+HBP+SF}}\)</span></p></li>
-</ul>
 </section>
-</section>
-<section id="people" class="level1">
-<h1>2. People</h1>
-<section id="main-cast" class="level2">
-<h2 class="anchored" data-anchor-id="main-cast">Main Cast</h2>
-<p><a href="https://en.wikipedia.org/wiki/Billy_Beane">Billy Beane</a></p>
-<ul>
-<li>Baseball player turned owner of the Oakland A’s.</li>
-</ul>
-<p><a href="">Paul Depodesta</a></p>
-</section>
-<section id="baseball-players" class="level2">
-<h2 class="anchored" data-anchor-id="baseball-players">Baseball Players</h2>
-<ul>
-<li><p>David Beck</p></li>
-<li><p>Nick Swisher</p></li>
-<li><p>Jeremy Brown</p></li>
-</ul>
-</section>
-</section>
-<section id="the-history-of-women" class="level1">
-<h1>3. The History of Women</h1>
-</section>
-<section id="themes" class="level1">
-<h1>4. Themes</h1>
-<section id="financial-gap" class="level2">
-<h2 class="anchored" data-anchor-id="financial-gap">Financial Gap</h2>
-</section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="models" class="level2">
+<h2 class="anchored" data-anchor-id="models">Models</h2>
 
 
+<!-- -->
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -593,6 +580,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -926,7 +964,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://giscus.app/client.js" data-repo="rbolt13/2024-rbolt.me" data-repo-id="R_kgDOLHi9CQ" data-category="General" data-category-id="DIC_kwDOLHi9Cc4CeSaA" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+<input type="hidden" id="giscus-alt-theme" value="dark"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Green is Gold: Soccor Stats 101"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-06-26"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["R", "Data Analysis", "NWSL", "MLS"]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">warning:</span><span class="co"> false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Hide code"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Here I introduce soccor statistics and look at evaluate the Portland Throns and Timbers players.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># Intro</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># Background Knowledge</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metrics</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Player Metrics</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Goals (G)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Assists (A)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Shots on Target (SoT): an intentional shot that goes into the net, or would have gone into the net if not for being stopped by the goalkeeper or the last defender</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Does not count hitting the post or crossbar.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Pass Completion Rate (PCR): $\frac{\text{Successful Passes}}{\text{Total Passes}}\times 100$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Statistics</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Models</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

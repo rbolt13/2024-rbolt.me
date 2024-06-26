@@ -6,6 +6,72 @@ toc: true
 draft: true
 ---
 
-**Rating**: 06/10 </br> **Overview**: Coming soon...
+**Rating**: 05/10 </br> **Overview**: Coming soon...
 
 ![](images/clipboard-1043185434.png)
+
+# Introduction 
+
+"Moneyball" by Michael Lewis explores how the Oakland A's used data and analytics to build a competitive team on a budget. It's fascinating to see how statistics can revolutionize a traditional sport, but I found the book challenging for three reasons:
+
+1. I don't know much about baseball statistics, so I got a crash course while reading.
+
+2. I wasn't familiar with most of the people mentioned, and some are portrayed much better in the book than they are in real life.
+
+3. I found Michael Lewis's sexist remarks off-putting and wish they had been edited out before publication.
+
+Because of these challenges, I’ve organized this post to discuss (1) Baseball Statistics and Sabermetrics, (2) People, (3) The History of Women’s Baseball, and (4) Major Themes.
+
+# 1. Baseball Metrics, Statistics, and Sabermetrics
+
+## Fundamental Statistics
+
+1. [Hits (H)](https://www.mlb.com/glossary/standard-stats/hit)
+
+* A hit occurs when a batter strikes the baseball into fair territory and reaches base without doing so via an error or a fielder's choice.
+
+* There are four types of hits in baseball: singles, doubles, triples and home runs.
+
+* All four are counted equally when deciphering batting average.
+
+2. [Walks (BB)](https://www.mlb.com/glossary/standard-stats/walk)
+
+* When a pitcher throws four pitches out of the strike zone, none of which are swung at by the hitter. After refraining from swinging at four pitches out of the zone, the batter is awarded first base.
+
+* Also known as base on balls. 
+
+## Statistics
+
+[OBP: On Base Percentages](https://www.baseball-reference.com/bullpen/On_base_percentage#:~:text=On%20Base%20Percentage%20(aka%20OBP,by%20Pitch%20%2B%20Sacrifice%20Flies).)
+
+* How often a batter reaches base per plate appearance.
+
+* $\text{OBP}=\frac{\text{H+BB+HBP}}{\text{AB+BB+HBP+SF}}$
+
+# 2. People
+
+## Main Cast
+
+[Billy Beane](https://en.wikipedia.org/wiki/Billy_Beane)
+
+* Baseball player turned owner of the Oakland A's. 
+
+[Paul Depodesta]()
+
+## Baseball Players
+
+* David Beck
+
+* Nick Swisher
+
+* Jeremy Brown
+
+
+
+# 3. The History of Women
+
+# 4. Themes
+
+## Financial Gap 
+
+# Conclusion 
