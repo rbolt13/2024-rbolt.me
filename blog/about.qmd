@@ -1,5 +1,5 @@
 ---
-title: "Welcome 🌹"
+title: "About 🌹"
 image: ../img/world-of-data.jpg
 about:
   template: broadside
