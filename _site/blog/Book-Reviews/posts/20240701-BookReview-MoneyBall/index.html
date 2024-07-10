@@ -110,6 +110,10 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../blog/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Blogs</span>
@@ -222,8 +226,17 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
   <li><a href="#economic-disparities" id="toc-economic-disparities" class="nav-link" data-scroll-target="#economic-disparities">4. Economic Disparities</a></li>
   <li><a href="#outsider-influence" id="toc-outsider-influence" class="nav-link" data-scroll-target="#outsider-influence">5. Outsider Influence</a></li>
   <li><a href="#sabermetrics-and-statistical-analysis" id="toc-sabermetrics-and-statistical-analysis" class="nav-link" data-scroll-target="#sabermetrics-and-statistical-analysis">6. Sabermetrics and Statistical Analysis</a></li>
-  <li><a href="#efficient-team-building" id="toc-efficient-team-building" class="nav-link" data-scroll-target="#efficient-team-building">7. Efficient Team Building</a></li>
-  <li><a href="#organizational-change" id="toc-organizational-change" class="nav-link" data-scroll-target="#organizational-change">8. Organizational Change</a></li>
+  <li><a href="#key-metrics-and-their-calculations" id="toc-key-metrics-and-their-calculations" class="nav-link" data-scroll-target="#key-metrics-and-their-calculations">7. Key Metrics and Their Calculations</a>
+  <ul class="collapse">
+  <li><a href="#on-base-percentage-obp" id="toc-on-base-percentage-obp" class="nav-link" data-scroll-target="#on-base-percentage-obp">On-Base Percentage (OBP)</a></li>
+  <li><a href="#slugging-percentage-slg" id="toc-slugging-percentage-slg" class="nav-link" data-scroll-target="#slugging-percentage-slg">Slugging Percentage (SLG)</a></li>
+  <li><a href="#on-base-plus-slugging-ops" id="toc-on-base-plus-slugging-ops" class="nav-link" data-scroll-target="#on-base-plus-slugging-ops">On-Base Plus Slugging (OPS)</a></li>
+  <li><a href="#wins-above-replacement-war" id="toc-wins-above-replacement-war" class="nav-link" data-scroll-target="#wins-above-replacement-war">Wins Above Replacement (WAR)</a></li>
+  <li><a href="#fielding-independent-pitching-fip" id="toc-fielding-independent-pitching-fip" class="nav-link" data-scroll-target="#fielding-independent-pitching-fip">Fielding Independent Pitching (FIP)</a></li>
+  <li><a href="#batting-average-on-balls-in-play-babip" id="toc-batting-average-on-balls-in-play-babip" class="nav-link" data-scroll-target="#batting-average-on-balls-in-play-babip">Batting Average on Balls in Play (BABIP)</a></li>
+  </ul></li>
+  <li><a href="#efficient-team-building" id="toc-efficient-team-building" class="nav-link" data-scroll-target="#efficient-team-building">8. Efficient Team Building</a></li>
+  <li><a href="#organizational-change" id="toc-organizational-change" class="nav-link" data-scroll-target="#organizational-change">9. Organizational Change</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -261,7 +274,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </header>
 
 
-<p><strong>Rating</strong>: 05/10 <br> <strong>Overview</strong>: Coming soon…</p>
+<p><strong>Rating</strong>: 06/10 <br> <strong>Overview</strong>: “Moneyball” offers fascinating insights into baseball analytics, but is marred by some unnecessary remarks that detract from the overall experience.</p>
 <p><img src="images/clipboard-1043185434.png" class="img-fluid"></p>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
@@ -281,7 +294,8 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </section>
 <section id="social-and-cultural-issues" class="level2">
 <h2 class="anchored" data-anchor-id="social-and-cultural-issues">2. Social and Cultural Issues</h2>
-<p>(coming)</p>
+<p>“Moneyball” frequently addresses the theme of control within the scouting community, where scouts wield significant influence despite lacking substantial data. Scouts often rely on “tools” to judge a player’s potential, emphasizing physical attributes like running speed and throwing strength over more substantial baseball skills such as plate discipline and on-base percentage. This reliance on subjective measures often leads to problematic commentary, including racist and fat-phobic remarks. By focusing on a player’s statistics the Oakland Athletics sought to remove these biases from the equation, evaluating players based on their actual performance rather than their appearance.</p>
+<p>Interestingly, while the book critiques these biases within scouting, it occasionally perpetuates its own issues with sexism. As a female reader, I found many of the comments about women to be unnecessary and out of place. This reflects a broader gender dispute within baseball, where women have historically faced significant barriers and discrimination. The author’s own history of sexist remarks and actions further highlights the pervasive gender issues within the sport. Despite these shortcomings, the book’s focus on data-driven decision-making offers a way to challenge and reduce the influence of these biases, promoting a more equitable approach to player evaluation.</p>
 </section>
 <section id="challenging-traditions" class="level2">
 <h2 class="anchored" data-anchor-id="challenging-traditions">3. Challenging Traditions</h2>
@@ -297,17 +311,63 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </section>
 <section id="sabermetrics-and-statistical-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="sabermetrics-and-statistical-analysis">6. Sabermetrics and Statistical Analysis</h2>
-<p>(add more)</p>
-<p>Sabermetrics, the empirical analysis of baseball through statistics, has revolutionized how player value is assessed. Pioneers like Bill James and Eric Walker have shown that traditional stats like batting average do not fully capture a player’s contribution to the team. Instead, metrics such as on-base percentage (OBP) and slugging percentage (SLG) provide a more accurate measure of a player’s effectiveness. This analytical approach has transformed baseball, making it possible to quantify aspects of the game that were previously overlooked, thereby enabling teams to make more informed decisions about player acquisitions and strategies.</p>
+<p>Sabermetrics, the empirical analysis of baseball through statistics, has revolutionized how player value is assessed. Pioneers like Bill James and Eric Walker demonstrated that traditional stats like batting average do not fully capture a player’s contribution to the team. Instead, more nuanced metrics such as on-base percentage (OBP) and slugging percentage (SLG) offer a more accurate measure of a player’s effectiveness. OBP accounts for how often a player reaches base per plate appearance, highlighting their ability to avoid outs and extend innings. SLG measures the total number of bases a player records per at-bat, emphasizing their power-hitting capabilities.</p>
+<p>This analytical approach transformed baseball, making it possible to quantify aspects of the game that were previously overlooked, such as a player’s plate discipline and situational hitting. By focusing on these advanced metrics, teams can make more informed decisions about player acquisitions and strategies.</p>
+</section>
+<section id="key-metrics-and-their-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="key-metrics-and-their-calculations">7. Key Metrics and Their Calculations</h2>
+<section id="on-base-percentage-obp" class="level3">
+<h3 class="anchored" data-anchor-id="on-base-percentage-obp">On-Base Percentage (OBP)</h3>
+<ul>
+<li><p>OBP = (Hits + Walks + Hit by Pitch) / (At Bats + Walks + Hit by Pitch + Sacrifice Flies)</p></li>
+<li><p>Importance: Measures a player’s ability to avoid making outs and get on base.</p></li>
+</ul>
+</section>
+<section id="slugging-percentage-slg" class="level3">
+<h3 class="anchored" data-anchor-id="slugging-percentage-slg">Slugging Percentage (SLG)</h3>
+<ul>
+<li><p>SLG = Total Bases / At Bats</p></li>
+<li><p>Importance: Reflects a player’s power by calculating the average number of bases a player earns per at-bat.</p></li>
+</ul>
+</section>
+<section id="on-base-plus-slugging-ops" class="level3">
+<h3 class="anchored" data-anchor-id="on-base-plus-slugging-ops">On-Base Plus Slugging (OPS)</h3>
+<ul>
+<li><p>OPS = OBP + SLG</p></li>
+<li><p>Importance: Combines OBP and SLG to provide a comprehensive measure of a player’s overall <strong>offensive value</strong>.</p></li>
+</ul>
+</section>
+<section id="wins-above-replacement-war" class="level3">
+<h3 class="anchored" data-anchor-id="wins-above-replacement-war">Wins Above Replacement (WAR)</h3>
+<ul>
+<li><p>Includes offensive, defensive, and pitching contributions.</p></li>
+<li><p>Estimates a player’s total contributions to their team in terms of wins compared to a replacement-level player.</p></li>
+</ul>
+</section>
+<section id="fielding-independent-pitching-fip" class="level3">
+<h3 class="anchored" data-anchor-id="fielding-independent-pitching-fip">Fielding Independent Pitching (FIP)</h3>
+<ul>
+<li><p>FIP = ((13HR) + (3(BB+HBP)) - (2*K)) / IP + constant</p></li>
+<li><p>Importance: Focuses on the outcomes a pitcher can control (home runs, walks, hit-by-pitches, and strikeouts) to provide a clearer picture of their effectiveness.</p></li>
+</ul>
+</section>
+<section id="batting-average-on-balls-in-play-babip" class="level3">
+<h3 class="anchored" data-anchor-id="batting-average-on-balls-in-play-babip">Batting Average on Balls in Play (BABIP)</h3>
+<ul>
+<li><p>BABIP = (Hits - Home Runs) / (At Bats - Strikeouts - Home Runs + Sacrifice Flies)</p></li>
+<li><p>Importance: Measures how often a ball in play goes for a hit, helping to separate skill from luck.</p></li>
+</ul>
+</section>
 </section>
 <section id="efficient-team-building" class="level2">
-<h2 class="anchored" data-anchor-id="efficient-team-building">7. Efficient Team Building</h2>
-<p>(more)</p>
-<p>By identifying undervalued players who excelled in key statistical areas, the A’s could construct a competitive roster without the need for large financial investments. This approach emphasized the aggregate value of a player’s contributions rather than individual standout skills.</p>
+<h2 class="anchored" data-anchor-id="efficient-team-building">8. Efficient Team Building</h2>
+<p>Efficient team building was at the heart of Billy Beane’s strategy for the Oakland Athletics. By identifying undervalued players who excelled in key statistical areas, the A’s constructed a competitive roster without the need for large financial investments. This approach emphasized the aggregate value of a player’s contributions rather than individual standout skills. Metrics such as On-Base Percentage (OBP) and Slugging Percentage (SLG) allowed the A’s to identify players who could contribute to the team’s success in meaningful ways, even if they lacked the glamour and high market value of more traditionally valued players.</p>
+<p>Wins Above Replacement (WAR) also played a crucial role in this strategy. WAR quantifies a player’s total contributions to their team, measuring how many more wins a player provides compared to a replacement-level player, typically a minor leaguer or bench player. By focusing on players with high WAR values, the A’s could ensure that they were acquiring talent that would provide substantial value on the field. This focus on overall contribution rather than specific skills allowed the A’s to trade for or sign players who might have been overlooked by other teams but who could collectively improve the team’s performance.</p>
+<p>For example, when the Athletics lost key players like Jason Giambi and Johnny Damon to wealthier teams, they didn’t seek to replace these stars with equally high-priced talent. Instead, they looked for players who could collectively match or exceed the production of the departed stars. By doing so, they could maintain a high level of performance while adhering to their limited budget. This method also included a careful analysis of defensive skills, often undervalued in the market, to ensure that their investments were as efficient as possible.</p>
 </section>
 <section id="organizational-change" class="level2">
-<h2 class="anchored" data-anchor-id="organizational-change">8. Organizational Change</h2>
-<p>(more)</p>
+<h2 class="anchored" data-anchor-id="organizational-change">9. Organizational Change</h2>
+<p>As the general manager, Billy Beane made decisions for the entire organization, ensuring a consistent application of sabermetric principles across all levels. Beane’s focus on metrics like OBP and SLG led to a uniform strategy that prioritized getting on base and efficient player development. His leadership and willingness to challenge the status quo enabled the A’s to remain competitive despite their limited budget, demonstrating the critical role of strong, innovative leadership in driving organizational change.</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
