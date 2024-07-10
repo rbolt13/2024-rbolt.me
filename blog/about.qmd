@@ -1,0 +1,25 @@
+---
+title: "Welcome 🌹"
+image: ../img/world-of-data.jpg
+about:
+  template: broadside
+comments: false
+---
+
+I am a statistical data analyst from the city of roses who leverages data science techniques to guide strategic decision-making. I have a relentless passion for exploring new topics and continuously improving upon my past and current work.
+
+Below are the focal points of my virtual rosarium:
+
+<center>
+
+**Central Display**: [Technical Blog](https://www.rbolt.me/blog/technical-blog/blog)
+
+**Feature Roses**: [Book Reviews](https://www.rbolt.me/blog/book-reviews/blog) & [Personal Blog](https://www.rbolt.me/blog/personal-blog/blog)
+
+**Showpiece Structures** (Projects): [Dashboards](https://www.rbolt.me/projects/dashboards) , <br>[Data Visuals & Analysis](https://www.rbolt.me/projects/data-visuals-and-analysis) , [Educational Insigts](https://www.rbolt.me/projects/educational-insights) , [Talks](https://www.rbolt.me/projects/talks) and [Archive Blogs](https://www.rbolt.me/projects/technical-blogs)
+
+**Thematic Area** (Links): [Email](randibolt93@gmail.com) , [Github](https://www.rbolt.me/links/github), [Linkedin](https://www.rbolt.me/links/linkedin) , <br>[Letterbox](https://www.rbolt.me/links/letterboxd), and [Spotify](https://www.rbolt.me/links/spotify)
+
+Enjoy!
+
+</center>

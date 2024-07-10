@@ -19,6 +19,8 @@ website:
 
   navbar:
     right:
+      - text: "About"
+        href: blog/about.qmd
       - text: "Blogs"
         menu:
           - icon: book
