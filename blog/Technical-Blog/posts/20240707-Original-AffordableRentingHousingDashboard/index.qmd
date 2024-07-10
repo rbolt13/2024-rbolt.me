@@ -1,0 +1,142 @@
+---
+title: "Dashboard Review: Affordable Rental Housing Dashboard"
+date: "2024-07-07"
+categories: ["Dashboard Review","Tableau", "Data Visuals"]
+toc: true
+draft: false
+warning: false
+eval: false
+---
+
+This post looks at the [Oregon Department of Housing and Community](https://www.oregon.gov/ohcs/development/pages/housing-data-analysis.aspx) Services dashboard, [Affordable Rental Housing Dashboard](https://public.tableau.com/app/profile/oregon.housing.and.community.services/viz/AffordableRentalHousingDashboard/Story1).
+
+![](images/clipboard-626431291.png)
+
+# Introduction
+
+Updated April 2024 the [Affordable Rental Housing Dashboard](https://public.tableau.com/app/profile/oregon.housing.and.community.services/viz/AffordableRentalHousingDashboard/Story1) from Oregon Housing and Community Services (OHCS) provides a look at the current state of affordable housing across Oregon. In this post, I will review the dashboard, share my thoughts on its features and usability, and highlight some key findings that can help us better understand the challenges and opportunities in Oregon's housing landscape.
+
+Note: This post is currently missing analysis of OHCS Funded Properties and Permanent Supportive Housing, and mainly focuses on the Overview.
+
+# Overview
+
+The title page of this dashboard appears to be an overview of the Affordable Rental Housing (ARH) programs between January 1, 2016 - December 31, 2023.
+
+![](images/clipboard-1775307760.png)
+
+## Title, Introduction, and Navigation Buttons
+
+Right away, I appreciate that this dashboard tells me the date it was updated and the range of data it covers. The font is easy to read, and the instruction to "explore the data through interactive elements" is clear.
+
+However, I would like to see this section highlight some key findings or features of the dashboard. Additionally, I found the dashboard's interactivity somewhat limited, which I will discuss further.
+
+Including definitions right away is helpful, but I don’t like having to refresh my screen to navigate back to the main dashboard.
+
+I like that the definitions are included right away, but I don't like the UI of having to refresh my screen to go back to the dashboard.
+
+## Total Funded Units and Annual Number Units Funded (Average)
+
+This is a good location for these metrics as they provide a high-level summary:
+
+- Total Funded Units (28,230): This represents the cumulative total of rental housing units funded from January 1, 2016, to December 31, 2023. This number shows the program's overall reach.
+
+- Annual Number of Units Funded (Average: 4,033): This represents the average number of units funded per year. This helps gauge the program's consistency and annual performance.
+
+However, without historical context, target goals, or housing demand values, it is hard to determine the significance of these values.
+
+## Number of Bedrooms
+
+A bubble chart is a visually appealing way to display the distribution of funded rental units by the number of bedrooms. However, having to click each circle to see the values and percentages is cumbersome.
+
+It is misleading to have this below the Total Funded Units and the Annual Number of Units Funded (Average). The percentages in parentheses are confusing. Initially, I assumed they represented the percentage of total funded units, but my calculations suggest otherwise.
+
+![](images/clipboard-222507487.png)
+
+I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units: $$\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%$$
+
+So, I manually added up the numbers:
+
+$\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &= 1 Bedroom + 2 Bedrooms + 3 Bedrooms + 4plus Bedrooms + Efficiency + SRO a+b+c\\&=3,732+3,387+1,661+125+1,427+448\\&=10,780\end{split}\end{equation}$
+
+$$\rightarrow\text{P(1 Bedroom)}=(3,732\div 10,780)*100\approx 34.6\%= 34.6\%$$
+
+This calculation shows the percentages are based on a total of 10,780 units, not 28,209 units.
+
+## Unit Affordability
+
+This stacked bar chart shows the number of units funded each year, broken down by affordability levels: ≤30% AMI, ≤50% AMI, ≤60% AMI, ≤80% AMI, and Project-Based Assistance. A line graph superimposed on the bar chart shows the total units funded each year.
+
+Observations:
+
+- Most affordable units are within the ≤60% AMI range.
+
+- There is an increase in units above the 80% AMI range.
+
+- 2021 had the most restricted units, while 2016 had the least.
+
+- 2023 shows a decline in units funded.
+
+The interactivity of this graph with others is misleading. Clicking on it doesn’t provide clear, valuable insights.
+
+![](images/clipboard-600757896.png)
+
+At one point, I got this graph to split up into quarters. I am not sure how I did this, but in that visual, you could see either Q2 or Q3 exceeding the other quarters consistently year after year.
+
+The interactivity of this graph with others is even more misleading, and clicking on it doesn’t provide clear, valuable insights.
+
+## Funding Sources
+
+This bar chart shows funding sources for the total units each year, distinguishing between federal and state funding. A line graph shows the total units funded each year.
+
+Observations:
+
+- The state provided more funding every year except 2016.
+
+- Clicking on the left graph to zoom in on bars is necessary but not user-friendly.
+
+- The interactivity between this and the Unit Affordability graph is confusing and misleading.
+
+## Construction Type
+
+This bar chart displays the number of units funded by construction type each year: Acquisition/Rehab, Manufactured Home Park, and New Construction.
+
+Observations:
+
+* New construction has the most units funded each year, with 2020 being the highest year.
+
+* Manufactured homes are consistently in the middle, with spikes in 2018 and 2021.
+
+* Acquisition/Rehabs have the least units, with 2016 being the lowest year.
+
+The interactivity here is strange and only works when selecting something on the first graph.
+
+## Preservation Units in Rural or Urban Communities
+
+This bar chart shows preservation units each year, distinguishing between urban and rural communities.
+
+Observations:
+
+* Urban units spiked in 2016, while rural units spiked in 2022.
+
+* 2022 is the only year rural units were greater than urban units.
+
+* Rural units dropped significantly in 2023.
+
+This graph disappears when you select anything on the first graph, which is a usability issue.
+
+# OHCS Funded Properties
+
+Coming Soon ... 
+
+![](images/clipboard-107122227.png)
+
+
+# Permanent Supportive Housing 
+
+Coming Soon ... 
+
+![](images/clipboard-3052567148.png)
+
+# Conclusion
+
+Overall, the OHCS Affordable Rental Housing Dashboard provides a detailed look at affordable housing in Oregon. While the metrics and visuals offer valuable insights, the interactivity and usability could be improved to make the data more accessible and understandable. Key metrics like Total Funded Units and Annual Number of Units Funded (Average) need context to gauge their effectiveness. Visuals like the bubble chart and stacked bar charts could benefit from clearer labels and less dependency on interactivity for understanding the data.

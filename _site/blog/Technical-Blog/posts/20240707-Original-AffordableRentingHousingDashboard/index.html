@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-01">
+<meta name="dcterms.date" content="2024-07-07">
 
-<title>Randi Bolt - Money Ball</title>
+<title>Randi Bolt - Dashboard Review: Affordable Rental Housing Dashboard</title>
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GPSGHZ166H"></script>
@@ -90,6 +90,35 @@ gtag('js', new Date());
 gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -214,17 +243,18 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-  <li><a href="#player-development-and-mental-game" id="toc-player-development-and-mental-game" class="nav-link" data-scroll-target="#player-development-and-mental-game">1. Player Development and Mental Game</a></li>
-  <li><a href="#social-and-cultural-issues" id="toc-social-and-cultural-issues" class="nav-link" data-scroll-target="#social-and-cultural-issues">2. Social and Cultural Issues</a></li>
-  <li><a href="#challenging-traditions" id="toc-challenging-traditions" class="nav-link" data-scroll-target="#challenging-traditions">3. Challenging Traditions</a></li>
-  <li><a href="#economic-disparities" id="toc-economic-disparities" class="nav-link" data-scroll-target="#economic-disparities">4. Economic Disparities</a></li>
-  <li><a href="#outsider-influence" id="toc-outsider-influence" class="nav-link" data-scroll-target="#outsider-influence">5. Outsider Influence</a></li>
-  <li><a href="#sabermetrics-and-statistical-analysis" id="toc-sabermetrics-and-statistical-analysis" class="nav-link" data-scroll-target="#sabermetrics-and-statistical-analysis">6. Sabermetrics and Statistical Analysis</a></li>
-  <li><a href="#efficient-team-building" id="toc-efficient-team-building" class="nav-link" data-scroll-target="#efficient-team-building">7. Efficient Team Building</a></li>
-  <li><a href="#organizational-change" id="toc-organizational-change" class="nav-link" data-scroll-target="#organizational-change">8. Organizational Change</a></li>
+  <li><a href="#title-introduction-and-navigation-buttons" id="toc-title-introduction-and-navigation-buttons" class="nav-link" data-scroll-target="#title-introduction-and-navigation-buttons">Title, Introduction, and Navigation Buttons</a></li>
+  <li><a href="#total-funded-units-and-annual-number-units-funded-average" id="toc-total-funded-units-and-annual-number-units-funded-average" class="nav-link" data-scroll-target="#total-funded-units-and-annual-number-units-funded-average">Total Funded Units and Annual Number Units Funded (Average)</a></li>
+  <li><a href="#number-of-bedrooms" id="toc-number-of-bedrooms" class="nav-link" data-scroll-target="#number-of-bedrooms">Number of Bedrooms</a></li>
+  <li><a href="#unit-affordability" id="toc-unit-affordability" class="nav-link" data-scroll-target="#unit-affordability">Unit Affordability</a></li>
+  <li><a href="#funding-sources" id="toc-funding-sources" class="nav-link" data-scroll-target="#funding-sources">Funding Sources</a></li>
+  <li><a href="#construction-type" id="toc-construction-type" class="nav-link" data-scroll-target="#construction-type">Construction Type</a></li>
+  <li><a href="#preservation-units-in-rural-or-urban-communities" id="toc-preservation-units-in-rural-or-urban-communities" class="nav-link" data-scroll-target="#preservation-units-in-rural-or-urban-communities">Preservation Units in Rural or Urban Communities</a></li>
   </ul></li>
+  <li><a href="#ohcs-funded-properties" id="toc-ohcs-funded-properties" class="nav-link" data-scroll-target="#ohcs-funded-properties">OHCS Funded Properties</a></li>
+  <li><a href="#permanent-supportive-housing" id="toc-permanent-supportive-housing" class="nav-link" data-scroll-target="#permanent-supportive-housing">Permanent Supportive Housing</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -234,10 +264,11 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Money Ball</h1>
+<h1 class="title">Dashboard Review: Affordable Rental Housing Dashboard</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">06/10</div>
-    <div class="quarto-category">Non-Fiction</div>
+    <div class="quarto-category">Dashboard Review</div>
+    <div class="quarto-category">Tableau</div>
+    <div class="quarto-category">Data Visuals</div>
   </div>
   </div>
 
@@ -249,7 +280,7 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 1, 2024</p>
+      <p class="date">July 7, 2024</p>
     </div>
   </div>
   
@@ -261,58 +292,105 @@ gtag('config', 'G-GPSGHZ166H', { 'anonymize_ip': true});
 </header>
 
 
-<p><strong>Rating</strong>: 05/10 <br> <strong>Overview</strong>: Coming soon…</p>
-<p><img src="images/clipboard-1043185434.png" class="img-fluid"></p>
+<p>This post looks at the <a href="https://www.oregon.gov/ohcs/development/pages/housing-data-analysis.aspx">Oregon Department of Housing and Community</a> Services dashboard, <a href="https://public.tableau.com/app/profile/oregon.housing.and.community.services/viz/AffordableRentalHousingDashboard/Story1">Affordable Rental Housing Dashboard</a>.</p>
+<p><img src="images/clipboard-626431291.png" class="img-fluid"></p>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>“Moneyball” by Michael Lewis explores how the Oakland A’s used data and analytics to build a competitive team on a budget. It’s fascinating to see how statistics can revolutionize a traditional sport, but I found the book challenging for three reasons:</p>
-<ol type="1">
-<li><p>I don’t know much about baseball statistics, so I got a crash course while reading.</p></li>
-<li><p>I wasn’t familiar with most of the people mentioned, and some are portrayed much better in the book than they are in real life.</p></li>
-<li><p>I found Michael Lewis’s sexist remarks off-putting and wish they had been edited out before publication.</p></li>
-</ol>
-<p>Regardless of these challenges I found this book full of insight, and a worth while read for anyone interested in data analysis. Below I will discus some themes in the book that stuck out to me.</p>
+<p>Updated April 2024 the <a href="https://public.tableau.com/app/profile/oregon.housing.and.community.services/viz/AffordableRentalHousingDashboard/Story1">Affordable Rental Housing Dashboard</a> from Oregon Housing and Community Services (OHCS) provides a look at the current state of affordable housing across Oregon. In this post, I will review the dashboard, share my thoughts on its features and usability, and highlight some key findings that can help us better understand the challenges and opportunities in Oregon’s housing landscape.</p>
+<p>Note: This post is currently missing analysis of OHCS Funded Properties and Permanent Supportive Housing, and mainly focuses on the Overview.</p>
 </section>
-<section id="themes" class="level1">
-<h1>Themes</h1>
-<section id="player-development-and-mental-game" class="level2">
-<h2 class="anchored" data-anchor-id="player-development-and-mental-game">1. Player Development and Mental Game</h2>
-<p>Billy Beane’s own struggles as a player informed his understanding of the importance of the mental game in baseball. Recognizing that mental toughness and psychological resilience are as crucial as physical talent, Beane and his team emphasized these aspects in their player development programs. The insights of sports psychologist Harvey Dorfman, who authored “The Mental Game of Baseball,” were particularly influential. Dorfman’s work highlighted the need for players to develop mental discipline and perspective, teaching them to handle failure and maintain focus under pressure. This holistic approach to player development ensured that the Athletics nurtured not just athletic talent, but also the mental fortitude necessary for sustained success.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>The title page of this dashboard appears to be an overview of the Affordable Rental Housing (ARH) programs between January 1, 2016 - December 31, 2023.</p>
+<p><img src="images/clipboard-1775307760.png" class="img-fluid"></p>
+<section id="title-introduction-and-navigation-buttons" class="level2">
+<h2 class="anchored" data-anchor-id="title-introduction-and-navigation-buttons">Title, Introduction, and Navigation Buttons</h2>
+<p>Right away, I appreciate that this dashboard tells me the date it was updated and the range of data it covers. The font is easy to read, and the instruction to “explore the data through interactive elements” is clear.</p>
+<p>However, I would like to see this section highlight some key findings or features of the dashboard. Additionally, I found the dashboard’s interactivity somewhat limited, which I will discuss further.</p>
+<p>Including definitions right away is helpful, but I don’t like having to refresh my screen to navigate back to the main dashboard.</p>
+<p>I like that the definitions are included right away, but I don’t like the UI of having to refresh my screen to go back to the dashboard.</p>
 </section>
-<section id="social-and-cultural-issues" class="level2">
-<h2 class="anchored" data-anchor-id="social-and-cultural-issues">2. Social and Cultural Issues</h2>
-<p>(coming)</p>
+<section id="total-funded-units-and-annual-number-units-funded-average" class="level2">
+<h2 class="anchored" data-anchor-id="total-funded-units-and-annual-number-units-funded-average">Total Funded Units and Annual Number Units Funded (Average)</h2>
+<p>This is a good location for these metrics as they provide a high-level summary:</p>
+<ul>
+<li><p>Total Funded Units (28,230): This represents the cumulative total of rental housing units funded from January 1, 2016, to December 31, 2023. This number shows the program’s overall reach.</p></li>
+<li><p>Annual Number of Units Funded (Average: 4,033): This represents the average number of units funded per year. This helps gauge the program’s consistency and annual performance.</p></li>
+</ul>
+<p>However, without historical context, target goals, or housing demand values, it is hard to determine the significance of these values.</p>
 </section>
-<section id="challenging-traditions" class="level2">
-<h2 class="anchored" data-anchor-id="challenging-traditions">3. Challenging Traditions</h2>
-<p>The traditional methods of scouting in baseball heavily relied on subjective assessments and physical attributes, which often led to biased and inaccurate evaluations of players. This created a significant conflict when new analytical approaches, emphasizing objective data and statistical analysis, began to emerge. Billy Beane and his team at the Oakland Athletics epitomized this clash by challenging the conventional wisdom of the scouts. They focused on quantifiable metrics like on-base percentage (OBP) rather than the scouts’ subjective measures, ultimately proving that a data-driven approach could lead to success on the field.</p>
+<section id="number-of-bedrooms" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-bedrooms">Number of Bedrooms</h2>
+<p>A bubble chart is a visually appealing way to display the distribution of funded rental units by the number of bedrooms. However, having to click each circle to see the values and percentages is cumbersome.</p>
+<p>It is misleading to have this below the Total Funded Units and the Annual Number of Units Funded (Average). The percentages in parentheses are confusing. Initially, I assumed they represented the percentage of total funded units, but my calculations suggest otherwise.</p>
+<p><img src="images/clipboard-222507487.png" class="img-fluid"></p>
+<p>I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units: <span class="math display">\[\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%\]</span></p>
+<p>So, I manually added up the numbers:</p>
+<p><span class="math inline">\(\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &amp;= 1 Bedroom + 2 Bedrooms + 3 Bedrooms + 4plus Bedrooms + Efficiency + SRO a+b+c\\&amp;=3,732+3,387+1,661+125+1,427+448\\&amp;=10,780\end{split}\end{equation}\)</span></p>
+<p><span class="math display">\[\rightarrow\text{P(1 Bedroom)}=(3,732\div 10,780)*100\approx 34.6\%= 34.6\%\]</span></p>
+<p>This calculation shows the percentages are based on a total of 10,780 units, not 28,209 units.</p>
 </section>
-<section id="economic-disparities" class="level2">
-<h2 class="anchored" data-anchor-id="economic-disparities">4. Economic Disparities</h2>
-<p>The disparity between rich and poor teams in baseball has been a long-standing issue, with wealthier teams traditionally able to afford the best players, thereby securing a competitive advantage. Discussions around the potential solutions, such as salary caps or revenue sharing, often revolve around the idea of creating a more level playing field. This economic imbalance forces smaller market teams to find creative ways to compete, showcasing the inefficiencies in how money is spent.</p>
+<section id="unit-affordability" class="level2">
+<h2 class="anchored" data-anchor-id="unit-affordability">Unit Affordability</h2>
+<p>This stacked bar chart shows the number of units funded each year, broken down by affordability levels: ≤30% AMI, ≤50% AMI, ≤60% AMI, ≤80% AMI, and Project-Based Assistance. A line graph superimposed on the bar chart shows the total units funded each year.</p>
+<p>Observations:</p>
+<ul>
+<li><p>Most affordable units are within the ≤60% AMI range.</p></li>
+<li><p>There is an increase in units above the 80% AMI range.</p></li>
+<li><p>2021 had the most restricted units, while 2016 had the least.</p></li>
+<li><p>2023 shows a decline in units funded.</p></li>
+</ul>
+<p>The interactivity of this graph with others is misleading. Clicking on it doesn’t provide clear, valuable insights.</p>
+<p><img src="images/clipboard-600757896.png" class="img-fluid"></p>
+<p>At one point, I got this graph to split up into quarters. I am not sure how I did this, but in that visual, you could see either Q2 or Q3 exceeding the other quarters consistently year after year.</p>
+<p>The interactivity of this graph with others is even more misleading, and clicking on it doesn’t provide clear, valuable insights.</p>
 </section>
-<section id="outsider-influence" class="level2">
-<h2 class="anchored" data-anchor-id="outsider-influence">5. Outsider Influence</h2>
-<p>The influence of outsiders, including community members and intellectuals, has been pivotal in challenging the traditional baseball establishment. Figures like Bill James and Eric Walker brought fresh perspectives and analytical rigor to the sport, advocating for the use of sabermetrics to evaluate player performance more accurately. Their work laid the foundation for a new way of thinking about baseball, moving away from anecdotal and subjective assessments towards a more empirical and data-driven approach.</p>
+<section id="funding-sources" class="level2">
+<h2 class="anchored" data-anchor-id="funding-sources">Funding Sources</h2>
+<p>This bar chart shows funding sources for the total units each year, distinguishing between federal and state funding. A line graph shows the total units funded each year.</p>
+<p>Observations:</p>
+<ul>
+<li><p>The state provided more funding every year except 2016.</p></li>
+<li><p>Clicking on the left graph to zoom in on bars is necessary but not user-friendly.</p></li>
+<li><p>The interactivity between this and the Unit Affordability graph is confusing and misleading.</p></li>
+</ul>
 </section>
-<section id="sabermetrics-and-statistical-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="sabermetrics-and-statistical-analysis">6. Sabermetrics and Statistical Analysis</h2>
-<p>(add more)</p>
-<p>Sabermetrics, the empirical analysis of baseball through statistics, has revolutionized how player value is assessed. Pioneers like Bill James and Eric Walker have shown that traditional stats like batting average do not fully capture a player’s contribution to the team. Instead, metrics such as on-base percentage (OBP) and slugging percentage (SLG) provide a more accurate measure of a player’s effectiveness. This analytical approach has transformed baseball, making it possible to quantify aspects of the game that were previously overlooked, thereby enabling teams to make more informed decisions about player acquisitions and strategies.</p>
+<section id="construction-type" class="level2">
+<h2 class="anchored" data-anchor-id="construction-type">Construction Type</h2>
+<p>This bar chart displays the number of units funded by construction type each year: Acquisition/Rehab, Manufactured Home Park, and New Construction.</p>
+<p>Observations:</p>
+<ul>
+<li><p>New construction has the most units funded each year, with 2020 being the highest year.</p></li>
+<li><p>Manufactured homes are consistently in the middle, with spikes in 2018 and 2021.</p></li>
+<li><p>Acquisition/Rehabs have the least units, with 2016 being the lowest year.</p></li>
+</ul>
+<p>The interactivity here is strange and only works when selecting something on the first graph.</p>
 </section>
-<section id="efficient-team-building" class="level2">
-<h2 class="anchored" data-anchor-id="efficient-team-building">7. Efficient Team Building</h2>
-<p>(more)</p>
-<p>By identifying undervalued players who excelled in key statistical areas, the A’s could construct a competitive roster without the need for large financial investments. This approach emphasized the aggregate value of a player’s contributions rather than individual standout skills.</p>
+<section id="preservation-units-in-rural-or-urban-communities" class="level2">
+<h2 class="anchored" data-anchor-id="preservation-units-in-rural-or-urban-communities">Preservation Units in Rural or Urban Communities</h2>
+<p>This bar chart shows preservation units each year, distinguishing between urban and rural communities.</p>
+<p>Observations:</p>
+<ul>
+<li><p>Urban units spiked in 2016, while rural units spiked in 2022.</p></li>
+<li><p>2022 is the only year rural units were greater than urban units.</p></li>
+<li><p>Rural units dropped significantly in 2023.</p></li>
+</ul>
+<p>This graph disappears when you select anything on the first graph, which is a usability issue.</p>
 </section>
-<section id="organizational-change" class="level2">
-<h2 class="anchored" data-anchor-id="organizational-change">8. Organizational Change</h2>
-<p>(more)</p>
 </section>
+<section id="ohcs-funded-properties" class="level1">
+<h1>OHCS Funded Properties</h1>
+<p>Coming Soon …</p>
+<p><img src="images/clipboard-107122227.png" class="img-fluid"></p>
+</section>
+<section id="permanent-supportive-housing" class="level1">
+<h1>Permanent Supportive Housing</h1>
+<p>Coming Soon …</p>
+<p><img src="images/clipboard-3052567148.png" class="img-fluid"></p>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>In conclusion I’d read this book. It has a lot of insightful information, but if you don’t know baseball it could be a lot more than meets the eye.</p>
+<p>Overall, the OHCS Affordable Rental Housing Dashboard provides a detailed look at affordable housing in Oregon. While the metrics and visuals offer valuable insights, the interactivity and usability could be improved to make the data more accessible and understandable. Key metrics like Total Funded Units and Annual Number of Units Funded (Average) need context to gauge their effectiveness. Visuals like the bubble chart and stacked bar charts could benefit from clearer labels and less dependency on interactivity for understanding the data.</p>
 
 
 </section>

@@ -1,0 +1,33 @@
+---
+title: "Update R"
+date: "2024-07-02"
+categories: ["R"]
+draft: true
+execute: 
+  eval: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+---
+
+Check version
+
+```{r}
+R.version.string
+```
+
+Go here: https://ftp.osuosl.org/pub/cran/ is the website.
+
+Download: (for me)
+
+![](images/clipboard-1417108620.png)
+
+Sometimes need to download:
+
+![](images/clipboard-1476444076.png)
+
+Sometimes need to move:
+
+![](images/clipboard-1064072939.png)

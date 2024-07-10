@@ -1,6 +1,6 @@
 ---
 title: "Money Ball"
-date: "2024-05-01"
+date: "2024-07-01"
 categories: ["06/10", "Non-Fiction"]
 toc: true
 draft: true
@@ -20,58 +20,46 @@ draft: true
 
 3. I found Michael Lewis's sexist remarks off-putting and wish they had been edited out before publication.
 
-Because of these challenges, I’ve organized this post to discuss (1) Baseball Statistics and Sabermetrics, (2) People, (3) The History of Women’s Baseball, and (4) Major Themes.
+Regardless of these challenges I found this book full of insight, and a worth while read for anyone interested in data analysis. Below I will discus some themes in the book that stuck out to me. 
 
-# 1. Baseball Metrics, Statistics, and Sabermetrics
+# Themes
 
-## Fundamental Statistics
+## 1. Player Development and Mental Game
 
-1. [Hits (H)](https://www.mlb.com/glossary/standard-stats/hit)
+Billy Beane’s own struggles as a player informed his understanding of the importance of the mental game in baseball. Recognizing that mental toughness and psychological resilience are as crucial as physical talent, Beane and his team emphasized these aspects in their player development programs. The insights of sports psychologist Harvey Dorfman, who authored "The Mental Game of Baseball," were particularly influential. Dorfman’s work highlighted the need for players to develop mental discipline and perspective, teaching them to handle failure and maintain focus under pressure. This holistic approach to player development ensured that the Athletics nurtured not just athletic talent, but also the mental fortitude necessary for sustained success.
 
-* A hit occurs when a batter strikes the baseball into fair territory and reaches base without doing so via an error or a fielder's choice.
+## 2. Social and Cultural Issues
 
-* There are four types of hits in baseball: singles, doubles, triples and home runs.
+(coming)
 
-* All four are counted equally when deciphering batting average.
+## 3. Challenging Traditions
 
-2. [Walks (BB)](https://www.mlb.com/glossary/standard-stats/walk)
+The traditional methods of scouting in baseball heavily relied on subjective assessments and physical attributes, which often led to biased and inaccurate evaluations of players. This created a significant conflict when new analytical approaches, emphasizing objective data and statistical analysis, began to emerge. Billy Beane and his team at the Oakland Athletics epitomized this clash by challenging the conventional wisdom of the scouts. They focused on quantifiable metrics like on-base percentage (OBP) rather than the scouts’ subjective measures, ultimately proving that a data-driven approach could lead to success on the field.
 
-* When a pitcher throws four pitches out of the strike zone, none of which are swung at by the hitter. After refraining from swinging at four pitches out of the zone, the batter is awarded first base.
+## 4. Economic Disparities
 
-* Also known as base on balls. 
+The disparity between rich and poor teams in baseball has been a long-standing issue, with wealthier teams traditionally able to afford the best players, thereby securing a competitive advantage. Discussions around the potential solutions, such as salary caps or revenue sharing, often revolve around the idea of creating a more level playing field. This economic imbalance forces smaller market teams to find creative ways to compete, showcasing the inefficiencies in how money is spent.
 
-## Statistics
+## 5. Outsider Influence
 
-[OBP: On Base Percentages](https://www.baseball-reference.com/bullpen/On_base_percentage#:~:text=On%20Base%20Percentage%20(aka%20OBP,by%20Pitch%20%2B%20Sacrifice%20Flies).)
+The influence of outsiders, including community members and intellectuals, has been pivotal in challenging the traditional baseball establishment. Figures like Bill James and Eric Walker brought fresh perspectives and analytical rigor to the sport, advocating for the use of sabermetrics to evaluate player performance more accurately. Their work laid the foundation for a new way of thinking about baseball, moving away from anecdotal and subjective assessments towards a more empirical and data-driven approach.
 
-* How often a batter reaches base per plate appearance.
+## 6. Sabermetrics and Statistical Analysis
 
-* $\text{OBP}=\frac{\text{H+BB+HBP}}{\text{AB+BB+HBP+SF}}$
+(add more)
 
-# 2. People
+Sabermetrics, the empirical analysis of baseball through statistics, has revolutionized how player value is assessed. Pioneers like Bill James and Eric Walker have shown that traditional stats like batting average do not fully capture a player's contribution to the team. Instead, metrics such as on-base percentage (OBP) and slugging percentage (SLG) provide a more accurate measure of a player's effectiveness. This analytical approach has transformed baseball, making it possible to quantify aspects of the game that were previously overlooked, thereby enabling teams to make more informed decisions about player acquisitions and strategies.
 
-## Main Cast
+## 7. Efficient Team Building
 
-[Billy Beane](https://en.wikipedia.org/wiki/Billy_Beane)
+(more)
 
-* Baseball player turned owner of the Oakland A's. 
+By identifying undervalued players who excelled in key statistical areas, the A’s could construct a competitive roster without the need for large financial investments. This approach emphasized the aggregate value of a player's contributions rather than individual standout skills.
 
-[Paul Depodesta]()
+## 8. Organizational Change
 
-## Baseball Players
-
-* David Beck
-
-* Nick Swisher
-
-* Jeremy Brown
-
-
-
-# 3. The History of Women
-
-# 4. Themes
-
-## Financial Gap 
+(more)
 
 # Conclusion 
+
+In conclusion I'd read this book. It has a lot of insightful information, but if you don't know baseball it could be a lot more than meets the eye. 
