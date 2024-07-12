@@ -6,7 +6,7 @@ toc: true
 draft: false
 ---
 
-**Rating**: 06/10 </br> **Overview**: "Moneyball" offers fascinating insights into baseball analytics, but is marred by some unnecessary remarks that detract from the overall experience. 
+**Rating**: 06/10 </br> **Overview**: This book offers fascinating insights into baseball analytics, but is marred by some unnecessary remarks that detract from the overall experience. 
 
 ![](images/clipboard-1043185434.png)
 
@@ -36,7 +36,7 @@ Interestingly, while the book critiques these biases within scouting, it occasio
 
 ## 3. Challenging Traditions
 
-The traditional methods of scouting in baseball heavily relied on subjective assessments and physical attributes, which often led to biased and inaccurate evaluations of players. This created a significant conflict when new analytical approaches, emphasizing objective data and statistical analysis, began to emerge. Billy Beane and his team at the Oakland Athletics epitomized this clash by challenging the conventional wisdom of the scouts. They focused on quantifiable metrics like on-base percentage (OBP) rather than the scouts’ subjective measures, ultimately proving that a data-driven approach could lead to success on the field.
+The traditional methods of scouting in baseball heavily relied on subjective assessments and physical attributes, which often led to biased and inaccurate evaluations of players. This created a significant conflict when new analytical approaches, emphasizing objective data and statistical analysis, began to emerge. Billy Beane and his team at the Oakland Athletics epitomized this clash by challenging the scouts. They focused on quantifiable metrics like on-base percentage (OBP) rather than the scouts’ subjective measures, ultimately proving that a data-driven approach could lead to success on the field.
 
 ## 4. Economic Disparities
 
