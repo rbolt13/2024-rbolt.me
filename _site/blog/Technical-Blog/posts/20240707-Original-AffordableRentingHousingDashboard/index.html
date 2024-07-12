@@ -139,6 +139,10 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../blog/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Blogs</span>
@@ -324,10 +328,11 @@ window.Quarto = {
 <p>A bubble chart is a visually appealing way to display the distribution of funded rental units by the number of bedrooms. However, having to click each circle to see the values and percentages is cumbersome.</p>
 <p>It is misleading to have this below the Total Funded Units and the Annual Number of Units Funded (Average). The percentages in parentheses are confusing. Initially, I assumed they represented the percentage of total funded units, but my calculations suggest otherwise.</p>
 <p><img src="images/clipboard-222507487.png" class="img-fluid"></p>
-<p>I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units: <span class="math display">\[\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%\]</span></p>
+<p>I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units:</p>
+<p><span class="math inline">\(\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%\)</span></p>
 <p>So, I manually added up the numbers:</p>
-<p><span class="math inline">\(\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &amp;= 1 Bedroom + 2 Bedrooms + 3 Bedrooms + 4plus Bedrooms + Efficiency + SRO a+b+c\\&amp;=3,732+3,387+1,661+125+1,427+448\\&amp;=10,780\end{split}\end{equation}\)</span></p>
-<p><span class="math display">\[\rightarrow\text{P(1 Bedroom)}=(3,732\div 10,780)*100\approx 34.6\%= 34.6\%\]</span></p>
+<p><span class="math inline">\(\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &amp;= \text{1 Bedroom} + \text{2 Bedrooms} + \text{3 Bedrooms} + \text{4+ Bedrooms} + \text{Efficiency} + \text{SRO} \\&amp;=3,732+3,387+1,661+125+1,427+448\\&amp;=10,780\end{split}\end{equation}\)</span></p>
+<p><span class="math inline">\(\rightarrow\text{P(1 Bedroom)}=(\frac{3,732}{10,780})*100\approx 34.6\%= 34.6\%\)</span></p>
 <p>This calculation shows the percentages are based on a total of 10,780 units, not 28,209 units.</p>
 </section>
 <section id="unit-affordability" class="level2">

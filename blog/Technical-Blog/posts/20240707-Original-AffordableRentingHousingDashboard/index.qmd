@@ -52,13 +52,15 @@ It is misleading to have this below the Total Funded Units and the Annual Number
 
 ![](images/clipboard-222507487.png)
 
-I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units: $$\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%$$
+I initially assumed they were to show the number of 1 bedroom units per 28,209 units. However, when we just consider 1 Bedroom (3,732) per 28,209 Total funded units: 
+
+$\text{P(1 Bedroom)}=\frac{3,732}{ 28,209}\times100\approx 13.22\%\neq 34.6\%$
 
 So, I manually added up the numbers:
 
-$\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &= 1 Bedroom + 2 Bedrooms + 3 Bedrooms + 4plus Bedrooms + Efficiency + SRO a+b+c\\&=3,732+3,387+1,661+125+1,427+448\\&=10,780\end{split}\end{equation}$
+$\begin{equation}\label{a}\begin{split}\sum(\text{Units}) &= \text{1 Bedroom} + \text{2 Bedrooms} + \text{3 Bedrooms} + \text{4+ Bedrooms} + \text{Efficiency} + \text{SRO} \\&=3,732+3,387+1,661+125+1,427+448\\&=10,780\end{split}\end{equation}$
 
-$$\rightarrow\text{P(1 Bedroom)}=(3,732\div 10,780)*100\approx 34.6\%= 34.6\%$$
+$\rightarrow\text{P(1 Bedroom)}=(\frac{3,732}{10,780})*100\approx 34.6\%= 34.6\%$
 
 This calculation shows the percentages are based on a total of 10,780 units, not 28,209 units.
 
