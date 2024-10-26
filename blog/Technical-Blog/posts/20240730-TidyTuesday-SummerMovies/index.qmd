@@ -1,0 +1,271 @@
+---
+title: "Week 31 Tidy Tuesday: Summer Movies"
+date: "2024-07-30"
+categories: ["#TidyTuesday", "R", "Data Visuals"]
+draft: true
+execute: 
+  eval: false
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+---
+
+My week 31 [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master) submission looks at the length of summer romance movies over the decades.  
+![](plot3.png)
+
+# Summer Movies
+
+This week we're exploring "summer" movies: movies with "summer" in their title!
+
+The data this week comes from the [Internet Movie Database](https://developer.imdb.com/non-commercial-datasets/).
+We don't have an article using exactly this dataset, but you might get inspiration from [IMDb's 2023 Summer Movie Guide](https://www.imdb.com/list/ls569932833/).
+
+# Code
+
+This code keeps similar elements as previous entries. The intention behind this code was to turn the visual out more quickly, and I feel successful in that. 
+
+::: panel-tabset
+### Packages & Data
+
+Packages:
+
+```{r load packages}
+#### Load packages ####
+base::library(tidyverse)
+base::library(showtext)
+base::library(ggtext)
+base::library(camcorder)
+base::library(viridis)
+```
+
+Data:
+
+```{r load data}
+#### Load Data ####
+tt_dataset <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-07-30/summer_movies.csv')
+```
+
+### Fonts and Colors
+
+Fonts
+
+```{r load fonts}
+### Load Fonts ####
+sysfonts::font_add_google("Lobster Two", "l2")
+showtext::showtext_auto()
+title_font <- "l2"
+```
+
+Colors:
+
+```{r load colors}
+#### Load Colors ####
+bg_col <- "#333333"
+text_col <- "#F0F0F0"
+```
+
+### Text 
+
+```{r define text}
+#### Define Text ####
+title <- "Run Times of Summer Movie Romanances Through the Decades (1950-2024)"
+st <- "Summer romance movies tend to skew slightly over the 90 minute mark with only _A Brighter Summer Day_, a Taiwanese epic, goes past the 3 hour mark. With the 1991 version reaching almost 4 hours."
+cap <- "**Data**: Summer Movies <br> **Graphic**: R. Bolt"
+xlab <- "Runtime (Minutes)"
+ylab <- "Movie"
+```
+
+### Data Wrangling
+
+Wranglin': 
+
+```{r wranglin}
+#### Data Wrangling ####
+plot_data <- tt_dataset |>
+  tidyr::separate_rows(genres, sep = ",") |>
+  dplyr::filter(
+    title_type == "movie",
+    genres == "Romance", 
+    year > 1949, 
+    !is.na(runtime_minutes)
+    ) |>
+  dplyr::mutate(decade = base::floor(year/10)*10) |>
+  dplyr::group_by(primary_title, year) |>
+  dplyr::arrange(dplyr::desc(runtime_minutes)) 
+
+avg_runtime <- plot_data |>
+  group_by(decade) |>
+  summarize(avg_runtime = mean(runtime_minutes, na.rm = TRUE))
+```
+
+:::
+
+
+# Plot
+
+::: panel-tabset
+
+### Aesthetics, Geometries, & Facet
+
+```{r plot1}
+plot1 <- ggplot2::ggplot(
+  plot_data,
+  ggplot2::aes(
+    x = stats::reorder(tconst, runtime_minutes),
+    y = runtime_minutes,
+    fill = runtime_minutes
+  )
+) +
+  ggplot2::geom_bar(
+    stat = "identity",
+    position = ggplot2::position_dodge(width=0.8)) +
+  ggplot2::geom_hline(
+    yintercept = 90, 
+    linetype = "dashed", 
+    color = "white") +
+  ggplot2::geom_hline(
+    yintercept = 180, 
+    linetype = "dashed", 
+    color = "white") +
+  ggplot2::facet_wrap(
+    ~decade,
+    scales = "free_x",
+    nrow = 1
+  )
+```
+
+### Labels & Scales
+
+```{r}
+plot2 <- plot1 +
+  ggplot2::labs(
+    title = title,
+    subtitle = st,
+    caption = cap,
+    y = xlab,
+    x = ylab
+  ) +
+  ggplot2::scale_y_continuous(
+    breaks = c(
+      30, 60, 90, 120, 150, 
+      180, 210, 240, 270, 300
+      )
+    ) +
+  ggplot2::scale_x_discrete(
+    labels = plot_data$primary_title
+    ) +
+  viridis::scale_fill_viridis(option = "C", direction = -1)
+```
+
+### Theme
+
+```{r theme}
+plot3 <- plot2 +
+  ggplot2::theme_minimal(base_size = 12) +
+  ggplot2::theme(
+    # Title
+    plot.title = element_textbox_simple(
+      colour = text_col,
+      size = rel(4),
+      margin = margin(b = 10, t = 10),
+      lineheight = 0.5,
+      family = title_font,
+      face = "bold",
+      hjust = 0.5
+    ), 
+    # Subtitle
+    plot.subtitle = element_textbox_simple(
+      colour = text_col,
+      size = rel(2),
+      margin = margin(b = 10, t = 0),
+      lineheight = 0.5,
+      family = title_font,
+      hjust = .5
+    ),
+    # Caption
+    plot.caption = element_textbox_simple(
+      colour = text_col,
+      size = rel(1.5),
+      margin = margin(b = 10, t = 5),
+      lineheight = 0.5,
+      family = title_font
+    ),
+    # Y Axis Titles
+    axis.title.y = element_text(
+      color = text_col,
+      size = rel(3),
+      family = title_font),
+    # X Axis Titles
+    axis.title.x = element_text(
+      color = text_col,
+      family = title_font,
+      size = rel(2)),
+    # Y Axis Text
+    axis.text.y = element_text(
+      color = text_col,
+      family = title_font,
+      size = rel(1.8)),
+    # X Axis Text
+    axis.text.x = element_text(
+      vjust = 1.5,
+      hjust = 1,
+      color = text_col,
+      family = title_font,
+      angle = 45,
+      size = rel(1.8)),
+    # Title and Caption Position
+    plot.title.position = "plot",
+    plot.caption.position = "plot",
+    # Background Color
+    plot.background = element_rect(
+      fill = bg_col, 
+      colour = bg_col),
+    panel.background = element_rect(
+      fill = bg_col, 
+      colour = bg_col),
+    # Remove Grid lines
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    # Facets
+    strip.text = element_text(color = text_col),
+    # Legend 
+    legend.position = "none"
+  ) 
+
+
+ggplot2::ggsave(
+  filename = "plot3.png", 
+  plot = plot3, 
+  device = "png", 
+  width = 10, 
+  height = 10, 
+  units = "in", 
+  dpi = 300)
+```
+
+### Save 
+
+Save image:
+
+```{r}
+ggplot2::ggsave(
+  filename = "plot3.png", 
+  plot = plot3, 
+  device = "png", 
+  width = 4, 
+  height = 8, 
+  units = "in", 
+  dpi = 300)
+```
+
+:::
+
+
+
+# Quick Notes
+
+* 

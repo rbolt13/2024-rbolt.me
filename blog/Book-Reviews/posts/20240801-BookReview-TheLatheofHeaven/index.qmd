@@ -1,14 +1,43 @@
 ---
 title: "The Lathe of Heaven"
 date: "2024-08-01"
-categories: ["00/10", "Science Fiction"]
+categories: ["07/10", "Science Fiction"]
 toc: true
 draft: true
 ---
 
-**Rating**: 00/10 </br> **Overview**: Coming soon...
+**Rating**: 07/10 </br> **Overview**: A thought-provoking journey set in Portland, exploring dreams that alter reality. The sci-fi elements fit well but made the read somewhat chaotic.
 
 ![](images/clipboard-1208801698.png)
 
 
 # Introduction 
+
+Reading "The Lathe of Heaven" by Ursula K. Le Guin was a thought-provoking experience. 
+
+This is the intro
+
+# Themes
+
+Here are some themes
+
+## 1. Reality and Dreams
+
+
+
+## 2. Memory and Perception
+
+## 3. Trust and Deception 
+
+## 4. Humanitarian Concerns and Societal Collapse
+
+## 5. Benevolunce and Self Interest
+
+## 6. Relationships and Isolation 
+
+
+# Conclusion
+
+Overall I really enjoyed this book and found it provided a captivating lens to examine 
+
+

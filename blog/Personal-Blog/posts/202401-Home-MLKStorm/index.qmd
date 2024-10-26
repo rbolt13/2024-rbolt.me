@@ -3,6 +3,7 @@ title: "2024 January Winter Storm"
 date: "2024-01-21"
 categories: ["Storm Preparedness"]
 toc: true
+draft: true
 ---
 
 In January 2024, Oregon was battered by a formidable storm, leaving a lasting imprint on our community. Months later, the scars of destruction still linger in our neighborhood, evident in the tarps draped over homes awaiting repair from the trees that crashed through them.
