@@ -21,17 +21,8 @@ website:
     right:
       - text: "About"
         href: blog/about.qmd
-      - text: "Blogs"
-        menu:
-          - icon: book
-            text: Book Reviews
-            href: blog/Book-Reviews/blog.qmd
-          - icon: person
-            text: Personal Blog
-            href: blog/Personal-Blog/blog.qmd
-          - icon: code
-            text: Technical Blogs
-            href: blog/Technical-Blog/blog.qmd
+      - text: "Blog"
+        href: blog/Technical-Blog/blog.qmd
       - text: "Projects"
         menu:
           - icon: bar-chart-steps
