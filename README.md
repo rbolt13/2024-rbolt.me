@@ -12,7 +12,7 @@ Personal Website and Blog
 Quick Link
 -->
 
-[Website]:https://www.rbolt.me/
+[Website]:[https://www.rbolt.me/](https://2024-rbolt.netlify.app/)
 [Email]:randibolt93@gmail.com 
 [LinkedIn]:https://www.linkedin.com/in/randi-bolt/
 
